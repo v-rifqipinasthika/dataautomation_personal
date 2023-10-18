@@ -20720,9 +20720,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_Performer_Portal",
       "projectName": "Traveloka_DataAutomation_Performer_Portal",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Performer_Portal\\.local",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Performer_Portal\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Performer_Portal\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Performer_Portal\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

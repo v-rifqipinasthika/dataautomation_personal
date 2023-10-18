@@ -22047,11 +22047,11 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Traveloka_DataAutomation_Portal_7Eleven",
-      "projectName": "Traveloka_DataAutomation_Portal_7Eleven",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_7Eleven\\.local",
+      "projectUniqueName": "Traveloka_DataAutomation_Portal_Seveneleven",
+      "projectName": "Traveloka_DataAutomation_Portal_Seveneleven",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Seveneleven\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_7Eleven\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Seveneleven\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
