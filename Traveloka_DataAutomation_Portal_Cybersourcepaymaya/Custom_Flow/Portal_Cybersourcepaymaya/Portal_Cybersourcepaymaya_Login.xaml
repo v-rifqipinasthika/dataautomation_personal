@@ -3,8 +3,6 @@
     <x:Property Name="in_portalLink" Type="InArgument(x:String)" />
     <x:Property Name="in_cred" Type="InArgument(x:String)" />
     <x:Property Name="in_PID" Type="InArgument(x:String)" />
-    <x:Property Name="in_captchaRuleId" Type="InArgument(x:String)" />
-    <x:Property Name="in_captchaSiteKey" Type="InArgument(x:String)" />
     <x:Property Name="in_BPID" Type="InArgument(x:String)" />
     <x:Property Name="in_BPName" Type="InArgument(x:String)" />
     <x:Property Name="out_loginSuccess" Type="OutArgument(x:Boolean)" />
@@ -132,9 +130,9 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="379.47169811320754,25.358490566037734" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
             <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="379.47169811320754,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Doesn't support simulate activy" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,165.73584905660377" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[usrname]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Doesn't support simulate activy" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,165.73584905660377" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="98e06fb7b3c534119e7d3b04c730d5f0" Selector="&lt;webctrl id='label-identity' tag='LABEL' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="98e06fb7b3c534119e7d3b04c730d5f0" Selector="&lt;webctrl id='identityValue' tag='INPUT' aaname='*Email address or mobile number*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -149,9 +147,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,106.86792452830188" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]">
+            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,106.86792452830188" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
               <ui:TypeSecureText.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="d1eed8d0c6513e70bcafeb28fa7bd293" Selector="&lt;webctrl id='label-password' tag='LABEL' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="d1eed8d0c6513e70bcafeb28fa7bd293" Selector="&lt;webctrl id='password' tag='INPUT' aaname='*Password*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -185,15 +183,11 @@
             </ui:Click>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Cybersourcepaymaya\Portal_Cybersourcepaymaya_OTPHandler.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cybersourcepaymaya\Portal_Cybersourcepaymaya_OTPHandler.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_emailCred">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_credMail" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_otpCode">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="otpCode" />
-                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_emailCred">[in_credMail]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_otpCode">[otpCode]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'LABEL  label-identity' OTP Code" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[otpCode]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'LABEL  label-identity' OTP Code" EmptyField="True" sap:VirtualizedContainerService.HintSize="379.47169811320754,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[otpCode]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d4be460-18b4-405e-a905-afd65da5f8fb" InformativeScreenshot="8e42029b9a6562bdc0add4f3ae3fe2cd" Selector="&lt;html app='chrome.exe' title='One Time PIN | Maya' /&gt;&lt;webctrl id='digit-1' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
