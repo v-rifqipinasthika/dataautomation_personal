@@ -78,7 +78,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="674.7169811320754,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
-    <TryCatch DisplayName="Try Catch Close Application" sap:VirtualizedContainerService.HintSize="674.7169811320754,1219.0188679245282" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch Close Application" sap:VirtualizedContainerService.HintSize="674.7169811320754,1219.0188679245282" sap2010:WorkflowViewState.IdRef="TryCatch_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -86,7 +86,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="636.6792452830189,998.9433962264151" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="636.6792452830189,998.9433962264151" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="logoutExist" />
           </Sequence.Variables>
@@ -95,36 +95,36 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[logoutExist]" sap:VirtualizedContainerService.HintSize="575.0943396226414,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[logoutExist]" sap:VirtualizedContainerService.HintSize="575.0943396226414,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="637dd8a4-c43f-460e-9780-6345dd44f9aa" InformativeScreenshot="bcf839eb91f00782264e12faae520708" Selector="&lt;html app='chrome.exe' title='Vietinbank Card Support' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;" TimeoutMS="3000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="637dd8a4-c43f-460e-9780-6345dd44f9aa" InformativeScreenshot="0ac9f47c6ab4a512a06e1ed7051d09a1" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;" TimeoutMS="3000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[logoutExist]" DisplayName="If Logout Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,742.6415094339623" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[logoutExist]" DisplayName="If Logout Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,742.6415094339623" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,472.75471698113205" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,472.75471698113205" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="434.71698113207543,363.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="7f88d3fb1d4206cd90ee61fe8b5c7993" Selector="&lt;html app='chrome.exe' title='Vietinbank Card Support' /&gt;">
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="434.71698113207543,363.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="8cab8a05d67403be40ea2140e58fcaa1" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  ctl00_lnkLogout'" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  ctl00_lnkLogout'" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -136,7 +136,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="bcf839eb91f00782264e12faae520708" Selector="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="aab48fc51cc2933ca4a7756d52ec91e1" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -153,7 +153,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,7 +165,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="640.3018867924528,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="640.3018867924528,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -176,7 +176,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Message Close Applicaiton" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[exception.Message]" />
+            <ui:LogMessage DisplayName="Log Message Close Applicaiton" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[exception.Message]" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
