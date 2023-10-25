@@ -95,11 +95,7 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,1605.7358490566037" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="reportPage">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">https://meservices.ocbc.com/merchant/main.jsp?PAGEID=Mp_txnstatementTabFormSearch&amp;Action=Search&amp;menuId=Reports&amp;OWASP_CSRFTOKEN=1SJU-UUO1-X0SL-H5TJ-57BJ-KI1M-X6TP-G7BR</Literal>
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="x:String" Default="https://meservices.ocbc.com/merchant/main.jsp?PAGEID=Mp_txnstatementTabFormSearch&amp;Action=Search&amp;menuId=Reports&amp;OWASP_CSRFTOKEN=1SJU-UUO1-X0SL-H5TJ-57BJ-KI1M-X6TP-G7BR" Name="reportPage" />
               <Variable x:TypeArguments="x:Boolean" Name="notFound" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -185,7 +181,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' Submit" sap:VirtualizedContainerService.HintSize="479.0943396226415,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' Submit" sap:VirtualizedContainerService.HintSize="479.0943396226415,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
