@@ -1,6 +1,21 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Molpaysgdfee_SearchReport" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="979.9245283018868,825.0566037735848" sap2010:WorkflowViewState.IdRef="Portal_Molpaysgdfee_SearchReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Molpaysgdfee_SearchReport" this:Portal_Molpaysgdfee_SearchReport.in_maxNumberSearch="30" this:Portal_Molpaysgdfee_SearchReport.in_period="[Now.AddDays(-4)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_maxNumberSearch" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
+    <x:Property Name="out_dataFound" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <this:Portal_Molpaysgdfee_SearchReport.out_dataFound>
+    <InArgument x:TypeArguments="x:Boolean">
+      <Literal x:TypeArguments="x:Boolean" />
+    </InArgument>
+  </this:Portal_Molpaysgdfee_SearchReport.out_dataFound>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2734.188679245283</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Portal_Molpaysgdfee_SearchReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="56">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -30,10 +45,12 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="47">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -66,63 +83,236 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Molpaysgdfee_SearchReport" sap:VirtualizedContainerService.HintSize="496.3018867924528,759.8490566037735" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Search Report for Today.&#xA;If report not foun" DisplayName="Portal_Molpaysgdfee_SearchReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,2668.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtFeeReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="434.71698113207543,247.2452830188679" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fd446fcb1a7f603f71739b3ea1762a0e" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version*' /&gt;">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Test&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="575.0943396226414,2390.9433962264147" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fd446fcb1a7f603f71739b3ea1762a0e" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2244.2264150943392" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="https://portal.merchant.razer.com/index.php?mod=settlements&amp;opt=record" Name="reportLink" />
+              <Variable x:TypeArguments="x:String" Name="reportIndex" />
+              <Variable x:TypeArguments="x:String" Name="reportPage" />
+              <Variable x:TypeArguments="x:String" Name="dataPerPage">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">120</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </ActivityAction>
-      </ui:BrowserScope.Body>
-    </ui:BrowserScope>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'RazerMerc Page'" sap:VirtualizedContainerService.HintSize="434.71698113207543,363.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3be523f445e0e398de9f22939d257c35" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version 2.0 : SETTLEMENT RECORDS' /&gt;">
-      <ui:BrowserScope.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE  tbl_settlement'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='No' attr='text' /&gt;&lt;column name='Date' attr='text' /&gt;&lt;column name='Merchant Ref ID' attr='text' /&gt;&lt;column name='Bank Account' attr='text' /&gt;&lt;column name='Transaction Amount' attr='text' /&gt;&lt;column name='Transaction GST' attr='text' /&gt;&lt;column name='Deduct' attr='text' /&gt;&lt;column name='Token Amount' attr='text' /&gt;&lt;column name='Token GST' attr='text' /&gt;&lt;column name='Mass Payment' attr='text' /&gt;&lt;column name='Settle Amount' attr='text' /&gt;&lt;column name='Column-11' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl parentid='tbl_settlement_next' tag='A' /&gt;" SimulateClick="True">
-              <ui:ExtractData.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b43ec004-c872-47fe-b80f-c53e520d08ab" InformativeScreenshot="62a8517bb359f8fb4995181d2c948e7f" Selector="&lt;webctrl id='tbl_settlement' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" sap2010:Annotation.AnnotationText="120 data/page" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="479.0943396226415,165.73584905660377" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[dataPerPage]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>30</x:String>
+                  <x:String>60</x:String>
+                  <x:String>90</x:String>
+                  <x:String>120</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba0b99cf-9b2a-4127-8a4d-d630c3187151" InformativeScreenshot="de8ee7998bf479687590dbf97c472e0c" Selector="&lt;webctrl tag='SELECT' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
                 </ui:Target>
-              </ui:ExtractData.Target>
-            </ui:ExtractData>
+              </ui:SelectItem.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SelectItem>
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'RazerMerc Page'" sap:VirtualizedContainerService.HintSize="479.0943396226415,363.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3be523f445e0e398de9f22939d257c35" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version 2.0 : SETTLEMENT RECORDS' /&gt;">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[dtFeeReport]" DisplayName="Extract Structured Data 'TABLE  tbl_settlement'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='No' attr='text' /&gt;&lt;column name='Date' attr='text' /&gt;&lt;column name='Merchant Ref ID' attr='text' /&gt;&lt;column name='Bank Account' attr='text' /&gt;&lt;column name='Transaction Amount' attr='text' /&gt;&lt;column name='Transaction GST' attr='text' /&gt;&lt;column name='Deduct' attr='text' /&gt;&lt;column name='Token Amount' attr='text' /&gt;&lt;column name='Token GST' attr='text' /&gt;&lt;column name='Mass Payment' attr='text' /&gt;&lt;column name='Settle Amount' attr='text' /&gt;&lt;column name='Column-11' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="[in_maxNumberSearch]" NextLinkSelector="&lt;webctrl parentid='tbl_settlement_next' tag='A' /&gt;" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b43ec004-c872-47fe-b80f-c53e520d08ab" InformativeScreenshot="62a8517bb359f8fb4995181d2c948e7f" Selector="&lt;webctrl id='tbl_settlement' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:BrowserScope>
+            <TryCatch DisplayName="Try Catch Invoke Code Get Report Index &amp; Page" sap:VirtualizedContainerService.HintSize="479.0943396226415,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Initiate dt to dictionary and groupby&#xD;&#xA;Dim dict1 As Dictionary(Of String, DataRow()) = in_dtFeeReport.AsEnumerable().GroupBy(Function(row) CDate(row(&quot;Date&quot;).ToString()).ToShortDateString).ToDictionary(Function(entry) entry.Key, Function(entry) entry.ToArray())&#xD;&#xA;Console.WriteLine(&quot;Testing&quot;)&#xD;&#xA;Console.WriteLine(in_searchedData)&#xD;&#xA;&#x9;&#xD;&#xA;'Filter value of period date&#xD;&#xA;Dim filterValue As String = in_searchedData&#xD;&#xA;Dim filteredArray As DataRow() = If(dict1.ContainsKey(filterValue), dict1(filterValue), {})&#xD;&#xA;Dim filteredTable = in_dtFeeReport.clone()&#xD;&#xA;If filteredArray.Any()&#xD;&#xA;&#x9;filteredTable = filteredArray.CopyToDataTable()&#xD;&#xA;&#x9;Dim reportNo As Int32 = CInt(filteredTable.Rows(0).Item(&quot;No&quot;).ToString)&#xD;&#xA;&#x9;'ReportIndex+=2&#xD;&#xA;&#x9;out_reportIndex = ((reportNo Mod CInt(in_dataPerPage)) + 2).ToString&#xD;&#xA;&#x9;Console.WriteLine(out_reportIndex)&#xD;&#xA;&#x9;'ReportPage / 120&#xD;&#xA;&#x9;out_reportPage = Math.Ceiling(reportNo/120).ToString&#xD;&#xA;&#x9;Console.WriteLine(out_reportPage)&#xD;&#xA;&#x9;'Set dataFound to True&#xD;&#xA;&#x9;out_dataFound = True&#xD;&#xA;&#xD;&#xA;End If" DisplayName="Invoke Code Get Report Index &amp; Page" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtFeeReport">
+                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtFeeReport" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_searchedData">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_period.ToShortDateString" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportIndex">
+                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="reportIndex" />
+                    </OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportPage">
+                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="reportPage" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_dataPerPage">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dataPerPage" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_dataFound">
+                      <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_dataFound" />
+                    </OutArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.92452830188677,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Throw DisplayName="Throw Inner Exception" Exception="[exception.InnerException]" sap:VirtualizedContainerService.HintSize="334.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <If Condition="[out_dataFound]" DisplayName="If Data Found" sap:VirtualizedContainerService.HintSize="479.0943396226415,861.2830188679245" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,492.6792452830188" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message Data Found" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Data found at page {0} and index {1}&quot;, reportPage, reportIndex)]" />
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  #' | Nav to Report Page" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="217bc4dd-0468-4be6-bd7c-5fc14d0d2179" InformativeScreenshot="e516fe318dfe7ce8133a4905eb148aeb" Selector="[string.Format(&quot;&lt;webctrl parentid='tbl_settlement_paginate' tag='A' innertext='{0}' /&gt;&quot;, reportPage)]">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'I' | Nav to Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f3581c4-9dd9-43c2-ba0c-38c49576faf5" InformativeScreenshot="8d35355e5169d78d695c1761a89a4a27" Selector="[string.Format(&quot;&lt;webctrl id='tbl_settlement' tag='TABLE' /&gt;&lt;webctrl tableRow='{0}' tag='A' /&gt;&quot;, reportIndex)]">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,199.24528301886792" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message Data Not Found" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Data Not Found&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <Sequence sap:VirtualizedContainerService.HintSize="479.0943396226415,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
   </Sequence>
 </Activity>
