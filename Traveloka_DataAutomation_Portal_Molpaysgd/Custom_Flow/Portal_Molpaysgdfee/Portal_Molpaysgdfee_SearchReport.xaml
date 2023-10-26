@@ -1,14 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Molpaysgdfee_SearchReport" this:Portal_Molpaysgdfee_SearchReport.in_maxNumberSearch="30" this:Portal_Molpaysgdfee_SearchReport.in_period="[Now.AddDays(-4)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Molpaysgdfee_SearchReport" this:Portal_Molpaysgdfee_SearchReport.in_maxNumberSearch="30" this:Portal_Molpaysgdfee_SearchReport.in_period="[Now.AddDays(-6)]" this:Portal_Molpaysgdfee_SearchReport.out_dataFound="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_maxNumberSearch" Type="InArgument(x:Int32)" />
     <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
     <x:Property Name="out_dataFound" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <this:Portal_Molpaysgdfee_SearchReport.out_dataFound>
-    <InArgument x:TypeArguments="x:Boolean">
-      <Literal x:TypeArguments="x:Boolean" />
-    </InArgument>
-  </this:Portal_Molpaysgdfee_SearchReport.out_dataFound>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -50,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="47">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="94">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -97,6 +92,8 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Search Report for Today.&#xA;If report not foun" DisplayName="Portal_Molpaysgdfee_SearchReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,2668.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -109,7 +106,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Test&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Portal_Molpaysgdfee_SearchReport" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Molpaysgdfee_SearchReport&quot;]" />
     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="575.0943396226414,2390.9433962264147" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fd446fcb1a7f603f71739b3ea1762a0e" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -121,11 +118,7 @@
               <Variable x:TypeArguments="x:String" Default="https://portal.merchant.razer.com/index.php?mod=settlements&amp;opt=record" Name="reportLink" />
               <Variable x:TypeArguments="x:String" Name="reportIndex" />
               <Variable x:TypeArguments="x:String" Name="reportPage" />
-              <Variable x:TypeArguments="x:String" Name="dataPerPage">
-                <Variable.Default>
-                  <Literal x:TypeArguments="x:String">120</Literal>
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="x:String" Default="120" Name="dataPerPage" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -197,26 +190,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Initiate dt to dictionary and groupby&#xD;&#xA;Dim dict1 As Dictionary(Of String, DataRow()) = in_dtFeeReport.AsEnumerable().GroupBy(Function(row) CDate(row(&quot;Date&quot;).ToString()).ToShortDateString).ToDictionary(Function(entry) entry.Key, Function(entry) entry.ToArray())&#xD;&#xA;Console.WriteLine(&quot;Testing&quot;)&#xD;&#xA;Console.WriteLine(in_searchedData)&#xD;&#xA;&#x9;&#xD;&#xA;'Filter value of period date&#xD;&#xA;Dim filterValue As String = in_searchedData&#xD;&#xA;Dim filteredArray As DataRow() = If(dict1.ContainsKey(filterValue), dict1(filterValue), {})&#xD;&#xA;Dim filteredTable = in_dtFeeReport.clone()&#xD;&#xA;If filteredArray.Any()&#xD;&#xA;&#x9;filteredTable = filteredArray.CopyToDataTable()&#xD;&#xA;&#x9;Dim reportNo As Int32 = CInt(filteredTable.Rows(0).Item(&quot;No&quot;).ToString)&#xD;&#xA;&#x9;'ReportIndex+=2&#xD;&#xA;&#x9;out_reportIndex = ((reportNo Mod CInt(in_dataPerPage)) + 2).ToString&#xD;&#xA;&#x9;Console.WriteLine(out_reportIndex)&#xD;&#xA;&#x9;'ReportPage / 120&#xD;&#xA;&#x9;out_reportPage = Math.Ceiling(reportNo/120).ToString&#xD;&#xA;&#x9;Console.WriteLine(out_reportPage)&#xD;&#xA;&#x9;'Set dataFound to True&#xD;&#xA;&#x9;out_dataFound = True&#xD;&#xA;&#xD;&#xA;End If" DisplayName="Invoke Code Get Report Index &amp; Page" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Initiate dt to dictionary and groupby&#xA;Dim dict1 As Dictionary(Of String, DataRow()) = in_dtFeeReport.AsEnumerable().GroupBy(Function(row) CDate(row(&quot;Date&quot;).ToString()).ToShortDateString).ToDictionary(Function(entry) entry.Key, Function(entry) entry.ToArray())&#xA;Console.WriteLine(&quot;Testing&quot;)&#xA;Console.WriteLine(in_searchedData)&#xA;&#x9;&#xA;'Filter value of period date&#xA;Dim filterValue As String = in_searchedData&#xA;Dim filteredArray As DataRow() = If(dict1.ContainsKey(filterValue), dict1(filterValue), {})&#xA;Dim filteredTable = in_dtFeeReport.clone()&#xA;If filteredArray.Any()&#xA;&#x9;filteredTable = filteredArray.CopyToDataTable()&#xA;&#x9;Dim reportNo As Int32 = CInt(filteredTable.Rows(0).Item(&quot;No&quot;).ToString)&#xA;&#x9;'ReportIndex+=2&#xA;&#x9;out_reportIndex = ((reportNo Mod CInt(in_dataPerPage)) + 2).ToString&#xA;&#x9;Console.WriteLine(out_reportIndex)&#xA;&#x9;'ReportPage / 120&#xA;&#x9;out_reportPage = Math.Ceiling(reportNo/120).ToString&#xA;&#x9;Console.WriteLine(out_reportPage)&#xA;&#x9;'Set dataFound to True&#xA;&#x9;out_dataFound = True&#xA;&#xA;End If" DisplayName="Invoke Code Get Report Index &amp; Page" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                   <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtFeeReport">
-                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtFeeReport" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_searchedData">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_period.ToShortDateString" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportIndex">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="reportIndex" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportPage">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="reportPage" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_dataPerPage">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dataPerPage" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_dataFound">
-                      <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_dataFound" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtFeeReport">[dtFeeReport]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_searchedData">[in_period.ToShortDateString]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportIndex">[reportIndex]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_reportPage">[reportPage]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_dataPerPage">[dataPerPage]</InArgument>
+                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_dataFound">[out_dataFound]</OutArgument>
                   </ui:InvokeCode.Arguments>
                 </ui:InvokeCode>
               </TryCatch.Try>
@@ -268,7 +249,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'I' | Nav to Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'I' | Nav to Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
