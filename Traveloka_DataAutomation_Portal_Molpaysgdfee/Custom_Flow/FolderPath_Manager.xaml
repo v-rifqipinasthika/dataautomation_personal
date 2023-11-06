@@ -10,6 +10,7 @@
     <x:Property Name="in_productType" Type="InArgument(x:String)" />
     <x:Property Name="in_archieve" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_Rerun" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_reportType" Type="InArgument(x:String)" />
   </x:Members>
   <this:FolderPath_Manager.in_archieve>
     <InArgument x:TypeArguments="x:Boolean" />
@@ -17,7 +18,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>799.6981132075471,2273.2075471698113</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1864.7547169811319</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FolderPath_Manager_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -111,7 +112,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Create folder according to master data&#xA;1. Daily&#xA;2. Weekly&#xA;3. Monthly&#xA;4. copy new log every new year&#xA;5. Hanling holiday, public holiday, leap year" DisplayName="FolderPath_Manager" sap:VirtualizedContainerService.HintSize="602.2641509433962,2208" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Create folder according to master data&#xA;1. Daily&#xA;2. Weekly&#xA;3. Monthly&#xA;4. copy new log every new year&#xA;5. Hanling holiday, public holiday, leap year" DisplayName="FolderPath_Manager" sap:VirtualizedContainerService.HintSize="529.8113207547169,1799.5471698113206" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="userLogExist" />
       <Variable x:TypeArguments="x:String" Name="pathMasterBp" />
@@ -125,8 +126,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message FolderPath_Manager" sap:VirtualizedContainerService.HintSize="540.6792452830189,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, String.Format(&quot;{0} {1} for {2}&quot;, &quot;STEP: FolderPath_Manager&quot;, If(in_Rerun, &quot;rerun&quot;, &quot;normal&quot;),in_period.ToString(&quot;dd-MM-yyyy&quot;)))]" />
-    <TryCatch DisplayName="Try Catch Assign Path Folder" sap:VirtualizedContainerService.HintSize="540.6792452830189,474.566037735849" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message FolderPath_Manager" sap:VirtualizedContainerService.HintSize="468.2264150943396,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, String.Format(&quot;{0} {1} for {2}&quot;, &quot;STEP: FolderPath_Manager&quot;, If(in_Rerun, &quot;rerun&quot;, &quot;normal&quot;),in_period.ToString(&quot;dd-MM-yyyy&quot;)))]" />
+    <TryCatch DisplayName="Try Catch Assign Path Folder" sap:VirtualizedContainerService.HintSize="468.2264150943396,474.566037735849" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <ui:MultipleAssign DisplayName="Multiple Assign Path Folder" sap:VirtualizedContainerService.HintSize="430.18867924528297,254.49056603773585" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
@@ -136,7 +137,7 @@
                   <OutArgument x:TypeArguments="x:String">[pathMasterBp]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", in_pathMasterFolder, in_BPKey)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\", in_pathMasterFolder, in_BPKey, in_reportType)]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -144,7 +145,7 @@
                   <OutArgument x:TypeArguments="x:String">[pathMasterBpYear]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"))]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", pathMasterBp, in_period.ToString("yyyy"))]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -152,7 +153,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_pathMasterBpScheduler]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), in_period.ToString("yyyy-MM-dd"))]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}", pathMasterBpYear, in_period.ToString("yyyy-MM-dd"), in_reportType)]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -168,7 +169,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_pathLogCurrent]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}.xlsx", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), String.Format("{0}-Log-{1}", in_PID,in_period.ToString("yyyy")))]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}.xlsx", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), String.Format("{0}-Log {1}-{2}", in_PID, in_reportType, in_period.ToString("yyyy")))]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -200,7 +201,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="540.6792452830189,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="468.2264150943396,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_Config("pathLog")]</OutArgument>
       </Assign.To>
@@ -208,7 +209,7 @@
         <InArgument x:TypeArguments="x:Object">[CType(out_pathLogCurrent, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="540.6792452830189,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="468.2264150943396,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_Config("period")]</OutArgument>
       </Assign.To>
@@ -216,11 +217,17 @@
         <InArgument x:TypeArguments="x:Object">[CType(in_period, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP" sap:VirtualizedContainerService.HintSize="540.6792452830189,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[pathMasterBp]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler Year" sap:VirtualizedContainerService.HintSize="540.6792452830189,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[pathMasterBpYear]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler" sap:VirtualizedContainerService.HintSize="540.6792452830189,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[out_pathMasterBpScheduler]" />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="540.6792452830189,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Create in separate workflow" />
-    <If Condition="[in_archieve]" DisplayName="If Archieve" sap:VirtualizedContainerService.HintSize="540.6792452830189,459.16981132075466" sap2010:WorkflowViewState.IdRef="If_5">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP" sap:VirtualizedContainerService.HintSize="468.2264150943396,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[pathMasterBp]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler Year" sap:VirtualizedContainerService.HintSize="468.2264150943396,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[pathMasterBpYear]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler" sap:VirtualizedContainerService.HintSize="468.2264150943396,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[out_pathMasterBpScheduler]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="468.2264150943396,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Create in separate workflow" />
+    <If Condition="[in_archieve]" DisplayName="If Archieve" sap:VirtualizedContainerService.HintSize="468.2264150943396,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="461.88679245283015,189.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
@@ -303,8 +310,8 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists User Log Report" Exists="[userLogExist]" sap:VirtualizedContainerService.HintSize="540.6792452830189,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[out_pathLogCurrent]" PathType="File" />
-    <If sap2010:Annotation.AnnotationText="Not created copy from template" Condition="[Not userLogExist]" DisplayName="If User Log Report Not Created" sap:VirtualizedContainerService.HintSize="540.6792452830189,81.50943396226414" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists User Log Report" Exists="[userLogExist]" sap:VirtualizedContainerService.HintSize="468.2264150943396,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[out_pathLogCurrent]" PathType="File" />
+    <If sap2010:Annotation.AnnotationText="Not created copy from template" Condition="[Not userLogExist]" DisplayName="If User Log Report Not Created" sap:VirtualizedContainerService.HintSize="468.2264150943396,81.50943396226414" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

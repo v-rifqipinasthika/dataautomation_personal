@@ -23896,8 +23896,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Traveloka_DataAutomation_Molpaysgd",
-      "projectName": "Traveloka_DataAutomation_Molpaysgd",
+      "projectUniqueName": "Traveloka_DataAutomation_Portal_Molpaysgd",
+      "projectName": "Traveloka_DataAutomation_Portal_Molpaysgd",
       "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaysgd\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaysgd\\.local"
