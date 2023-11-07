@@ -23898,9 +23898,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_Cybersourcebay",
       "projectName": "Traveloka_DataAutomation_Cybersourcebay",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Cybersourcebay\\.local",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Cybersourcebay\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Cybersourcebay\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Cybersourcebay\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

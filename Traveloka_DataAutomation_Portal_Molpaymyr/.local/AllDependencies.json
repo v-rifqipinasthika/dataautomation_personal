@@ -23898,9 +23898,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_Molpaymyr",
       "projectName": "Traveloka_DataAutomation_Molpaymyr",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaymyr\\.local",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaymyr\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaymyr\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Molpaymyr\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

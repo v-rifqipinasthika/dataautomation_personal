@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>985.3584905660377,2854.6415094339623</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2814.7924528301883</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -174,7 +174,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,1506.1132075471696" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,970.8679245283018" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -541,14 +541,27 @@
       </If>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="CBool(io_Config(&quot;DialogDownloadDialog&quot;))" DisplayName="Custom_Flow\Portal_Molpaymyr\Portal_Molpaymyr_CreateDownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,142.188679245283" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Molpaymyr\Portal_Molpaymyr_CreateDownloadReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[pathScheduler]</InArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[pathRawFile]</OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[io_Config("BPID").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_reportType">zip</InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="chromeDialogStatus">[CBool(io_Config("DialogDownloadChrome"))]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathChromeDownload">[io_Config("PathDownloadChrome").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathScheduler" />
+          </InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathRawFile" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;BPID&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_reportType">
+            <Literal x:TypeArguments="x:String">zip</Literal>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathChromeDownload">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -569,33 +582,15 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">
-            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(io_Config(&quot;PathMailTemplate&quot;).ToString, &quot;Email_RawFile.html&quot;)" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Business Partner&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_CredentialEmail">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;CredMail&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Email User To&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Email User CC&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathRawFile" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_senderName">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;SenderName&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[period]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">[Path.Combine(io_Config("PathMailTemplate").ToString, "Email_RawFile.html")]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProcessName">[io_Config("Business Partner").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_CredentialEmail">[io_Config("CredMail").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[io_Config("Email User To").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">[io_Config("Email User CC").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">[pathRawFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_senderName">[io_Config("SenderName").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>

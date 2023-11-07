@@ -23898,9 +23898,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_Paypal",
       "projectName": "Traveloka_DataAutomation_Paypal",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Paypal\\.local",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Paypal\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\Kalyana\\Traveloka_DataAutomation_Portal_Paypal\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Portal_Paypal\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
