@@ -1,10 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Cybersourcevietin_DownloadReport" this:Portal_Cybersourcevietin_DownloadReport.in_pathDownloadChrome="C:\Users\Administrator\Downloads" this:Portal_Cybersourcevietin_DownloadReport.in_PID="[&quot;RPA001&quot;]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Cybersourcevietin_DownloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_pathDownloadChrome" Type="InArgument(x:String)" />
     <x:Property Name="in_pathResultFile" Type="InArgument(x:String)" />
     <x:Property Name="in_PID" Type="InArgument(x:Object)" />
     <x:Property Name="out_pathRawFile" Type="OutArgument(x:String)" />
     <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_fileType" Type="InArgument(x:String)" />
   </x:Members>
   <this:Portal_Cybersourcevietin_DownloadReport.in_pathFolder>
     <InArgument x:TypeArguments="x:String" />
@@ -188,6 +189,9 @@
               <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
                 <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
               </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
+              </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

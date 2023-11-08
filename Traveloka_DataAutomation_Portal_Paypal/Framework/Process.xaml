@@ -184,7 +184,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,869.4339622641509" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,869.4339622641509" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="gadvd:File[]" Name="listFile" />
             </Sequence.Variables>
@@ -579,7 +579,7 @@
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_reportType">
-            <Literal x:TypeArguments="x:String">CSV</Literal>
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).ToString" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_pathChromeDownload">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />

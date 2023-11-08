@@ -7,11 +7,12 @@
     <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_BPID" Type="InArgument(x:String)" />
+    <x:Property Name="in_fileType" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2756.830188679245</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4150943396226,2756.830188679245</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourceocbc_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -218,8 +219,15 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_pathFolder]</InArgument>
-                      <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[out_pathRawFile]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
+                      </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

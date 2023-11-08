@@ -174,7 +174,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,970.8679245283018" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,1073.2075471698113" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -557,7 +557,7 @@
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_reportType">
-            <Literal x:TypeArguments="x:String">zip</Literal>
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).ToString" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_pathChromeDownload">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />

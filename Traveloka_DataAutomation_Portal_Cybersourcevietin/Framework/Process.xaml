@@ -557,6 +557,9 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathScheduler" />
           </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).tostring" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">

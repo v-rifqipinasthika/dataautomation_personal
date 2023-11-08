@@ -5,6 +5,7 @@
     <x:Property Name="in_pathResultFile" Type="InArgument(x:String)" />
     <x:Property Name="in_PID" Type="InArgument(x:Object)" />
     <x:Property Name="out_pathRawFile" Type="OutArgument(x:String)" />
+    <x:Property Name="in_fileType" Type="InArgument(x:String)" />
   </x:Members>
   <this:Portal_Seveneleven_DownloadReport.in_pathFolder>
     <InArgument x:TypeArguments="x:String" />
@@ -201,6 +202,9 @@
                       <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
                         <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
                       </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
