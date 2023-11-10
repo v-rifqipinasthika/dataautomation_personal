@@ -1,6 +1,6 @@
 {
-  "name": "Traveloka_DataAutomation_UploadBucket_Dev",
-  "description": "Traveloka_DataAutomation_UploadBucket for Development",
+  "name": "Traveloka_DataAutomation_UploadBucket",
+  "description": "Traveloka_DataAutomation_UploadBucket",
   "main": "Main.xaml",
   "dependencies": {
     "FuzzySharp": "[2.0.2]",
