@@ -137,7 +137,7 @@
                   <OutArgument x:TypeArguments="x:String">[pathMasterBp]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\", in_pathMasterFolder, in_BPKey, in_reportType)]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", in_pathMasterFolder, in_BPKey, in_reportType)]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">

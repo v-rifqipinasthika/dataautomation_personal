@@ -23117,9 +23117,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_UploadBucket_Dev",
       "projectName": "Traveloka_DataAutomation_UploadBucket_Dev",
-      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket\\.local",
+      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket_Dev\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket\\.local"
+      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket_Dev\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

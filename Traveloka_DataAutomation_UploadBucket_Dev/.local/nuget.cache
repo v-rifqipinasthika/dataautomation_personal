@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5eIHO24bmpjH75x9HaAiCzkrQWY7MPxEAo1M+x1AVtY0Ps76TwAcKhFnSTJyIAcJTw7nTKpTPv1w1VKnNaWehg==",
+  "dgSpecHash": "B3fHqH2dAsNAe2yk07P4O0j7Ei3Y8xVb2bW53s9fSee0R7XqdEZsuWKhwaNDkZJbuHmEFF12Dtoek3RGHn/lHQ==",
   "success": true,
-  "projectFilePath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket\\.local\\",
+  "projectFilePath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket_Dev\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\amazon.extensions.configuration.systemsmanager\\3.0.0\\amazon.extensions.configuration.systemsmanager.3.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
