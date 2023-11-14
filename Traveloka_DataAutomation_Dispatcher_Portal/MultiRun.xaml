@@ -70,7 +70,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrBp">
         <Variable.Default>
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;cybersourcevietin&quot;, &quot;cybersourcepaymaya&quot;, &quot;seveneleven&quot;, &quot;cybersourceocbcmdr&quot;, &quot;cybersourceocbc&quot;}" />
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;molpaysgd&quot;, &quot;molpaysgdfee&quot;}" />
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
