@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Expedia_DownloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Expedia_DownloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_pathDownloadChrome" Type="InArgument(x:String)" />
     <x:Property Name="in_pathResultFile" Type="InArgument(x:String)" />
@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1831.245283018868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>968.1509433962264,1463.5471698113206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Expedia_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="557.8867924528302,1766.0377358490564" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="557.8867924528302,1398.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="notFound" />
     </Sequence.Variables>
@@ -126,13 +126,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="496.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Expedia_DownloadReport&quot;)]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  EPS Portal'" sap:VirtualizedContainerService.HintSize="496.3018867924528,1526.943396226415" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="eed1b53b70e8d8919c78b18feec447a6" Selector="&lt;html app='chrome.exe' title='EPS Portal' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  EPS Portal'" sap:VirtualizedContainerService.HintSize="496.3018867924528,1159.245283018868" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="eed1b53b70e8d8919c78b18feec447a6" Selector="&lt;html app='chrome.exe' title='EPS Portal' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="461.88679245283015,1380.2264150943395" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="461.88679245283015,1012.5283018867924" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,19 +186,16 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <Sequence DisplayName="Sequence Report Not Found" sap:VirtualizedContainerService.HintSize="400.3018867924528,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Sequence Report Not Found" sap:VirtualizedContainerService.HintSize="400.3018867924528,250.86792452830187" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'DIV' Not Found" Exists="[notFound]" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2a48ef1c-0c46-4438-b10f-6bc15d29d99b" InformativeScreenshot="f4b60811cb7651e5bfb3abc1751f3b0d" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' isleaf='1' parentid='root' tag='DIV' /&gt;">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2a48ef1c-0c46-4438-b10f-6bc15d29d99b" InformativeScreenshot="f4b60811cb7651e5bfb3abc1751f3b0d" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' isleaf='1' parentid='root' tag='DIV' /&gt;" TimeoutMS="4000">
                     <ui:Target.WaitForReady>
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
@@ -241,7 +238,7 @@
             </Sequence>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Expedia\Portal_Expedia_DownloadByCid.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400.3018867924528,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Expedia\Portal_Expedia_DownloadByCid.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_cid">609406</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_cid">[in_cid]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400.3018867924528,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
@@ -251,22 +248,6 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[in_fileType]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pathResultFile]" DisplayName="Copy File PathRaw to PathResult" sap:VirtualizedContainerService.HintSize="400.3018867924528,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[out_pathRawFile]" />
-            <uascw:CompressFiles CompressedFileInfo="{x:Null}" CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileName="[out_pathRawFile.Replace(in_fileType, &quot;zip&quot;)]" CompressionLevel="Normal" DisplayName="Compress/Zip Files Raw File" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="400.3018867924528,210.1132075471698" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
-              <uascw:CompressFiles.ContentToArchive>
-                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
-                  <InArgument x:TypeArguments="x:String">[out_pathRawFile]</InArgument>
-                </scg:List>
-              </uascw:CompressFiles.ContentToArchive>
-            </uascw:CompressFiles>
-            <Assign DisplayName="Assign New Raw File .zip" sap:VirtualizedContainerService.HintSize="400.3018867924528,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[out_pathRawFile]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[out_pathRawFile.Replace(in_fileType, "zip")]</InArgument>
-              </Assign.Value>
-            </Assign>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

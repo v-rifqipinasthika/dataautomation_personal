@@ -33,7 +33,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1565.8867924528302</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1065.9622641509434,1567.698113207547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -133,7 +133,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="540.6792452830189,1500.6792452830189" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="540.6792452830189,1502.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="htmlBody" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
@@ -160,15 +160,15 @@
       </ui:GetRobotCredential.TimeoutMS>
     </ui:GetRobotCredential>
     <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="479.0943396226415,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-    <Assign DisplayName="Assign Subjcet Mail" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Subjcet Mail" sap:VirtualizedContainerService.HintSize="479.0943396226415,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[subjectMail]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[String.Format("{0}_{1}_{2}_{3}", in_PID,in_ProcessName, in_errorSubject,in_Period.ToString("dd-MMM-yy"))]</InArgument>
+        <InArgument x:TypeArguments="x:String">[String.Format("{0}_{1}_{2}_{3}", in_PID,in_ProcessName, in_errorSubject,in_Period.ToString("MMM-yy"))]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Body Mail" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign Body Mail" sap:VirtualizedContainerService.HintSize="479.0943396226415,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[bodyMail]</OutArgument>
       </Assign.To>

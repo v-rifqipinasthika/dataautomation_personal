@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ug="clr-namespace:UiPath.GSuite;assembly=UiPath.GSuite" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="io_period" Type="InOutArgument(x:String)" />
     <x:Property Name="in_rerun" Type="InArgument(x:String)" />
+    <x:Property Name="in_period" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>425.66037735849056,1370.264150943396</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1065.9622641509434,1279.698113207547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -114,7 +114,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="435.62264150943395,1305.0566037735848" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="435.62264150943395,1214.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtLoginChecker" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
@@ -174,80 +174,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uga:GSuiteApplicationScope>
-    <If Condition="[Not CBool(in_Rerun)]" DisplayName="If Normal Run Assign Period M-1" sap:VirtualizedContainerService.HintSize="374.03773584905656,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,208.30188679245282" sap2010:WorkflowViewState.IdRef="Sequence_11">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign sap2010:Annotation.AnnotationText="For monthly process add day 1 first. Param from dispatcher already -1 day" DisplayName="Assign Date Rerun" sap:VirtualizedContainerService.HintSize="338.71698113207543,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_2">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[io_period]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[CDate(io_Period).ToLocalTime.AddDays(1).AddMonths(-1).ToString]</InArgument>
-            </Assign.Value>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Assign>
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_12">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </If.Else>
-    </If>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="374.03773584905656,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PathMasterFolder&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(io_period).ToLocalTime" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Key&quot;).ToString" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathLog" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathScheduler" />
-        </OutArgument>
-        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
-          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_productType">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Product Type&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_archieve">
-          <Literal x:TypeArguments="x:Boolean" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">
-          <Literal x:TypeArguments="x:Boolean" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_reportName">
-          <Literal x:TypeArguments="x:String">Expedia - Marketing Fee</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[in_Config("PathMasterFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_period).ToLocalTime]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">[in_Config("Key").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">[pathLog]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">[pathScheduler]</OutArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[in_Config]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_productType">[in_Config("Product Type").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_archieve">False</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">False</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_reportName">Expedia - Marketing Fee</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -330,7 +269,7 @@
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.2075471698113,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(io_period).ToLocalTime]</InArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_period).ToLocalTime]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[pathLog]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
                 <Literal x:TypeArguments="x:String" Value="" />

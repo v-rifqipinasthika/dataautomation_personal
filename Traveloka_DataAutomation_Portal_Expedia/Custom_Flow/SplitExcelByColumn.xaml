@@ -8,10 +8,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>628.5283018867924,1285.132075471698</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1065.9622641509434,1344.9056603773583</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SplitExcelByColumn_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="31">
+    <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -43,10 +43,12 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="92">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -92,20 +94,21 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Split Excel File By Value in a Column" DisplayName="SplitExcelByColumn" sap:VirtualizedContainerService.HintSize="638.4905660377358,1219.9245283018868" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Split Excel File By Value From Selected Column" DisplayName="SplitExcelByColumn" sap:VirtualizedContainerService.HintSize="636.6792452830189,1279.698113207547" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="576.9056603773585,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="TODO : Adjust split excel, raw file" />
-    <ui:LogMessage DisplayName="Log Message SplitExcelByColumn" sap:VirtualizedContainerService.HintSize="576.9056603773585,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;STEP : SplitExcelByColumn {0}&quot;, in_columnName)]" />
-    <If Condition="[Not in_columnName = &quot;&quot; And Not in_splitValue = &quot;&quot;]" DisplayName="If Split Excel" sap:VirtualizedContainerService.HintSize="576.9056603773585,853.132075471698" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="575.0943396226414,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="TODO : Adjust split excel, raw file" />
+    <ui:LogMessage DisplayName="Log Message SplitExcelByColumn" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;STEP : SplitExcelByColumn {0}&quot;, in_columnName)]" />
+    <If Condition="[Not in_columnName = &quot;&quot; And Not in_splitValue = &quot;&quot;]" DisplayName="If Split Excel" sap:VirtualizedContainerService.HintSize="575.0943396226414,912.9056603773585" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="498.1132075471698,583.2452830188679" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,643.9245283018868" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dtRawFile" />
             <Variable x:TypeArguments="sd:DataTable" Name="dtResultFile" />
@@ -115,19 +118,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.5283018867924,276.2264150943396" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400.3018867924528,197.43396226415092" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:ReadRange Range="{x:Null}" SheetName="{x:Null}" AddHeaders="True" DataTable="[dtRawFile]" DisplayName="Read Range Raw File" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="ReadRange_1" WorkbookPath="[in_pathRawFile]" />
-              </Sequence>
-            </ui:CommentOut.Body>
-          </ui:CommentOut>
-          <ui:FilterDataTable DataTable="[dtRawFile]" DisplayName="Filter Data Table Split According to Split Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="436.5283018867924,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtResultFile]" SelectColumnsMode="Keep">
+          <ui:ReadCsvFile DataTable="[dtRawFile]" Delimitator="Comma" DisplayName="Read CSV Raw File" FilePath="[in_pathRawFile]" sap:VirtualizedContainerService.HintSize="434.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+          <ui:FilterDataTable DataTable="[dtRawFile]" DisplayName="Filter Data Table Split According to Split Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434.71698113207543,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtResultFile]" SelectColumnsMode="Keep">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                 <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -146,17 +138,9 @@
               </scg:List>
             </ui:FilterDataTable.SelectColumns>
           </ui:FilterDataTable>
+          <ui:WriteCsvFile AddHeaders="True" DataTable="[dtResultFile]" Delimitator="Comma" DisplayName="Write CSV Result File" FilePath="[in_pathResultFile]" sap:VirtualizedContainerService.HintSize="434.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
         </Sequence>
       </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </If.Else>
     </If>
   </Sequence>
 </Activity>
