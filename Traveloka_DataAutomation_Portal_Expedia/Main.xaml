@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>968.1509433962264,859.4716981132075</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049.6603773584905,899.3207547169811</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -362,36 +362,16 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (BRE)" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">
-                                      <VisualBasicValue x:TypeArguments="ui:BusinessRuleException" ExpressionText="BusinessException" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField1" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField2" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionID" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">
-                                      <VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="Nothing" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
-                                      <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="TransactionItem" />
-                                    </InArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="RetryNumber" />
-                                    </InOutArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-                                    </InOutArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ConsecutiveSystemExceptions" />
-                                    </InOutArgument>
+                                    <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">[BusinessException]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">[TransactionField1]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">[TransactionField2]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">[TransactionID]</InArgument>
+                                    <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">[Nothing]</InArgument>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">[RetryNumber]</InOutArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">[TransactionNumber]</InOutArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">[ConsecutiveSystemExceptions]</InOutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Sequence>
@@ -458,36 +438,16 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (SE)" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">
-                                      <VisualBasicValue x:TypeArguments="ui:BusinessRuleException" ExpressionText="Nothing" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField1" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField2" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionID" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">
-                                      <VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="SystemException" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
-                                      <VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="TransactionItem" />
-                                    </InArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="RetryNumber" />
-                                    </InOutArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-                                    </InOutArgument>
-                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">
-                                      <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ConsecutiveSystemExceptions" />
-                                    </InOutArgument>
+                                    <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">[Nothing]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">[TransactionField1]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">[TransactionField2]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">[TransactionID]</InArgument>
+                                    <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">[SystemException]</InArgument>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">[RetryNumber]</InOutArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">[TransactionNumber]</InOutArgument>
+                                    <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">[ConsecutiveSystemExceptions]</InOutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Sequence>
@@ -731,15 +691,9 @@
                               </If>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="479.0943396226415,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                    <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_rerun">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Rerun" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_period">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Period" />
-                                  </InArgument>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_rerun">[in_Rerun]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_period">[in_Period]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
@@ -826,21 +780,11 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PID&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                                              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Period).ToLocalTime" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;pathLog&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
-                                              <Literal x:TypeArguments="x:String">Failed</Literal>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_schedule">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Schedule&quot;).ToString" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">[Config("PID").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Period).ToLocalTime]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[Config("pathLog").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">Failed</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_schedule">[Config("Schedule").ToString]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
@@ -964,21 +908,11 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PID&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                                              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Period).ToLocalTime" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;pathLog&quot;).ToString" />
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
-                                              <Literal x:TypeArguments="x:String">Failed</Literal>
-                                            </InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_schedule">
-                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Schedule&quot;).ToString" />
-                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">[Config("PID").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Period).ToLocalTime]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[Config("pathLog").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">Failed</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_schedule">[Config("Schedule").ToString]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
@@ -1063,7 +997,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="446.49056603773585,454.64150943396226" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,115.92452830188678" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
                                 <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,311.5471698113207" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -1123,9 +1057,7 @@
                                   </TryCatch>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\CheckException.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Custom_Flow\CheckException.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_flagErrorName">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;FlagError&quot;).ToString" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_flagErrorName">[Config("FlagError").ToString]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>

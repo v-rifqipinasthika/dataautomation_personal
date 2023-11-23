@@ -21842,9 +21842,9 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_Dispatcher_Portal",
       "projectName": "Traveloka_DataAutomation_Dispatcher_Portal",
-      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_Dispatcher_Portal\\.local",
+      "projectPath": "C:\\Kalyana\\dataautomation_personal\\Traveloka_DataAutomation_Dispatcher_Portal\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_Dispatcher_Portal\\.local"
+      "outputPath": "C:\\Kalyana\\dataautomation_personal\\Traveloka_DataAutomation_Dispatcher_Portal\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {

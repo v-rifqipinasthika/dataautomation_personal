@@ -235,15 +235,6 @@
           }
         }
       },
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
-      },
       "Google.Apis/1.55.0": {
         "type": "package",
         "dependencies": {
@@ -6198,15 +6189,6 @@
           }
         }
       },
-      "FuzzySharp/2.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/FuzzySharp.dll": {}
-        }
-      },
       "Google.Apis/1.55.0": {
         "type": "package",
         "dependencies": {
@@ -12086,26 +12068,6 @@
         "lib/netstandard1.0/ExcelNumberFormat.xml",
         "lib/netstandard2.0/ExcelNumberFormat.dll",
         "lib/netstandard2.0/ExcelNumberFormat.xml"
-      ]
-    },
-    "FuzzySharp/2.0.2": {
-      "sha512": "sBKqWxw3g//peYxDZ8JipRlyPbIyBtgzqBVA5GqwHVeqtIrw75maGXAllztf+1aJhchD+drcQIgf2mFho8ZV8A==",
-      "type": "package",
-      "path": "fuzzysharp/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "fuzzysharp.2.0.2.nupkg.sha512",
-        "fuzzysharp.nuspec",
-        "lib/net45/FuzzySharp.dll",
-        "lib/net46/FuzzySharp.dll",
-        "lib/net461/FuzzySharp.dll",
-        "lib/netcoreapp2.0/FuzzySharp.dll",
-        "lib/netcoreapp2.1/FuzzySharp.dll",
-        "lib/netstandard1.6/FuzzySharp.dll",
-        "lib/netstandard2.0/FuzzySharp.dll",
-        "lib/netstandard2.1/FuzzySharp.dll"
       ]
     },
     "Google.Apis/1.55.0": {
@@ -23099,7 +23061,6 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "FuzzySharp >= 2.0.2 <= 2.0.2",
       "UiPath.AmazonWebServices.Activities >= 2.3.0 <= 2.3.0",
       "UiPath.Excel.Activities >= 2.16.2 <= 2.16.2",
       "UiPath.GSuite.Activities >= 2.0.1 <= 2.0.1",
@@ -23117,18 +23078,13 @@
     "restore": {
       "projectUniqueName": "Traveloka_DataAutomation_UploadBucket",
       "projectName": "Traveloka_DataAutomation_UploadBucket",
-      "projectPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket\\.local",
+      "projectPath": "C:\\Kalyana\\dataautomation_personal\\Traveloka_DataAutomation_UploadBucket\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Kalyana\\Traveloka_DataAutomation_UploadBucket\\.local"
+      "outputPath": "C:\\Kalyana\\dataautomation_personal\\Traveloka_DataAutomation_UploadBucket\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
         "dependencies": {
-          "FuzzySharp": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[2.0.2, 2.0.2]"
-          },
           "UiPath.AmazonWebServices.Activities": {
             "include": "Runtime",
             "target": "Package",

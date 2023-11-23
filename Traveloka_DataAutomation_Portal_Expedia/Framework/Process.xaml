@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>968.1509433962264,2741.433962264151</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1075.0188679245282,2787.622641509434</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -139,7 +139,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="614.9433962264151,2676.2264150943392" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="614.9433962264151,2722.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
@@ -150,6 +150,7 @@
       <Variable x:TypeArguments="x:Int32" Name="rowLoginChecker" />
       <Variable x:TypeArguments="x:Boolean" Name="loginSuccess" />
       <Variable x:TypeArguments="s:DateTime" Name="period" />
+      <Variable x:TypeArguments="x:String" Name="periodRange" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -249,21 +250,13 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-              </InArgument>
-              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathLog" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[pathLog]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
                 <Literal x:TypeArguments="x:String" Value="" />
               </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_schedule">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Schedule&quot;).ToString" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_schedule">[io_Config("Schedule").ToString]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -283,17 +276,22 @@
         <OutArgument x:TypeArguments="x:String">[pathResultFile]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[String.Format("{0}\Traveloka_{1}_{2}.{3}", pathScheduler, io_Config("BPID").ToString, period.ToString("MMMyy"), io_Config("File Type").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[String.Format("{0}\Traveloka_{1}_{2}.{3}", pathScheduler, in_TransactionItem("BPID").ToString, period.ToString("MMMyy"), io_Config("File Type").ToString)]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:Comment sap:VirtualizedContainerService.HintSize="553.3584905660377,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Put portal flow below here" />
-    <Sequence DisplayName="Sequence Custom Flow" sap:VirtualizedContainerService.HintSize="553.3584905660377,843.1698113207547" sap2010:WorkflowViewState.IdRef="Sequence_27">
+    <Sequence DisplayName="Sequence Custom Flow" sap:VirtualizedContainerService.HintSize="553.3584905660377,738.1132075471697" sap2010:WorkflowViewState.IdRef="Sequence_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Delete_PreviousDownload.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="491.77358490566036,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Delete_PreviousDownload.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[pathScheduler]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Expedia_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="491.77358490566036,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Expedia\Portal_Expedia_DownloadReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">[io_Config("PathDownloadChrome").ToString]</InArgument>
@@ -306,8 +304,20 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_cid">[in_TransactionItem("CID").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem(&quot;ReportName&quot;).ToString.ToLower]" sap:VirtualizedContainerService.HintSize="491.77358490566036,279.8490566037736" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-        <x:Null x:Key="expedia - marketing fee" />
+      <Switch x:TypeArguments="x:String" DisplayName="Switch Report Name" Expression="[in_TransactionItem(&quot;ReportName&quot;).ToString.ToLower]" sap:VirtualizedContainerService.HintSize="491.77358490566036,174.79245283018867" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="expedia - marketing fee" DisplayName="Custom_Flow\CompressRawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Custom_Flow\CompressRawFile.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InOutArgument x:TypeArguments="x:String" x:Key="io_pathRawFile">[pathRawFile]</InOutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[io_Config("File Type").ToString]</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="expedia" DisplayName="Custom_Flow\SplitExcelByColumn.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Custom_Flow\SplitExcelByColumn.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_columnName">[in_TransactionItem("ColumnName").ToString]</InArgument>
@@ -325,13 +335,6 @@
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Switch>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\CompressRawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="491.77358490566036,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Custom_Flow\CompressRawFile.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="x:String" x:Key="io_pathRawFile">[pathRawFile]</InOutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[io_Config("File Type").ToString]</InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="491.77358490566036,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[period]</InArgument>
@@ -346,6 +349,19 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\CreatePeriodRange.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="553.3584905660377,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Custom_Flow\CreatePeriodRange.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_schedule">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Schedule&quot;).ToString" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_periodRange">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="periodRange" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="553.3584905660377,599.5471698113207" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="Normal" QueueType="[io_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[String.Format(&quot;{0}-{1}&quot;, in_TransactionItem(&quot;ReportName&quot;).ToString.ToLower.Replace(&quot; &quot;, &quot;&quot;), period.ToString(&quot;dd-MM-yyyy&quot;))]">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="BPID">[in_TransactionItem("BPID").ToString]</InArgument>
@@ -361,6 +377,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="PID">[io_Config("PID").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="PathResultFile">[pathResultFile]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="PathRawFile">[pathRawFile]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Date Range">[periodRange]</InArgument>
       </ui:AddQueueItem.ItemInformation>
       <ui:AddQueueItem.TimeoutMS>
         <InArgument x:TypeArguments="x:Int32" />
