@@ -1,7 +1,6 @@
 {
-  "name": "Traveloka_DataAutomation_BP_Notification",
-  "projectId": "1164334a-ceaf-4f10-ae95-3b39107edbbe",
-  "description": "Traveloka_DataAutomation_BP_Notification",
+  "name": "Traveloka_DataAutomation_BP_Notification_PaymentChannel",
+  "description": "Traveloka_DataAutomation_BP_Notification_PaymentChannel",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.2]",
@@ -15,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.10.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -23,7 +22,6 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
-    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -45,8 +43,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true,
-    "saveToCloud": false
+    "modernBehavior": true
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
