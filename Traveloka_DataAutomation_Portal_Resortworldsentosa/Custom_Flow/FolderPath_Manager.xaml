@@ -8,16 +8,12 @@
     <x:Property Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_PID" Type="InArgument(x:String)" />
     <x:Property Name="in_productType" Type="InArgument(x:String)" />
-    <x:Property Name="in_archieve" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_Rerun" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <this:FolderPath_Manager.in_archieve>
-    <InArgument x:TypeArguments="x:Boolean" />
-  </this:FolderPath_Manager.in_archieve>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>830.4905660377358,3478.6415094339623</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,2183.5471698113206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FolderPath_Manager_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -111,7 +107,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Create folder according to master data&#xA;1. Daily&#xA;2. Weekly&#xA;3. Monthly&#xA;4. copy new log every new year&#xA;5. Hanling holiday, public holiday, leap year" DisplayName="FolderPath_Manager" sap:VirtualizedContainerService.HintSize="840.4528301886792,3413.4339622641505" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Create folder according to master data&#xA;1. Daily&#xA;2. Weekly&#xA;3. Monthly&#xA;4. copy new log every new year&#xA;5. Hanling holiday, public holiday, leap year" DisplayName="FolderPath_Manager" sap:VirtualizedContainerService.HintSize="540.6792452830189,2118.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="userLogExist" />
       <Variable x:TypeArguments="x:String" Name="pathMasterBp" />
@@ -125,8 +121,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message FolderPath_Manager" sap:VirtualizedContainerService.HintSize="778.8679245283018,91.47169811320754" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, String.Format(&quot;{0} {1} for {2}&quot;, &quot;STEP: FolderPath_Manager&quot;, If(in_Rerun, &quot;rerun&quot;, &quot;normal&quot;),in_period.ToString(&quot;dd-MM-yyyy&quot;)))]" />
-    <TryCatch DisplayName="Try Catch Assign Path Folder" sap:VirtualizedContainerService.HintSize="778.8679245283018,478.18867924528297" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message FolderPath_Manager" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, String.Format(&quot;{0} {1} for {2}&quot;, &quot;STEP: FolderPath_Manager&quot;, If(in_Rerun, &quot;rerun&quot;, &quot;normal&quot;),in_period.ToString(&quot;dd-MM-yyyy&quot;)))]" />
+    <TryCatch DisplayName="Try Catch Assign Path Folder" sap:VirtualizedContainerService.HintSize="479.0943396226415,474.566037735849" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <ui:MultipleAssign DisplayName="Multiple Assign Path Folder" sap:VirtualizedContainerService.HintSize="430.18867924528297,254.49056603773585" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
@@ -176,7 +172,7 @@
                   <OutArgument x:TypeArguments="x:String">[pathBackUpScheduler]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}\Archieve_Rerun-{4}", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), in_period.ToString("yyyy-MM-dd"), now.ToString("yyyyMMddHHmmss"))]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}\Archieve_Rerun-{4}", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), in_period.ToString("yyyy-MM"), now.ToString("yyyyMMddHHmmss"))]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
             </scg:List>
@@ -200,7 +196,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="778.8679245283018,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Path Log to Config" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_Config("pathLog")]</OutArgument>
       </Assign.To>
@@ -208,7 +204,7 @@
         <InArgument x:TypeArguments="x:Object">[CType(out_pathLogCurrent, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Period Log to Config" sap:VirtualizedContainerService.HintSize="778.8679245283018,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign Period Log to Config" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[io_Config("period")]</OutArgument>
       </Assign.To>
@@ -216,19 +212,20 @@
         <InArgument x:TypeArguments="x:Object">[CType(in_period, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP" sap:VirtualizedContainerService.HintSize="778.8679245283018,79.69811320754717" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[pathMasterBp]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler Year" sap:VirtualizedContainerService.HintSize="778.8679245283018,79.69811320754717" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[pathMasterBpYear]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler" sap:VirtualizedContainerService.HintSize="778.8679245283018,79.69811320754717" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[out_pathMasterBpScheduler]" />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="778.8679245283018,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Create in separate workflow" />
-    <If Condition="[in_archieve]" DisplayName="If Archieve" sap:VirtualizedContainerService.HintSize="778.8679245283018,1648.3018867924527" sap2010:WorkflowViewState.IdRef="If_5">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP" sap:VirtualizedContainerService.HintSize="479.0943396226415,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[pathMasterBp]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler Year" sap:VirtualizedContainerService.HintSize="479.0943396226415,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[pathMasterBpYear]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder MasterBP by Schduler" sap:VirtualizedContainerService.HintSize="479.0943396226415,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[out_pathMasterBpScheduler]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="479.0943396226415,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Create in separate workflow" />
+    <If Condition="[in_Rerun]" DisplayName="If Rerun Archieve" sap:VirtualizedContainerService.HintSize="479.0943396226415,369.50943396226415" sap2010:WorkflowViewState.IdRef="If_5">
       <If.Then>
-        <Sequence DisplayName="Sequence Archieve" sap:VirtualizedContainerService.HintSize="700.0754716981131,1374.7924528301885" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Sequence Archieve" sap:VirtualizedContainerService.HintSize="400.3018867924528,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Sequence Backup" sap:VirtualizedContainerService.HintSize="638.4905660377358,1265.2075471698113" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Sequence Backup" sap:VirtualizedContainerService.HintSize="638.4905660377358,1253.4339622641508" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="totalFile" />
             </Sequence.Variables>
@@ -246,34 +243,34 @@
                 <InArgument x:TypeArguments="x:Int32">[Directory.GetFiles(out_pathMasterBpScheduler).Count]</InArgument>
               </Assign.Value>
             </Assign>
-            <If sap2010:Annotation.AnnotationText="There's file do backup" Condition="[totalFile &gt; 0]" DisplayName="If File &gt; 0" sap:VirtualizedContainerService.HintSize="576.9056603773585,1056" sap2010:WorkflowViewState.IdRef="If_4">
+            <If sap2010:Annotation.AnnotationText="There's file do backup" Condition="[totalFile &gt; 0]" DisplayName="If File &gt; 0" sap:VirtualizedContainerService.HintSize="576.9056603773585,1044.2264150943395" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Sequence Archieve or Backup" sap:VirtualizedContainerService.HintSize="498.1132075471698,751.6981132075471" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Sequence Archieve or Backup" sap:VirtualizedContainerService.HintSize="498.1132075471698,743.5471698113207" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message Back Up Files" sap:VirtualizedContainerService.HintSize="436.5283018867924,91.47169811320754" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Backup Files&quot;]" />
-                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder Backup Scheduler " sap:VirtualizedContainerService.HintSize="436.5283018867924,79.69811320754717" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[pathBackUpScheduler]" />
-                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Files Backup" sap:VirtualizedContainerService.HintSize="436.5283018867924,391.2452830188679" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(out_pathMasterBpScheduler)]">
+                  <ui:LogMessage DisplayName="Log Message Back Up Files" sap:VirtualizedContainerService.HintSize="436.5283018867924,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Backup Files&quot;]" />
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder Backup Scheduler " sap:VirtualizedContainerService.HintSize="436.5283018867924,78.79245283018868" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[pathBackUpScheduler]" />
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each Files Backup" sap:VirtualizedContainerService.HintSize="436.5283018867924,385.811320754717" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(out_pathMasterBpScheduler)]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,268.0754716981132" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,263.5471698113207" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[pathBackUpScheduler]" DisplayName="Move File From Master TO Backup" sap:VirtualizedContainerService.HintSize="338.71698113207543,158.49056603773585" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[currentItem.ToString]" />
+                          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[pathBackUpScheduler]" DisplayName="Move File From Master TO Backup" sap:VirtualizedContainerService.HintSize="338.71698113207543,153.96226415094338" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[currentItem.ToString]" />
                         </Sequence>
                       </ActivityAction>
                     </ui:ForEach.Body>
@@ -281,7 +278,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,101.43396226415094" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -294,7 +291,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,101.43396226415094" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -303,8 +300,8 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists User Log Report" Exists="[userLogExist]" sap:VirtualizedContainerService.HintSize="778.8679245283018,89.66037735849056" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[out_pathLogCurrent]" PathType="File" />
-    <If sap2010:Annotation.AnnotationText="Not created copy from template" Condition="[Not userLogExist]" DisplayName="If User Log Report Not Created" sap:VirtualizedContainerService.HintSize="778.8679245283018,82.41509433962264" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists User Log Report" Exists="[userLogExist]" sap:VirtualizedContainerService.HintSize="479.0943396226415,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[out_pathLogCurrent]" PathType="File" />
+    <If sap2010:Annotation.AnnotationText="Not created copy from template" Condition="[Not userLogExist]" DisplayName="If User Log Report Not Created" sap:VirtualizedContainerService.HintSize="479.0943396226415,81.50943396226414" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

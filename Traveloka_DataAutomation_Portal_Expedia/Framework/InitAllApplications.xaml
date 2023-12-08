@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1065.9622641509434,1279.698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,1279.698113207547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -176,17 +176,36 @@
     </uga:GSuiteApplicationScope>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="374.03773584905656,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[in_Config("PathMasterFolder").ToString]</InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_period).ToLocalTime]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">[in_Config("Key").ToString]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">[pathLog]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">[pathScheduler]</OutArgument>
-        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[in_Config]</InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_productType">[in_Config("Product Type").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_archieve">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">False</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_reportName">Expedia - Marketing Fee</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PathMasterFolder&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_period).ToLocalTime" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Key&quot;).ToString" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathLog" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathScheduler" />
+        </OutArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
+          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_productType">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Product Type&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">
+          <Literal x:TypeArguments="x:Boolean" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_reportName">
+          <Literal x:TypeArguments="x:String">Expedia - Marketing Fee</Literal>
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

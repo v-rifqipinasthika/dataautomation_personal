@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150.1886792452829,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -270,7 +270,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch sap2010:Annotation.AnnotationText="Take a screenshot of the current state of the screen to facilitate debugging." DisplayName="Try taking screenshot" sap:VirtualizedContainerService.HintSize="578.7169811320755,103.24528301886792" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                  <TryCatch sap2010:Annotation.AnnotationText="Take a screenshot of the current state of the screen to facilitate debugging." DisplayName="Try taking screenshot" sap:VirtualizedContainerService.HintSize="438.3396226415094,103.24528301886792" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -303,7 +303,7 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <TryCatch sap2010:Annotation.AnnotationText="Avoid exception in set transaction to prevent infinite loop" DisplayName="Try Catch Send Mail Error" sap:VirtualizedContainerService.HintSize="578.7169811320755,843.1698113207547" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                  <TryCatch sap2010:Annotation.AnnotationText="Avoid exception in set transaction to prevent infinite loop" DisplayName="Try Catch Send Mail Error" sap:VirtualizedContainerService.HintSize="438.3396226415094,843.1698113207547" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -371,13 +371,13 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Config("period"))]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[in_Config("pathLog").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">[logStatus]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_schedule">[in_Config("Schedule").ToString]</InArgument>
+                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">[CDate(in_Config("periodStart").ToString)]</InArgument>
+                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">[CDate(in_Config("periodEnd").ToString)]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
@@ -401,7 +401,7 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="544.3018867924528,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.92452830188677,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -611,7 +611,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:SetAsset AssetName="[in_Config(&quot;FlagError&quot;).ToString]" ContinueOnError="{x:Null}" DisplayName="Set Asset Flag Error | True" FolderPath="{x:Null}" sap:VirtualizedContainerService.HintSize="338.71698113207543,212.83018867924528" sap2010:WorkflowViewState.IdRef="SetAsset_1" TimeoutMS="{x:Null}" Value="[True]">
+                            <ui:SetAsset TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;FlagError&quot;).ToString]" DisplayName="Set Asset Flag Error | True" sap:VirtualizedContainerService.HintSize="338.71698113207543,212.83018867924528" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[True]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -664,11 +664,21 @@
                             </If>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Config("period"))]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[in_Config("pathLog").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">[logStatus]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_schedule">[in_Config("Schedule").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;pathLog&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="logStatus" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">
+                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodStart&quot;).ToString)" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">
+                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodEnd&quot;).ToString)" />
+                                </InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
