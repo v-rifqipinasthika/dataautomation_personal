@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,3064.754716981132</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,3389.88679245283</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -139,7 +139,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,2999.5471698113206" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,3324.6792452830186" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathUserLog" />
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
@@ -262,7 +262,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uga:GSuiteApplicationScope>
-    <Assign DisplayName="Assign Period From Dispatcher" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign DisplayName="Assign Period From Dispatcher" sap:VirtualizedContainerService.HintSize="479.0943396226415,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[period]</OutArgument>
       </Assign.To>
@@ -270,7 +270,7 @@
         <InArgument x:TypeArguments="s:DateTime">[CDate(in_Period).ToLocalTime]</InArgument>
       </Assign.Value>
     </Assign>
-    <If sap2010:Annotation.AnnotationText="If rerun true get date from config gsheet | And archieve previous run&#xA;Else run period - 1" Condition="[CBool(in_Rerun)]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="479.0943396226415,616.754716981132" sap2010:WorkflowViewState.IdRef="If_12">
+    <If sap2010:Annotation.AnnotationText="If rerun true get date from config gsheet | And archieve previous run&#xA;Else run period - 1" Condition="[CBool(in_Rerun)]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="479.0943396226415,508.9811320754717" sap2010:WorkflowViewState.IdRef="If_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -301,25 +301,12 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,208.30188679245282" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap2010:Annotation.AnnotationText="Cybersource OCBC schedule is d-2&#xA;Period from dispatcher is d-1" DisplayName="Assign Date Normal H-2" sap:VirtualizedContainerService.HintSize="338.71698113207543,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_15">
-            <Assign.To>
-              <OutArgument x:TypeArguments="s:DateTime">[period]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="s:DateTime">[period.AddDays(-1)]</InArgument>
-            </Assign.Value>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Assign>
         </Sequence>
       </If.Else>
     </If>
@@ -392,10 +379,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="If Rerun True Mark Log Empty For Current Period" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True Mark Log Empty For Current Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="If_6">
+    <If sap2010:Annotation.AnnotationText="If Rerun True Mark Log Empty For Current Period" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True Mark Log Empty For Current Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,521.6603773584906" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -545,36 +532,24 @@
       </If>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Cybersourceocbc_SearchReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cybersourceocbc\Portal_Cybersourceocbc_SearchReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Cybersourceocbc_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cybersourceocbc\Portal_Cybersourceocbc_DownloadReport.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_PID">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathResultFile" />
-          </InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
-            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathRawFile" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathScheduler" />
           </InArgument>
           <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
             <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;BPID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).ToString" />
-          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Cybersourceocbc_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cybersourceocbc\Portal_Cybersourceocbc_DownloadReport.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">[io_Config("PathDownloadChrome").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[pathRawFile]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[pathScheduler]</InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[io_Config("BPID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[io_Config("File Type").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">
