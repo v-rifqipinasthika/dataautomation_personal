@@ -20,7 +20,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1824.9056603773583</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>848.6037735849056,1824.9056603773583</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Molpay_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -190,10 +190,18 @@
             </ui:TypeSecureText>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traveloka_DataAutomation_Captcha_Handler\Captcha_Breaker_Molpay.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Traveloka_DataAutomation_Captcha_Handler\Captcha_Breaker_Molpay.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_site_key">6LcQtAsUAAAAAEa4OcQybYoIjOj472g6iN98o5aX</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">recaptchav2_rpa</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">[in_portalLink]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">razer</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_site_key">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_captchaSiteKey" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_captchaRuleId" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_portalLink" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">
+                  <Literal x:TypeArguments="x:String">razer</Literal>
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:UiElementExists DisplayName="Element Exists 'A  #' Dashboard Exist" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="379.47169811320754,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
