@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,3068.3773584905657</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1330.4,3144</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcebay_CreateReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -129,7 +129,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,3003.1698113207544" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="637.6,3079.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathDownload" />
       <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
@@ -144,27 +144,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;Portal_Cybersourcebay_CreateReport&quot;)]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="575.0943396226414,2764.0754716981132" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4fe2bba0fd5458baea4b50652d3f283f" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="575.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;Portal_Cybersourcebay_CreateReport&quot;)]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="575.2,2834.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4fe2bba0fd5458baea4b50652d3f283f" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2617.3584905660377" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="541.6,2687.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Delay DisplayName="Delay Load Page" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479.0943396226415,87.84905660377358" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
-            <Assign sap2010:Annotation.AnnotationText="Report date is d+1" DisplayName="Assign Report Date" sap:VirtualizedContainerService.HintSize="479.0943396226415,90.56603773584905" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Delay DisplayName="Delay Load Page" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="479.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
+            <Assign sap2010:Annotation.AnnotationText="Report date is d+1 for normal Run&#xD;&#xA;Report date = Period if rerun" DisplayName="Assign Report Date" sap:VirtualizedContainerService.HintSize="479.2,104" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:DateTime">[reportDate]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="s:DateTime">[in_period.AddDays(1)]</InArgument>
+                <InArgument x:TypeArguments="s:DateTime">[in_period]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -172,12 +172,12 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign sap2010:Annotation.AnnotationText="Initial&#xA;231003_TVLK_TC33_DETAIL.d02&#xA;Extension file D-1&#xA;Ie: &#xA;Currently 3 sep, the extension is d02&#xA;Currently 1 sep, the extension is 31 (File for 31 aug)&#xA;" DisplayName="Assign Extension FIle" sap:VirtualizedContainerService.HintSize="479.0943396226415,181.1320754716981" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign sap2010:Annotation.AnnotationText="Initial&#xA;231003_TVLK_TC33_DETAIL.d02&#xA;Extension file D-1&#xA;Ie: &#xA;Currently 3 sep, the extension is d02&#xA;Currently 1 sep, the extension is 31 (File for 31 aug)&#xA;" DisplayName="Assign Extension FIle" sap:VirtualizedContainerService.HintSize="479.2,200" sap2010:WorkflowViewState.IdRef="Assign_6">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[extensionFile]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[in_period.ToString("dd")]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_period.AddDays(-1).ToString("dd")]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -185,16 +185,16 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:RetryScope DisplayName="Retry Scope Inject JS Date" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="5" RetryInterval="00:00:02">
+            <ui:RetryScope DisplayName="Retry Scope Inject JS Date" sap:VirtualizedContainerService.HintSize="479.2,52.8" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="5" RetryInterval="00:00:02">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,274.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,278.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InjectJsScript ScriptOutput="{x:Null}" sap2010:Annotation.AnnotationText="Search period for report D+1 to retrive current period" DisplayName="Inject Js Script Create Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,164.83018867924528" sap2010:WorkflowViewState.IdRef="InjectJsScript_3" InputParameter="[reportDate.ToString(&quot;dd-MM-yyyy&quot;)]" ScriptCode="Custom_Flow\Portal_Cybersourcebay\Portal_Cybersource_CreateReport.js">
+                    <ui:InjectJsScript ScriptOutput="{x:Null}" sap2010:Annotation.AnnotationText="Search period for report D+1 to retrive current period" DisplayName="Inject Js Script Create Report" sap:VirtualizedContainerService.HintSize="337.6,166.4" sap2010:WorkflowViewState.IdRef="InjectJsScript_3" InputParameter="[reportDate.ToString(&quot;dd-MM-yyyy&quot;)]" ScriptCode="Custom_Flow\Portal_Cybersourcebay\Portal_Cybersource_CreateReport.js">
                       <ui:InjectJsScript.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f5137bd-d1c6-4f52-9ce4-0f2f2d0aafda">
                           <ui:Target.TimeoutMS>
@@ -224,7 +224,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  buttonSearch'" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  buttonSearch'" sap:VirtualizedContainerService.HintSize="479.2,52.8" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -252,16 +252,16 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:RetryScope DisplayName="Retry Scope Wait Element" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:02">
+            <ui:RetryScope DisplayName="Retry Scope Wait Element" sap:VirtualizedContainerService.HintSize="479.2,52.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:02">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,219.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  actionDate' Satrtdate" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'INPUT  actionDate' Satrtdate" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="399a5c5c-3144-4c26-a54f-13567f55582e" InformativeScreenshot="9f781f9195f81953b91a0290cfb2584f" Selector="&lt;webctrl id='monitoring-table' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
                           <ui:Target.TimeoutMS>
@@ -286,7 +286,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <Assign sap2010:Annotation.AnnotationText=" 230914_TVLK_TC33_DETAIL.d13" DisplayName="Assign Path File Raw" sap:VirtualizedContainerService.HintSize="479.0943396226415,91.47169811320754" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText=" 230914_TVLK_TC33_DETAIL.d13" DisplayName="Assign Path File Raw" sap:VirtualizedContainerService.HintSize="479.2,91.2" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_pathRawFile]</OutArgument>
               </Assign.To>
@@ -299,7 +299,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="479.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[pathDownload]</OutArgument>
               </Assign.To>
@@ -307,23 +307,23 @@
                 <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", in_pathChromeDownload, Path.GetFileName(out_pathRawFile))]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message Check Report Name" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[out_pathRawFile]" />
-            <If sap2010:Annotation.AnnotationText="Traveloka_RPA026_ddMMMyy&#xA; 230914_TVLK_TC33_DETAIL.d13" Condition="[generatedReport.ToLower = Path.GetFileName(out_pathRawFile).ToLower]" DisplayName="If Not Suit Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,1156.5283018867924" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message Check Report Name" sap:VirtualizedContainerService.HintSize="479.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[out_pathRawFile]" />
+            <If sap2010:Annotation.AnnotationText="Traveloka_RPA026_ddMMMyy&#xA; 230914_TVLK_TC33_DETAIL.d13" Condition="[generatedReport.ToLower = Path.GetFileName(out_pathRawFile).ToLower]" DisplayName="If Not Suit Period" sap:VirtualizedContainerService.HintSize="479.2,1177.6" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,750.7924528301886" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="400.8,757.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message Suitable Period" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Report suitable&quot;]" />
-                  <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Old FIle" Exists="[oldFileExist]" sap:VirtualizedContainerService.HintSize="338.71698113207543,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[pathDownload]" PathType="File" />
+                  <ui:LogMessage DisplayName="Log Message Suitable Period" sap:VirtualizedContainerService.HintSize="338.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Report suitable&quot;]" />
+                  <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Old FIle" Exists="[oldFileExist]" sap:VirtualizedContainerService.HintSize="338.4,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[pathDownload]" PathType="File" />
                   <If Condition="[oldFileExist]" DisplayName="If Old File Exist &gt; Download" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -464,12 +464,8 @@
                   </If>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_TxtToCsv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_TxtToCsv.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathResultFile" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">[out_pathRawFile]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[in_pathResultFile]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
