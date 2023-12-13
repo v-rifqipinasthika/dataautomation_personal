@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>968.1509433962264,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1352.1509433962262,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -254,7 +254,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">330.07547169811323,640.5031446540877 330.07547169811323,670.5031446540877 210.0754716981132,670.5031446540877 210.0754716981132,715.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="701.8867924528302,2054.0377358490564" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="200.1509433962264,171.16981132075472" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
                 </Sequence.Variables>
@@ -305,12 +305,8 @@
                     <TryCatch.Try>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString" />
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
-                          </InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[ScreenshotPath]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </TryCatch.Try>
@@ -355,42 +351,18 @@
                           <TryCatch.Try>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Custom_Flow\Mail_Error.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Error_MailTemplate&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strProcessName">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;logF_BusinessProcessName&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strSource">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BusinessException.Source" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BusinessException.Message" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BP_Notification_EmailTo&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BP_Notification_EmailCC&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_credMail">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CredMail&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strBPName">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;Business Partner&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">
-                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_strSenderName">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SenderName&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">[in_Config("Error_MailTemplate").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strProcessName">[in_Config("logF_BusinessProcessName").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strSource">[in_BusinessException.Source]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">[in_BusinessException.Message]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_Config("BP_Notification_EmailTo").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_Config("BP_Notification_EmailCC").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[in_Config("CredMail").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">[ScreenshotPath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strBPName">[in_TransactionItem("Business Partner").ToString]</InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[Now]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strSenderName">[in_Config("SenderName").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                           </TryCatch.Try>
@@ -443,7 +415,6 @@
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
-                  <Variable x:TypeArguments="s:DateTime" Name="datePeriod" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -581,42 +552,18 @@
                         <TryCatch.Try>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Custom_Flow\Mail_Error.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Error_MailTemplate&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strProcessName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;logF_BusinessProcessName&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strSource">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SystemException.Source" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SystemException.Message" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BP_Notification_EmailTo&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BP_Notification_EmailCC&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_credMail">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CredMail&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strBPName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;Business Partner&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">
-                                <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now.AddMonths(CInt(in_TransactionItem(&quot;Reminder Period&quot;).ToString))" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_strSenderName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SenderName&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">[in_Config("Error_MailTemplate").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strProcessName">[in_Config("logF_BusinessProcessName").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strSource">[in_SystemException.Source]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">[in_SystemException.Message]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_Config("BP_Notification_EmailTo").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_Config("BP_Notification_EmailCC").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[in_Config("CredMail").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">[ScreenshotPath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strBPName">[in_TransactionItem("Business Partner").ToString]</InArgument>
+                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[Now.AddMonths(CInt(in_TransactionItem("Reminder Period").ToString))]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_strSenderName">[in_Config("SenderName").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </TryCatch.Try>

@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1330.4,3144</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,2945.2075471698113</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcebay_CreateReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -129,7 +129,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="637.6,3079.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,2880" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathDownload" />
       <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
@@ -144,22 +144,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="575.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;Portal_Cybersourcebay_CreateReport&quot;)]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="575.2,2834.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4fe2bba0fd5458baea4b50652d3f283f" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_CreateReport" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;Portal_Cybersourcebay_CreateReport&quot;)]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="575.0943396226414,2640.9056603773583" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4fe2bba0fd5458baea4b50652d3f283f" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="541.6,2687.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2494.188679245283" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Delay DisplayName="Delay Load Page" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="479.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
-            <Assign sap2010:Annotation.AnnotationText="Report date is d+1 for normal Run&#xD;&#xA;Report date = Period if rerun" DisplayName="Assign Report Date" sap:VirtualizedContainerService.HintSize="479.2,104" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Delay DisplayName="Delay Load Page" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="479.0943396226415,87.84905660377358" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
+            <Assign sap2010:Annotation.AnnotationText="Report date is d+1 for normal Run&#xA;Report date = Period if rerun" DisplayName="Assign Report Date" sap:VirtualizedContainerService.HintSize="479.0943396226415,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:DateTime">[reportDate]</OutArgument>
               </Assign.To>
@@ -172,7 +172,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign sap2010:Annotation.AnnotationText="Initial&#xA;231003_TVLK_TC33_DETAIL.d02&#xA;Extension file D-1&#xA;Ie: &#xA;Currently 3 sep, the extension is d02&#xA;Currently 1 sep, the extension is 31 (File for 31 aug)&#xA;" DisplayName="Assign Extension FIle" sap:VirtualizedContainerService.HintSize="479.2,200" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign sap2010:Annotation.AnnotationText="Initial&#xA;231003_TVLK_TC33_DETAIL.d02&#xA;Extension file D-1&#xA;Ie: &#xA;Currently 3 sep, the extension is d02&#xA;Currently 1 sep, the extension is 31 (File for 31 aug)&#xA;" DisplayName="Assign Extension FIle" sap:VirtualizedContainerService.HintSize="479.0943396226415,180.22641509433961" sap2010:WorkflowViewState.IdRef="Assign_6">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[extensionFile]</OutArgument>
               </Assign.To>
@@ -299,7 +299,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="479.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[pathDownload]</OutArgument>
               </Assign.To>
@@ -307,15 +307,15 @@
                 <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", in_pathChromeDownload, Path.GetFileName(out_pathRawFile))]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message Check Report Name" sap:VirtualizedContainerService.HintSize="479.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[out_pathRawFile]" />
-            <If sap2010:Annotation.AnnotationText="Traveloka_RPA026_ddMMMyy&#xA; 230914_TVLK_TC33_DETAIL.d13" Condition="[generatedReport.ToLower = Path.GetFileName(out_pathRawFile).ToLower]" DisplayName="If Not Suit Period" sap:VirtualizedContainerService.HintSize="479.2,1177.6" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message Check Report Name" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[out_pathRawFile]" />
+            <If sap2010:Annotation.AnnotationText="Traveloka_RPA026_ddMMMyy&#xA; 230914_TVLK_TC33_DETAIL.d13" Condition="[generatedReport.ToLower = Path.GetFileName(out_pathRawFile).ToLower]" DisplayName="If Not Suit Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,1161.0566037735848" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="400.8,757.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,755.3207547169811" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -481,13 +481,6 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence sap:VirtualizedContainerService.HintSize="479.0943396226415,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

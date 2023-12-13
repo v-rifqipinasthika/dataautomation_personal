@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>968.1509433962264,1171.9245283018868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1352.1509433962262,1031.5471698113206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MarkIncompleteConfig_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MarkIncompleteConfig" sap:VirtualizedContainerService.HintSize="594.1132075471697,1106.7169811320755" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MarkIncompleteConfig" sap:VirtualizedContainerService.HintSize="594.1132075471697,966.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,12 +162,5 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Sequence sap:VirtualizedContainerService.HintSize="532.5283018867924,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_5">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
   </Sequence>
 </Activity>

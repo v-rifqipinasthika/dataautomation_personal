@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2056.754716981132</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,2056.754716981132</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourceocbc_SearchDownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -95,7 +95,6 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,1605.7358490566037" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Default="https://meservices.ocbc.com/merchant/main.jsp?PAGEID=Mp_txnstatementTabFormSearch&amp;Action=Search&amp;menuId=Reports&amp;OWASP_CSRFTOKEN=1SJU-UUO1-X0SL-H5TJ-57BJ-KI1M-X6TP-G7BR" Name="reportPage" />
               <Variable x:TypeArguments="x:Boolean" Name="notFound" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>

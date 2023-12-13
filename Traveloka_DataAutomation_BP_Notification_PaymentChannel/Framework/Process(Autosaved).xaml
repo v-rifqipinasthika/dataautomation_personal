@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1124,1732</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1232.6037735849056,1653.7358490566037</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -118,10 +118,9 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
-      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="560,1627" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="559.6981132075472,1588.5283018867924" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathMasterBp" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_MasterBp" />
@@ -135,18 +134,18 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="498,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="498,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:LogMessage DisplayName="Log Message Process" sap:VirtualizedContainerService.HintSize="498,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} {1}&quot;, in_TransactionItem(&quot;name&quot;), in_TransactionItem(&quot;no&quot;))]" />
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="498.1132075471698,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="498.1132075471698,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:LogMessage DisplayName="Log Message Process" sap:VirtualizedContainerService.HintSize="498.1132075471698,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} {1}&quot;, in_TransactionItem(&quot;name&quot;), in_TransactionItem(&quot;no&quot;))]" />
     <ui:Comment sap:VirtualizedContainerService.HintSize="498,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Delete later" />
     <Throw DisplayName="Throw Testing" Exception="[New Exception(&quot;Testing&quot;)]" sap:VirtualizedContainerService.HintSize="498,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
-    <Sequence sap:VirtualizedContainerService.HintSize="498,843" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap:VirtualizedContainerService.HintSize="498.1132075471698,831.3962264150942" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign Variable" sap:VirtualizedContainerService.HintSize="436,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign Variable" sap:VirtualizedContainerService.HintSize="436.5283018867924,162.1132075471698" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -165,7 +164,7 @@
                 <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
-            <ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">[pathMasterBp]</OutArgument>
               </ui:AssignOperation.To>
@@ -176,25 +175,19 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,303" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.5283018867924,299.77358490566036" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400.3018867924528,220.9811320754717" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MasterBp">
-                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MasterBp" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PathMasterFolder&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now" />
-                </InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MasterBp">[dt_MasterBp]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[in_Config("PathMasterFolder").ToString]</InArgument>
+                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[Now]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
@@ -206,7 +199,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="List of all BP including schedule (daily, weekly, etc)" DataTable="[dt_MasterBp]" DisplayName="Read Range Workbook MasterBP" sap:VirtualizedContainerService.HintSize="436,94" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[pathMasterBp]">
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="List of all BP including schedule (daily, weekly, etc)" DataTable="[dt_MasterBp]" DisplayName="Read Range Workbook MasterBP" sap:VirtualizedContainerService.HintSize="436.5283018867924,89.66037735849056" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[pathMasterBp]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -215,13 +208,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadRange>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MasterBp]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="436,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MasterBp]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434.71698113207543,996.2264150943397" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1072" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,883.0188679245282" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:DateTime" Default="[Now]" Name="period" />
                 <Variable x:TypeArguments="sd:DataTable" Name="dt_UserLog" />
@@ -232,7 +225,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Path User Log" sap:VirtualizedContainerService.HintSize="450,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="Assign Path User Log" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[pathUserLog]</OutArgument>
                 </Assign.To>
@@ -240,14 +233,14 @@
                   <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\Log {2}.xlsx", in_Config("PathMasterFolder").ToString, CurrentRow("Key").ToString, period.ToString("yyyy"))]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="User log that indicate state of process for period (success, failed, &quot;&quot;)&#xA;*tbc on holiday status" DataTable="[dt_UserLog]" DisplayName="Read Range User Log" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[period.ToString(&quot;MMMM&quot;)]" WorkbookPath="[pathUserLog]">
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="User log that indicate state of process for period (success, failed, &quot;&quot;)&#xA;*tbc on holiday status" DataTable="[dt_UserLog]" DisplayName="Read Range User Log" sap:VirtualizedContainerService.HintSize="338.71698113207543,140.37735849056602" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[period.ToString(&quot;MMMM&quot;)]" WorkbookPath="[pathUserLog]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ReadRange>
-              <Assign sap2010:Annotation.AnnotationText="Change format and ignore first zero&#xA;01 -&gt; 1" DisplayName="Assign Current Date" sap:VirtualizedContainerService.HintSize="449.6,125.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign sap2010:Annotation.AnnotationText="Change format and ignore first zero&#xA;01 -&gt; 1" DisplayName="Assign Current Date" sap:VirtualizedContainerService.HintSize="338.71698113207543,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[currentDate]</OutArgument>
                 </Assign.To>
@@ -260,7 +253,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <ui:FilterDataTable DataTable="[dt_UserLog]" DisplayName="Filter Data Table Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="449.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_UserLog]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable DataTable="[dt_UserLog]" DisplayName="Filter Data Table Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="338.71698113207543,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_UserLog]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -279,7 +272,7 @@
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
               </ui:FilterDataTable>
-              <ui:FilterDataTable DataTable="[dt_UserLog]" DisplayName="Filter Data Table Current Period Status" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="449.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_UserLog]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable DataTable="[dt_UserLog]" DisplayName="Filter Data Table Current Period Status" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="338.71698113207543,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_UserLog]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -314,13 +307,6 @@
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
               </ui:FilterDataTable>
-              <Sequence sap:VirtualizedContainerService.HintSize="449.6,104.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>

@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1279.698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,1279.698113207547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Login_Checker_Write_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -96,7 +96,6 @@
   <Sequence DisplayName="Portal_Login_Checker_Write" sap:VirtualizedContainerService.HintSize="540.6792452830189,1214.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="lastLogin" />
-      <Variable x:TypeArguments="x:String" Name="statusLogin" />
       <Variable x:TypeArguments="x:String" Name="loginState" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
