@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1026.4,3484.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,3484.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_PKFARE_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -217,7 +217,7 @@
             </ui:UiElementExists>
             <If Condition="[boolNoData]" DisplayName="If no data" sap:VirtualizedContainerService.HintSize="412.8,378.4" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Throw DisplayName="Throw No Report Data" Exception="[New BusinessRuleException(&quot;No Report Data Found for period: &quot;+in_strPeriod.ToString(&quot;dd-MM-yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                <Throw DisplayName="Throw No Report Data" Exception="[New BusinessRuleException(&quot;Report Data Not Found for period: &quot;+in_strPeriod.ToString(&quot;dd-MM-yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
             </If>
             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click 'BUTTON Export'" sap:VirtualizedContainerService.HintSize="412.9811320754717,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
