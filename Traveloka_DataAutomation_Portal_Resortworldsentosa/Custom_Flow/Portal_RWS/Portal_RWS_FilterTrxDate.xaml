@@ -1,13 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_RWS_FilterTrxDate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_RWS_FilterTrxDate" this:Portal_RWS_FilterTrxDate.in_readRange="A5" this:Portal_RWS_FilterTrxDate.in_sheetName="Prepayment Balance Detail Repor" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_pathResult" Type="InArgument(x:String)" />
     <x:Property Name="in_pathRawFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_readRange" Type="InArgument(x:String)" />
+    <x:Property Name="in_sheetName" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,776.1509433962264</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,787.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_RWS_FilterTrxDate_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -92,10 +94,8 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Filter Transaction Date for only current period" DisplayName="Portal_RWS_FilterTrxDate" sap:VirtualizedContainerService.HintSize="400.3018867924528,710.9433962264151" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Filter Transaction Date for only current period" DisplayName="Portal_RWS_FilterTrxDate" sap:VirtualizedContainerService.HintSize="400,722.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="Prepayment Balance Detail Repor" Name="sheetName" />
-      <Variable x:TypeArguments="x:String" Default="A5" Name="readRange" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -104,9 +104,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_RWS_FilterTrxDate" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_RWS_FilterTrxDate&quot;]" />
-    <ui:ReadRange AddHeaders="True" DataTable="[dtReport]" DisplayName="Read Range Workbook | RWS Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="ReadRange_1" PreserveFormat="True" Range="[readRange]" SheetName="[sheetName]" WorkbookPath="[in_pathRawFile]" />
-    <ui:FilterDataTable DataTable="[dtReport]" DisplayName="Filter Data Table Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="338.71698113207543,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtReport]" SelectColumnsMode="Keep">
+    <ui:LogMessage DisplayName="Log Message Portal_RWS_FilterTrxDate" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_RWS_FilterTrxDate&quot;]" />
+    <ui:ReadRange AddHeaders="True" DataTable="[dtReport]" DisplayName="Read Range Workbook | RWS Report" sap:VirtualizedContainerService.HintSize="337.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" PreserveFormat="True" Range="[in_readRange]" SheetName="[in_sheetName]" WorkbookPath="[in_pathRawFile]" />
+    <ui:FilterDataTable DataTable="[dtReport]" DisplayName="Filter Data Table Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="337.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtReport]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -125,6 +125,6 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtReport]" DisplayName="Write Range Workbook | Write Filterd Exclude Period" sap:VirtualizedContainerService.HintSize="338.71698113207543,115.92452830188678" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[sheetName]" WorkbookPath="[in_pathResult]" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtReport]" DisplayName="Write Range Workbook | Write Filterd Exclude Period" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_sheetName]" WorkbookPath="[in_pathResult]" />
   </Sequence>
 </Activity>
