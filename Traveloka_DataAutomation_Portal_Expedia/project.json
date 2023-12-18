@@ -1,5 +1,6 @@
 {
   "name": "Traveloka_DataAutomation_Portal_Expedia",
+  "projectId": "c828aa74-490d-4100-85ca-dadbc903607a",
   "description": "Traveloka_DataAutomation_Portal_Expedia",
   "main": "Main.xaml",
   "dependencies": {
@@ -23,6 +24,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -44,7 +46,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
