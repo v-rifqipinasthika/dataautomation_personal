@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1459.0188679245282,3350.0377358490564</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,3350.0377358490564</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FolderPath_Manager_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -165,7 +165,7 @@
                   <OutArgument x:TypeArguments="x:String">[out_pathLogCurrent]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}.xlsx", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), String.Format("{0}-Log {1}-{2}", in_PID, in_reportName,in_period.ToString("yyyy")))]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}\{2}\{3}.xlsx", in_pathMasterFolder, in_BPKey, in_period.ToString("yyyy"), String.Format("{0}-Log {1}-{2}", in_PID, in_reportName, in_period.ToString("yyyy")))]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">

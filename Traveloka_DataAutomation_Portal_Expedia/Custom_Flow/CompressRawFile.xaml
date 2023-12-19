@@ -7,10 +7,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1075.0188679245282,833.2075471698113</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,1282.4150943396226</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompressRawFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="60">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="84">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -91,31 +91,76 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Compressing raw file. Gmail can't attach file that has size more than 25 MB" DisplayName="CompressRawFile" sap:VirtualizedContainerService.HintSize="400.3018867924528,768" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Compressing raw file. Gmail can't attach file that has size more than 25 MB" DisplayName="CompressRawFile" sap:VirtualizedContainerService.HintSize="540.6792452830189,1217.2075471698113" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Double" Name="fileSize" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message CompressRawFile" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : CompressRawFile&quot;]" />
-    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pathResultFile]" DisplayName="Copy File PathRaw to PathResult" sap:VirtualizedContainerService.HintSize="338.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[io_pathRawFile]" />
-    <uascw:CompressFiles CompressedFileInfo="{x:Null}" CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileName="[io_pathRawFile.Replace(in_fileType, &quot;zip&quot;)]" CompressionLevel="Normal" DisplayName="Compress/Zip Files Raw File" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="338.71698113207543,210.1132075471698" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
-      <uascw:CompressFiles.ContentToArchive>
-        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
-          <InArgument x:TypeArguments="x:String">[io_pathRawFile]</InArgument>
-        </scg:List>
-      </uascw:CompressFiles.ContentToArchive>
-    </uascw:CompressFiles>
-    <Assign DisplayName="Assign New Raw File .zip" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message CompressRawFile" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : CompressRawFile&quot;]" />
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pathResultFile]" DisplayName="Copy File PathRaw to PathResult" sap:VirtualizedContainerService.HintSize="479.0943396226415,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[io_pathRawFile]" />
+    <Assign DisplayName=" Assign Raw FIle Size" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[io_pathRawFile]</OutArgument>
+        <OutArgument x:TypeArguments="x:Double">[fileSize]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[io_pathRawFile.Replace(in_fileType, "zip")]</InArgument>
+        <InArgument x:TypeArguments="x:Double">[New System.IO.FileInfo(io_pathRawFile).Length/(1024.0 * 1024.0)]</InArgument>
       </Assign.Value>
     </Assign>
+    <If Condition="[fileSize &gt; 15]" DisplayName="If File &gt; 15MB, Zip File" sap:VirtualizedContainerService.HintSize="479.0943396226415,659.3207547169811" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,389.4339622641509" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message Zip File" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;File size {0}, zip file&quot;, fileSize.ToString)]" />
+          <uascw:CompressFiles CompressedFileInfo="{x:Null}" CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileName="[io_pathRawFile.Replace(in_fileType, &quot;zip&quot;)]" CompressionLevel="Normal" DisplayName="Compress/Zip Files Raw File" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+            <uascw:CompressFiles.ContentToArchive>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                <InArgument x:TypeArguments="x:String">[io_pathRawFile]</InArgument>
+              </scg:List>
+            </uascw:CompressFiles.ContentToArchive>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uascw:CompressFiles>
+          <Assign DisplayName="Assign New Raw File .zip" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[io_pathRawFile]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[io_pathRawFile.Replace(in_fileType, "zip")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
