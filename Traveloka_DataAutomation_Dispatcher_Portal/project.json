@@ -1,5 +1,6 @@
 {
   "name": "Traveloka_DataAutomation_Dispatcher_Portal",
+  "projectId": "2b3a7787-1b47-4a05-8303-07d64e1c124b",
   "description": "Traveloka_DataAutomation_Dispatcher_Portal",
   "main": "Main.xaml",
   "dependencies": {
@@ -22,6 +23,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -43,7 +45,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
