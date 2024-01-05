@@ -1,0 +1,206 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_Queue_Retry" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1674.566037735849</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Add_Queue_Retry_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Add_Queue_Retry" sap:VirtualizedContainerService.HintSize="540.6792452830189,1609.3584905660375" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strQueueReference" />
+      <Variable x:TypeArguments="x:Int32" Name="intAutoRetryMax" />
+      <Variable x:TypeArguments="x:Int32" Name="intRetried" />
+      <Variable x:TypeArguments="x:Int32" Name="intAutoRetryPostpone" />
+      <Variable x:TypeArguments="s:DateTime" Name="dateStartPeriod" />
+      <Variable x:TypeArguments="s:DateTime" Name="dateEndPeriod" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Get Queue Reference Name, Max Retry, Postpone" DisplayName="Multiple Assign - Queue reference, max retry, postpone" sap:VirtualizedContainerService.HintSize="479.0943396226415,192.9056603773585" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strQueueReference]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.Reference]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intAutoRetryMax]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("AutoRetryMax").ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intAutoRetryPostpone]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("AutoRetryPostpone").ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="replace any date format found in string, the string should look like this -&gt; &quot;foo {yyyMM}&quot; (date format should be in between { })" Code="string pattern = @&quot;\{(\d+)\}&quot;;&#xD;&#xA;int incrementedInteger = 0;&#xD;&#xA;&#xD;&#xA;if (System.Text.RegularExpressions.Regex.IsMatch(io_strQueueReference, pattern))&#xD;&#xA;{&#xD;&#xA;    // Use Regex.Replace with a MatchEvaluator function to increment&#xD;&#xA;    io_strQueueReference =  System.Text.RegularExpressions.Regex.Replace(io_strQueueReference, pattern, match =&gt;&#xD;&#xA;    {&#xD;&#xA;        int originalInteger = int.Parse(match.Groups[1].Value);&#xD;&#xA;&#x9;&#x9;incrementedInteger = originalInteger + 1;&#xD;&#xA;        return &quot;{&quot; + incrementedInteger + &quot;}&quot;;&#xD;&#xA;    });&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    // If the pattern is not matched, add {1} in front of the string&#xD;&#xA;    io_strQueueReference =  &quot;{1}_&quot; + io_strQueueReference;&#xD;&#xA;}&#xD;&#xA;out_intRetried = incrementedInteger;" DisplayName="Invoke code -  replace any date format in string" sap:VirtualizedContainerService.HintSize="479.0943396226415,217.35849056603772" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_strQueueReference">[strQueueReference]</InOutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_intRetried">[intRetried]</OutArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <If Condition="[intRetried &lt; intAutoRetryMax]" sap:VirtualizedContainerService.HintSize="479.0943396226415,1009.8113207547169" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,739.9245283018868" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listStartEndRange" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" sap2010:Annotation.AnnotationText="" DeferDate="[Now.AddHours(intAutoRetryPostpone)]" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="338.71698113207543,630.3396226415094" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[strQueueReference]">
+            <ui:AddQueueItem.ItemInformation>
+              <InArgument x:TypeArguments="x:String" x:Key="BPID">[in_TransactionItem.SpecificContent("BPID").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Key">[in_TransactionItem.SpecificContent("Key").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Business Partner">[in_TransactionItem.SpecificContent("Business Partner").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Email User To">[in_TransactionItem.SpecificContent("Email User To").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Email Technical To">[in_TransactionItem.SpecificContent("Email Technical To").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Period">[in_TransactionItem.SpecificContent("Period").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="PathMasterFolder">[in_TransactionItem.SpecificContent("PathMasterFolder").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="PathLog">[in_TransactionItem.SpecificContent("PathLog").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Rerun">False</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="PID">[in_TransactionItem.SpecificContent("PID").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Email User CC">[in_TransactionItem.SpecificContent("Email User CC").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Email Technical CC">[in_TransactionItem.SpecificContent("Email Technical CC").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Credential">[in_TransactionItem.SpecificContent("Credential").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Schedule">[in_TransactionItem.SpecificContent("Schedule").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Link">[in_TransactionItem.SpecificContent("Link").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="File Type">[in_TransactionItem.SpecificContent("File Type").ToString]</InArgument>
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

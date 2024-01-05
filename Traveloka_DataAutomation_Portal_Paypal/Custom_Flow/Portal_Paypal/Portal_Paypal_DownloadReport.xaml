@@ -7,7 +7,6 @@
     <x:Property Name="in_PID" Type="InArgument(x:String)" />
     <x:Property Name="in_reportType" Type="InArgument(x:String)" />
     <x:Property Name="in_pathChromeDownload" Type="InArgument(x:String)" />
-    <x:Property Name="in_chromeDialogStatus" Type="InArgument(x:Boolean)" />
     <x:Property Name="io_pathResultFile" Type="InArgument(x:String)" />
   </x:Members>
   <this:Portal_Paypal_DownloadReport.in_BPID>
@@ -16,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>919.2452830188679,4841.66037735849</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>979.9245283018868,3359.094339622641</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Paypal_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -112,25 +111,26 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Paypal_DownloadReport" sap:VirtualizedContainerService.HintSize="777.0566037735848,4776.4528301886785" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Paypal_DownloadReport" sap:VirtualizedContainerService.HintSize="740.8301886792452,3293.88679245283" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="moveSuccess" />
       <Variable x:TypeArguments="x:String" Name="pathDownload" />
       <Variable x:TypeArguments="x:String" Default="Download.csv" Name="downloadFileName" />
+      <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Paypal_DownloadReport" sap:VirtualizedContainerService.HintSize="715.4716981132075,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Paypal_DownloadReport&quot;)]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Reports'" sap:VirtualizedContainerService.HintSize="715.4716981132075,4537.358490566037" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d39f55febb703f13b2ceb896d1dea93c" Selector="&lt;html app='chrome.exe' title='Reports' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Paypal_DownloadReport" sap:VirtualizedContainerService.HintSize="679.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Paypal_DownloadReport&quot;)]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Reports'" sap:VirtualizedContainerService.HintSize="679.2452830188679,3054.7924528301883" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d39f55febb703f13b2ceb896d1dea93c" Selector="&lt;html app='chrome.exe' title='Reports' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="681.0566037735848,4390.641509433962" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="644.8301886792452,2908.0754716981132" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="feedbackPopupExist" />
               <Variable x:TypeArguments="x:String" Name="transactionType" />
@@ -138,7 +138,6 @@
               <Variable x:TypeArguments="x:String" Name="dateRange" />
               <Variable x:TypeArguments="x:String" Name="fileFormat" />
               <Variable x:TypeArguments="x:String" Name="actionStatus" />
-              <Variable x:TypeArguments="x:Boolean" Name="flagReportFound" />
               <Variable x:TypeArguments="x:Boolean" Name="reportSubmitted" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -146,7 +145,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists DisplayName="Element Exists 'IMG' Paypal Popup" Exists="[feedbackPopupExist]" sap:VirtualizedContainerService.HintSize="619.4716981132075,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists 'IMG' Paypal Popup" Exists="[feedbackPopupExist]" sap:VirtualizedContainerService.HintSize="583.2452830188679,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e755f7c3-95ce-47ed-8c98-c175288f2705" InformativeScreenshot="2c6721fa10a7c73975ab799df95d82ec" Selector="&lt;webctrl tag='IMG' parentclass='QSIWebResponsiveDialog-Layout1-SI_4UBsl2JmAnTX90p_close-btn' /&gt;" TimeoutMS="3000">
                   <ui:Target.WaitForReady>
@@ -155,7 +154,7 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[feedbackPopupExist]" DisplayName="If Feedback Popup Exist" sap:VirtualizedContainerService.HintSize="619.4716981132075,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[feedbackPopupExist]" DisplayName="If Feedback Popup Exist" sap:VirtualizedContainerService.HintSize="583.2452830188679,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -203,124 +202,8 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="619.4716981132075,50.71698113207547" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="461.88679245283015,189.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_3">
-                      <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18415460-7fc5-4d6f-95c0-c1d97cec0cfc" InformativeScreenshot="f236dec25b759a0c136de8adab1999c6" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='1' tableRow='3' tag='TD' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:GetValue.Target>
-                      <ui:GetValue.Value>
-                        <OutArgument x:TypeArguments="x:String">[transactionType]</OutArgument>
-                      </ui:GetValue.Value>
-                    </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD' Report Date" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_1">
-                      <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84fa8319-5bcc-4843-8e62-36cca0f9e508" InformativeScreenshot="f5a06359e6a049b65d4524bf45c40155" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='3' tag='TD' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:GetValue.Target>
-                      <ui:GetValue.Value>
-                        <OutArgument x:TypeArguments="x:String">[reportDate]</OutArgument>
-                      </ui:GetValue.Value>
-                    </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_5">
-                      <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee3ce895-a813-47a2-bc8a-64d5f590b3e8" InformativeScreenshot="7b58d3794ea51574c9269cdbc492880e" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='3' tag='TD' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:GetValue.Target>
-                      <ui:GetValue.Value>
-                        <OutArgument x:TypeArguments="x:String">[dateRange]</OutArgument>
-                      </ui:GetValue.Value>
-                    </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="GetValue_6">
-                      <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ee3ce895-a813-47a2-bc8a-64d5f590b3e8" InformativeScreenshot="714e64fbe9a9bbffaa35ed97b40bd775" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='4' tableRow='3' tag='TD' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:GetValue.Target>
-                      <ui:GetValue.Value>
-                        <OutArgument x:TypeArguments="x:String">[fileFormat]</OutArgument>
-                      </ui:GetValue.Value>
-                    </ui:GetValue>
-                    <ui:Comment sap:VirtualizedContainerService.HintSize="338,76" sap2010:WorkflowViewState.IdRef="Comment_1" Text="TODO : Loop referesh until prepared file can be downloaded" />
-                    <ui:Comment sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="Comment_3" Text="TODO : Make sure the date range. When set to 23Sep2023, the range is 23Sep2023-24Sep2023" />
-                    <If sap2010:Annotation.AnnotationText=" transactionType&#xA; &quot;All transactions&quot;&#xA; dateRange (One day on current period)&#xA; &quot;13 Sep 2023 - 13 Sep 2023&quot;&#xA;String.Format(&quot;{0} - {0}&quot;, in_period.ToString(&quot;dd MMM yyyy&quot;))&#xA; reportDate (Current period)&#xA; &quot;13 Sep 2023&quot;&#xA; fileFormat&#xA; &quot;CSV&quot;" Condition="[transactionType = &quot;All transactions&quot; AND fileFormat = &quot;CSV&quot; AND dateRange.Contains(in_period.ToString(&quot;dd MMM yyyy&quot;))]" DisplayName="If Generated File Valid" sap:VirtualizedContainerService.HintSize="338,257" sap2010:WorkflowViewState.IdRef="If_2">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,205" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Report Paypal for {0} created&quot;, in_period.ToString(&quot;dd MMM yyyy&quot;))]" />
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,202" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Throw Report Not Found" Exception="[New BusinessRuleException(&quot;Report not found&quot;)]" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                  </Sequence>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="619.4716981132075,76.98113207547169" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Loop referesh until prepared file can be downloaded" />
-            <ui:UiElementExists DisplayName="Element Exists 'TD' Report Submitted" Exists="[reportSubmitted]" sap:VirtualizedContainerService.HintSize="619.4716981132075,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+            <ui:Comment sap:VirtualizedContainerService.HintSize="583.2452830188679,76.98113207547169" sap2010:WorkflowViewState.IdRef="Comment_2" Text="TODO : Loop referesh until prepared file can be downloaded" />
+            <ui:UiElementExists DisplayName="Element Exists 'TD' Report Submitted" Exists="[reportSubmitted]" sap:VirtualizedContainerService.HintSize="583.2452830188679,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6e3a367f-c4dd-4cde-beca-f2dedea3a749" InformativeScreenshot="8c059177fef94d2c5728c74dbab8bc40" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='5' tableRow='3' tag='TD' visibleinnertext='Submitted' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -332,7 +215,13 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[reportSubmitted]" DisplayName="If Report Submitted" sap:VirtualizedContainerService.HintSize="619.4716981132075,467.3207547169811" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[reportSubmitted]" DisplayName="If Report Submitted" sap:VirtualizedContainerService.HintSize="583.2452830188679,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
@@ -353,7 +242,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:RetryScope DisplayName="Retry Scope Wait For File Ready" sap:VirtualizedContainerService.HintSize="619.4716981132075,50.71698113207547" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="12" RetryInterval="00:00:02">
+            <ui:RetryScope DisplayName="Retry Scope Wait For File Ready" sap:VirtualizedContainerService.HintSize="583.2452830188679,50.71698113207547" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="12" RetryInterval="00:00:02">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_13">
@@ -407,7 +296,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'BUTTON' Download Status" sap:VirtualizedContainerService.HintSize="619.4716981132075,106.86792452830188" sap2010:WorkflowViewState.IdRef="GetValue_8">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'BUTTON' Download Status" sap:VirtualizedContainerService.HintSize="583.2452830188679,106.86792452830188" sap2010:WorkflowViewState.IdRef="GetValue_8">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="75f49e80-b6de-457a-9b2d-464fe3c07caa" InformativeScreenshot="6fa33c3f859d76cbe26b374af1167d3d" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' tableCol='5' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -422,15 +311,15 @@
                 <OutArgument x:TypeArguments="x:String">[actionStatus]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <If Condition="[actionStatus = &quot;Download&quot;]" DisplayName="If Status Download" sap:VirtualizedContainerService.HintSize="619.4716981132075,1547.7735849056603" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[actionStatus = &quot;Download&quot;]" DisplayName="If Status Download" sap:VirtualizedContainerService.HintSize="583.2452830188679,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="540.6792452830189,1180.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,527.0943396226414" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="oldFileExist" />
                   </Sequence.Variables>
@@ -439,15 +328,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign Reportn Found" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[flagReportFound]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign DisplayName="Assign Path Download" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[pathDownload]</OutArgument>
                     </Assign.To>
@@ -455,7 +336,7 @@
                       <InArgument x:TypeArguments="x:String">[String.Format("{0}\{1}", in_pathChromeDownload, downloadFileName)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap2010:Annotation.AnnotationText="String.Format(&quot;{0}\{1}&quot;, in_pathFolder, downloadFileName)" DisplayName="Assign Report Raw" sap:VirtualizedContainerService.HintSize="479.0943396226415,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign sap2010:Annotation.AnnotationText="String.Format(&quot;{0}\{1}&quot;, in_pathFolder, downloadFileName)" DisplayName="Assign Report Raw" sap:VirtualizedContainerService.HintSize="338.71698113207543,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_pathRawFile]</OutArgument>
                     </Assign.To>
@@ -468,8 +349,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Download Original" Exists="[oldFileExist]" sap:VirtualizedContainerService.HintSize="479.0943396226415,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_5" Path="[pathDownload]" PathType="File" />
-                  <If Condition="[oldFileExist]" DisplayName="If Old FIle Exist &gt; Delete" sap:VirtualizedContainerService.HintSize="479.0943396226415,458.2641509433962" sap2010:WorkflowViewState.IdRef="If_6">
+                  <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists Download Original" Exists="[oldFileExist]" sap:VirtualizedContainerService.HintSize="338.71698113207543,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_5" Path="[pathDownload]" PathType="File" />
+                  <If Condition="[oldFileExist]" DisplayName="If Old FIle Exist &gt; Delete" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,188.37735849056602" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
@@ -490,42 +377,75 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON' Download" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f5188fa-4ddc-4275-91f5-f743a232df94" InformativeScreenshot="6fa33c3f859d76cbe26b374af1167d3d" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' tableCol='5' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,197.43396226415092" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Throw DisplayName="Throw Report Not Ready" Exception="[New BusinessRuleException(&quot;Report wating time longer than excpected&quot;)]" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_3" />
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_chromeDialogStatus And flagReportFound]" DisplayName="If Report Exist determine download method" sap:VirtualizedContainerService.HintSize="619.4716981132075,1357.5849056603772" sap2010:WorkflowViewState.IdRef="If_4">
+            <ui:RetryScope DisplayName="Retry Scope Click Download" sap:VirtualizedContainerService.HintSize="583.2452830188679,481.811320754717" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="80" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON' Download" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f5188fa-4ddc-4275-91f5-f743a232df94" InformativeScreenshot="6fa33c3f859d76cbe26b374af1167d3d" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' tableCol='5' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists DisplayName="Element Exists 'chrome.exe  Save As'" Exists="[dialogDownloadExist]" sap:VirtualizedContainerService.HintSize="334.18867924528297,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="459ad9fe-ce50-456f-a9e9-cca6d43d1efc" InformativeScreenshot="9c484472297cc7be3ed68fe25fdc42df" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" TimeoutMS="5000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <If Condition="[dialogDownloadExist]" DisplayName="If Report Exist &amp; Dialog Exist" sap:VirtualizedContainerService.HintSize="583.2452830188679,1169.2075471698113" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -542,22 +462,31 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[out_pathRawFile]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
+                      </InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
+                      </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_reportType" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="504.45283018867923,967.2452830188679" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence sap:VirtualizedContainerService.HintSize="504.45283018867923,778.8679245283018" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RetryScope DisplayName="Retry Scope Direct Download" sap:VirtualizedContainerService.HintSize="442.86792452830184,857.6603773584906" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:15">
+                  <ui:RetryScope DisplayName="Retry Scope Direct Download" sap:VirtualizedContainerService.HintSize="442.86792452830184,669.2830188679245" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:15">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,611.3207547169811" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,422.9433962264151" sap2010:WorkflowViewState.IdRef="Sequence_16">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -570,8 +499,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:MoveFile>
-                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[io_pathResultFile]" DisplayName="Copy File Name" sap:VirtualizedContainerService.HintSize="338.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[out_pathRawFile]" />
-                          <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[moveSuccess]" sap:VirtualizedContainerService.HintSize="338.71698113207543,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[io_pathResultFile]" PathType="File" />
+                          <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[moveSuccess]" sap:VirtualizedContainerService.HintSize="338.71698113207543,88.75471698113206" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[out_pathRawFile]" PathType="File" />
                         </Sequence>
                       </ActivityAction>
                     </ui:RetryScope.ActivityBody>
@@ -590,6 +518,7 @@
                 </Sequence>
               </If.Else>
             </If>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[io_pathResultFile]" DisplayName="Copy File Name" sap:VirtualizedContainerService.HintSize="583.2452830188679,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[out_pathRawFile]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

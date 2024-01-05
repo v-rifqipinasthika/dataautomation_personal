@@ -425,7 +425,7 @@
       </Assign.Value>
     </Assign>
     <ui:Comment sap:VirtualizedContainerService.HintSize="479.0943396226415,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Put portal flow below here" />
-    <Sequence DisplayName="Sequence Custom Flow" sap:VirtualizedContainerService.HintSize="441.05660377358487,1007.0943396226414" sap2010:WorkflowViewState.IdRef="Sequence_27">
+    <Sequence DisplayName="Sequence Custom Flow" sap:VirtualizedContainerService.HintSize="479.0943396226415,1007.0943396226414" sap2010:WorkflowViewState.IdRef="Sequence_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -542,11 +542,24 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Seveneleven_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Seveneleven\Portal_Seveneleven_DownloadReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">[io_Config("PathDownloadChrome").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
-          <InArgument x:TypeArguments="x:Object" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[pathRawFile]</OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[pathScheduler]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathScheduler" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathResultFile" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Object" x:Key="in_PID">
+            <VisualBasicValue x:TypeArguments="x:Object" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathRawFile" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).ToString" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">
@@ -563,7 +576,7 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="441.05660377358487,50.71698113207547" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="Normal" QueueType="[io_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[String.Format(&quot;{0}-{1}&quot;,io_Config(&quot;Key&quot;).ToString, period.ToString(&quot;dd-MM-yyyy&quot;))]">
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="Normal" QueueType="[io_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[String.Format(&quot;{0}-{1}&quot;,io_Config(&quot;Key&quot;).ToString, period.ToString(&quot;dd-MM-yyyy&quot;))]">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="BPID">[io_Config("BPID").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Key">[io_Config("Key").ToString]</InArgument>
@@ -589,7 +602,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddQueueItem>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Log_MarkStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="441.05660377358487,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_Success.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Log_MarkStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479.0943396226415,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_Success.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[io_Config("pathLog").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_status">Success</InArgument>
