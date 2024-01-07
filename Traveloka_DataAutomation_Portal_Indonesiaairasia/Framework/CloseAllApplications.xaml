@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="726.3396226415094,1852.075471698113" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="726.3396226415094,1851.1698113207547" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,7 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="736.3018867924528,1786.8679245283017" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="736.3018867924528,1785.9622641509434" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -78,7 +78,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="674.7169811320754,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
-    <TryCatch DisplayName="Try Catch Close Application" sap:VirtualizedContainerService.HintSize="674.7169811320754,1365.7358490566037" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch Close Application" sap:VirtualizedContainerService.HintSize="674.7169811320754,1364.830188679245" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -86,7 +86,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="636.6792452830189,1145.6603773584905" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="636.6792452830189,1144.754716981132" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="logoutExist" />
           </Sequence.Variables>
@@ -97,14 +97,14 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[logoutExist]" sap:VirtualizedContainerService.HintSize="575.0943396226414,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="637dd8a4-c43f-460e-9780-6345dd44f9aa" InformativeScreenshot="20b89ac4430c31dfc98227c49bb0ba8c" Selector="&lt;html app='chrome.exe' title='Maya Business Merchant Manager' /&gt;&lt;webctrl class='dropdown-toggle' tag='BUTTON' /&gt;" TimeoutMS="3000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="637dd8a4-c43f-460e-9780-6345dd44f9aa" InformativeScreenshot="1919272d8d709e5e4cb5a19050bbba14" Selector="&lt;html app='chrome.exe' title='Book Cheap Flights, Hotels &amp;amp; Activities Online | AirAsia' /&gt;&lt;webctrl parentid='loginWidget' tag='BUTTON' /&gt;" TimeoutMS="3000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[logoutExist]" DisplayName="If Logout Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,889.3584905660376" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[logoutExist]" DisplayName="If Logout Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,888.4528301886792" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,619.4716981132075" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
@@ -112,7 +112,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="434.71698113207543,509.88679245283015" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="06900ae6c41736d9394b4cef3795eb04" Selector="&lt;html app='chrome.exe' title='Maya Business Merchant Manager' /&gt;">
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="434.71698113207543,509.88679245283015" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="d08c9911f1cc749f8be6e4b32dbfe10c" Selector="&lt;html app='chrome.exe' title='*AirAsia' /&gt;">
                   <ui:BrowserScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -136,7 +136,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="20b89ac4430c31dfc98227c49bb0ba8c" Selector="&lt;webctrl class='dropdown-toggle' tag='BUTTON' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="1919272d8d709e5e4cb5a19050bbba14" Selector="&lt;webctrl parentid='loginWidget' tag='BUTTON' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -158,7 +158,7 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="075f23e75ff9a300d49987ffdc1e3cf1" Selector="&lt;webctrl aaname='         Log Out ' parentid='main' tag='A' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="9d6c1258bb7e549bee70ed0d30d1fde7" Selector="&lt;webctrl aaname='Logout' parentid='login-popover' tag='BUTTON' /&gt;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -174,15 +174,6 @@
                 </ui:BrowserScope>
               </Sequence>
             </If.Then>
-            <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Else>
           </If>
         </Sequence>
       </TryCatch.Try>
