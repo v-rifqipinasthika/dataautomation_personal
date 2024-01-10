@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>712.754716981132,2836.528301886792</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1180.0754716981132,2836.528301886792</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcepaymaya_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -125,7 +125,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2385.509433962264" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2386.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtRaw" />
             </Sequence.Variables>
@@ -178,12 +178,12 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Assign DisplayName="Assign notFound" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign DisplayName="Assign notFound" sap:VirtualizedContainerService.HintSize="479.0943396226415,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[notFound]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[if(in_period&gt;=Now, True, False)]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean">[if(in_period&gt;Now, True, False)]</InArgument>
               </Assign.Value>
             </Assign>
             <If Condition="[notFound]" DisplayName="If Data Not Found" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_3">
