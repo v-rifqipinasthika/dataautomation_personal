@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,2290.4150943396226</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>752.6037735849056,2290.4150943396226</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Playground_Recaptcha_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -41,7 +41,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -68,6 +68,15 @@
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Playground_Recaptcha" sap:VirtualizedContainerService.HintSize="528.9056603773585,2225.2075471698113" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -204,8 +213,8 @@
                 <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">
                   <VisualBasicReference x:TypeArguments="x:String" ExpressionText="captchaResponse" />
                 </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_AssetPathCaptcha">
-                  <Literal x:TypeArguments="x:String">[Dev] RPA_Moon_PathCaptchaHandler</Literal>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptcha">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="PathCaptchaBreaker" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>

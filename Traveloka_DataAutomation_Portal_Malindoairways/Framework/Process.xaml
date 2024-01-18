@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1096.754716981132,2349.2830188679245</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1030.6415094339623,2309.433962264151</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -175,13 +175,13 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,1112.1509433962262" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.188679245283,1104" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" sap2010:Annotation.AnnotationText="Sheet id from asset in orchestrator for all BP&#xA;Sheet format &quot;Config_&quot; + BPKey" AuthScopesInvalid="False" DisplayName="Read Range User Config" sap:VirtualizedContainerService.HintSize="338.71698113207543,244.52830188679243" sap2010:WorkflowViewState.IdRef="ReadRange_3" IncludeHeaders="True" Result="[dtUserConfig]" SheetName="[String.Format(&quot;Config_{0}&quot;, in_BPKey)]" SpreadsheetId="[io_Config(&quot;SheetIdConfig&quot;).ToString]">
+            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" sap2010:Annotation.AnnotationText="Sheet id from asset in orchestrator for all BP&#xA;Sheet format &quot;Config_&quot; + BPKey" AuthScopesInvalid="False" DisplayName="Read Range User Config" sap:VirtualizedContainerService.HintSize="512.6037735849056,244.52830188679243" sap2010:WorkflowViewState.IdRef="ReadRange_3" IncludeHeaders="True" Result="[dtUserConfig]" SheetName="[String.Format(&quot;Config_{0}&quot;, in_BPKey)]" SpreadsheetId="[io_Config(&quot;SheetIdConfig&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -190,7 +190,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uga:ReadRange>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtUserConfig]" DisplayName="For each configuration row add to config" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtUserConfig]" DisplayName="For each configuration row add to config" sap:VirtualizedContainerService.HintSize="512.6037735849056,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -233,7 +233,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" sap2010:Annotation.AnnotationText="Login checker state&#xA;Sucess&#xA;Rertry&#xA;Failed -&gt; Throw business rule exception" AuthScopesInvalid="False" DisplayName="Read Range Login Checker" sap:VirtualizedContainerService.HintSize="338.71698113207543,271.6981132075471" sap2010:WorkflowViewState.IdRef="ReadRange_4" IncludeHeaders="True" Result="[dtLoginChecker]" SheetName="[String.Format(&quot;Login_Checker_{0}&quot;, io_Config(&quot;Product Type&quot;).ToString)]" SpreadsheetId="[io_Config(&quot;SheetIdConfig&quot;).ToString]">
+            <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" sap2010:Annotation.AnnotationText="Login checker state&#xA;Sucess&#xA;Rertry&#xA;Failed -&gt; Throw business rule exception" AuthScopesInvalid="False" DisplayName="Read Range Login Checker" sap:VirtualizedContainerService.HintSize="512.6037735849056,271.6981132075471" sap2010:WorkflowViewState.IdRef="ReadRange_4" IncludeHeaders="True" Result="[dtLoginChecker]" SheetName="[String.Format(&quot;Login_Checker_{0}&quot;, io_Config(&quot;Product Type&quot;).ToString)]" SpreadsheetId="[io_Config(&quot;SheetIdConfig&quot;).ToString]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -242,7 +242,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uga:ReadRange>
-            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" sap2010:Annotation.AnnotationText="Row login checker for current BP" DataTable="[dtLoginChecker]" DisplayName="Lookup Data Table for Current BP" sap:VirtualizedContainerService.HintSize="338.71698113207543,316.0754716981132" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="BPID" LookupValue="[io_Config(&quot;BPID&quot;).ToString]" RowIndex="[rowLoginChecker]">
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" sap2010:Annotation.AnnotationText="Row login checker for current BP" DataTable="[dtLoginChecker]" DisplayName="Lookup Data Table for Current BP" sap:VirtualizedContainerService.HintSize="512.6037735849056,316.0754716981132" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="BPID" LookupValue="[io_Config(&quot;BPID&quot;).ToString]" RowIndex="[rowLoginChecker]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -261,7 +261,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uga:GSuiteApplicationScope>
-    <Assign sap2010:Annotation.AnnotationText="Period from dispatcher already D-1.&#xD;&#xA;AddDays(1) for process other than daily" DisplayName="Assign Date" sap:VirtualizedContainerService.HintSize="441.05660377358487,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_12">
+    <Assign sap2010:Annotation.AnnotationText="Period from dispatcher already D-1.&#xA;AddDays(1) for process other than daily" DisplayName="Assign Date" sap:VirtualizedContainerService.HintSize="441.05660377358487,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_12">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[period]</OutArgument>
       </Assign.To>
@@ -276,33 +276,15 @@
     </Assign>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="441.05660377358487,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathMasterFolder&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BPKey" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathLog" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathScheduler" />
-        </OutArgument>
-        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
-          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="io_Config" />
-        </InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_productType">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Product Type&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">
-          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CBool(io_Config(&quot;Rerun&quot;))" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[io_Config("PathMasterFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">[in_BPKey]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">[pathLog]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">[pathScheduler]</OutArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[io_Config]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_productType">[io_Config("Product Type").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">[CBool(io_Config("Rerun"))]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <If sap2010:Annotation.AnnotationText="Data Exist in login checker" Condition="[rowLoginChecker &gt;= 0]" DisplayName="If Login Data Exist and Status Success or Retry" sap:VirtualizedContainerService.HintSize="441.05660377358487,81.50943396226414" sap2010:WorkflowViewState.IdRef="If_10">
@@ -402,7 +384,7 @@
         <OutArgument x:TypeArguments="x:String">[pathResultFile]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[String.Format("{0}\Traveloka_{1}_{2}.{3}", pathScheduler, io_Config("BPID").ToString, period.ToString("ddMMMyy"),"xlsx")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[String.Format("{0}\Traveloka_{1}_{2}.{3}", pathScheduler, io_Config("BPID").ToString, period.ToString("ddMMMyy"), io_Config("File Type").ToString)]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:Comment sap:VirtualizedContainerService.HintSize="441.05660377358487,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Put portal flow below here" />
@@ -415,36 +397,18 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Malindo_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Malindo\Portal_Malindo_Login.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Link&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_cred">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Credential&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_captchaRuleId">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Captcha_RuleId&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">[io_Config("Link").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_cred">[io_Config("Credential").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_captchaRuleId">[io_Config("Captcha_RuleId").ToString]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_captchaSiteKey">
             <Literal x:TypeArguments="x:String" Value="" />
           </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;BPID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPName">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Business Partner&quot;).ToString" />
-          </InArgument>
-          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_loginSuccess">
-            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="loginSuccess" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptchaBreaker">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathCaptchaHandler&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_capthaProcess">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;CaptchaProcess&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[io_Config("BPID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPName">[io_Config("Business Partner").ToString]</InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_loginSuccess">[loginSuccess]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_capthaProcess">[io_Config("CaptchaProcess").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptchaBreaker">[io_Config("PathCaptchaHandler").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Login_Checker_Write.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Login_Checker_Write.xaml">
@@ -460,7 +424,7 @@
       <ui:RetryScope DisplayName="Retry Scope Write Range Gsheet" sap:VirtualizedContainerService.HintSize="379.47169811320754,50.71698113207547" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
         <ui:RetryScope.ActivityBody>
           <ActivityAction>
-            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496.3018867924528,160.30188679245282" sap2010:WorkflowViewState.IdRef="Sequence_35">
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="447.3962264150943,160.30188679245282" sap2010:WorkflowViewState.IdRef="Sequence_35">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -537,30 +501,14 @@
       </If>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Malindo_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Malindo\Portal_Malindo_DownloadReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathDownloadChrome&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathResultFile" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:Object" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:Object" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
-            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathRawFile" />
-          </OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathScheduler" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;File Type&quot;).tostring" />
-          </InArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_reportPage">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;ReportPage&quot;).tostring" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">[io_Config("PathDownloadChrome").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
+          <InArgument x:TypeArguments="x:Object" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[pathRawFile]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[pathScheduler]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[io_Config("File Type").tostring]</InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_reportPage">[io_Config("ReportPage").tostring]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">

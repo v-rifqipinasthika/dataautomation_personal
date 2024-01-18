@@ -1,16 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_AssetPathCaptcha="[Dev] RPA_Moon_PathCaptchaHandler" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_site_key" Type="InArgument(x:String)" />
     <x:Property Name="in_captcha_rule_id" Type="InArgument(x:String)" />
     <x:Property Name="in_url_airlines" Type="InArgument(x:String)" />
     <x:Property Name="in_target_site" Type="InArgument(x:String)" />
     <x:Property Name="out_captcha_response" Type="OutArgument(x:String)" />
-    <x:Property Name="in_AssetPathCaptcha" Type="InArgument(x:String)" />
+    <x:Property Name="in_pathCaptcha" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Main.in_pathCaptcha>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_pathCaptcha>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,2239.698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>752.6037735849056,2249.66037735849</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -125,14 +128,12 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="If using image captcha breaker pass &quot;&quot; in_site_key. It will be getting &quot;captchaimage.png&quot; as parameter in the python code" DisplayName="Captcha_Breaker" sap:VirtualizedContainerService.HintSize="691.9245283018868,2174.490566037736" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="If using image captcha breaker pass &quot;&quot; in_site_key. It will be getting &quot;captchaimage.png&quot; as parameter in the python code" DisplayName="Captcha_Breaker" sap:VirtualizedContainerService.HintSize="691.9245283018868,2184.452830188679" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="p:PythonObject" Name="LoadOut" />
       <Variable x:TypeArguments="p:PythonObject" Name="InvokeOut" />
       <Variable x:TypeArguments="x:Boolean" Name="CaptchaResponseFileExists" />
-      <Variable x:TypeArguments="x:String" Name="PathCaptchaBreaker" />
       <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="CaptchaBreaker" />
-      <Variable x:TypeArguments="x:Object" Name="assetPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,51 +142,22 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Captcha_Breaker_Image" sap:VirtualizedContainerService.HintSize="630.3396226415094,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Run Captcha_Breaker&quot;]" />
-    <Sequence DisplayName="Sequence GetAsset PathCaptcha" sap:VirtualizedContainerService.HintSize="630.3396226415094,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_14">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotAsset sap2010:Annotation.AnnotationText="[Dev] RPA_Moon_PathCaptchaHandler&#xA;RPA_Moon_PathCaptchaHandler" AssetName="[in_AssetPathCaptcha]" CacheStrategy="None" DisplayName="Get Asset Path Captcha Handler" sap:VirtualizedContainerService.HintSize="338.71698113207543,202.86792452830187" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
-        <ui:GetRobotAsset.TimeoutMS>
-          <InArgument x:TypeArguments="x:Int32" />
-        </ui:GetRobotAsset.TimeoutMS>
-        <ui:GetRobotAsset.Value>
-          <OutArgument x:TypeArguments="x:Object">[assetPath]</OutArgument>
-        </ui:GetRobotAsset.Value>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:GetRobotAsset>
-      <Assign DisplayName="Assign Path Captcha Breaker" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PathCaptchaBreaker]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[assetPath.ToString]</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <ui:RetryScope DisplayName="Retry Scope Captcha Breaker" sap:VirtualizedContainerService.HintSize="630.3396226415094,1785.0566037735848" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:05">
+    <ui:RetryScope DisplayName="Retry Scope Captcha Breaker" sap:VirtualizedContainerService.HintSize="630.3396226415094,1914.566037735849" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:05">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="587.7735849056603,1612.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="587.7735849056603,1742.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="526.188679245283,1503.3962264150941" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Python39" TargetPlatform="x64" Version="Python 3.9" WorkingFolder="[PathCaptchaBreaker]">
+            <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="526.188679245283,1632.9056603773583" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Python39" TargetPlatform="x64" Version="Python 3.9" WorkingFolder="[in_pathCaptcha]">
               <p:PythonScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="491.77358490566036,1466.264150943396" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="491.77358490566036,1595.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="JSONFile" />
                       <Variable x:TypeArguments="njl:JToken" Name="JCaptchaResponse" />
@@ -196,7 +168,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:FileExistsX DisplayName="File Exists Previous Response" Exists="[CaptchaResponseFileExists]" sap:VirtualizedContainerService.HintSize="430.18867924528297,130.41509433962264" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;outputGetCaptcha.json&quot;)]" />
+                    <ui:FileExistsX DisplayName="File Exists Previous Response" Exists="[CaptchaResponseFileExists]" sap:VirtualizedContainerService.HintSize="430.18867924528297,130.41509433962264" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[String.Format(&quot;{0}/{1}&quot;, in_pathCaptcha, &quot;outputGetCaptcha.json&quot;)]" />
                     <If Condition="[CaptchaResponseFileExists]" DisplayName="If Previous Response Exist -&gt; Delete" sap:VirtualizedContainerService.HintSize="430.18867924528297,50.71698113207547" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -211,7 +183,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:DeleteFileX DisplayName="Delete File Previous Response" sap:VirtualizedContainerService.HintSize="338.71698113207543,78.79245283018868" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;outputGetCaptcha.json&quot;)]" />
+                          <ui:DeleteFileX DisplayName="Delete File Previous Response" sap:VirtualizedContainerService.HintSize="338.71698113207543,78.79245283018868" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[String.Format(&quot;{0}/{1}&quot;, in_pathCaptcha, &quot;outputGetCaptcha.json&quot;)]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -224,7 +196,8 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <p:LoadScript Code="{x:Null}" sap2010:Annotation.AnnotationText="Call Captcha Breaker" DisplayName="Load Python Script for Captcha Breaker" sap:VirtualizedContainerService.HintSize="430.18867924528297,90.56603773584905" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[LoadOut]" ScriptFile="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;captcha-breaker.py&quot;)]">
+                    <ui:LogMessage DisplayName="Log Message Path Captcha" sap:VirtualizedContainerService.HintSize="430.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[String.Format(&quot;Path captcha : {0}/{1}&quot;, in_pathCaptcha, &quot;captcha-breaker.py&quot;)]" />
+                    <p:LoadScript Code="{x:Null}" sap2010:Annotation.AnnotationText="Call Captcha Breaker" DisplayName="Load Python Script for Captcha Breaker" sap:VirtualizedContainerService.HintSize="430.18867924528297,90.56603773584905" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[LoadOut]" ScriptFile="[String.Format(&quot;{0}/{1}&quot;, in_pathCaptcha, &quot;captcha-breaker.py&quot;)]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -246,7 +219,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </p:InvokeMethod>
-                    <ui:ReadTextFile File="{x:Null}" Content="[JSONFile]" DisplayName="Read Text File Reponse" FileName="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;outputGetCaptcha.json&quot;)]" sap:VirtualizedContainerService.HintSize="430.18867924528297,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                    <ui:ReadTextFile File="{x:Null}" Content="[JSONFile]" DisplayName="Read Text File Reponse" FileName="[String.Format(&quot;{0}/{1}&quot;, in_pathCaptcha, &quot;outputGetCaptcha.json&quot;)]" sap:VirtualizedContainerService.HintSize="430.18867924528297,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
                     <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON Captcha Response" sap:VirtualizedContainerService.HintSize="430.18867924528297,59.77358490566037" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[ObjJSON]" JsonString="[JSONFile]" />
                     <ui:LogMessage DisplayName="Log Message ObjJson" sap:VirtualizedContainerService.HintSize="430.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[ObjJSON]" />
                     <ui:MultipleAssign DisplayName="Multiple Assign Captcha Response" sap:VirtualizedContainerService.HintSize="430.18867924528297,131.32075471698113" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">

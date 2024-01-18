@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Malindo_Login" this:Portal_Malindo_Login.in_portalLink="https://b2b.malindoair.com/MalindoAirAgentsPortal/Default.aspx" this:Portal_Malindo_Login.in_cred="RPA107_Malindo ID" this:Portal_Malindo_Login.in_PID="RPA107" this:Portal_Malindo_Login.in_captchaRuleId="image_captcha_rpa" this:Portal_Malindo_Login.in_BPName="Malindoid" this:Portal_Malindo_Login.in_pathCaptchaBreaker="C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\Template\Captcha_Handler" this:Portal_Malindo_Login.in_capthaProcess="Traveloka_CaptchaHandler_Dev" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Malindo_Login" this:Portal_Malindo_Login.in_portalLink="https://b2b.malindoair.com/MalindoAirAgentsPortal/Default.aspx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_portalLink" Type="InArgument(x:String)" />
     <x:Property Name="in_cred" Type="InArgument(x:String)" />
@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1096.754716981132,4026.5660377358486</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>871.2452830188679,4026.5660377358486</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Malindo_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -99,11 +99,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Portal_Malindo_Login" sap:VirtualizedContainerService.HintSize="881.2075471698113,3961.3584905660373" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="isCaptchaInvalid">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isCaptchaInvalid" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -258,24 +254,16 @@
                       </ui:TypeSecureText.Target>
                     </ui:TypeSecureText>
                     <ui:LogMessage DisplayName="Log Message Captcha_Breaker" sap:VirtualizedContainerService.HintSize="619.4716981132075,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Captcha_Breaker&quot;)]" />
-                    <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Image : &quot;image_captcha_rpa&quot;&#xD;&#xA;Recaptcha : &quot;recaptchav2_rpa&quot;" DisplayName="Invoke Process Captcha Breaker" sap:VirtualizedContainerService.HintSize="619.4716981132075,201.96226415094338" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="[in_capthaProcess]">
+                    <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Image : &quot;image_captcha_rpa&quot;&#xA;Recaptcha : &quot;recaptchav2_rpa&quot;" DisplayName="Invoke Process Captcha Breaker" sap:VirtualizedContainerService.HintSize="619.4716981132075,201.96226415094338" sap2010:WorkflowViewState.IdRef="InvokeProcess_2" ProcessName="[in_capthaProcess]">
                       <ui:InvokeProcess.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_site_key">
                           <Literal x:TypeArguments="x:String" Value="" />
                         </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_captchaRuleId" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_portalLink" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_target_site">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BPName" />
-                        </InArgument>
-                        <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">
-                          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="captchaResponse" />
-                        </OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_AssetPathCaptcha" />
+                        <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">[in_captchaRuleId]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">[in_portalLink]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_target_site">[in_BPName]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">[captchaResponse]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptcha">[in_pathCaptchaBreaker]</InArgument>
                       </ui:InvokeProcess.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -337,7 +325,7 @@
             </ui:RetryScope>
             <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="723.622641509434,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="252982eab6182f95ce81f537251b51d3" Selector="&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='10' tag='A' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="252982eab6182f95ce81f537251b51d3" Selector="&lt;webctrl tableRow='*' tag='TABLE' /&gt;&lt;webctrl aaname='*Log Out' innertext='*Log Out' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
