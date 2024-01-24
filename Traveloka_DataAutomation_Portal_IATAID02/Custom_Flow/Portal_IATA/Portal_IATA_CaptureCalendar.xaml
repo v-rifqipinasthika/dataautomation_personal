@@ -1,0 +1,222 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_CaptureCalendar" this:Portal_IATA_CaptureCalendar.in_periodTo="[New DateTime(2024,3,15)]" this:Portal_IATA_CaptureCalendar.in_pathFolder="[Directory.GetCurrentDirectory]" this:Portal_IATA_CaptureCalendar.in_period="[New DateTime(2024,3,15)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_periodTo" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
+    <x:Property Name="out_pathCalendar" Type="OutArgument(x:String)" />
+    <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>506.2641509433962,1741.5849056603772</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Portal_IATA_CaptureCalendar_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Portal_IATA_CaptureCalendar" sap:VirtualizedContainerService.HintSize="516.2264150943396,1676.377358490566" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCalendar" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Portal_IATA_CaptureCalendar" sap:VirtualizedContainerService.HintSize="454.64150943396226,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_CaptureCalendar&quot;]" />
+    <Assign DisplayName="Assign Path Calendar" sap:VirtualizedContainerService.HintSize="454.64150943396226,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_pathCalendar]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(in_pathFolder, String.Format("IATA Calendar {0}.png", in_period.ToString("dd MMM yyyy")))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe IATA'" sap:VirtualizedContainerService.HintSize="454.64150943396226,1336.7547169811319" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a3875997b4398d3c1c484db2ed230f0a" Selector="&lt;html app='chrome.exe' title='*IATA*' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="420.2264150943396,1190.0377358490566" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="page" />
+              <Variable x:TypeArguments="ui:Image" Name="img" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="3000" DisplayName="Select Item 'SELECT  billingPeriodFi...'" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[String.Format(&quot;{0} Billing Period&quot;, in_periodTo.ToString(&quot;yyyy&quot;))]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="16">
+                  <x:String>January 2024 Billing Period</x:String>
+                  <x:String>February 2024 Billing Period</x:String>
+                  <x:String>March 2024 Billing Period</x:String>
+                  <x:String>April 2024 Billing Period</x:String>
+                  <x:String>May 2024 Billing Period</x:String>
+                  <x:String>June 2024 Billing Period</x:String>
+                  <x:String>July 2024 Billing Period</x:String>
+                  <x:String>August 2024 Billing Period</x:String>
+                  <x:String>September 2024 Billing Period</x:String>
+                  <x:String>October 2024 Billing Period</x:String>
+                  <x:String>November 2024 Billing Period</x:String>
+                  <x:String>December 2024 Billing Period</x:String>
+                  <x:String>2023 Billing Period</x:String>
+                  <x:String>2024 Billing Period</x:String>
+                  <x:String>2025 Billing Period</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="15039e33-c290-4956-93d2-80741bf568e5" InformativeScreenshot="b97304ab05748196b515f19a28c3c7a5" Selector="&lt;webctrl aaname='Billing Period' class='form-control' tag='SELECT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[dtCalendar]" DisplayName="Extract Structured Data 'TABLE  DataTables_Table...'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Period Code' attr='text' /&gt;&lt;column name='Billing From' attr='text' /&gt;&lt;column name='Billing To' attr='text' /&gt;&lt;column name='Billing Availability' attr='text' /&gt;&lt;column name='Remittance Frequency' attr='text' /&gt;&lt;column name='Operation Currency' attr='text' /&gt;&lt;column name='Remittance Day' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname='Next' tag='A' /&gt;" SimulateClick="True">
+              <ui:ExtractData.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18bc1781-1e18-4c32-ad76-8fbd2efa4c43" InformativeScreenshot="3142d73a205ce57667d602db6f8f42d7" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:ExtractData.Target>
+            </ui:ExtractData>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim index As Integer = 0&#xD;&#xA;Dim page As Double = 0&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In dtCalendar.Rows&#xD;&#xA;&#x9;index = index + 1&#xD;&#xA;&#x9;If row(&quot;Billing To&quot;).ToString.Equals(periodSearch)&#xD;&#xA;&#x9;&#x9;Console.WriteLine(row(&quot;Billing To&quot;).ToString)&#xD;&#xA;&#x9;&#x9;page = Math.Ceiling(index/10)&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;Period Found in index &quot; + index.ToString + &quot; and page &quot; + CInt(page).ToString)&#xD;&#xA;&#x9;End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;out_page = CInt(page).ToString" DisplayName="Invoke Code Search Page" sap:VirtualizedContainerService.HintSize="358.64150943396226,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="dtCalendar">
+                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtCalendar" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="periodSearch">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_periodTo.ToString(&quot;d MMM yyyy&quot;)" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_page">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="page" />
+                </OutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  #' Report Page" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9b318d0-b148-409d-9e92-d908f760ed64" InformativeScreenshot="5b548377e8beb39647001c79c7963ec0" Selector="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='A' parentclass='paginate_button*' /&gt;&quot;, page)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'HTML ' Calendar" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[img]">
+              <ui:TakeScreenshot.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a1ba8269-4916-4468-96c4-d301bb3609af" InformativeScreenshot="c1168097f2b0010e0c1979aca8cf28a1" Selector="&lt;webctrl tag='HTML' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TakeScreenshot.Target>
+            </ui:TakeScreenshot>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="358.64150943396226,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[out_pathCalendar]" />
+            <ui:SaveImage DisplayName="Save Image" FileName="[out_pathCalendar]" sap:VirtualizedContainerService.HintSize="358.64150943396226,131.32075471698113" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[img]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+  </Sequence>
+</Activity>
