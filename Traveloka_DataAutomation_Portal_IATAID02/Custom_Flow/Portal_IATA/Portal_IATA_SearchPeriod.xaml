@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,2963.320754716981</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,2923.4716981132074</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_CaptureCalendar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -268,10 +268,18 @@
                           <ui:LogMessage DisplayName="Log Message Current Period" sap:VirtualizedContainerService.HintSize="430.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[String.Format(&quot;Billing From : {1}{0}Billing To : {2}{0}Billing Availability : {3}{0}Remittance Day : {4}{0}&quot;, Environment.NewLine, out_periodStart, out_periodEnd, out_periodAvailability, out_periodRemittance)]" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_CaptureCalendar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="430.18867924528297,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_CaptureCalendar.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodTo">[out_periodEnd]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">[in_pathFolder]</InArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_pathCalendar">[out_pathCalendar]</OutArgument>
-                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[in_period]</InArgument>
+                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodTo">
+                                <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="out_periodEnd" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_pathFolder">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_pathCalendar">
+                                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathCalendar" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+                                <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_period" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:Break DisplayName="Break Period Found" sap:VirtualizedContainerService.HintSize="430.18867924528297,25.358490566037734" sap2010:WorkflowViewState.IdRef="Break_2" />

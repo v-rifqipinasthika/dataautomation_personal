@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Mail_RawFile" this:Mail_RawFile.in_Period="[Now]" this:Mail_RawFile.in_ProcessName="ABC" this:Mail_RawFile.in_CredentialEmail="RPA_Moon_Cred_Gmail" this:Mail_RawFile.in_MailTo="rifqionepin@gmail.com" this:Mail_RawFile.in_PID="RPA000" this:Mail_RawFile.in_senderName="RPA" this:Mail_RawFile.in_pathCalendar="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Calendar 02 Jan 2024.png" this:Mail_RawFile.in_pathStatement="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Customer Statement 23 Jan 2024.png" this:Mail_RawFile.in_pathAgentBilling="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\Billing Agent 12 Jan 2024.png" this:Mail_RawFile.in_listReport="[Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory, &quot;Data&quot;, &quot;IATA&quot;), &quot;*.zip&quot;).ToList]" this:Mail_RawFile.in_periodRemittance="[New DateTime(2024,01,12)]" this:Mail_RawFile.in_reportBills="123" this:Mail_RawFile.in_periodStart="[New DateTime(2024,01,01)]" this:Mail_RawFile.in_periodEnd="[New DateTime(2024,01,08)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Mail_RawFile" this:Mail_RawFile.in_Period="[Now]" this:Mail_RawFile.in_ProcessName="ABC" this:Mail_RawFile.in_CredentialEmail="RPA_Moon_Cred_Gmail" this:Mail_RawFile.in_MailTo="rifqionepin@gmail.com" this:Mail_RawFile.in_PID="RPA000" this:Mail_RawFile.in_senderName="RPA Test" this:Mail_RawFile.in_pathCalendar="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Calendar 02 Jan 2024.png" this:Mail_RawFile.in_pathStatement="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Customer Statement 23 Jan 2024.png" this:Mail_RawFile.in_pathAgentBilling="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\Billing Agent 12 Jan 2024.png" this:Mail_RawFile.in_periodRemittance="[New DateTime(2024,01,12)]" this:Mail_RawFile.in_reportBills="123" this:Mail_RawFile.in_periodStart="[New DateTime(2024,01,01)]" this:Mail_RawFile.in_periodEnd="[New DateTime(2024,01,08)]" this:Mail_RawFile.in_pathFolder="[Path.Combine(Directory.GetCurrentDirectory, &quot;Data&quot;, &quot;IATA&quot;)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Period" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_strEmailTemplate" Type="InArgument(x:String)" />
@@ -12,11 +12,11 @@
     <x:Property Name="in_pathCalendar" Type="InArgument(x:String)" />
     <x:Property Name="in_pathStatement" Type="InArgument(x:String)" />
     <x:Property Name="in_pathAgentBilling" Type="InArgument(x:String)" />
-    <x:Property Name="in_listReport" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="in_periodRemittance" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_reportBills" Type="InArgument(x:String)" />
     <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
   </x:Members>
   <this:Mail_RawFile.in_strEmailTemplate>
     <InArgument x:TypeArguments="x:String" />
@@ -27,7 +27,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1372.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>594.1132075471697,1585.811320754717</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Mail_RawFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -130,12 +130,13 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Mail_RawFile" sap:VirtualizedContainerService.HintSize="604.0754716981131,1307.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Mail_RawFile" sap:VirtualizedContainerService.HintSize="604.0754716981131,1520.6037735849056" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="htmlBody" />
       <Variable x:TypeArguments="x:String" Name="usrname" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
       <Variable x:TypeArguments="x:String" Name="strBody" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="listReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,6 +144,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Mail_RawFile" sap:VirtualizedContainerService.HintSize="542.4905660377358,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Mail_RawFile&quot;)]" />
+    <Assign sap:VirtualizedContainerService.HintSize="542.4905660377358,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">[listReport]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[Directory.GetFiles(in_pathFolder, "*.zip").ToList]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="542.4905660377358,50.71698113207547" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400.3018867924528,188.37735849056602" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -161,13 +170,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:GetRobotCredential AssetName="[in_CredentialEmail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="542.4905660377358,50.71698113207547" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
+    <ui:GetRobotCredential AssetName="[in_CredentialEmail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="542.4905660377358,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
       <ui:GetRobotCredential.TimeoutMS>
         <InArgument x:TypeArguments="x:Int32" />
       </ui:GetRobotCredential.TimeoutMS>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -191,47 +200,22 @@
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.3396226415094,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;Dim avHtml As AlternateView = AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, MediaTypeNames.Text.Html)&#xD;&#xA;&#x9;Dim inline1 As LinkedResource = New LinkedResource(imageFilePath1, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline2 As LinkedResource = New LinkedResource(imageFilePath2, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline3 As LinkedResource = New LinkedResource(imageFilePath3, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;inline1.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline2.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline3.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline1)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline2)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline3)&#xD;&#xA;&#x9;Dim mail As New MailMessage()&#xD;&#xA;&#x9;mail.AlternateViews.Add(avHtml)&#xD;&#xA;&#x9;Dim att1 As Attachment = New Attachment(imageFilePath1)&#xD;&#xA;&#x9;Dim att2 As Attachment = New Attachment(imageFilePath2)&#xD;&#xA;&#x9;Dim att3 As Attachment = New Attachment(imageFilePath3)&#xD;&#xA;&#x9;att1.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att2.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att3.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att1.ContentId = &quot;TestImage1&quot;&#xD;&#xA;&#x9;att2.ContentId = &quot;TestImage2&quot;&#xD;&#xA;&#x9;att3.ContentId = &quot;TestImage3&quot;&#xD;&#xA;&#x9;mail.From = New MailAddress(usrname)&#xD;&#xA;    mail.To.Add(strEmailTo)&#xD;&#xA;&#x9;If Not String.IsNullOrEmpty(strEmailCC)&#xD;&#xA;&#x9;&#x9;mail.CC.Add(strEmailCC)&#xD;&#xA;&#x9;End If&#xD;&#xA;    mail.Subject = &quot;Billing IATA ID &quot; + Date.Now.ToString(&quot;dd MMM yyyy&quot;)&#xD;&#xA;    mail.IsBodyHtml = True&#xD;&#xA;&#x9;mail.Attachments.Add(att1)&#xD;&#xA;&#x9;mail.Attachments.Add(att2)&#xD;&#xA;&#x9;mail.Attachments.Add(att3)&#xD;&#xA;&#x9;For Each item As String In listAttachment&#xD;&#xA;&#x9;&#x9;mail.Attachments.Add(New Attachment(item, MediaTypeNames.Application.Zip))&#xD;&#xA;&#x9;Next&#xD;&#xA;    Dim smtp As New SmtpClient(&quot;smtp.gmail.com&quot;, 587)&#xD;&#xA;    smtp.UseDefaultCredentials = False&#xD;&#xA;    smtp.EnableSsl = True&#xD;&#xA;    smtp.Credentials = New System.Net.NetworkCredential(usrname, pwd)&#xD;&#xA;    smtp.Send(mail)&#xD;&#xA;Catch e As exception&#xD;&#xA;&#x9;console.WriteLine(e)&#xD;&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;Dim avHtml As AlternateView = AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, MediaTypeNames.Text.Html)&#xD;&#xA;&#x9;Dim inline1 As LinkedResource = New LinkedResource(imageFilePath1, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline2 As LinkedResource = New LinkedResource(imageFilePath2, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline3 As LinkedResource = New LinkedResource(imageFilePath3, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;inline1.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline2.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline3.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline1)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline2)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline3)&#xD;&#xA;&#x9;Dim mail As New MailMessage()&#xD;&#xA;&#x9;mail.AlternateViews.Add(avHtml)&#xD;&#xA;&#x9;Dim att1 As Attachment = New Attachment(imageFilePath1)&#xD;&#xA;&#x9;Dim att2 As Attachment = New Attachment(imageFilePath2)&#xD;&#xA;&#x9;Dim att3 As Attachment = New Attachment(imageFilePath3)&#xD;&#xA;&#x9;att1.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att2.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att3.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att1.ContentId = &quot;TestImage1&quot;&#xD;&#xA;&#x9;att2.ContentId = &quot;TestImage2&quot;&#xD;&#xA;&#x9;att3.ContentId = &quot;TestImage3&quot;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;mail.From = New MailAddress(usrname, senderName)&#xD;&#xA;    mail.To.Add(strEmailTo)&#xD;&#xA;&#x9;If Not String.IsNullOrEmpty(strEmailCC)&#xD;&#xA;&#x9;&#x9;mail.CC.Add(strEmailCC)&#xD;&#xA;&#x9;End If&#xD;&#xA;    mail.Subject = &quot;Billing IATA ID &quot; + Date.Now.ToString(&quot;dd MMM yyyy&quot;)&#xD;&#xA;    mail.IsBodyHtml = True&#xD;&#xA;&#x9;mail.Attachments.Add(att1)&#xD;&#xA;&#x9;mail.Attachments.Add(att2)&#xD;&#xA;&#x9;mail.Attachments.Add(att3)&#xD;&#xA;&#x9;For Each item As String In listAttachment&#xD;&#xA;&#x9;&#x9;mail.Attachments.Add(New Attachment(item, MediaTypeNames.Application.Zip))&#xD;&#xA;&#x9;Next&#xD;&#xA;    Dim smtp As New SmtpClient(&quot;smtp.gmail.com&quot;, 587)&#xD;&#xA;    smtp.UseDefaultCredentials = False&#xD;&#xA;    smtp.EnableSsl = True&#xD;&#xA;    smtp.Credentials = New System.Net.NetworkCredential(usrname, pwd)&#xD;&#xA;    smtp.Send(mail)&#xD;&#xA;Catch e As exception&#xD;&#xA;&#x9;console.WriteLine(e)&#xD;&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                   <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath1">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathCalendar" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath2">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathStatement" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath3">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathAgentBilling" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listAttachment">
-                      <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="in_listReport" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="htmlBody">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strBody" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="usrname">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="usrname" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="ss:SecureString" x:Key="pwd">
-                      <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strEmailTo">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MailTo" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strEmailCC">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MailCC" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateFrom">
-                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodStart" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateTo">
-                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodEnd" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateRemittance">
-                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodRemittance" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strBills">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_reportBills" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath1">[in_pathCalendar]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath2">[in_pathStatement]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath3">[in_pathAgentBilling]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listAttachment">[listReport]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="htmlBody">[strBody]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="usrname">[usrname]</InArgument>
+                    <InArgument x:TypeArguments="ss:SecureString" x:Key="pwd">[pwd]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailTo">[in_MailTo]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailCC">[in_MailCC]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateFrom">[in_periodStart]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateTo">[in_periodEnd]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateRemittance">[in_periodRemittance]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strBills">[in_reportBills]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="senderName">[in_senderName]</InArgument>
                   </ui:InvokeCode.Arguments>
                 </ui:InvokeCode>
               </TryCatch.Try>
@@ -292,6 +276,8 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
