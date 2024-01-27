@@ -1,16 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_Export" this:Portal_IATA_Export.in_pathFolder="[Path.Combine(Directory.GetCurrentDirectory, &quot;Data&quot;, &quot;IATA&quot;)]" this:Portal_IATA_Export.in_period="[New DateTime(2024, 01, 12)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_Extract" this:Portal_IATA_Extract.in_pathFolder="[Path.Combine(Directory.GetCurrentDirectory, &quot;Data&quot;, &quot;IATA&quot;)]" this:Portal_IATA_Extract.in_period="[New DateTime(2024, 01, 12)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
-    <x:Property Name="out_pathBillingSum" Type="OutArgument(x:String)" />
+    <x:Property Name="out_pathImgBillingSum" Type="OutArgument(x:String)" />
+    <x:Property Name="out_reportSum" Type="OutArgument(x:String)" />
+    <x:Property Name="out_reportDetails" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,935.5471698113207</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>Portal_IATA_Export_1</sap2010:WorkflowViewState.IdRef>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,1035.1698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Portal_IATA_Extract_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="60">
+    <scg:List x:TypeArguments="x:String" Capacity="33">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -47,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="92">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -97,17 +99,17 @@
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_IATA_Export" sap:VirtualizedContainerService.HintSize="491.77358490566036,870.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_IATA_Extract" sap:VirtualizedContainerService.HintSize="491.77358490566036,969.9622641509434" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathAgentBilling" />
-      <Variable x:TypeArguments="x:String" Name="pathAgentBillingSum" />
+      <Variable x:TypeArguments="x:String" Name="pathExtract" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_IATA_Export" sap:VirtualizedContainerService.HintSize="430.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_Export&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Portal_IATA_Extract" sap:VirtualizedContainerService.HintSize="430.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_Extract&quot;]" />
     <ui:MultipleAssign DisplayName="Multiple Assign Path Agent Billing" sap:VirtualizedContainerService.HintSize="430.18867924528297,162.1132075471698" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -121,7 +123,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[pathAgentBillingSum]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[pathExtract]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[Path.Combine(in_pathFolder, "AgentBilling")]</InArgument>
@@ -129,7 +131,7 @@
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[out_pathBillingSum]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[out_pathImgBillingSum]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[Path.Combine(in_pathFolder, String.Format("Billing Agent {0}.png", in_period.ToString("dd MMM yyyy")))]</InArgument>
@@ -138,7 +140,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uascw:ExtractFiles Content="{x:Null}" DestinationFolderInfo="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[pathAgentBIllingSum]" DisplayName="Extract/Unzip Files Agent_Billing" ExtractToADedicatedFolder="False" FileToExtract="[pathAgentBilling]" sap:VirtualizedContainerService.HintSize="430.18867924528297,201.0566037735849" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False">
+    <uascw:ExtractFiles Content="{x:Null}" DestinationFolderInfo="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[pathExtract]" DisplayName="Extract/Unzip Files Agent_Billing" ExtractToADedicatedFolder="False" FileToExtract="[pathAgentBilling]" sap:VirtualizedContainerService.HintSize="430.18867924528297,201.0566037735849" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,14 +148,22 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uascw:ExtractFiles>
-    <Assign DisplayName="Assign Agent Billing" sap:VirtualizedContainerService.HintSize="430.18867924528297,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign Report Summary" sap:VirtualizedContainerService.HintSize="430.18867924528297,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[pathAgentBillingSum]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[out_reportSum]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Directory.GetFiles(pathAgentBillingSum, "*AGBILLSUMNG*")(0)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Directory.GetFiles(pathExtract, "*AGBILLSUMNG*")(0)]</InArgument>
       </Assign.Value>
     </Assign>
-    <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[pathAgentBillingSum]" sap:VirtualizedContainerService.HintSize="430.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_1" ImageDpi="150" OutputFileName="[out_pathBillingSum]" PageNumber="1" />
+    <Assign DisplayName="Assign Report Details" sap:VirtualizedContainerService.HintSize="430.18867924528297,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_reportDetails]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Directory.GetFiles(pathExtract, "*AGBILLDET*")(0)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <upap:ExportPDFPageAsImage DisplayName="Export PDF Page As Image" FileName="[out_reportSum]" sap:VirtualizedContainerService.HintSize="430.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_1" ImageDpi="150" OutputFileName="[out_pathImgBillingSum]" PageNumber="1" />
   </Sequence>
 </Activity>
