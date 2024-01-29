@@ -27,7 +27,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>594.1132075471697,1585.811320754717</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1585.811320754717</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Mail_RawFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -200,22 +200,53 @@
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.3396226415094,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;Dim avHtml As AlternateView = AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, MediaTypeNames.Text.Html)&#xD;&#xA;&#x9;Dim inline1 As LinkedResource = New LinkedResource(imageFilePath1, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline2 As LinkedResource = New LinkedResource(imageFilePath2, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline3 As LinkedResource = New LinkedResource(imageFilePath3, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;inline1.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline2.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline3.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline1)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline2)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline3)&#xD;&#xA;&#x9;Dim mail As New MailMessage()&#xD;&#xA;&#x9;mail.AlternateViews.Add(avHtml)&#xD;&#xA;&#x9;Dim att1 As Attachment = New Attachment(imageFilePath1)&#xD;&#xA;&#x9;Dim att2 As Attachment = New Attachment(imageFilePath2)&#xD;&#xA;&#x9;Dim att3 As Attachment = New Attachment(imageFilePath3)&#xD;&#xA;&#x9;att1.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att2.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att3.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att1.ContentId = &quot;TestImage1&quot;&#xD;&#xA;&#x9;att2.ContentId = &quot;TestImage2&quot;&#xD;&#xA;&#x9;att3.ContentId = &quot;TestImage3&quot;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;mail.From = New MailAddress(usrname, senderName)&#xD;&#xA;    mail.To.Add(strEmailTo)&#xD;&#xA;&#x9;If Not String.IsNullOrEmpty(strEmailCC)&#xD;&#xA;&#x9;&#x9;mail.CC.Add(strEmailCC)&#xD;&#xA;&#x9;End If&#xD;&#xA;    mail.Subject = &quot;Billing IATA ID &quot; + Date.Now.ToString(&quot;dd MMM yyyy&quot;)&#xD;&#xA;    mail.IsBodyHtml = True&#xD;&#xA;&#x9;mail.Attachments.Add(att1)&#xD;&#xA;&#x9;mail.Attachments.Add(att2)&#xD;&#xA;&#x9;mail.Attachments.Add(att3)&#xD;&#xA;&#x9;For Each item As String In listAttachment&#xD;&#xA;&#x9;&#x9;mail.Attachments.Add(New Attachment(item, MediaTypeNames.Application.Zip))&#xD;&#xA;&#x9;Next&#xD;&#xA;    Dim smtp As New SmtpClient(&quot;smtp.gmail.com&quot;, 587)&#xD;&#xA;    smtp.UseDefaultCredentials = False&#xD;&#xA;    smtp.EnableSsl = True&#xD;&#xA;    smtp.Credentials = New System.Net.NetworkCredential(usrname, pwd)&#xD;&#xA;    smtp.Send(mail)&#xD;&#xA;Catch e As exception&#xD;&#xA;&#x9;console.WriteLine(e)&#xD;&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;Dim avHtml As AlternateView = AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, MediaTypeNames.Text.Html)&#xD;&#xA;&#x9;Dim inline1 As LinkedResource = New LinkedResource(imageFilePath1, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline2 As LinkedResource = New LinkedResource(imageFilePath2, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;Dim inline3 As LinkedResource = New LinkedResource(imageFilePath3, MediaTypeNames.Image.Jpeg)&#xD;&#xA;&#x9;inline1.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline2.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;inline3.ContentId = Guid.NewGuid().ToString()&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline1)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline2)&#xD;&#xA;&#x9;avHtml.LinkedResources.Add(inline3)&#xD;&#xA;&#x9;Dim mail As New MailMessage()&#xD;&#xA;&#x9;mail.AlternateViews.Add(avHtml)&#xD;&#xA;&#x9;Dim att1 As Attachment = New Attachment(imageFilePath1)&#xD;&#xA;&#x9;Dim att2 As Attachment = New Attachment(imageFilePath2)&#xD;&#xA;&#x9;Dim att3 As Attachment = New Attachment(imageFilePath3)&#xD;&#xA;&#x9;att1.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att2.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att3.ContentDisposition.Inline = True&#xD;&#xA;&#x9;att1.ContentId = &quot;TestImage1&quot;&#xD;&#xA;&#x9;att2.ContentId = &quot;TestImage2&quot;&#xD;&#xA;&#x9;att3.ContentId = &quot;TestImage3&quot;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;mail.From = New MailAddress(usrname, senderName)&#xD;&#xA;    mail.To.Add(strEmailTo)&#xD;&#xA;&#x9;If Not String.IsNullOrEmpty(strEmailCC)&#xD;&#xA;&#x9;&#x9;mail.CC.Add(strEmailCC)&#xD;&#xA;&#x9;End If&#xD;&#xA;    mail.Subject = subject&#xD;&#xA;    mail.IsBodyHtml = True&#xD;&#xA;&#x9;mail.Attachments.Add(att1)&#xD;&#xA;&#x9;mail.Attachments.Add(att2)&#xD;&#xA;&#x9;mail.Attachments.Add(att3)&#xD;&#xA;&#x9;For Each item As String In listAttachment&#xD;&#xA;&#x9;&#x9;mail.Attachments.Add(New Attachment(item, MediaTypeNames.Application.Zip))&#xD;&#xA;&#x9;Next&#xD;&#xA;    Dim smtp As New SmtpClient(&quot;smtp.gmail.com&quot;, 587)&#xD;&#xA;    smtp.UseDefaultCredentials = False&#xD;&#xA;    smtp.EnableSsl = True&#xD;&#xA;    smtp.Credentials = New System.Net.NetworkCredential(usrname, pwd)&#xD;&#xA;    smtp.Send(mail)&#xD;&#xA;Catch e As exception&#xD;&#xA;&#x9;console.WriteLine(e)&#xD;&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                   <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath1">[in_pathCalendar]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath2">[in_pathStatement]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath3">[in_pathAgentBilling]</InArgument>
-                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listAttachment">[listReport]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="htmlBody">[strBody]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="usrname">[usrname]</InArgument>
-                    <InArgument x:TypeArguments="ss:SecureString" x:Key="pwd">[pwd]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strEmailTo">[in_MailTo]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strEmailCC">[in_MailCC]</InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateFrom">[in_periodStart]</InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateTo">[in_periodEnd]</InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateRemittance">[in_periodRemittance]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="strBills">[in_reportBills]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="senderName">[in_senderName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath1">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathCalendar" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath2">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathStatement" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath3">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathAgentBilling" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listAttachment">
+                      <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="listReport" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="htmlBody">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strBody" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="usrname">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="usrname" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="ss:SecureString" x:Key="pwd">
+                      <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="pwd" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailTo">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MailTo" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailCC">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MailCC" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateFrom">
+                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodStart" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateTo">
+                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodEnd" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateRemittance">
+                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodRemittance" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strBills">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_reportBills" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="senderName">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_senderName" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="subject">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;{0}_{1}_Raw File_{2}&quot;, in_PID,in_ProcessName,in_Period.ToString(&quot;dd-MM-yyyy&quot;))" />
+                    </InArgument>
                   </ui:InvokeCode.Arguments>
                 </ui:InvokeCode>
               </TryCatch.Try>

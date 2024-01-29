@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1212.6792452830189</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -252,7 +252,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">330.07547169811323,640.5031446540877 330.07547169811323,670.5031446540877 210.0754716981132,670.5031446540877 210.0754716981132,715.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="701.8867924528302,2197.132075471698" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="200.1509433962264,171.16981132075472" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -362,12 +362,24 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479.0943396226415,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_NotSuccess.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Write_Log_Report.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479.0943396226415,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Custom_Flow\Write_Log_Report.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Config("period"))]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[in_Config("pathLog").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">[logStatus]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_PID">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strPathLog">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;pathLog&quot;).ToString" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="logStatus" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">
+                              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodStart&quot;))" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">
+                              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodEnd&quot;))" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="scg:List(s:DateTime)" x:Key="in_listStartEndRange" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479.0943396226415,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
@@ -522,7 +534,7 @@
                   <av:Size x:Key="ShapeSize">200.1509433962264,157.58490566037736</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="200.1509433962264,157.58490566037736" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="640.3018867924528,3747.622641509434" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -639,7 +651,7 @@
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_QueueRetry">[QueueRetry]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <If Condition="[io_RetryNumber = 0]" DisplayName="If Max Retry Reached" sap:VirtualizedContainerService.HintSize="578.7169811320755,1363.9245283018868" sap2010:WorkflowViewState.IdRef="If_8">
+                <If Condition="[io_RetryNumber = 0]" DisplayName="If Max Retry Reached" sap:VirtualizedContainerService.HintSize="578.7169811320755,1360.3018867924527" sap2010:WorkflowViewState.IdRef="If_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -714,12 +726,24 @@
                                 </Sequence>
                               </If.Else>
                             </If>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_NotSuccess.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Write_Log_Report.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Custom_Flow\Write_Log_Report.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">[in_Config("PID").ToString]</InArgument>
-                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[CDate(in_Config("period"))]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[in_Config("pathLog").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">[logStatus]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_PID">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PID&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strPathLog">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;pathLog&quot;).ToString" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="logStatus" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateStartPeriod">
+                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodStart&quot;))" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateEndPeriod">
+                                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(in_Config(&quot;periodEnd&quot;))" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="scg:List(s:DateTime)" x:Key="in_listStartEndRange" />
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail_Error.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_Error.xaml">
@@ -762,13 +786,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="400,203" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,199.24528301886792" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message Retry" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;Retry transaction continue&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message Retry" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;Retry transaction continue&quot;]" />
                     </Sequence>
                   </If.Else>
                 </If>

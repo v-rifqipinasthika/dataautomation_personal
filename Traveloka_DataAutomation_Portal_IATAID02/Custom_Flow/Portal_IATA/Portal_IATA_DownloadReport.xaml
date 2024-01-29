@@ -1,15 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_DownloadReport" this:Portal_IATA_DownloadReport.in_periodCode="20240101W" this:Portal_IATA_DownloadReport.in_periodStart="[New DateTime(2024,01,01)]" this:Portal_IATA_DownloadReport.in_periodEnd="[New DateTime(2024,01,08)]" this:Portal_IATA_DownloadReport.in_filePath="[Directory.GetCurrentDirectory]" this:Portal_IATA_DownloadReport.in_fileType="zip" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_DownloadReport" this:Portal_IATA_DownloadReport.in_periodCode="20240101W" this:Portal_IATA_DownloadReport.in_periodStart="[New DateTime(2024,01,01)]" this:Portal_IATA_DownloadReport.in_periodEnd="[New DateTime(2024,01,08)]" this:Portal_IATA_DownloadReport.in_filePath="[Directory.GetCurrentDirectory]" this:Portal_IATA_DownloadReport.in_fileType="zip" this:Portal_IATA_DownloadReport.in_bpKey="my02" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_periodCode" Type="InArgument(x:String)" />
     <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_filePath" Type="InArgument(x:String)" />
     <x:Property Name="in_fileType" Type="InArgument(x:String)" />
+    <x:Property Name="in_bpKey" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,4368</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,4649.66037735849</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -86,14 +87,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Download report end with&#xA;&quot;in_periodCode_Agent_Billing.zip&quot;&#xA;&quot;in_periodCode_Agent_Tax_On_Commission.zip&quot;&#xA;Billing From - Billing To + &quot;Agent_Billing_EasyPay.zip&quot;&#xA;&#xA;" DisplayName="Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="979.0188679245282,4262.943396226415" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Download report end with&#xA;&quot;in_periodCode_Agent_Billing.zip&quot;&#xA;&quot;in_periodCode_Agent_Tax_On_Commission.zip&quot;&#xD;&#xA;&quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xA;Billing From - Billing To + &quot;Agent_Billing_EasyPay.zip&quot;&#xA;" DisplayName="Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="979.0188679245282,4584.4528301886785" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listReport" />
-      <Variable x:TypeArguments="x:Boolean" Name="multipleDownload">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="multipleDownload" />
       <Variable x:TypeArguments="x:Boolean" Name="reportExist" />
       <Variable x:TypeArguments="x:String" Name="period" />
       <Variable x:TypeArguments="x:Boolean" Name="downloadBlockExist" />
@@ -104,7 +101,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="917.4339622641509,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_DownloadReport&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="917.4339622641509,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_DownloadReport &quot; + in_bpKey]" />
     <TryCatch DisplayName="Try Catch Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="917.4339622641509,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -113,12 +110,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="'Add list billing eazy pay&#xD;&#xA;While periodStart &lt;= periodEnd&#xD;&#xA;    listReport.Add(String.Format(&quot;{0}_Agent_Billing_EasyPay.zip&quot;, periodStart.ToString(&quot;yyyyMMdd&quot;)))&#xD;&#xA;    periodStart = periodStart.AddDays(1) ' Increment the date by one day&#xD;&#xA;End While&#xD;&#xA;&#xD;&#xA;'Add list billing tax commission | in_periodCode_Agent_Tax_On_Commission.zip&#xD;&#xA;listReport.Add(String.Format(&quot;{0}_Agent_Tax_On_Commission.zip&quot;, periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;&#xD;&#xA;'Add list agent billing | &quot;in_periodCode(yyMMdd)_Agent_Billing.zip&quot;&#xD;&#xA;listReport.Add(String.Format(&quot;{0}_Agent_Billing.zip&quot;,periodCode.Substring(2, periodCode.Length-3)))" DisplayName="Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="'ID02 add report eazy pay &amp; tax commission&#xD;&#xA;If key.ToLower.Equals(&quot;id02&quot;)&#xD;&#xA;&#x9;'Add list billing eazy pay&#xD;&#xA;&#x9;While periodStart &lt;= periodEnd&#xD;&#xA;&#x9;    listReport.Add(String.Format(&quot;{0}_Agent_Billing_EasyPay.zip&quot;, periodStart.ToString(&quot;yyyyMMdd&quot;)))&#xD;&#xA;&#x9;    periodStart = periodStart.AddDays(1) ' Increment the date by one day&#xD;&#xA;&#x9;End While&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Add list billing tax commission | in_periodCode_Agent_Tax_On_Commission.zip&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_Tax_On_Commission.zip&quot;, periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'TH02 add report vat summary&#xD;&#xA;If key.ToLower.Equals(&quot;th02&quot;)&#xD;&#xA;&#x9;'Add agent vat summary | &quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_VAT_Summary.zip&quot;,periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'Add list agent billing | &quot;in_periodCode(yyMMdd)_Agent_Billing.zip&quot;&#xD;&#xA;listReport.Add(String.Format(&quot;{0}_Agent_Billing.zip&quot;,periodCode.Substring(2, periodCode.Length-3)))" DisplayName="Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
           <ui:InvokeCode.Arguments>
-            <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="listReport">[listReport]</InOutArgument>
-            <InArgument x:TypeArguments="s:DateTime" x:Key="periodStart">[in_periodStart]</InArgument>
-            <InArgument x:TypeArguments="s:DateTime" x:Key="periodEnd">[in_periodEnd]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="periodCode">[in_periodCode]</InArgument>
+            <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="listReport">
+              <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="listReport" />
+            </InOutArgument>
+            <InArgument x:TypeArguments="s:DateTime" x:Key="periodStart">
+              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodStart" />
+            </InArgument>
+            <InArgument x:TypeArguments="s:DateTime" x:Key="periodEnd">
+              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodEnd" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="periodCode">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_periodCode" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="key">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_bpKey" />
+            </InArgument>
           </ui:InvokeCode.Arguments>
         </ui:InvokeCode>
       </TryCatch.Try>
@@ -139,20 +147,37 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Report" sap:VirtualizedContainerService.HintSize="917.4339622641509,3505.8113207547167" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listReport]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="917.4339622641509,321.50943396226415" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[listReport]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="report" />
+            <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="881.2075471698113,3383.5471698113206" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,199.24528301886792" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818.7169811320754,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[report]" />
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe IATA'" sap:VirtualizedContainerService.HintSize="819.622641509434,3144.452830188679" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="e9c4bb19e2bdb90f9d760e0f3b507883" Selector="&lt;html app='chrome.exe' title='IATA BSP Link' /&gt;">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[currentItem]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Report" sap:VirtualizedContainerService.HintSize="917.4339622641509,3465.962264150943" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listReport]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="report" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="881.2075471698113,3343.698113207547" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="819.622641509434,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[report]" />
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe IATA'" sap:VirtualizedContainerService.HintSize="819.622641509434,3104.6037735849054" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="e9c4bb19e2bdb90f9d760e0f3b507883" Selector="&lt;html app='chrome.exe' title='IATA BSP Link' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -238,7 +263,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="Log Message Download Current Report" sap:VirtualizedContainerService.HintSize="583.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Download report {0}&quot;, report)]" />
-                          <ui:RetryScope DisplayName="Retry Scope Download Report" sap:VirtualizedContainerService.HintSize="583.2452830188679,1474.4150943396226" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                          <ui:RetryScope DisplayName="Retry Scope Download Report" sap:VirtualizedContainerService.HintSize="583.2452830188679,1474.4150943396226" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:03">
                             <ui:RetryScope.ActivityBody>
                               <ActivityAction>
                                 <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="540.6792452830189,1209.0566037735848" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -437,6 +462,12 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
   </Sequence>
 </Activity>

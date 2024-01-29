@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,2079.396226415094</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,2079.396226415094</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_Export_Amount_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -50,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -84,6 +84,16 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Portal_IATA_Export_Amount" sap:VirtualizedContainerService.HintSize="540.6792452830189,2014.1886792452829" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -145,17 +155,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Tabula path is {0}&quot;, strTabulaPath)]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[String.Format(&quot;Input path is {0}&quot;, strInputPath)]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Outputpath is {0}&quot;, strOutputPath)]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -c {2} -p {3} -o {5}{4}{5}&quot;,strTabulaPath, StrInputPath, strColumnWidth, &quot;1&quot;, strOutputPath, quotes)]" />
-    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -c{5}{2}{5} -p {5}{3}{5} -o {5}{4}{5}&quot;,strTabulaPath, StrInputPath, strColumnWidth, &quot;1&quot;, strOutputPath, quotes)]" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" IsScript="True">
+    <ui:LogMessage DisplayName="Log Message Tabula Path" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="{x:Null}" Message="[String.Format(&quot;Tabula path is {0}&quot;, strTabulaPath)]" />
+    <ui:LogMessage DisplayName="Log Message Input Path" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="{x:Null}" Message="[String.Format(&quot;Input path is {0}&quot;, strInputPath)]" />
+    <ui:LogMessage DisplayName="Log Message Output Path" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="{x:Null}" Message="[String.Format(&quot;Outputpath is {0}&quot;, strOutputPath)]" />
+    <ui:LogMessage DisplayName="Log Message Java Path" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="{x:Null}" Message="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -c {2} -p {3} -o {5}{4}{5}&quot;,strTabulaPath, StrInputPath, strColumnWidth, &quot;1&quot;, strOutputPath, quotes)]" />
+    <ui:InvokePowerShell x:TypeArguments="sma:PSObject" CommandText="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -c{5}{2}{5} -p {5}{3}{5} -o {5}{4}{5}&quot;,strTabulaPath, StrInputPath, strColumnWidth, &quot;1&quot;, strOutputPath, quotes)]" ContinueOnError="{x:Null}" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" Input="{x:Null}" IsScript="True" Output="{x:Null}">
       <ui:InvokePowerShell.PowerShellVariables>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokePowerShell.PowerShellVariables>
     </ui:InvokePowerShell>
-    <ui:ReadCsvFile DataTable="[dtAmount]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[String.Format(&quot;{0}\AgentAmount {1}.csv&quot;, in_strExportPath, Date.Now.ToString(&quot;dd MMM yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="479.0943396226415,148.52830188679243" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
-    <ui:FilterDataTable DataTable="[dtAmount]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="479.0943396226415,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtAmount]" SelectColumnsMode="Keep">
+    <ui:ReadCsvFile DataTable="[dtAmount]" Delimitator="Comma" DisplayName="Read CSV Agent Amount" Encoding="{x:Null}" FilePath="[String.Format(&quot;{0}\AgentAmount {1}.csv&quot;, in_strExportPath, Date.Now.ToString(&quot;dd MMM yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="479.0943396226415,148.52830188679243" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IgnoreQuotes="{x:Null}" IncludeColumnNames="False" />
+    <ui:FilterDataTable DataTable="[dtAmount]" DisplayName="Filter Data Table Grand Total" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="479.0943396226415,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtAmount]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -174,7 +184,6 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;IDR &quot;+CDbl(dtAmount.Rows(0).Item(0)).ToString(&quot;0,00.00&quot;)]" />
     <If Condition="[dtAmount.Rows.Count &gt; 0]" DisplayName="If Total Found" sap:VirtualizedContainerService.HintSize="479.0943396226415,508.0754716981132" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,169.35849056603772" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -211,5 +220,6 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Message Amount" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="{x:Null}" Message="[out_strAmount]" />
   </Sequence>
 </Activity>
