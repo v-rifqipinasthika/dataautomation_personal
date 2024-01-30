@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="playground" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1476.2264150943395,908.3773584905659" sap2010:WorkflowViewState.IdRef="playground_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="playground" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1476.2264150943395,948.2264150943396" sap2010:WorkflowViewState.IdRef="playground_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -84,17 +84,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="{}{&quot;iataid02&quot;,&#xD;&#xA; &quot;iatasg02&quot;,&#xD;&#xA; &quot;iatath02&quot;,&#xD;&#xA; &quot;iatavn02&quot;,&#xD;&#xA; &quot;iatamy02&quot;,&#xD;&#xA; &quot;iatamy12&quot;}" DisplayName="Assign Region" sap:VirtualizedContainerService.HintSize="436.5283018867924,156.67924528301884" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="{}{&quot;iataid02&quot;,&#xA; &quot;iatasg02&quot;,&#xA; &quot;iatath02&quot;,&#xA; &quot;iatavn02&quot;,&#xA; &quot;iatamy02&quot;,&#xA; &quot;iatamy12&quot;}" DisplayName="Assign Region" sap:VirtualizedContainerService.HintSize="436.5283018867924,156.67924528301884" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[listRegion]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"iataid02",
- "iatasg02",
+        <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{
+"iataid02",
+"iatasg02",
  "iatath02",
  "iatavn02",
  "iatamy02",
- "iatamy12"}]</InArgument>
+ "iatamy12"
+ }]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -148,12 +150,8 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_Login.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">
-                          <Literal x:TypeArguments="x:String">https://portal.iata.org/s/login/?language=en_US</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_cred">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="dicCred(region)" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">https://portal.iata.org/s/login/?language=en_US</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_cred">[dicCred(region)]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_PID" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_BPID" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_BPName" />
@@ -162,31 +160,17 @@
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_NavReportPage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_NavReportPage.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_homeLink">
-                          <Literal x:TypeArguments="x:String">https://portal.iata.org/s/</Literal>
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_homeLink">https://portal.iata.org/s/</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,112.30188679245282" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_DownloadReport.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_periodCode">
-                          <Literal x:TypeArguments="x:String">20240101W</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">
-                          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="New DateTime(2024,01,01)" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">
-                          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="New DateTime(2024,01,08)" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-                          <Literal x:TypeArguments="x:String">zip</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_bpKey">
-                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="region" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_periodCode">20240101W</InArgument>
+                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">[New DateTime(2024,01,01)]</InArgument>
+                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">[New DateTime(2024,01,08)]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[Directory.GetCurrentDirectory]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_fileType">zip</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_bpKey">[region]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
@@ -207,7 +191,7 @@
                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="region" />
                 </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Period">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="New DateTime(2024, 01, 10).ToString" />
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="New DateTime(2024, 01, 15).ToString" />
                 </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Rerun">
                   <Literal x:TypeArguments="x:String">True</Literal>

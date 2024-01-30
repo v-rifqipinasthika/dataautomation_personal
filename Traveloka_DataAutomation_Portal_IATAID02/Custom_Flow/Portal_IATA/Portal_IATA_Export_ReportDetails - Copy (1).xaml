@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_Export_ReportDetails" this:Portal_IATA_Export_ReportDetails.in_strTabulaArea="97.241,17.346,558.739,832.064" this:Portal_IATA_Export_ReportDetails.in_pathFolder="[Directory.GetCurrentDirectory]" this:Portal_IATA_Export_ReportDetails.in_pathReportDetails="C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\iatamy12\2023\2023-12-06\AgentBilling\MY_FCAGBILLDET_B_2031333_1202_MYR.PDF" this:Portal_IATA_Export_ReportDetails.in_pathTabula="[Path.Combine(Directory.GetCurrentDirectory, &quot;Tabula&quot;, &quot;tabula-1.0.2-jar-with-dependencies.jar&quot;)]" this:Portal_IATA_Export_ReportDetails.in_pathResult="Result.xlsx" this:Portal_IATA_Export_ReportDetails.in_pathTemplate="Data\Template\Template_IATA.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_Export_ReportDetails" this:Portal_IATA_Export_ReportDetails.in_strTabulaArea="97.241,17.346,558.739,832.064" this:Portal_IATA_Export_ReportDetails.in_pathFolder="[Directory.GetCurrentDirectory]" this:Portal_IATA_Export_ReportDetails.in_pathReportDetails="C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\iatamy12\2024\2024-01-10\AgentBilling\MY_FCAGBILLDET_B_2031333_0101_MYR.PDF" this:Portal_IATA_Export_ReportDetails.in_pathTabula="[Path.Combine(Directory.GetCurrentDirectory, &quot;Tabula&quot;, &quot;tabula-1.0.2-jar-with-dependencies.jar&quot;)]" this:Portal_IATA_Export_ReportDetails.in_pathResult="Result.xlsx" this:Portal_IATA_Export_ReportDetails.in_pathTemplate="Data\Template\Template_IATA.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strTabulaArea" Type="InArgument(x:String)" />
     <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
@@ -10,10 +10,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,3629.88679245283</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,3636.2264150943392</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_Export_ReportDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="78">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -59,7 +59,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_IATA_Export_ReportDetails" sap:VirtualizedContainerService.HintSize="636.6792452830189,3564.6792452830186" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_IATA_Export_ReportDetails" sap:VirtualizedContainerService.HintSize="636.6792452830189,3571.018867924528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTempPath" />
       <Variable x:TypeArguments="x:String" Name="strArea" />
@@ -135,10 +135,10 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;STEP : Portal_IATA_Export_ReportDetails&quot;]" />
     <ui:Comment sap:VirtualizedContainerService.HintSize="575.0943396226414,57.056603773584904" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Using UIPath.PDF.Activities" />
-    <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="[in_pathReportDetails]" sap:VirtualizedContainerService.HintSize="575.0943396226414,59.77358490566037" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intPageCount]" Password="{x:Null}" />
-    <If Condition="[intPageCount &gt;= 2]" DisplayName="If Report Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,3129.056603773585" sap2010:WorkflowViewState.IdRef="If_41">
+    <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="[in_pathReportDetails]" sap:VirtualizedContainerService.HintSize="575.0943396226414,59.77358490566037" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[intPageCount]" />
+    <If Condition="[intPageCount &gt;= 2]" DisplayName="If Report Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,3135.396226415094" sap2010:WorkflowViewState.IdRef="If_41">
       <If.Then>
-        <Sequence DisplayName="Sequence Export Report" sap:VirtualizedContainerService.HintSize="496.3018867924528,2572.0754716981132" sap2010:WorkflowViewState.IdRef="Sequence_81">
+        <Sequence DisplayName="Sequence Export Report" sap:VirtualizedContainerService.HintSize="496.3018867924528,2578.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_81">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -190,13 +190,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:InvokePowerShell x:TypeArguments="sma:PSObject" CommandText="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -a {2} -c {6} -p {3} -o {5}{4}{5}&quot;,in_pathTabula, in_pathReportDetails, strArea, strPage, strTempPath, quotes, strColumnWidth)]" ContinueOnError="{x:Null}" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="434.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" Input="{x:Null}" IsScript="True" Output="{x:Null}">
+          <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="[&quot;Java &quot;+String.Format(&quot;-jar {5}{0}{5} {5}{1}{5} -a {2} -c {6} -p {3} -o {5}{4}{5}&quot;,in_pathTabula, in_pathReportDetails, strArea, strPage, strTempPath, quotes, strColumnWidth)]" DisplayName="Invoke Power Shell" sap:VirtualizedContainerService.HintSize="434.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_2" IsScript="True">
             <ui:InvokePowerShell.PowerShellVariables>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:InvokePowerShell.PowerShellVariables>
           </ui:InvokePowerShell>
           <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="Delay_1" />
-          <ui:ReadCsvFile DataTable="[dtCSV]" Delimitator="Comma" DisplayName="Read CSV_Tabula" Encoding="{x:Null}" FilePath="[strTempPath]" sap:VirtualizedContainerService.HintSize="434.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IgnoreQuotes="{x:Null}" IncludeColumnNames="False" />
+          <ui:ReadCsvFile DataTable="[dtCSV]" Delimitator="Comma" DisplayName="Read CSV_Tabula" FilePath="[strTempPath]" sap:VirtualizedContainerService.HintSize="434.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
           <ui:FilterDataTable DataTable="[dtCSV]" DisplayName="Filter Data Table_AGCombine" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="434.71698113207543,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dtCSV]" SelectColumnsMode="Keep">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -224,7 +224,7 @@
               </scg:List>
             </ui:FilterDataTable.SelectColumns>
           </ui:FilterDataTable>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[i]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEach`1_2" MaxIterations="{x:Null}" Values="[arrAgentBillingDetailColumn]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[i]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434.71698113207543,51.62264150943396" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrAgentBillingDetailColumn]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -247,7 +247,7 @@
                       <InArgument x:TypeArguments="x:String">[If(Not String.IsNullOrEmpty(item), item, "Column-" + i.ToString())]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="468.8,248.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="{x:Null}">
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="468.8,248.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                     <ui:InterruptibleWhile.Body>
                       <Assign DisplayName="Assign_Add - if duplicate" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
@@ -259,11 +259,7 @@
                       </Assign>
                     </ui:InterruptibleWhile.Body>
                     <ui:InterruptibleWhile.Condition>
-                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dtCSV.Columns.Contains(columnName)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1">
-                        <VisualBasicValue.Result>
-                          <OutArgument x:TypeArguments="x:Boolean" />
-                        </VisualBasicValue.Result>
-                      </VisualBasicValue>
+                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dtCSV.Columns.Contains(columnName)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
                     </ui:InterruptibleWhile.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -290,7 +286,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
-          <ui:WriteRange AddHeaders="True" DataTable="[dtCSV]" DisplayName="Write Range_Tabula" sap:VirtualizedContainerService.HintSize="434.71698113207543,115.92452830188678" sap2010:WorkflowViewState.IdRef="WriteRange_2" Password="{x:Null}" SheetName="Raw" StartingCell="A1" WorkbookPath="[strTempPath.Replace(&quot;csv&quot;, &quot;xlsx&quot;).Replace(&quot;RAW&quot;, &quot;Draft&quot;)]" />
+          <ui:WriteRange AddHeaders="True" DataTable="[dtCSV]" DisplayName="Write Range_Tabula" sap:VirtualizedContainerService.HintSize="434.71698113207543,115.92452830188678" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Raw" StartingCell="A1" WorkbookPath="[strTempPath.Replace(&quot;csv&quot;, &quot;xlsx&quot;).Replace(&quot;RAW&quot;, &quot;Draft&quot;)]" />
           <Assign DisplayName="Assign_dtNormalizeClone" sap:VirtualizedContainerService.HintSize="434.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_10">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[dtNormalize]</OutArgument>
@@ -299,8 +295,8 @@
               <InArgument x:TypeArguments="sd:DataTable">[dtCSV.Clone]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtNormalize]" DefaultValue="{x:Null}" DisplayName="Add Data Column_Categories for dtNormalize" sap:VirtualizedContainerService.HintSize="434.71698113207543,182.0377358490566" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" MaxLength="-1" Unique="{x:Null}" />
-          <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column dt Normalize" sap:VirtualizedContainerService.HintSize="434.71698113207543,187.47169811320754" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
+          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtNormalize]" DisplayName="Add Data Column_Categories for dtNormalize" sap:VirtualizedContainerService.HintSize="434.71698113207543,184.75471698113208" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" MaxLength="-1" />
+          <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column dt Normalize" sap:VirtualizedContainerService.HintSize="434.71698113207543,190.188679245283" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
             <InvokeMethod.TargetObject>
               <InArgument x:TypeArguments="sd:DataColumn">[dtNormalize.Columns("CATEGORIES")]</InArgument>
             </InvokeMethod.TargetObject>
@@ -311,7 +307,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <InArgument x:TypeArguments="x:Int32">0</InArgument>
           </InvokeMethod>
-          <ui:LookupDataTable CellValue="{x:Null}" sap2010:Annotation.AnnotationText="If 2nd table exist" DataTable="[dtCSV]" DisplayName="Lookup Data Table_OPE" sap:VirtualizedContainerService.HintSize="434.71698113207543,81.50943396226414" sap2010:WorkflowViewState.IdRef="LookupDataTable_10" LookupColumnIndex="[1]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="OPE" RowIndex="[intRowOPE]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}">
+          <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" sap2010:Annotation.AnnotationText="If 2nd table exist" DataTable="[dtCSV]" DisplayName="Lookup Data Table_OPE" sap:VirtualizedContainerService.HintSize="434.71698113207543,81.50943396226414" sap2010:WorkflowViewState.IdRef="LookupDataTable_10" LookupColumnIndex="[1]" LookupValue="OPE" RowIndex="[intRowOPE]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -345,13 +341,13 @@
               </Sequence>
             </If.Then>
           </If>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436.5283018867924,827.7735849056603" sap2010:WorkflowViewState.IdRef="ForEach`1_4" MaxIterations="{x:Null}" Values="[{&quot;SALES&quot;, &quot;REFUND&quot;, &quot;ADM&quot;, &quot;ACM&quot;, &quot;SCOPE&quot;}]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[{&quot;SALES&quot;, &quot;REFUND&quot;, &quot;ADM&quot;, &quot;ACM&quot;, &quot;SCOPE&quot;}]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,705.5094339622641" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,712.754716981132" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -366,8 +362,8 @@
                       <InArgument x:TypeArguments="sd:DataTable">[dtCSV.Clone()]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtFiltered]" DefaultValue="{x:Null}" DisplayName="Add Data Column_dtFiltered Categories" sap:VirtualizedContainerService.HintSize="338.71698113207543,182.0377358490566" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" MaxLength="-1" Unique="{x:Null}" />
-                  <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="338.71698113207543,183.84905660377356" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="SetOrdinal">
+                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtFiltered]" DisplayName="Add Data Column_dtFiltered Categories" sap:VirtualizedContainerService.HintSize="338.71698113207543,184.75471698113208" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" MaxLength="-1" />
+                  <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="338.71698113207543,187.47169811320754" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="SetOrdinal">
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="sd:DataColumn">[dtFiltered.Columns("CATEGORIES")]</InArgument>
                     </InvokeMethod.TargetObject>
@@ -378,14 +374,14 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <InArgument x:TypeArguments="x:Int32">0</InArgument>
                   </InvokeMethod>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item]" sap:VirtualizedContainerService.HintSize="1064.1509433962262,2447.094339622641" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item]" sap:VirtualizedContainerService.HintSize="338.71698113207543,51.62264150943396" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence x:Key="SALES" sap:VirtualizedContainerService.HintSize="641.2075471698113,1956.2264150943395" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                    <Sequence x:Key="SALES" sap:VirtualizedContainerService.HintSize="641.6,1692" sap2010:WorkflowViewState.IdRef="Sequence_39">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="dtISSUE" />
                       </Sequence.Variables>
@@ -395,22 +391,22 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_ISSUE" sap:VirtualizedContainerService.HintSize="579.622641509434,285.2830188679245" sap2010:WorkflowViewState.IdRef="LookupDataTable_5" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="ISSUE" RowIndex="[intRowIssueLimit]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                      <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_SALES to Filtered" sap:VirtualizedContainerService.HintSize="579.622641509434,130.41509433962264" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[dtCSV.AsEnumerable.Skip(1).Take(intRowIssueLimit-1).CopyToDataTable]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="579.622641509434,844.0754716981131" sap2010:WorkflowViewState.IdRef="ForEachRow_6" MaxIterations="{x:Null}" Values="{x:Null}">
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_ISSUE" sap:VirtualizedContainerService.HintSize="579.2,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_5" LookupColumnIndex="[0]" LookupValue="ISSUE" RowIndex="[intRowIssueLimit]" />
+                      <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_SALES to Filtered" sap:VirtualizedContainerService.HintSize="579.2,24.8" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[dtCSV.AsEnumerable.Skip(1).Take(intRowIssueLimit-1).CopyToDataTable]" />
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="579.2,797.6" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="444.6792452830188,730.8679245283018" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="545.6,676" sap2010:WorkflowViewState.IdRef="Sequence_38">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Assign_Sales_Add Categories" sap:VirtualizedContainerService.HintSize="383.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_30">
+                              <Assign DisplayName="Assign_Sales_Add Categories" sap:VirtualizedContainerService.HintSize="483.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_30">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[CurrentRow("CATEGORIES")]</OutArgument>
                                 </Assign.To>
@@ -418,7 +414,7 @@
                                   <InArgument x:TypeArguments="x:Object">[item]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If Condition="[not String.IsNullOrEmpty(CurrentRow(&quot;AIR&quot;).ToString) And not CurrentRow(&quot;AIR&quot;).ToString.IsNumeric()]" sap:VirtualizedContainerService.HintSize="383.0943396226415,521.6603773584906" sap2010:WorkflowViewState.IdRef="If_11">
+                              <If Condition="[not String.IsNullOrEmpty(CurrentRow(&quot;AIR&quot;).ToString) And not CurrentRow(&quot;AIR&quot;).ToString.IsNumeric()]" sap:VirtualizedContainerService.HintSize="483.2,442.4" sap2010:WorkflowViewState.IdRef="If_11">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -475,8 +471,8 @@
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** ISS" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_11" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="*** ISS" RowIndex="[intRowIssueStart]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_ISSUE" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_12" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="ISSUE" RowIndex="[intRowIssueEnd]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** ISS" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_11" LookupColumnIndex="[0]" LookupValue="*** ISS" RowIndex="[intRowIssueStart]" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_ISSUE" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_12" LookupColumnIndex="[0]" LookupValue="ISSUE" RowIndex="[intRowIssueEnd]" />
                             <If Condition="[Not(intRowIssueStart = -1 And intRowIssueEnd = -1)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -499,7 +495,7 @@
                                       <InArgument x:TypeArguments="sd:DataTable">[dtScope.AsEnumerable.Skip(intRowIssueStart+1).Take(intRowIssueEnd-intRowIssueStart-1).CopyToDataTable]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtISSUE]" DefaultValue="{x:Null}" DisplayName="Add Data Column_dtIssue Categories" sap:VirtualizedContainerService.HintSize="560,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" MaxLength="-1" Unique="{x:Null}" />
+                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtISSUE]" DisplayName="Add Data Column_dtIssue Categories" sap:VirtualizedContainerService.HintSize="560,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" MaxLength="-1" />
                                   <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="560,191" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="SetOrdinal">
                                     <InvokeMethod.TargetObject>
                                       <InArgument x:TypeArguments="sd:DataColumn">[dtISSUE.Columns("CATEGORIES")]</InArgument>
@@ -511,7 +507,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                   </InvokeMethod>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtISSUE]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,741" sap2010:WorkflowViewState.IdRef="ForEachRow_10" MaxIterations="{x:Null}" Values="{x:Null}">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtISSUE]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,741" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -588,10 +584,9 @@
                         </If.Then>
                       </If>
                     </Sequence>
-                    <Sequence x:Key="REFUND" sap:VirtualizedContainerService.HintSize="1023.3962264150942,2185.3584905660377" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <Sequence x:Key="REFUND" sap:VirtualizedContainerService.HintSize="1134.4,1163.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="dtRefund" />
-                        <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredRefund" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -599,10 +594,10 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_REFU" sap:VirtualizedContainerService.HintSize="961.8113207547169,285.2830188679245" sap2010:WorkflowViewState.IdRef="LookupDataTable_6" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="REFU" RowIndex="[intRowRefundLimit]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                      <If Condition="[intRowRefundLimit = -1]" sap:VirtualizedContainerService.HintSize="961.8113207547169,368.60377358490564" sap2010:WorkflowViewState.IdRef="If_12">
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_REFU" sap:VirtualizedContainerService.HintSize="1072,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_6" LookupColumnIndex="[0]" LookupValue="REFU" RowIndex="[intRowRefundLimit]" />
+                      <If Condition="[intRowRefundLimit = -1]" sap:VirtualizedContainerService.HintSize="1072,271.2" sap2010:WorkflowViewState.IdRef="If_12">
                         <If.Then>
-                          <Assign DisplayName="Assign_intRowRefundLimit" sap:VirtualizedContainerService.HintSize="260.8301886792453,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_33">
+                          <Assign DisplayName="Assign_intRowRefundLimit" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[intRowRefundLimit]</OutArgument>
                             </Assign.To>
@@ -612,43 +607,8 @@
                           </Assign>
                         </If.Then>
                       </If>
-                      <TryCatch DisplayName="Try Catch Table_dtFiltered_Refund" sap:VirtualizedContainerService.HintSize="961.8113207547169,324.2264150943396" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-                        <TryCatch.Try>
-                          <Assign DisplayName="Assign Merge Data Table_dtFiltered_Refund" sap:VirtualizedContainerService.HintSize="260.8301886792453,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_76">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataTable">[dtFilteredRefund]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataTable">[dtCSV.AsEnumerable.Skip(intRowIssueLimit+2).Take(intRowRefundLimit-intRowIssueLimit-2).CopyToDataTable]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400.3018867924528,167.54716981132074" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:Exception">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                              </ActivityAction.Argument>
-                              <Assign DisplayName="Assign Merge Data Table_dtFiltered_Refund" sap:VirtualizedContainerService.HintSize="260.8301886792453,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_77">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="sd:DataTable">[dtFilteredRefund]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="sd:DataTable">[dtFiltered.Clone]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                      </TryCatch>
-                      <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_dtFiltered_Refund" sap:VirtualizedContainerService.HintSize="961.8113207547169,130.41509433962264" sap2010:WorkflowViewState.IdRef="MergeDataTable_12" MissingSchemaAction="Add" Source="[dtFilteredRefund]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="961.8113207547169,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEachRow_7" MaxIterations="{x:Null}" Values="{x:Null}">
+                      <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_dtFiltered_Refund" sap:VirtualizedContainerService.HintSize="1072,24.8" sap2010:WorkflowViewState.IdRef="MergeDataTable_12" MissingSchemaAction="Add" Source="[dtCSV.AsEnumerable.Skip(intRowIssueLimit+2).Take(intRowRefundLimit-intRowIssueLimit-2).CopyToDataTable]" />
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1072,51" sap2010:WorkflowViewState.IdRef="ForEachRow_7">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
@@ -755,9 +715,9 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEachRow>
-                      <If Condition="[Not dtScope is Nothing]" DisplayName="If dtScope exists" sap:VirtualizedContainerService.HintSize="961.8113207547169,377.66037735849056" sap2010:WorkflowViewState.IdRef="If_38">
+                      <If Condition="[Not dtScope is Nothing]" DisplayName="If dtScope exists" sap:VirtualizedContainerService.HintSize="1072,245" sap2010:WorkflowViewState.IdRef="If_38">
                         <If.Then>
-                          <Sequence sap2010:Annotation.AnnotationText="Get refund dt" DisplayName="Sequence_GetRefund" sap:VirtualizedContainerService.HintSize="400.3018867924528,108.67924528301886" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                          <Sequence sap2010:Annotation.AnnotationText="Get refund dt" DisplayName="Sequence_GetRefund" sap:VirtualizedContainerService.HintSize="200,97" sap2010:WorkflowViewState.IdRef="Sequence_61">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Int32" Name="intRowRefundStart" />
                               <Variable x:TypeArguments="x:Int32" Name="intRowRefundEnd" />
@@ -769,8 +729,8 @@
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** RE" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_13" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="*** RE" RowIndex="[intRowRefundStart]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_REFU" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_14" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="REFU" RowIndex="[intRowRefundEnd]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** RE" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_13" LookupColumnIndex="[0]" LookupValue="*** RE" RowIndex="[intRowRefundStart]" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_REFU" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_14" LookupColumnIndex="[0]" LookupValue="REFU" RowIndex="[intRowRefundEnd]" />
                             <If Condition="[Not(intRowRefundStart = -1 And intRowRefundEnd = -1)]" sap:VirtualizedContainerService.HintSize="885,1753" sap2010:WorkflowViewState.IdRef="If_24">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="849,1576" sap2010:WorkflowViewState.IdRef="Sequence_60">
@@ -787,7 +747,7 @@
                                       <InArgument x:TypeArguments="sd:DataTable">[dtScope.AsEnumerable.Skip(intRowRefundStart+1).Take(intRowRefundEnd-intRowRefundStart-1).CopyToDataTable]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtRefund]" DefaultValue="{x:Null}" DisplayName="Add Data Column_dtIssue Categories" sap:VirtualizedContainerService.HintSize="807,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" MaxLength="-1" Unique="{x:Null}" />
+                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtRefund]" DisplayName="Add Data Column_dtIssue Categories" sap:VirtualizedContainerService.HintSize="807,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" MaxLength="-1" />
                                   <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="807,191" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" MethodName="SetOrdinal">
                                     <InvokeMethod.TargetObject>
                                       <InArgument x:TypeArguments="sd:DataColumn">[dtRefund.Columns("CATEGORIES")]</InArgument>
@@ -799,7 +759,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                   </InvokeMethod>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRefund]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="807,1091" sap2010:WorkflowViewState.IdRef="ForEachRow_12" MaxIterations="{x:Null}" Values="{x:Null}">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRefund]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="807,1091" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -929,7 +889,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_DEBIT" sap:VirtualizedContainerService.HintSize="671.2,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="DEBIT" RowIndex="[intRowDebitLimit]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_DEBIT" sap:VirtualizedContainerService.HintSize="671.2,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnIndex="[0]" LookupValue="DEBIT" RowIndex="[intRowDebitLimit]" />
                       <If Condition="[intRowDebitLimit = -1]" sap:VirtualizedContainerService.HintSize="671.2,52.8" sap2010:WorkflowViewState.IdRef="If_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -957,7 +917,7 @@
                         </If.Then>
                       </If>
                       <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_ADM to Filtered" sap:VirtualizedContainerService.HintSize="671.2,24.8" sap2010:WorkflowViewState.IdRef="MergeDataTable_14" MissingSchemaAction="Add" Source="[dtCSV.AsEnumerable.Skip(intRowRefundLimit+2).Take(intRowDebitLimit-intRowRefundLimit-2).CopyToDataTable]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="671.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_8" MaxIterations="{x:Null}" Values="{x:Null}">
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="671.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
@@ -1034,8 +994,8 @@
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** DE" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_15" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="*** DE" RowIndex="[intRowADMStart]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_DEBIT" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_16" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="DEBIT" RowIndex="[intRowADMEnd]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** DE" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_15" LookupColumnIndex="[0]" LookupValue="*** DE" RowIndex="[intRowADMStart]" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_DEBIT" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_16" LookupColumnIndex="[0]" LookupValue="DEBIT" RowIndex="[intRowADMEnd]" />
                             <If Condition="[Not(intRowADMStart = -1 And intRowADMEnd = -1)]" sap:VirtualizedContainerService.HintSize="484,713" sap2010:WorkflowViewState.IdRef="If_31">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="304,536" sap2010:WorkflowViewState.IdRef="Sequence_70">
@@ -1052,7 +1012,7 @@
                                       <InArgument x:TypeArguments="sd:DataTable">[dtScope.AsEnumerable.Skip(intRowADMStart+1).Take(intRowADMEnd-intRowADMStart-1).CopyToDataTable]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtADM]" DefaultValue="{x:Null}" DisplayName="Add Data Column_dtADM Categories" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="-1" Unique="{x:Null}" />
+                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtADM]" DisplayName="Add Data Column_dtADM Categories" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="-1" />
                                   <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="262,191" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="SetOrdinal">
                                     <InvokeMethod.TargetObject>
                                       <InArgument x:TypeArguments="sd:DataColumn">[dtADM.Columns("CATEGORIES")]</InArgument>
@@ -1064,7 +1024,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                   </InvokeMethod>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtADM]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEachRow_13" MaxIterations="{x:Null}" Values="{x:Null}">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtADM]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEachRow_13">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -1194,14 +1154,14 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_CRED" sap:VirtualizedContainerService.HintSize="1072,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="CRED" RowIndex="[intRowCreditLimit]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtCSV]" DisplayName="Lookup Data Table_CRED" sap:VirtualizedContainerService.HintSize="1072,24.8" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnIndex="[0]" LookupValue="CRED" RowIndex="[intRowCreditLimit]" />
                       <If Condition="[intRowCreditLimit = -1]" sap:VirtualizedContainerService.HintSize="1072,249.6" sap2010:WorkflowViewState.IdRef="If_17">
                         <If.Then>
                           <ui:Continue sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Continue_4" />
                         </If.Then>
                       </If>
                       <ui:MergeDataTable Destination="[dtFiltered]" DisplayName="Merge Data Table_CRED_Filtered" sap:VirtualizedContainerService.HintSize="1072,24.8" sap2010:WorkflowViewState.IdRef="MergeDataTable_16" MissingSchemaAction="Add" Source="[dtCSV.AsEnumerable.Skip(intRowDebitLimit+2).Take(intRowCreditLimit-intRowDebitLimit-2).CopyToDataTable]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1072,51" sap2010:WorkflowViewState.IdRef="ForEachRow_9" MaxIterations="{x:Null}" Values="{x:Null}">
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtFiltered]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1072,51" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
@@ -1278,8 +1238,8 @@
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** CR" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_17" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="*** CR" RowIndex="[intRowACMStart]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
-                            <ui:LookupDataTable CellValue="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_CRED" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_18" LookupColumnIndex="[0]" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" LookupValue="CRED" RowIndex="[intRowACMEnd]" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_*** CR" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_17" LookupColumnIndex="[0]" LookupValue="*** CR" RowIndex="[intRowACMStart]" />
+                            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtScope]" DisplayName="Lookup Data Table_CRED" sap:VirtualizedContainerService.HintSize="885,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_18" LookupColumnIndex="[0]" LookupValue="CRED" RowIndex="[intRowACMEnd]" />
                             <If Condition="[Not(intRowACMStart = -1 And intRowACMEnd = -1)]" sap:VirtualizedContainerService.HintSize="885,1753" sap2010:WorkflowViewState.IdRef="If_35">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="849,1576" sap2010:WorkflowViewState.IdRef="Sequence_76">
@@ -1296,7 +1256,7 @@
                                       <InArgument x:TypeArguments="sd:DataTable">[dtScope.AsEnumerable.Skip(intRowACMStart+1).Take(intRowACMEnd-intRowACMStart-1).CopyToDataTable]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtACM]" DefaultValue="{x:Null}" DisplayName="Add Data Column_dtACM Categories" sap:VirtualizedContainerService.HintSize="807,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="-1" Unique="{x:Null}" />
+                                  <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" ColumnName="CATEGORIES" DataTable="[dtACM]" DisplayName="Add Data Column_dtACM Categories" sap:VirtualizedContainerService.HintSize="807,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="-1" />
                                   <InvokeMethod sap2010:Annotation.AnnotationText="Run last&#xA;Some code depends on absolute column index / positioning" DisplayName="Invoke Method - set column ordinal for &quot;Category&quot; column_dt Filtered" sap:VirtualizedContainerService.HintSize="807,191" sap2010:WorkflowViewState.IdRef="InvokeMethod_7" MethodName="SetOrdinal">
                                     <InvokeMethod.TargetObject>
                                       <InArgument x:TypeArguments="sd:DataColumn">[dtACM.Columns("CATEGORIES")]</InArgument>
@@ -1308,7 +1268,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                   </InvokeMethod>
-                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtACM]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="807,1091" sap2010:WorkflowViewState.IdRef="ForEachRow_14" MaxIterations="{x:Null}" Values="{x:Null}">
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtACM]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="807,1091" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
                                     <ui:ForEachRow.Body>
                                       <ActivityAction x:TypeArguments="sd:DataRow">
                                         <ActivityAction.Argument>
@@ -1440,7 +1400,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtNormalize]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEachRow_5" MaxIterations="{x:Null}" Values="{x:Null}">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtNormalize]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -1555,7 +1515,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FilterDataTable>
-          <ui:ExcelApplicationScope DisplayName="Excel Application Scope" EditPassword="{x:Null}" ExistingWorkbook="{x:Null}" sap:VirtualizedContainerService.HintSize="434.71698113207543,307.0188679245283" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Password="{x:Null}" Workbook="{x:Null}" WorkbookPath="[in_pathResult]">
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434.71698113207543,307.0188679245283" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_pathResult]">
             <ui:ExcelApplicationScope.Body>
               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                 <ActivityAction.Argument>
@@ -1567,7 +1527,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dtNormalize]" DisplayName="Write Range_dtNormalize" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="{x:Null}" />
+                  <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dtNormalize]" DisplayName="Write Range_dtNormalize" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" />
                 </Sequence>
               </ActivityAction>
             </ui:ExcelApplicationScope.Body>
@@ -1587,7 +1547,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message No Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="{x:Null}" Message="[&quot;No Report&quot;]" />
+          <ui:LogMessage DisplayName="Log Message No Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;No Report&quot;]" />
           <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pathResult]" DisplayName="Copy File Empty Report" sap:VirtualizedContainerService.HintSize="338.71698113207543,148.52830188679243" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_pathTemplate]" />
         </Sequence>
       </If.Else>
