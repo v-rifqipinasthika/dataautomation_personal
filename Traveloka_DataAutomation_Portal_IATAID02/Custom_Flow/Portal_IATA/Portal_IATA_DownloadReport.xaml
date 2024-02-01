@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_DownloadReport" this:Portal_IATA_DownloadReport.in_periodCode="20240101W" this:Portal_IATA_DownloadReport.in_periodStart="[New DateTime(2024,01,01)]" this:Portal_IATA_DownloadReport.in_periodEnd="[New DateTime(2024,01,08)]" this:Portal_IATA_DownloadReport.in_filePath="[Directory.GetCurrentDirectory]" this:Portal_IATA_DownloadReport.in_fileType="zip" this:Portal_IATA_DownloadReport.in_bpKey="my02" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_IATA_DownloadReport" this:Portal_IATA_DownloadReport.in_periodCode="20240101W" this:Portal_IATA_DownloadReport.in_periodStart="[New DateTime(2024,01,01)]" this:Portal_IATA_DownloadReport.in_periodEnd="[New DateTime(2024,01,08)]" this:Portal_IATA_DownloadReport.in_filePath="[Directory.GetCurrentDirectory]" this:Portal_IATA_DownloadReport.in_fileType="zip" this:Portal_IATA_DownloadReport.in_bpKey="iatamy02" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_periodCode" Type="InArgument(x:String)" />
     <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,4649.66037735849</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1072.8,4680.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -87,7 +87,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Download report end with&#xA;&quot;in_periodCode_Agent_Billing.zip&quot;&#xA;&quot;in_periodCode_Agent_Tax_On_Commission.zip&quot;&#xD;&#xA;&quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xA;Billing From - Billing To + &quot;Agent_Billing_EasyPay.zip&quot;&#xA;" DisplayName="Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="979.0188679245282,4584.4528301886785" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Download report end with&#xA;&quot;in_periodCode_Agent_Billing.zip&quot;&#xA;&quot;in_periodCode_Agent_Tax_On_Commission.zip&quot;&#xA;&quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xA;Billing From - Billing To + &quot;Agent_Billing_EasyPay.zip&quot;&#xA;" DisplayName="Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="980,4616" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listReport" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="multipleDownload" />
@@ -101,8 +101,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="917.4339622641509,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_DownloadReport &quot; + in_bpKey]" />
-    <TryCatch DisplayName="Try Catch Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="917.4339622641509,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message Portal_IATA_DownloadReport" sap:VirtualizedContainerService.HintSize="917.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_IATA_DownloadReport &quot; + in_bpKey]" />
+    <TryCatch DisplayName="Try Catch Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="917.6,396" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,28 +110,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="'ID02 add report eazy pay &amp; tax commission&#xD;&#xA;If key.ToLower.Equals(&quot;id02&quot;)&#xD;&#xA;&#x9;'Add list billing eazy pay&#xD;&#xA;&#x9;While periodStart &lt;= periodEnd&#xD;&#xA;&#x9;    listReport.Add(String.Format(&quot;{0}_Agent_Billing_EasyPay.zip&quot;, periodStart.ToString(&quot;yyyyMMdd&quot;)))&#xD;&#xA;&#x9;    periodStart = periodStart.AddDays(1) ' Increment the date by one day&#xD;&#xA;&#x9;End While&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Add list billing tax commission | in_periodCode_Agent_Tax_On_Commission.zip&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_Tax_On_Commission.zip&quot;, periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'TH02 add report vat summary&#xD;&#xA;If key.ToLower.Equals(&quot;th02&quot;)&#xD;&#xA;&#x9;'Add agent vat summary | &quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_VAT_Summary.zip&quot;,periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'Add list agent billing | &quot;in_periodCode(yyMMdd)_Agent_Billing.zip&quot;&#xD;&#xA;listReport.Add(String.Format(&quot;{0}_Agent_Billing.zip&quot;,periodCode.Substring(2, periodCode.Length-3)))" DisplayName="Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="'ID02 add report eazy pay &amp; tax commission&#xD;&#xA;If key.ToLower.Equals(&quot;iataid02&quot;)&#xD;&#xA;&#x9;'Add list billing eazy pay&#xD;&#xA;&#x9;While periodStart &lt;= periodEnd&#xD;&#xA;&#x9;    listReport.Add(String.Format(&quot;{0}_Agent_Billing_EasyPay.zip&quot;, periodStart.ToString(&quot;yyyyMMdd&quot;)))&#xD;&#xA;&#x9;    periodStart = periodStart.AddDays(1) ' Increment the date by one day&#xD;&#xA;&#x9;End While&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;'Add list billing tax commission | in_periodCode_Agent_Tax_On_Commission.zip&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_Tax_On_Commission.zip&quot;, periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'TH02 add report vat summary&#xD;&#xA;If key.ToLower.Equals(&quot;iatath02&quot;)&#xD;&#xA;&#x9;'Add agent vat summary | &quot;in_periodCode_Agent_VAT_Summary.zip&quot;&#xD;&#xA;&#x9;listReport.Add(String.Format(&quot;{0}_Agent_VAT_Summary.zip&quot;,periodCode.Substring(0,periodCode.Length-1)))&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;'Add list agent billing | &quot;in_periodCode(yyMMdd)_Agent_Billing.zip&quot;&#xD;&#xA;listReport.Add(String.Format(&quot;{0}_Agent_Billing.zip&quot;,periodCode.Substring(2, periodCode.Length-3)))" DisplayName="Invoke Code Create List Report" sap:VirtualizedContainerService.HintSize="333.6,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
           <ui:InvokeCode.Arguments>
-            <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="listReport">
-              <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="listReport" />
-            </InOutArgument>
-            <InArgument x:TypeArguments="s:DateTime" x:Key="periodStart">
-              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodStart" />
-            </InArgument>
-            <InArgument x:TypeArguments="s:DateTime" x:Key="periodEnd">
-              <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodEnd" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="periodCode">
-              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_periodCode" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="key">
-              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_bpKey" />
-            </InArgument>
+            <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="listReport">[listReport]</InOutArgument>
+            <InArgument x:TypeArguments="s:DateTime" x:Key="periodStart">[in_periodStart]</InArgument>
+            <InArgument x:TypeArguments="s:DateTime" x:Key="periodEnd">[in_periodEnd]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="periodCode">[in_periodCode]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="key">[in_bpKey]</InArgument>
           </ui:InvokeCode.Arguments>
         </ui:InvokeCode>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="403.92452830188677,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -142,7 +132,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
             </ActivityAction.Argument>
-            <Throw DisplayName="Throw Inner Exception" Exception="[exception.InnerException]" sap:VirtualizedContainerService.HintSize="334.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Throw DisplayName="Throw Inner Exception" Exception="[exception.InnerException]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>

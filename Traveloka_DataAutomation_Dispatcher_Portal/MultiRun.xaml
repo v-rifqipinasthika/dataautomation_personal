@@ -76,14 +76,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="{}{&#xA;&quot;indonesiaairasia&quot;, &#xA;&quot;malindoairwayssdnbhd&quot;, &#xA;&quot;malindoairways&quot;&#xD;&#xA;&quot;trigana&quot;,&#xD;&#xA;&quot;aerodili&quot;&#xA;}&#xA;&#xA;{&#xA;&quot;resortworldsentosa&quot;,&#xA;&quot;bemyguest&quot;&#xA;}" sap:VirtualizedContainerService.HintSize="435.2,268" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="{}{&#xA;&quot;indonesiaairasia&quot;, &#xA;&quot;malindoairwayssdnbhd&quot;, &#xA;&quot;malindoairways&quot;&#xA;&quot;trigana&quot;,&#xA;&quot;aerodili&quot;&#xA;}&#xA;&#xA;{&#xA;&quot;resortworldsentosa&quot;,&#xA;&quot;bemyguest&quot;&#xA;}" sap:VirtualizedContainerService.HintSize="435.2,268" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[arrBp]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{
-"malindoairwayssdnbhd", 
-"malindoairways"
+    "iataid02",
+    "iatamy02",
+    "iatamy12",
+    "iatasg02",
+    "iatath02",
+    "iatavn02"
 }]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
@@ -109,12 +113,8 @@
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
                 <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueFolder" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentItem" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ProductType">
-                  <Literal x:TypeArguments="x:String">Transport</Literal>
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">[currentItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ProductType">Transport</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
