@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,2835.622641509434</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,3335.5471698113206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -139,7 +139,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,2770.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,3270.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
@@ -159,10 +159,10 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Started Process Report {0}&quot;, in_TransactionItem(&quot;ReportName&quot;).ToString)]" />
-    <TryCatch DisplayName="Try Catch Assing Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch Assing Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,550.6415094339623" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -191,7 +191,7 @@
                   <OutArgument x:TypeArguments="s:DateTime">[periodEnd]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="s:DateTime">[New DateTime(period.Year, period.AddMonths(1).Month, 1).AddDays(-1)]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime">[New DateTime(period.Year, period.Month, 1).AddMonths(1).AddDays(-1)]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
