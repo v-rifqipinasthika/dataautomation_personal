@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1146.4,4618.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1146.4,4658.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Resortworldsentosa_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -262,7 +262,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="200" DisplayName="Type Into 'INPUT' Start Date" EmptyField="True" sap:VirtualizedContainerService.HintSize="540,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_startDate.ToString(&quot;dd-MMM-yyyy&quot;)]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="200" DisplayName="Type Into 'INPUT' Start Date" EmptyField="True" sap:VirtualizedContainerService.HintSize="540,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_startDate.AddDays(-1).ToString(&quot;dd-MMM-yyyy&quot;)]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="07f70a65-9051-4432-9b04-78f45fd9d5f3" InformativeScreenshot="be18cb5a33e4106d97435bb2b168af9e" Selector="&lt;webctrl tag='INPUT' class='ant-calendar-input ' placeholder='Start Date' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -286,7 +286,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="200" DisplayName="Type Into 'INPUT' Start Date" EmptyField="True" sap:VirtualizedContainerService.HintSize="540,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[in_startDate.ToString(&quot;dd-MMM-yyyy&quot;)]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="200" DisplayName="Type Into 'INPUT' Start Date" EmptyField="True" sap:VirtualizedContainerService.HintSize="540,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[in_startDate.AddDays(-1).ToString(&quot;dd-MMM-yyyy&quot;)]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="07f70a65-9051-4432-9b04-78f45fd9d5f3" InformativeScreenshot="be18cb5a33e4106d97435bb2b168af9e" Selector="&lt;webctrl tag='INPUT' class='ant-calendar-input ' placeholder='Start Date' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -460,21 +460,11 @@
             </Sequence>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_RWS\Portal_RWS_FilterTrxDate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="540,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_RWS\Portal_RWS_FilterTrxDate.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                  <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_startDate" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_pathResult">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathResultFile" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_readRange">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="readRange" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_sheetName">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheetName" />
-                </InArgument>
+                <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[in_startDate]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathResult">[in_pathResultFile]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">[out_pathRawFile]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_readRange">[readRange]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_sheetName">[sheetName]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
