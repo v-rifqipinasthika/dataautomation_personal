@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1508,2969</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1198.1886792452829,2947.018867924528</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -123,7 +123,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Captcha_Breaker_Molpay" sap:VirtualizedContainerService.HintSize="740,2904" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Captcha_Breaker_Molpay" sap:VirtualizedContainerService.HintSize="740.8301886792452,2881.8113207547167" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="p:PythonObject" Name="LoadOut" />
       <Variable x:TypeArguments="p:PythonObject" Name="InvokeOut" />
@@ -136,23 +136,23 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Captcha_Breaker_Molpay" sap:VirtualizedContainerService.HintSize="678,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Captcha_Breaker_Molpay&quot;]" />
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="678,2661" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:05">
+    <ui:LogMessage DisplayName="Log Message Captcha_Breaker_Molpay" sap:VirtualizedContainerService.HintSize="679.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Captcha_Breaker_Molpay&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="679.2452830188679,2642.7169811320755" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:05">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="636,2486" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="636.6792452830189,2470.6415094339623" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="574,2375" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Python39" TargetPlatform="x64" Version="Python 3.9" WorkingFolder="[PathCaptchaBreaker]">
+            <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="575.0943396226414,2361.056603773585" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Python39" TargetPlatform="x64" Version="Python 3.9" WorkingFolder="[PathCaptchaBreaker]">
               <p:PythonScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,2338" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,2323.9245283018868" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="JSONFile" />
                       <Variable x:TypeArguments="njl:JToken" Name="JCaptchaResponse" />
@@ -164,8 +164,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:FileExistsX DisplayName="File Exists Previous Response" Exists="[CaptchaResponseFileExists]" sap:VirtualizedContainerService.HintSize="478,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;outputGetCaptcha.json&quot;)]" />
-                    <If Condition="[CaptchaResponseFileExists]" DisplayName="If Previous Response Exist -&gt; Delete" sap:VirtualizedContainerService.HintSize="478,470" sap2010:WorkflowViewState.IdRef="If_1">
+                    <ui:FileExistsX DisplayName="File Exists Previous Response" Exists="[CaptchaResponseFileExists]" sap:VirtualizedContainerService.HintSize="479.0943396226415,130.41509433962264" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;outputGetCaptcha.json&quot;)]" />
+                    <If Condition="[CaptchaResponseFileExists]" DisplayName="If Previous Response Exist -&gt; Delete" sap:VirtualizedContainerService.HintSize="479.0943396226415,461.88679245283015" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +173,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,191" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,189.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -255,11 +255,6 @@
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
                           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,246" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Default="travelokamy" Name="merchant" />
-                              <Variable x:TypeArguments="x:String" Default="acc-receivable.b2c@traveloka.com" Name="usrname" />
-                              <Variable x:TypeArguments="x:String" Default="!jsFahiZ2!1" Name="pwd" />
-                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
