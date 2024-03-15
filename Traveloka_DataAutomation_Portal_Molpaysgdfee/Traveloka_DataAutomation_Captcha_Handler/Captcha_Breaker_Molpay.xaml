@@ -248,7 +248,7 @@
                       </Assign.Value>
                     </Assign>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[CaptchaResponse]" />
-                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="479.0943396226415,390.33962264150944" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="c21528ce0d9f4aee8dbf8f155eaaf9d9" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version 2.0 : LOGIN' /&gt;">
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="479.0943396226415,390.33962264150944" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="c21528ce0d9f4aee8dbf8f155eaaf9d9" Selector="&lt;html app='chrome.exe' title='*: LOGIN' /&gt;">
                       <ui:BrowserScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>

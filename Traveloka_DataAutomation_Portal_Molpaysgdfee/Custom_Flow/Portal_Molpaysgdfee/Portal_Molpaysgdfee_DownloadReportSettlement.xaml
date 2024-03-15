@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,3407.094339622641</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,3327.396226415094</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Molpaysgdfee_DownloadReportSettlement_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -94,7 +94,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Molpaysgdfee_DownloadReportSettlement" sap:VirtualizedContainerService.HintSize="740.8301886792452,3341.88679245283" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Molpaysgdfee_DownloadReportSettlement" sap:VirtualizedContainerService.HintSize="740.8301886792452,3262.188679245283" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
       <Variable x:TypeArguments="x:String" Name="pathDownloaded" />
@@ -106,19 +106,19 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Portal_Molpaysgdfee_DownloadReportSettlement" sap:VirtualizedContainerService.HintSize="679.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Molpaysgdfee_DownloadReportSettlement&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="679.2452830188679,3102.7924528301883" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4673a6cd5a604ccfa739f93f1cebad2d" Selector="&lt;html app='chrome.exe' title='Razer Merchant Services Admin Portal Version*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Razer'" sap:VirtualizedContainerService.HintSize="679.2452830188679,3023.094339622641" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4673a6cd5a604ccfa739f93f1cebad2d" Selector="&lt;html app='chrome.exe' title='*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="644.8301886792452,2956.0754716981132" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="644.8301886792452,2876.3773584905657" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope Download Report" sap:VirtualizedContainerService.HintSize="583.2452830188679,1032.4528301886792" sap2010:WorkflowViewState.IdRef="RetryScope_3">
+            <ui:RetryScope DisplayName="Retry Scope Download Report" sap:VirtualizedContainerService.HintSize="583.2452830188679,952.754716981132" sap2010:WorkflowViewState.IdRef="RetryScope_3">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="499.92452830188677,687.3962264150942" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -129,7 +129,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message Try Download Raw File" sap:VirtualizedContainerService.HintSize="438.3396226415094,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Try click download excel file&quot;]" />
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe google'" sap:VirtualizedContainerService.HintSize="434.71698113207543,160.30188679245282" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="9b20bd3b6c3bf996949b5fc0b820910e" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe google'" sap:VirtualizedContainerService.HintSize="438.3396226415094,50.71698113207547" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="9b20bd3b6c3bf996949b5fc0b820910e" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
