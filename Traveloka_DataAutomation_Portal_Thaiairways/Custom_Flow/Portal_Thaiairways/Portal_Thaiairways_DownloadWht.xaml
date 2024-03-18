@@ -1,0 +1,280 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Thaiairways_DownloadInvoice" this:Portal_Thaiairways_DownloadInvoice.in_reportId="35202440" this:Portal_Thaiairways_DownloadInvoice.in_periodStart="[New DateTime(2024, 2, 1)]" this:Portal_Thaiairways_DownloadInvoice.in_periodEnd="[New DateTime(2024, 2, 15)]" this:Portal_Thaiairways_DownloadInvoice.in_filePath="[Directory.GetCurrentDirectory]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_reportId" Type="InArgument(x:String)" />
+    <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_filePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1804.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Portal_Thaiairways_DownloadInvoice_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="516.2264150943396,1739.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="454.64150943396226,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Thaiairways_DownloadInvoice&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  KBank : ESCF'" sap:VirtualizedContainerService.HintSize="454.64150943396226,1349.4339622641508" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="15ddef1e8265c1d01c2b7bb078c77917" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="420.2264150943396,1202.7169811320755" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'XMP'" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23b7f076-0ef1-400d-a50a-8e3003ed5b2b" InformativeScreenshot="81dc17708b52b264ef42c4af02afaa6c" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='9' tag='XMP' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+            </ui:GetValue>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /ESCFWEB/sponsor/tg/...'" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9179227b-e017-4538-8762-be99cdf1b572" InformativeScreenshot="ae2a43727a208da6352de02153d04798" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl tableRow='10' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_reportId]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>35075305</x:String>
+                  <x:String>35202440</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="deb32804-6a72-4449-912a-a1b7e5d41a5c" InformativeScreenshot="ea8b1f142a3ca6faf4c2abe0998decad" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='agentCode' tableRow='2' tag='SELECT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  datePeriod'" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[$&quot;{in_periodStart.ToString(&quot;dd/MM/yyyy&quot;)}-{in_periodEnd.ToString(&quot;dd/MM/yyyy&quot;)}&quot;]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>16/02/2024-29/02/2024</x:String>
+                  <x:String>01/02/2024-15/02/2024</x:String>
+                  <x:String>16/01/2024-31/01/2024</x:String>
+                  <x:String>01/01/2024-15/01/2024</x:String>
+                  <x:String>16/12/2023-31/12/2023</x:String>
+                  <x:String>01/12/2023-15/12/2023</x:String>
+                  <x:String>16/11/2023-30/11/2023</x:String>
+                  <x:String>01/11/2023-15/11/2023</x:String>
+                  <x:String>16/10/2023-31/10/2023</x:String>
+                  <x:String>01/10/2023-15/10/2023</x:String>
+                  <x:String>16/09/2023-30/09/2023</x:String>
+                  <x:String>01/09/2023-15/09/2023</x:String>
+                  <x:String>16/08/2023-31/08/2023</x:String>
+                  <x:String>01/08/2023-15/08/2023</x:String>
+                  <x:String>16/07/2023-31/07/2023</x:String>
+                  <x:String>01/07/2023-15/07/2023</x:String>
+                  <x:String>16/06/2023-30/06/2023</x:String>
+                  <x:String>01/06/2023-15/06/2023</x:String>
+                  <x:String>16/05/2023-31/05/2023</x:String>
+                  <x:String>01/05/2023-15/05/2023</x:String>
+                  <x:String>16/04/2023-30/04/2023</x:String>
+                  <x:String>01/04/2023-15/04/2023</x:String>
+                  <x:String>16/03/2023-31/03/2023</x:String>
+                  <x:String>01/03/2023-15/03/2023</x:String>
+                  <x:String>16/02/2023-28/02/2023</x:String>
+                  <x:String>01/02/2023-15/02/2023</x:String>
+                  <x:String>16/01/2023-31/01/2023</x:String>
+                  <x:String>01/01/2023-15/01/2023</x:String>
+                  <x:String>16/12/2022-31/12/2022</x:String>
+                  <x:String>01/12/2022-15/12/2022</x:String>
+                  <x:String>16/11/2022-30/11/2022</x:String>
+                  <x:String>01/11/2022-15/11/2022</x:String>
+                  <x:String>16/10/2022-31/10/2022</x:String>
+                  <x:String>01/10/2022-15/10/2022</x:String>
+                  <x:String>16/09/2022-30/09/2022</x:String>
+                  <x:String>01/09/2022-15/09/2022</x:String>
+                  <x:String>16/08/2022-31/08/2022</x:String>
+                  <x:String>01/08/2022-15/08/2022</x:String>
+                  <x:String>16/07/2022-31/07/2022</x:String>
+                  <x:String>01/07/2022-15/07/2022</x:String>
+                  <x:String>16/06/2022-30/06/2022</x:String>
+                  <x:String>01/06/2022-15/06/2022</x:String>
+                  <x:String>16/05/2022-31/05/2022</x:String>
+                  <x:String>01/05/2022-15/05/2022</x:String>
+                  <x:String>16/04/2022-30/04/2022</x:String>
+                  <x:String>01/04/2022-15/04/2022</x:String>
+                  <x:String>16/03/2022-31/03/2022</x:String>
+                  <x:String>01/03/2022-15/03/2022</x:String>
+                  <x:String>16/02/2022-28/02/2022</x:String>
+                  <x:String>01/02/2022-15/02/2022</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="262a5d02-c83a-4be4-aefb-0e5b4f190a26" InformativeScreenshot="5b599446bd681d272e5a5bd3f8152614" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='4' tag='TABLE' /&gt;&lt;webctrl id='periodDate' tableRow='1' tag='SELECT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="358.64150943396226,129.50943396226415" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="c" KeyModifiers="Ctrl, Shift">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="633d24ca-7fc5-46b1-83ea-b304e939fc60">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="28a35ff7-7dff-4704-9aa4-aec13fbc5f60" InformativeScreenshot="29d0de2780a145b9055001e1b71828f2" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableCol='13' tableRow='3' tag='TABLE' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td' tableCol='1' tableRow='1' tag='TD' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.0377358490566" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="Custom_Flow\Portal_Thaiairways\downloadOriginalFile.js">
+              <ui:InjectJsScript.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="01c5e0e4-1cfa-406e-8d80-5363c14a98bc">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:InjectJsScript.Target>
+            </ui:InjectJsScript>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="454.64150943396226,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_filePath]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_fileType">pdf</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
