@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1804.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1884.6792452830186</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Thaiairways_DownloadInvoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -82,14 +82,14 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="516.2264150943396,1739.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="516.2264150943396,1779.6226415094338" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="454.64150943396226,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Thaiairways_DownloadInvoice&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  KBank : ESCF'" sap:VirtualizedContainerService.HintSize="454.64150943396226,1349.4339622641508" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="15ddef1e8265c1d01c2b7bb078c77917" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  KBank : ESCF'" sap:VirtualizedContainerService.HintSize="454.64150943396226,1389.2830188679245" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="15ddef1e8265c1d01c2b7bb078c77917" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
