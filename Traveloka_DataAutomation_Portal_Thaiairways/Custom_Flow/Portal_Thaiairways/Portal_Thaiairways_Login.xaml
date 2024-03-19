@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,2524.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1405.6,2663.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Thaiairways_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -53,47 +53,48 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
-      <AssemblyReference>System.Activities</AssemblyReference>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="76">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
-      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.ObjectModel</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Thaiairways_Login" sap:VirtualizedContainerService.HintSize="540.6792452830189,2340.2264150943392" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Thaiairways_Login" sap:VirtualizedContainerService.HintSize="528.8,2598.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="usrname" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
@@ -104,8 +105,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_Login" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Thaiairways_Login&quot;)]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="479.0943396226415,114.11320754716981" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Private="True" Url="[in_portalLink]">
+    <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_Login" sap:VirtualizedContainerService.HintSize="466.4,132.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Thaiairways_Login&quot;)]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="466.4,158.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Private="True" Url="[in_portalLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -114,7 +115,7 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[isAnnouncementAppear]" sap:VirtualizedContainerService.HintSize="479.0943396226415,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[isAnnouncementAppear]" sap:VirtualizedContainerService.HintSize="466.4,147.2" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ea4a782-11a4-4915-b784-7c06f8777785" InformativeScreenshot="46157a8fab26fa90d0e7a18f248c45ed" Selector="&lt;html app='chrome.exe' title='Warning' /&gt;&lt;webctrl css-selector='body&amp;gt;table' idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" TimeoutMS="5000">
           <ui:Target.WaitForReady>
@@ -123,15 +124,15 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[isAnnouncementAppear]" DisplayName="If announcement appear" sap:VirtualizedContainerService.HintSize="479.0943396226415,485.4339622641509" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[isAnnouncementAppear]" DisplayName="If announcement appear" sap:VirtualizedContainerService.HintSize="466.4,497.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,216.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="353.6,130.4" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -155,22 +156,31 @@
           </ui:Click>
         </Sequence>
       </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Thaiairways'" sap:VirtualizedContainerService.HintSize="479.0943396226415,1275.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="1e849449beef56c07c0f25e5ff69ce12" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Thaiairways'" sap:VirtualizedContainerService.HintSize="466.4,1573.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="1e849449beef56c07c0f25e5ff69ce12" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,1128.4528301886792" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1403.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="338.71698113207543,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_refId]">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="353.6,64.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="353.6,175.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_refId]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="a37ab18576bf57a924ac8d817c13684f" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='loginPage:inpt_custRef' tableRow='7' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -182,7 +192,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[usrname]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="353.6,175.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="d12db8b837fa9b64abe7e7b5fc1f5f4d" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='loginPage:inpt_userName' tableRow='9' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -194,7 +204,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
+            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="353.6,147.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
               <ui:TypeSecureText.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="f16b8ec7cb596570a536a6b98ffeea18" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='loginPage:inpt_pwd' tableRow='11' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -206,7 +216,7 @@
                 </ui:Target>
               </ui:TypeSecureText.Target>
             </ui:TypeSecureText>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  COM001_btnLogon'" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  COM001_btnLogon'" sap:VirtualizedContainerService.HintSize="353.6,147.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -228,7 +238,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+            <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="353.6,147.2" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="fe1ee25fc38cf87423df6984fb2cb8be" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl parentname='loanTypeForm' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='selProductType:btn_enterBFP_bu' tableRow='2' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -240,6 +250,50 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  selProductType:b...'" sap:VirtualizedContainerService.HintSize="353.6,147.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3972cde5-12ba-4621-9e39-0ac54b0c8b8a" InformativeScreenshot="fe1ee25fc38cf87423df6984fb2cb8be" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl parentname='loanTypeForm' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='selProductType:btn_enterBFP_bu' tableRow='2' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  selProductType:b...'" sap:VirtualizedContainerService.HintSize="353.6,130.4" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3972cde5-12ba-4621-9e39-0ac54b0c8b8a" InformativeScreenshot="03c7eafa0d685d300de8d505c2d09c63" Selector="&lt;webctrl name='content' tag='FRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

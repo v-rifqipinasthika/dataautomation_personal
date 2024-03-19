@@ -1,6 +1,7 @@
 {
-  "name": "Traveloka_DataAutomation_Portal_Kpay",
-  "description": "Traveloka_DataAutomation_Portal_Kpay",
+  "name": "Traveloka_DataAutomation_Portal_Thaiairways",
+  "projectId": "45337a46-180b-477e-9245-2189f5297fba",
+  "description": "Traveloka_DataAutomation_Portal_Thaiairways",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.2]",
@@ -23,6 +24,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -44,7 +46,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [

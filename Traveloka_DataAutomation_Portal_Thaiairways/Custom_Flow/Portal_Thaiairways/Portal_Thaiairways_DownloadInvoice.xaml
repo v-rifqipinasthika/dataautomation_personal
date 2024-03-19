@@ -4,11 +4,12 @@
     <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_filePath" Type="InArgument(x:String)" />
+    <x:Property Name="out_pathInvoice" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1315.0188679245282</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>506.4,1324.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Thaiairways_DownloadInvoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,68 +41,74 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="37">
-      <AssemblyReference>System.Activities</AssemblyReference>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="74">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
-      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.ObjectModel</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="516.2264150943396,1249.811320754717" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="516.8,1260" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="454.64150943396226,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Thaiairways_DownloadInvoice&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  KBank : ESCF'" sap:VirtualizedContainerService.HintSize="454.64150943396226,859.4716981132075" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="42aaba1001b4d2f017fc89e7862da3ce" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Thaiairways_DownloadInvoice" sap:VirtualizedContainerService.HintSize="454.4,132.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Thaiairways_DownloadInvoice&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  KBank : ESCF'" sap:VirtualizedContainerService.HintSize="454.4,901.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="42aaba1001b4d2f017fc89e7862da3ce" Selector="&lt;html app='chrome.exe' title='KBank : ESCF' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="420.2264150943396,712.754716981132" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="420.8,714.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /ESCFWEB/sponsor/tg/...'" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /ESCFWEB/sponsor/tg/...'" sap:VirtualizedContainerService.HintSize="358.4,147.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -123,7 +130,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_reportId]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="358.4,175.2" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_reportId]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String>All</x:String>
@@ -142,7 +149,7 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  datePeriod'" sap:VirtualizedContainerService.HintSize="358.64150943396226,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[$&quot;{in_periodStart.ToString(&quot;dd/MM/yyyy&quot;)}-{in_periodEnd.ToString(&quot;dd/MM/yyyy&quot;)}&quot;]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  datePeriod'" sap:VirtualizedContainerService.HintSize="358.4,175.2" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[$&quot;{in_periodStart.ToString(&quot;dd/MM/yyyy&quot;)}-{in_periodEnd.ToString(&quot;dd/MM/yyyy&quot;)}&quot;]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="50">
                   <x:String>16/02/2024-29/02/2024</x:String>
@@ -208,7 +215,7 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="358.64150943396226,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="358.4,130.4" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -234,12 +241,14 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="454.64150943396226,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="454.4,136.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_filePath" />
         </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile" />
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathInvoice" />
+        </OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
           <Literal x:TypeArguments="x:String">pdf</Literal>
         </InArgument>
