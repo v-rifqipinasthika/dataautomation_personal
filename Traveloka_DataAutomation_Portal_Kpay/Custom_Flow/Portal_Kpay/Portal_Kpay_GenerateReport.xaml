@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>724.5283018867924,3753.962264150943</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,3883.4716981132074</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Kpay_Generatereport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -113,16 +113,12 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Kpay_Generatereport" sap:VirtualizedContainerService.HintSize="734.4905660377358,3688.754716981132" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Kpay_Generatereport" sap:VirtualizedContainerService.HintSize="734.4905660377358,3818.264150943396" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://kpaymentgateway.kasikornbank.com/portal/v1/transaction-create-report" Name="reportLink" />
       <Variable x:TypeArguments="x:String" Name="selectorDate" />
       <Variable x:TypeArguments="x:String" Name="totalRecords" />
-      <Variable x:TypeArguments="x:Boolean" Name="isReportExist">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isReportExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -130,19 +126,37 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Portal_Kpay_Generatereport" sap:VirtualizedContainerService.HintSize="672.9056603773585,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Kpay_Generatereport&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Amadeusaltea'" sap:VirtualizedContainerService.HintSize="672.9056603773585,3449.66037735849" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a271d2ff5e880c27f5048a77ec487433" Selector="&lt;html app='chrome.exe' title='KBTG Payment Gateway' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Amadeusaltea'" sap:VirtualizedContainerService.HintSize="672.9056603773585,3579.1698113207544" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a271d2ff5e880c27f5048a77ec487433" Selector="&lt;html app='chrome.exe' title='KBTG Payment Gateway' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638.4905660377358,3302.9433962264147" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638.4905660377358,3432.452830188679" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="576.9056603773585,59.77358490566037" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Year" sap:VirtualizedContainerService.HintSize="576.9056603773585,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_period.ToString(&quot;yyyy&quot;)]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>2023</x:String>
+                  <x:String>2024</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a8cda251-7ada-4c83-bced-97a42b7cbd1b" InformativeScreenshot="b4530ec38265e7c79656d4680265727c" Selector="&lt;webctrl idx='2' tag='SELECT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
             <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Month" sap:VirtualizedContainerService.HintSize="576.9056603773585,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_period.ToString(&quot;MMM&quot;)]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
@@ -153,24 +167,6 @@
               </ui:SelectItem.Items>
               <ui:SelectItem.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a8cda251-7ada-4c83-bced-97a42b7cbd1b" InformativeScreenshot="ac7c879bfd72d05ba9347843c4517f73" Selector="&lt;webctrl tag='SELECT' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:SelectItem.Target>
-            </ui:SelectItem>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Year" sap:VirtualizedContainerService.HintSize="576.9056603773585,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_period.ToString(&quot;yyyy&quot;)]">
-              <ui:SelectItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="4">
-                  <x:String>2023</x:String>
-                  <x:String>2024</x:String>
-                </scg:List>
-              </ui:SelectItem.Items>
-              <ui:SelectItem.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a8cda251-7ada-4c83-bced-97a42b7cbd1b" InformativeScreenshot="b4530ec38265e7c79656d4680265727c" Selector="&lt;webctrl idx='2' tag='SELECT' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -251,13 +247,13 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="576.9056603773585,1338.566037735849" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, 10)]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="576.9056603773585,1468.075471698113" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, 10)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540.6792452830189,1216.3018867924527" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540.6792452830189,1345.811320754717" sap2010:WorkflowViewState.IdRef="Sequence_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -283,11 +279,12 @@
                         <OutArgument x:TypeArguments="x:String">[totalRecords]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[Split(totalRecords, " "c)(0).Trim]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[Split(totalRecords.Trim, " "c)(0).Trim]</InArgument>
                       </Assign.Value>
                     </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[totalRecords]" />
                     <Delay DisplayName="Delay Report Load" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="479.0943396226415,87.84905660377358" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                    <If Condition="[totalRecords.Equals(&quot;0&quot;)]" DisplayName="If Reports Loaded" sap:VirtualizedContainerService.HintSize="479.0943396226415,732.6792452830189" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[String.IsNullOrEmpty(totalRecords) Or ( Not String.IsNullOrEmpty(totalRecords) AndAlso Cint(totalRecords) = 0)]" DisplayName="If Reports Loaded" sap:VirtualizedContainerService.HintSize="479.0943396226415,732.6792452830189" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
                         <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,199.24528301886792" sap2010:WorkflowViewState.IdRef="Sequence_26">
                           <sap:WorkflowViewStateService.ViewState>
