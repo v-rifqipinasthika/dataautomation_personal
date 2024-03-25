@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Kpay_DownloadReport" this:Portal_Kpay_DownloadReport.in_pathFolder="[Directory.GetCurrentDirectory]" this:Portal_Kpay_DownloadReport.in_fileType="xls" this:Portal_Kpay_DownloadReport.in_reportId="35202440" this:Portal_Kpay_DownloadReport.in_periodStart="[New DateTime(2024, 2, 1)]" this:Portal_Kpay_DownloadReport.in_periodEnd="[New DateTime(2024, 2, 15)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Kpay_DownloadReport" this:Portal_Kpay_DownloadReport.in_pathFolder="[Directory.GetCurrentDirectory]" this:Portal_Kpay_DownloadReport.in_fileType="xls" this:Portal_Kpay_DownloadReport.in_reportId="35202440" this:Portal_Kpay_DownloadReport.in_periodStart="[New DateTime(2024, 3, 1)]" this:Portal_Kpay_DownloadReport.in_periodEnd="[New DateTime(2024, 3, 15)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_pathRawFile" Type="OutArgument(x:String)" />
     <x:Property Name="in_pathResultFile" Type="InArgument(x:String)" />
@@ -7,11 +7,12 @@
     <x:Property Name="in_reportId" Type="InArgument(x:String)" />
     <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
+    <x:Property Name="out_pathBillingPdf" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,3818.264150943396</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,3698.716981132075</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Kpay_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -253,7 +254,7 @@
                                     <OutArgument x:TypeArguments="x:String">[reportPage]</OutArgument>
                                   </ui:AssignOperation.To>
                                   <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[Math.Ceiling(index/10).ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String">[If(Math.Ceiling(index/10).ToString.Equals("0"), "1", Math.Ceiling(index/10).ToString)]</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -397,9 +398,15 @@
             </ui:RetryScope>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="666.566037735849,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_pathFolder]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[out_pathRawFile]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">pdf</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathBillingPdf" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
+                  <Literal x:TypeArguments="x:String">pdf</Literal>
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:RetryScope DisplayName="Retry Scope download excel" sap:VirtualizedContainerService.HintSize="666.566037735849,633.0566037735848" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="5" RetryInterval="00:00:05">

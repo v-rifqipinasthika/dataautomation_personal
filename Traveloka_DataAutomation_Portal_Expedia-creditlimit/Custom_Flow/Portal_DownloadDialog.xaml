@@ -283,7 +283,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:RetryScope sap2010:Annotation.AnnotationText="Wait for download for 12 seconds" DisplayName="Retry Scope Wait Download" sap:VirtualizedContainerService.HintSize="479.0943396226415,475.47169811320754" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="12" RetryInterval="00:00:05">
+            <ui:RetryScope sap2010:Annotation.AnnotationText="Wait for download for 12 seconds" DisplayName="Retry Scope Wait Download" sap:VirtualizedContainerService.HintSize="479.0943396226415,475.47169811320754" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="7" RetryInterval="00:00:04">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,198.3396226415094" sap2010:WorkflowViewState.IdRef="Sequence_3">

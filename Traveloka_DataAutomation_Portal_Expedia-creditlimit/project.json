@@ -1,6 +1,6 @@
 {
-  "name": "Traveloka_DataAutomation_Portal_Thaiairways",
-  "description": "Traveloka_DataAutomation_Portal_Thaiairways",
+  "name": "Traveloka_DataAutomation_Portal_Expedia-creditlimit",
+  "description": "Traveloka_DataAutomation_Portal_Expedia-creditlimit",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.2]",
