@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Expedia_DownloadPeriod" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Expedia_DownloadPeriod" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_period" Type="InArgument(s:DateTime)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1449.0566037735848</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,2138.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Expedia_DownloadPeriod_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -36,10 +36,10 @@
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="41">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -80,16 +80,16 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Expedia_DownloadPeriod" sap:VirtualizedContainerService.HintSize="1099.4716981132074,1383.8490566037735" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Expedia_DownloadPeriod" sap:VirtualizedContainerService.HintSize="1098.4,2073.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Expedia_DownloadPeriod" sap:VirtualizedContainerService.HintSize="1037.8867924528302,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;STEP : {0}&quot;, &quot;Portal_Expedia_DownloadPeriod&quot;)]" />
-    <Assign DisplayName="Assign Period Search" sap:VirtualizedContainerService.HintSize="1037.8867924528302,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message Portal_Expedia_DownloadPeriod" sap:VirtualizedContainerService.HintSize="1036,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;STEP : {0}&quot;, &quot;Portal_Expedia_DownloadPeriod&quot;)]" />
+    <Assign DisplayName="Assign Period Search" sap:VirtualizedContainerService.HintSize="1036,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[in_period]</OutArgument>
       </Assign.To>
@@ -97,28 +97,31 @@
         <InArgument x:TypeArguments="s:DateTime">[in_period.AddDays(1)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  EPS Portal'" sap:VirtualizedContainerService.HintSize="1037.8867924528302,1044.2264150943395" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="eed1b53b70e8d8919c78b18feec447a6" Selector="&lt;html app='chrome.exe' title='EPS Portal' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  EPS Portal'" sap:VirtualizedContainerService.HintSize="1036,1728.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="eed1b53b70e8d8919c78b18feec447a6" Selector="&lt;html app='chrome.exe' title='EPS Portal' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1003.4716981132075,897.5094339622641" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1002.4,1581.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="isNotFound" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Pick DisplayName="Pick Trigger Choose Period" sap:VirtualizedContainerService.HintSize="941.8867924528302,438.3396226415094" sap2010:WorkflowViewState.IdRef="Pick_1">
+            <Pick DisplayName="Pick Trigger Choose Period" sap:VirtualizedContainerService.HintSize="940,446.4" sap2010:WorkflowViewState.IdRef="Pick_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <PickBranch sap:VirtualizedContainerService.HintSize="384,391.2452830188679" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,400" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
-                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'TH'" sap:VirtualizedContainerService.HintSize="334.18867924528297,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'TH'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b83618d0-7441-436c-ae19-2dee644fd933" InformativeScreenshot="5644790bfeefbee8fce6976f1581bac5" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -131,11 +134,11 @@
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                 </PickBranch.Trigger>
-                <ui:LogMessage DisplayName="Log Message Table Exist" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Table Exist. Loading Complete&quot;]" />
+                <ui:LogMessage DisplayName="Log Message Table Exist" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Table Exist. Loading Complete&quot;]" />
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="384,391.2452830188679" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,400" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
-                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'DIV'" sap:VirtualizedContainerService.HintSize="334.18867924528297,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b83618d0-7441-436c-ae19-2dee644fd933" InformativeScreenshot="de69488687a82da6198254335bc6b779" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='root' tag='DIV' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -148,10 +151,10 @@
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                 </PickBranch.Trigger>
-                <ui:LogMessage DisplayName="Log Message No commission" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;No commission. Loading Complete&quot;]" />
+                <ui:LogMessage DisplayName="Log Message No commission" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;No commission. Loading Complete&quot;]" />
               </PickBranch>
             </Pick>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Year" sap:VirtualizedContainerService.HintSize="941.8867924528302,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_period.ToString(&quot;yyyy&quot;)]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Year" sap:VirtualizedContainerService.HintSize="940,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_period.ToString(&quot;yyyy&quot;)]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String>2023</x:String>
@@ -168,7 +171,7 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Month" sap:VirtualizedContainerService.HintSize="941.8867924528302,134.94339622641508" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_period.ToString(&quot;MMMM&quot;)]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT' Month" sap:VirtualizedContainerService.HintSize="940,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_period.ToString(&quot;MMMM&quot;)]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="16">
                   <x:String>January</x:String>
@@ -196,6 +199,36 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
+            <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[isNotFound]" sap:VirtualizedContainerService.HintSize="940,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cfaef9e9-f9ce-471d-94f0-2c6f4d5a4e7d" InformativeScreenshot="0d09c6965579251cda985b473edb03be" Selector="&lt;webctrl isleaf='1' parentid='root' tag='DIV' visibleinnertext='You didn&amp;apos;t have any billing statements for the selected time period.' /&gt;" TimeoutMS="7000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[isNotFound]" DisplayName="If Throw Not Found" sap:VirtualizedContainerService.HintSize="940,485.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw DisplayName="Throw not found" Exception="[New BusinessRuleException(&quot;Data not found for period &quot; + in_period.ToString(&quot;dd MMM yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
