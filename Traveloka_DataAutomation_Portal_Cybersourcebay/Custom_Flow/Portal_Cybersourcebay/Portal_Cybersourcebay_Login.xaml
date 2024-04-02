@@ -1,55 +1,30 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Cybersourcebay_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Cybersourcebay_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_portalLink" Type="InArgument(x:String)" />
     <x:Property Name="in_cred" Type="InArgument(x:String)" />
     <x:Property Name="in_PID" Type="InArgument(x:String)" />
-    <x:Property Name="in_BPID" Type="InArgument(x:String)" />
-    <x:Property Name="in_BPName" Type="InArgument(x:String)" />
-    <x:Property Name="in_pathLoginChecker" Type="InArgument(x:String)" />
     <x:Property Name="out_flagLogin" Type="OutArgument(x:Boolean)" />
   </x:Members>
-  <this:Portal_Cybersourcebay_Login.in_BPID>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Portal_Cybersourcebay_Login.in_BPID>
-  <this:Portal_Cybersourcebay_Login.in_BPName>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Portal_Cybersourcebay_Login.in_BPName>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,1747.9245283018868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,1580.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcebay_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
-      <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Data</x:String>
-      <x:String>System.Diagnostics</x:String>
-      <x:String>System.Drawing</x:String>
-      <x:String>System.IO</x:String>
-      <x:String>System.Linq</x:String>
-      <x:String>System.Net.Mail</x:String>
-      <x:String>System.Xml</x:String>
-      <x:String>System.Xml.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Security</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -103,14 +78,14 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcebay_Login" sap:VirtualizedContainerService.HintSize="528.9056603773585,1682.7169811320753" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcebay_Login" sap:VirtualizedContainerService.HintSize="528.8,1516" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_Login" sap:VirtualizedContainerService.HintSize="467.3207547169811,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcebay_Login&quot;)]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467.3207547169811,114.11320754716981" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcebay_Login" sap:VirtualizedContainerService.HintSize="466.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcebay_Login&quot;)]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.4,118.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -119,13 +94,13 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="467.3207547169811,959.9999999999999" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8b8e907125948d5a4d227c26afbb3270" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="466.4,965.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8b8e907125948d5a4d227c26afbb3270" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,813" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,818.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="usrname" />
               <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
@@ -135,9 +110,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  username'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,135" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[usrname]">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="337.6,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="337.6,172" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  username'" EmptyField="True" sap:VirtualizedContainerService.HintSize="337.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fedaa544-030a-47f3-9e9d-3854215bce08" InformativeScreenshot="8fd42260b095200de21c37376d5c9294" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;&lt;webctrl id='username' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -149,7 +124,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  password'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="TypeSecureText_2" SecureText="[pwd]" SimulateType="True">
+            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  password'" EmptyField="True" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_2" SecureText="[pwd]" SimulateType="True">
               <ui:TypeSecureText.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2025a006-db47-40b6-85bc-c6512abfc584" InformativeScreenshot="6d8be48acf9b9e5e91a229fce9468e0c" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;&lt;webctrl id='password' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -161,7 +136,7 @@
                 </ui:Target>
               </ui:TypeSecureText.Target>
             </ui:TypeSecureText>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  password'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  password'" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -187,7 +162,7 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:UiElementExists DisplayName="Element Exists 'A  javascript:;' Logout" Exists="[out_flagLogin]" sap:VirtualizedContainerService.HintSize="467,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="Element Exists 'A  javascript:;' Logout" Exists="[out_flagLogin]" sap:VirtualizedContainerService.HintSize="466.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="523fe379-e961-4a42-a82b-743e886b0ab8" InformativeScreenshot="10e4e80dd4b0bce85ae2a6629b4abe36" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;&lt;webctrl aaname=' Log out' tag='A' /&gt;">
           <ui:Target.TimeoutMS>
@@ -199,74 +174,5 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="467,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Login_Checker.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Login_Checker.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="in_flagLoginStatus">[out_flagLogin]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[in_BPID]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_BPName">[in_BPName]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_pathLoginChecker">[in_pathLoginChecker]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="467,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_8">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[Not out_flagLogin]" DisplayName="If Login Failed" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="If_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Throw DisplayName="Throw BRE login failed" Exception="[New BusinessRuleException(&quot;Login failed&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
-              </Sequence>
-            </If.Then>
-            <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Else>
-          </If>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
   </Sequence>
 </Activity>

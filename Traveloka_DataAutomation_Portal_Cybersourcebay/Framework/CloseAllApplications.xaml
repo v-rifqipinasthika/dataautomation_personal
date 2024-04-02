@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="776,868" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseAllApplications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="390.33962264150944,545.2075471698113" sap2010:WorkflowViewState.IdRef="CloseAllApplications_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="28">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -29,7 +29,7 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
@@ -70,53 +70,118 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="496,803" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Do the necessary procedures for ending the process (e.g., logout) and close the used applications." DisplayName="Close All Applications" sap:VirtualizedContainerService.HintSize="400.3018867924528,479.99999999999994" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Krungsri'" sap:VirtualizedContainerService.HintSize="434,365" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="957cc39a198673295c48144c97f57566" Selector="&lt;html app='chrome.exe' title='Krungsri' /&gt;">
-      <ui:BrowserScope.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,218" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  javascript:;'" sap:VirtualizedContainerService.HintSize="338,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8b30a86-0c20-4050-a133-c5c9ab54c1f2" InformativeScreenshot="10e4e80dd4b0bce85ae2a6629b4abe36" Selector="&lt;webctrl aaname=' Log out' tag='A' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-          </Sequence>
-        </ActivityAction>
-      </ui:BrowserScope.Body>
-    </ui:BrowserScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\KillAllProcesses.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+    <ui:LogMessage DisplayName="Log message (close applications)" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Closing applications...&quot;]" />
+    <TryCatch DisplayName="Try Catch Close Application" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="636.6792452830189,998.9433962264151" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="logoutExist" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[logoutExist]" sap:VirtualizedContainerService.HintSize="575.0943396226414,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="637dd8a4-c43f-460e-9780-6345dd44f9aa" InformativeScreenshot="76b30035bf5da3f984811ed9bf6fe543" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;" TimeoutMS="3000">
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:UiElementExists.Target>
+          </ui:UiElementExists>
+          <If Condition="[logoutExist]" DisplayName="If Logout Exist" sap:VirtualizedContainerService.HintSize="575.0943396226414,742.6415094339623" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,472.75471698113205" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="434.71698113207543,363.1698113207547" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="f98947a034562b3117cbfe36de2f9224" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;">
+                  <ui:BrowserScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,216.45283018867923" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  ctl00_lnkLogout'" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d6fa98eb-c2a1-4be5-ad2a-5b9d2b2b9f37" InformativeScreenshot="76b30035bf5da3f984811ed9bf6fe543" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:BrowserScope.Body>
+                </ui:BrowserScope>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="640.3018867924528,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message Close Applicaiton" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\KillAllProcesses.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
