@@ -6,7 +6,6 @@
     <x:Property Name="in_BPID" Type="InArgument(x:String)" />
     <x:Property Name="in_BPName" Type="InArgument(x:String)" />
     <x:Property Name="out_loginSuccess" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="in_refId" Type="InArgument(x:String)" />
     <x:Property Name="in_domain" Type="InArgument(x:String)" />
   </x:Members>
   <this:Portal_Thaiairways_Login.in_BPID>
@@ -15,9 +14,6 @@
   <this:Portal_Thaiairways_Login.in_BPName>
     <InArgument x:TypeArguments="x:String" />
   </this:Portal_Thaiairways_Login.in_BPName>
-  <this:Portal_Thaiairways_Login.in_refId>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Portal_Thaiairways_Login.in_refId>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>

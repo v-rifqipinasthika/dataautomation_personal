@@ -9,8 +9,6 @@
     <x:Property Name="in_PID" Type="InArgument(x:String)" />
     <x:Property Name="in_pathRawFile" Type="InArgument(x:String)" />
     <x:Property Name="in_senderName" Type="InArgument(x:String)" />
-    <x:Property Name="in_pathInvoice" Type="InArgument(x:String)" />
-    <x:Property Name="in_pathBillingPdf" Type="InArgument(x:String)" />
   </x:Members>
   <this:Mail_RawFile.in_strEmailTemplate>
     <InArgument x:TypeArguments="x:String" />
@@ -24,7 +22,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,1041.509433962264</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,1020</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Mail_RawFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -119,7 +117,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Mail_RawFile" sap:VirtualizedContainerService.HintSize="504.45283018867923,936.4528301886792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Mail_RawFile" sap:VirtualizedContainerService.HintSize="504,955.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="htmlBody" />
       <Variable x:TypeArguments="x:String" Name="usrname" />
@@ -130,9 +128,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Mail_RawFile" sap:VirtualizedContainerService.HintSize="442.86792452830184,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Mail_RawFile&quot;)]" />
-    <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="442.86792452830184,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:GetRobotCredential AssetName="[in_CredentialEmail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="442.86792452830184,50.71698113207547" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
+    <ui:LogMessage DisplayName="Log Message Mail_RawFile" sap:VirtualizedContainerService.HintSize="441.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Mail_RawFile&quot;)]" />
+    <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="441.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:GetRobotCredential AssetName="[in_CredentialEmail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="441.6,52.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
       <ui:GetRobotCredential.TimeoutMS>
         <InArgument x:TypeArguments="x:Int32" />
       </ui:GetRobotCredential.TimeoutMS>
@@ -143,26 +141,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <ui:RetryScope sap2010:Annotation.AnnotationText="1 Minute Retry" DisplayName="Retry Scope Waiting For Download Attachment" sap:VirtualizedContainerService.HintSize="442.86792452830184,488.1509433962264" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="4" RetryInterval="00:00:15">
+    <ui:RetryScope sap2010:Annotation.AnnotationText="1 Minute Retry" DisplayName="Retry Scope Waiting For Download Attachment" sap:VirtualizedContainerService.HintSize="441.6,496.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="4" RetryInterval="00:00:15">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,285.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,289.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="" Body="[htmlBody.Replace(&quot;{0}&quot;, in_ProcessName).Replace(&quot;{1}&quot;, in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" Cc="[in_MailCC]" DisplayName="Send SMTP Mail Message Raw File" Email="[usrname]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,175.69811320754715" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[in_senderName]" Port="465" SecureConnection="Auto" SecurePassword="[pwd]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0}_{1}_Raw File_{2}&quot;, in_PID,in_ProcessName,in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" TimeoutMS="120000" To="[in_mailTo]">
+            <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="" Body="[htmlBody.Replace(&quot;{0}&quot;, in_ProcessName).Replace(&quot;{1}&quot;, in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" Cc="[in_MailCC]" DisplayName="Send SMTP Mail Message Raw File" Email="[usrname]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="337.6,177.6" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[in_senderName]" Port="465" SecureConnection="Auto" SecurePassword="[pwd]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0}_{1}_Raw File_{2}&quot;, in_PID,in_ProcessName,in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" TimeoutMS="120000" To="[in_mailTo]">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                   <InArgument x:TypeArguments="x:String">
                     <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathRawFile" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathInvoice" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String">
-                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathBillingPdf" />
                   </InArgument>
                 </scg:List>
               </ui:SendMail.Files>

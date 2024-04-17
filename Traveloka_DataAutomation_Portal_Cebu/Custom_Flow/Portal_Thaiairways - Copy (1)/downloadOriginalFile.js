@@ -1,3 +1,0 @@
-function(element,input){
-    submitPrintReportAgent()
-}
