@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1271.2,3127.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1271.2,3167.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Compare_PaymentReceipt_Soa_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -256,38 +256,38 @@
                     <InArgument x:TypeArguments="x:String">[dtPaymentReceipt.Rows(dtPaymentReceipt.Rows.Count-1).Item("Column27").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="435.2,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[valueSoa]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[dtSoa.Rows(0).Item("Column36").ToString]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,281.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,250.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,203.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap2010:Annotation.AnnotationText="For testing unmatch value" DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="337.6,91.2" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[valueSoa]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">1</InArgument>
+                          <InArgument x:TypeArguments="x:String">[dtSoa.Rows(0).Item("Column36").ToString]</InArgument>
                         </Assign.Value>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
                       </Assign>
                     </Sequence>
                   </ui:CommentOut.Body>
                 </ui:CommentOut>
+                <Assign sap2010:Annotation.AnnotationText="For testing unmatch value" DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="435.2,91.2" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[valueSoa]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">1</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Value SOA : {0}{1}Value Payment Receipt : {2}&quot;, valueSoa, Environment.NewLine, valuePaymentReceipt)]" />
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail_CebuValidation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Mail_CebuValidation.xaml">
                   <ui:InvokeWorkflowFile.Arguments>

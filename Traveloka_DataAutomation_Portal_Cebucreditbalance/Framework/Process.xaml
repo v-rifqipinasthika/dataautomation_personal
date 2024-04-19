@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1477.6,2820</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1271.2,3348.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -463,46 +463,26 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Cebu_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cebu\Portal_Cebu_Login.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Link&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_cred">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Credential&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
-          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_loginSuccess">
-            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="loginSuccess" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">[io_Config("Link").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_cred">[io_Config("Credential").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_loginSuccess">[loginSuccess]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Login_Checker_Write.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Login_Checker_Write.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Int32" x:Key="in_rowCurrentBP">
-            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="rowLoginChecker" />
-          </InArgument>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtLoginChecker">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtLoginChecker" />
-          </InOutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;BPID&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BPName">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Business Partner&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="in_loginSuccess">
-            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="loginSuccess" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_rowCurrentBP">[rowLoginChecker]</InArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtLoginChecker">[dtLoginChecker]</InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[io_Config("BPID").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BPName">[io_Config("Business Partner").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="in_loginSuccess">[loginSuccess]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:RetryScope DisplayName="Retry Scope Write Range Gsheet" sap:VirtualizedContainerService.HintSize="378.4,52.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
         <ui:RetryScope.ActivityBody>
           <ActivityAction>
-            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496,164.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -579,25 +559,19 @@
       </If>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Cebu\Portal_Cebu_NavigateReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cebu\Portal_Cebu_NavigateReport.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal_Cebu_CaptureBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cebu\Portal_Cebu_CaptureBalance.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-            <Literal x:TypeArguments="x:String">RPA0043</Literal>
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathResultFile" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_PID">RPA0043</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[pathResultFile]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail\Mail_RawFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Custom_Flow\Mail\Mail_RawFile.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">
-            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
+            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="periodEnd" />
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">
             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(io_Config(&quot;PathMailTemplate&quot;).ToString, &quot;Email_RawFile.html&quot;)" />
@@ -628,21 +602,11 @@
     </Sequence>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="477.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="pathLog" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">
-          <Literal x:TypeArguments="x:String">Success</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">
-          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="periodStart" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">
-          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="periodEnd" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_pathLog">[pathLog]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_logStatus">Success</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">[periodStart]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">[periodEnd]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
