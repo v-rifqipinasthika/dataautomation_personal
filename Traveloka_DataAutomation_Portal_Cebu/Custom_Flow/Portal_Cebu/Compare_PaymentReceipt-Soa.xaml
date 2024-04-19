@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1271,2874</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1271.2,3127.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Compare_PaymentReceipt_Soa_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Compare_PaymentReceipt_Soa" sap:VirtualizedContainerService.HintSize="776,2729" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Compare_PaymentReceipt_Soa" sap:VirtualizedContainerService.HintSize="777.6,3062.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="txtPath" />
       <Variable x:TypeArguments="x:String" Name="pathSoa" />
@@ -120,18 +120,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Compare_PaymentReceipt_Soa" sap:VirtualizedContainerService.HintSize="714,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Compare_PaymentReceipt_Soa&quot;]" />
-    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[isTempPathExist]" sap:VirtualizedContainerService.HintSize="714,90" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_tempPath]" PathType="File" />
-    <If Condition="[isTempPathExist]" sap:VirtualizedContainerService.HintSize="714,2356" sap2010:WorkflowViewState.IdRef="If_3">
+    <ui:LogMessage DisplayName="Log Message Compare_PaymentReceipt_Soa" sap:VirtualizedContainerService.HintSize="715.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Compare_PaymentReceipt_Soa&quot;]" />
+    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[isTempPathExist]" sap:VirtualizedContainerService.HintSize="715.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[in_tempPath]" PathType="File" />
+    <If Condition="[isTempPathExist]" sap:VirtualizedContainerService.HintSize="715.2,2687.2" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="636,2080" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap:VirtualizedContainerService.HintSize="637.6,2408.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadTextFile File="{x:Null}" Content="[txtPath]" DisplayName="Read Text File" FileName="[in_tempPath]" sap:VirtualizedContainerService.HintSize="574,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-          <If Condition="[Split(txtPath, &quot;;&quot;c).Count = 3]" DisplayName="If Success Run" sap:VirtualizedContainerService.HintSize="574,1849" sap2010:WorkflowViewState.IdRef="If_1">
+          <ui:ReadTextFile File="{x:Null}" Content="[txtPath]" DisplayName="Read Text File" FileName="[in_tempPath]" sap:VirtualizedContainerService.HintSize="575.2,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <If Condition="[Split(txtPath, &quot;;&quot;c).Count &gt; 3]" DisplayName="If Success Run" sap:VirtualizedContainerService.HintSize="575.2,2176" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -139,7 +139,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="496,1573" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap:VirtualizedContainerService.HintSize="497.6,1897.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="valuePaymentReceipt" />
                   <Variable x:TypeArguments="x:String" Name="valueSoa" />
@@ -149,7 +149,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssign DisplayName="Multiple Assign path" sap:VirtualizedContainerService.HintSize="434,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign DisplayName="Multiple Assign path" sap:VirtualizedContainerService.HintSize="435.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -171,19 +171,19 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,281" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[pathSoa]">
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="435.2,281.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[pathSoa]">
                   <ui:ExcelApplicationScope.Body>
                     <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,171" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ExcelReadRange AddHeaders="False" DataTable="[dtSoa]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SOAReport">
+                        <ui:ExcelReadRange AddHeaders="False" DataTable="[dtSoa]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="SOAReport">
                           <ui:ExcelReadRange.Range>
                             <InArgument x:TypeArguments="x:String">
                               <Literal x:TypeArguments="x:String" Value="" />
@@ -200,19 +200,19 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ExcelApplicationScope>
-                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,281" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[pathPaymentReceipt]">
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="435.2,281.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[pathPaymentReceipt]">
                   <ui:ExcelApplicationScope.Body>
                     <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,171" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ExcelReadRange AddHeaders="False" DataTable="[dtPaymentReceipt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="PaymentReceipt">
+                        <ui:ExcelReadRange AddHeaders="False" DataTable="[dtPaymentReceipt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="PaymentReceipt">
                           <ui:ExcelReadRange.Range>
                             <InArgument x:TypeArguments="x:String">
                               <Literal x:TypeArguments="x:String" Value="" />
@@ -229,7 +229,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ExcelApplicationScope>
-                <ui:FilterDataTable DataTable="[dtSoa]" DisplayName="Filter Data Table soa" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtSoa]" SelectColumnsMode="Keep">
+                <ui:FilterDataTable DataTable="[dtSoa]" DisplayName="Filter Data Table soa" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="435.2,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtSoa]" SelectColumnsMode="Keep">
                   <ui:FilterDataTable.Filters>
                     <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                       <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -248,7 +248,7 @@
                     </scg:List>
                   </ui:FilterDataTable.SelectColumns>
                 </ui:FilterDataTable>
-                <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="435.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[valuePaymentReceipt]</OutArgument>
                   </Assign.To>
@@ -256,7 +256,7 @@
                     <InArgument x:TypeArguments="x:String">[dtPaymentReceipt.Rows(dtPaymentReceipt.Rows.Count-1).Item("Column27").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="435.2,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[valueSoa]</OutArgument>
                   </Assign.To>
@@ -264,33 +264,41 @@
                     <InArgument x:TypeArguments="x:String">[dtSoa.Rows(0).Item("Column36").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Value SOA : {0}{1}Value Payment Receipt : {2}&quot;, valueSoa, Environment.NewLine, valuePaymentReceipt)]" />
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail_CebuValidation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Mail_CebuValidation.xaml">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,281.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,203.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap2010:Annotation.AnnotationText="For testing unmatch value" DisplayName="Assign Value Payment Receipt" sap:VirtualizedContainerService.HintSize="337.6,91.2" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[valueSoa]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">1</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Value SOA : {0}{1}Value Payment Receipt : {2}&quot;, valueSoa, Environment.NewLine, valuePaymentReceipt)]" />
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Mail_CebuValidation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Mail_CebuValidation.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_validationMailTemplate">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_validationMailTemplate" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_valueSoa">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="valueSoa" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_valuePaymentReceipt">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="valuePaymentReceipt" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_subjectMail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="If(valuePaymentReceipt.Equals(valueSoa), &quot;Cebu SOA &amp; Payment Receipt Match&quot;, &quot;Cebu SOA &amp; Payment Receipt Unmatch&quot;)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_senderName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_senderName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_mailTo" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_mailCc" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_credMail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_credMail" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_validationMailTemplate">[in_validationMailTemplate]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_valueSoa">[valueSoa]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_valuePaymentReceipt">[valuePaymentReceipt]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_subjectMail">[If(valuePaymentReceipt.Equals(valueSoa), "Cebu SOA &amp; Payment Receipt Match", "Cebu SOA &amp; Payment Receipt Unmatch")]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_senderName">[in_senderName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_mailTo]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_mailCc]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[in_credMail]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
