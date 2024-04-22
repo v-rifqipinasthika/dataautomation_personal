@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408,3956.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1271.2,5519.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="680,3852" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="680,5454.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtUserConfig" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtLoginChecker" />
@@ -135,7 +135,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="617.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="617.6,52.8" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
+    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="617.6,1270.4" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
       <uga:GSuiteApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/spreadsheets</InArgument>
@@ -227,7 +227,7 @@
       </uga:GSuiteApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -248,7 +248,7 @@
               <OutArgument x:TypeArguments="x:Object">[io_Config("BPID")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Object">[CType("FL0101", Object)]</InArgument>
+              <InArgument x:TypeArguments="x:Object">[CType("FL0352", Object)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -278,33 +278,15 @@
     </ui:MultipleAssign>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="617.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PathMasterFolder&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-          <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="period" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Key&quot;).ToString" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathLog" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="pathScheduler" />
-        </OutArgument>
-        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">
-          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="io_Config" />
-        </InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_productType">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Product Type&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">
-          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CBool(in_Rerun)" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[io_Config("PathMasterFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">[io_Config("Key").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathLogCurrent">[pathLog]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_pathMasterBpScheduler">[pathScheduler]</OutArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[io_Config]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_productType">[io_Config("Product Type").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">[CBool(in_Rerun)]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <If sap2010:Annotation.AnnotationText="If Rerun True Mark Log Empty For Current Period" Condition="[CBool(in_Rerun) = True]" DisplayName="If Rerun True Mark Log Empty For Current Period" sap:VirtualizedContainerService.HintSize="617.6,697.6" sap2010:WorkflowViewState.IdRef="If_5">
@@ -468,36 +450,24 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Login_Checker_Write.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="617.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Login_Checker_Write.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_rowCurrentBP">
-          <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="rowLoginChecker" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtLoginChecker">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtLoginChecker" />
-        </InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;BPID&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BPName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;Business Partner&quot;).ToString" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_loginSuccess">
-          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="loginSuccess" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_PID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Config(&quot;PID&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_rowCurrentBP">[rowLoginChecker]</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtLoginChecker">[dtLoginChecker]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPID">[io_Config("BPID").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_BPName">[io_Config("Business Partner").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_loginSuccess">[loginSuccess]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:RetryScope DisplayName="Retry Scope Write Range Gsheet" sap:VirtualizedContainerService.HintSize="617.6,866.4" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+    <ui:RetryScope DisplayName="Retry Scope Write Range Gsheet" sap:VirtualizedContainerService.HintSize="617.6,1251.2" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="540,690.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="540,1075.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Write Updated Login Checker" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="477.6,52.8" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_2" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
+            <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Write Updated Login Checker" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="477.6,437.6" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_2" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
               <uga:GSuiteApplicationScope.AuthenticationScopes>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                   <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/drive.file</InArgument>
@@ -521,7 +491,7 @@
               </uga:GSuiteApplicationScope.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
