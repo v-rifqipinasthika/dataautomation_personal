@@ -130,7 +130,7 @@
             <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="338.71698113207543,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd]" Username="[usrname]" />
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="e9355ea5f329e368ab71b528b255b358" Selector="&lt;webctrl sfl-path='siteforceLoginApp2/siteforceRouterInitializer/siteforceGeneratedpage0e10c77745ba4dfcB5eeBe701a175063C143/cPortalLogin' tag='C-PORTAL-LOGIN' /&gt;&lt;webctrl tag='INPUT' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="e9355ea5f329e368ab71b528b255b358" Selector="&lt;webctrl tag='INPUT' name='username' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -142,7 +142,7 @@
             </ui:TypeInto>
             <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
               <ui:TypeSecureText.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="02ee615fd8ff3a9d45ee0e80ef5f5ba3" Selector="&lt;webctrl sfl-path='siteforceLoginApp2/siteforceRouterInitializer/siteforceGeneratedpage0e10c77745ba4dfcB5eeBe701a175063C143/cPortalLogin' tag='C-PORTAL-LOGIN' /&gt;&lt;webctrl tag='INPUT' type='password' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="02ee615fd8ff3a9d45ee0e80ef5f5ba3" Selector="&lt;webctrl tag='INPUT' type='password' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -164,7 +164,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b48f8113-f588-4685-80f8-d2a4a6ab435e" InformativeScreenshot="eae7fbe443752c0aa6537419ad206ef2" Selector="&lt;webctrl sfl-path='siteforceLoginApp2/siteforceRouterInitializer/siteforceGeneratedpage0e10c77745ba4dfcB5eeBe701a175063C143/cPortalLogin' tag='C-PORTAL-LOGIN' /&gt;&lt;webctrl class='next-btn' tag='BUTTON' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b48f8113-f588-4685-80f8-d2a4a6ab435e" InformativeScreenshot="eae7fbe443752c0aa6537419ad206ef2" Selector="&lt;webctrl class='next-btn' tag='BUTTON' visibleinnertext='Log in' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -176,7 +176,7 @@
             </ui:Click>
             <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="338.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="2931bee5a64f227e57c620b2cd245920" Selector="&lt;webctrl sfl-path='siteforceBaseApp/auraIf:pageLoaderContainer/siteforceGeneratedpageInnerC143/cPortalHeader' tag='C-PORTAL-HEADER' /&gt;&lt;webctrl class='avatar-back' tag='DIV' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="2931bee5a64f227e57c620b2cd245920" Selector="&lt;webctrl class='avatar-back' tag='DIV' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>

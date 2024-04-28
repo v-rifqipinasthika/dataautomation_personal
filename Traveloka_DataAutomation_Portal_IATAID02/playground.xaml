@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="playground" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1476.2264150943395,948.2264150943396" sap2010:WorkflowViewState.IdRef="playground_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="playground" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="486.3396226415093,775.2452830188679" sap2010:WorkflowViewState.IdRef="playground_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="29">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -28,10 +28,12 @@
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="41">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="86">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -72,135 +74,76 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="playground" sap:VirtualizedContainerService.HintSize="498.1132075471698,843.1698113207547" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="playground" sap:VirtualizedContainerService.HintSize="496.3018867924528,710.0377358490565" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="listRegion" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dicCred" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCalendar" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="{}{&quot;iataid02&quot;,&#xA; &quot;iatasg02&quot;,&#xA; &quot;iatath02&quot;,&#xA; &quot;iatavn02&quot;,&#xA; &quot;iatamy02&quot;,&#xA; &quot;iatamy12&quot;}" DisplayName="Assign Region" sap:VirtualizedContainerService.HintSize="436.5283018867924,156.67924528301884" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[listRegion]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{
-"iataid02",
-"iatasg02",
- "iatath02",
- "iatavn02",
- "iatamy02",
- "iatamy12"
- }]</InArgument>
-      </Assign.Value>
+    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[dtCalendar]" DisplayName="Extract Structured Data 'TABLE  DataTables_Table...'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Period Code' attr='text' /&gt;&lt;column name='Billing From' attr='text' /&gt;&lt;column name='Billing To' attr='text' /&gt;&lt;column name='Billing Availability' attr='text' /&gt;&lt;column name='Remittance Frequency' attr='text' /&gt;&lt;column name='Operation Currency' attr='text' /&gt;&lt;column name='Remittance Day' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="434.71698113207543,106.86792452830188" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname='Next' tag='A' /&gt;" SimulateClick="True">
+      <ui:ExtractData.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18bc1781-1e18-4c32-ad76-8fbd2efa4c43" InformativeScreenshot="3142d73a205ce57667d602db6f8f42d7" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </ui:ExtractData.Target>
+    </ui:ExtractData>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434.71698113207543,313.3584905660377" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <ui:FilterDataTable DataTable="[dtCalendar]" DisplayName="Filter Data Table For Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334.18867924528297,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dtCalendar]" SelectColumnsMode="Keep">
+          <ui:FilterDataTable.Filters>
+            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["Billing Availability"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">["abc"]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+            </scg:List>
+          </ui:FilterDataTable.Filters>
+          <ui:FilterDataTable.SelectColumns>
+            <scg:List x:TypeArguments="InArgument" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </ui:FilterDataTable.SelectColumns>
+        </ui:FilterDataTable>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400.3018867924528,156.67924528301884" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.18867924528297,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;No data found for period &quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <Sequence sap:VirtualizedContainerService.HintSize="434.71698113207543,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="436.5283018867924,63.39622641509433" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dicCred]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[New Dictionary(Of String, String) From
-{
-	{"iataid02", "RPA132_IATA_ID02"},
-	{"iatamy02", "RPA133_IATA_MY02"},
-	{"iatasg02", "RPA134_IATA_SG02"},
-	{"iatamy12", "RPA135_IATA_MY12"},
-	{"iatath02", "RPA136_IATA_TH02"},
-	{"iatavn02", "RPA137_IATA_VN02"}
-}]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436.5283018867924,433.811320754717" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listRegion]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="x:String">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="region" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400.3018867924528,311.5471698113207" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338.71698113207543,50.71698113207547" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="502.64150943396226,633.9622641509434" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap:VirtualizedContainerService.HintSize="441.05660377358487,524.377358490566" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_Login.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_portalLink">https://portal.iata.org/s/login/?language=en_US</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_cred">[dicCred(region)]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_PID" />
-                        <InArgument x:TypeArguments="x:String" x:Key="in_BPID" />
-                        <InArgument x:TypeArguments="x:String" x:Key="in_BPName" />
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_loginSuccess" />
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_NavReportPage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_NavReportPage.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_homeLink">https://portal.iata.org/s/</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_IATA\Portal_IATA_DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.47169811320754,112.30188679245282" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_IATA\Portal_IATA_DownloadReport.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_periodCode">20240101W</InArgument>
-                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodStart">[New DateTime(2024,01,01)]</InArgument>
-                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_periodEnd">[New DateTime(2024,01,08)]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[Directory.GetCurrentDirectory]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_fileType">zip</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_bpKey">[region]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </Sequence>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Main.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Main.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueFolder" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_BPKey">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="region" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Period">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="New DateTime(2024, 01, 15).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Rerun">
-                  <Literal x:TypeArguments="x:String">True</Literal>
-                </InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-    </ui:ForEach>
+    </Sequence>
   </Sequence>
 </Activity>
