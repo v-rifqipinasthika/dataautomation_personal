@@ -10,7 +10,7 @@
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1271.2,906.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1449.6,866.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -759,9 +759,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,122.4" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="621.6,1280.8" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="576.8,1174.4" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="576.8,1136" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -769,7 +769,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="540,903.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="540,904.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -777,12 +777,27 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Cebu\Compare_PaymentReceipt-Soa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="477.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cebu\Compare_PaymentReceipt-Soa.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_tempPath">[Config("PathValidation").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_validationMailTemplate">[Config("PathMailValidation").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_senderName">[Config("SenderName").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[Config("MailValidationTo").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[Config("MailValidationCc").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[Config("CredMail").ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_tempPath">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PathValidation&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_validationMailTemplate">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PathMailValidation&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_senderName">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;SenderName&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;MailValidationTo&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;MailValidationCc&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_credMail">
+                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;CredMail&quot;).ToString" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
+                                            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="CDate(Config(&quot;periodEnd&quot;).ToString)" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="477.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
@@ -790,7 +805,7 @@
                                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
-                                      <If Condition="[isException]" DisplayName="If Exception True" sap:VirtualizedContainerService.HintSize="477.6,484" sap2010:WorkflowViewState.IdRef="If_16">
+                                      <If Condition="[isException]" DisplayName="If Exception True" sap:VirtualizedContainerService.HintSize="477.6,485.6" sap2010:WorkflowViewState.IdRef="If_16">
                                         <If.Then>
                                           <Sequence sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -802,7 +817,7 @@
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
