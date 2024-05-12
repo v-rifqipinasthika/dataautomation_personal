@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,5071.698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>816,5069.8867924528295</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_IATA_CaptureCalendar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -101,7 +101,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Capture calender where Period = Billing Availability" DisplayName="Portal_IATA_SearchPeriod" sap:VirtualizedContainerService.HintSize="825.9622641509434,5006.490566037735" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Capture calender where Period = Billing Availability" DisplayName="Portal_IATA_SearchPeriod" sap:VirtualizedContainerService.HintSize="825.9622641509434,5004.679245283019" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtCalendar" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dicRegion" />
@@ -130,13 +130,13 @@
 }]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe IATA'" sap:VirtualizedContainerService.HintSize="764.3773584905659,4633.358490566037" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4296062614ba37aad4217c94c60e77a6" Selector="&lt;html app='chrome.exe' title='*IATA*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe IATA'" sap:VirtualizedContainerService.HintSize="764.3773584905659,4631.547169811321" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="4296062614ba37aad4217c94c60e77a6" Selector="&lt;html app='chrome.exe' title='*IATA*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="729.9622641509434,4486.641509433962" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="729.9622641509434,4484.830188679245" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -300,13 +300,13 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Search Period" sap:VirtualizedContainerService.HintSize="668.3773584905659,2698.8679245283015" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[{in_period.ToString(&quot;yyyy&quot;), in_period.AddYears(-1).ToString(&quot;yyyy&quot;)}]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Search Period" sap:VirtualizedContainerService.HintSize="668.3773584905659,2697.056603773585" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[{in_period.ToString(&quot;yyyy&quot;), in_period.AddYears(-1).ToString(&quot;yyyy&quot;)}]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="currentYear" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Sequence Check Period Year" sap:VirtualizedContainerService.HintSize="632.1509433962264,2576.6037735849054" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Sequence Check Period Year" sap:VirtualizedContainerService.HintSize="632.1509433962264,2574.7924528301887" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -366,7 +366,7 @@
                         </ui:Target>
                       </ui:ExtractData.Target>
                     </ui:ExtractData>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="570.566037735849,523.4716981132075" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="570.566037735849,522.566037735849" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                       <TryCatch.Try>
                         <ui:FilterDataTable DataTable="[dtCalendar]" DisplayName="Filter Data Table For Current Period" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334.18867924528297,157.58490566037736" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtCalendar]" SelectColumnsMode="Keep">
                           <ui:FilterDataTable.Filters>
@@ -389,7 +389,7 @@
                         </ui:FilterDataTable>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="406.64150943396226,366.79245283018867" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="406.64150943396226,365.88679245283015" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -400,14 +400,14 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                             </ActivityAction.Argument>
-                            <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,299.77358490566036" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,298.86792452830184" sap2010:WorkflowViewState.IdRef="Sequence_15">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message no data found" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;No data found for period&quot; + in_period.ToString(&quot;dd MMM yyyy&quot;)]" />
-                              <Assign DisplayName="Assign empty data table" sap:VirtualizedContainerService.HintSize="338.71698113207543,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <ui:LogMessage DisplayName="Log Message no data found" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Data not found for period&quot; + in_period.ToString(&quot;dd MMM yyyy&quot;)]" />
+                              <Assign DisplayName="Assign empty data table" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_3">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataTable">[dtCalendar]</OutArgument>
                                 </Assign.To>
@@ -420,7 +420,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <If Condition="[dtCalendar.Rows.Count &gt; 0]" DisplayName="If Period Exist" sap:VirtualizedContainerService.HintSize="570.566037735849,1277.8867924528302" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[dtCalendar.Rows.Count &gt; 0]" DisplayName="If Period Exist" sap:VirtualizedContainerService.HintSize="570.566037735849,1276.9811320754716" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -428,7 +428,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="491.77358490566036,909.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence sap:VirtualizedContainerService.HintSize="491.77358490566036,908.3773584905659" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -490,7 +490,7 @@
                               <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[in_period]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <Assign sap:VirtualizedContainerService.HintSize="430.18867924528297,60.679245283018865" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign sap:VirtualizedContainerService.HintSize="430.18867924528297,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[isPeriodFound]</OutArgument>
                             </Assign.To>
@@ -530,7 +530,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[New BusinessRuleException(&quot;No data found for period &quot; + in_period.ToString(&quot;dd MMM yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw Exception="[New BusinessRuleException(&quot;Data not found for period &quot; + in_period.ToString(&quot;dd MMM yyyy&quot;))]" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
