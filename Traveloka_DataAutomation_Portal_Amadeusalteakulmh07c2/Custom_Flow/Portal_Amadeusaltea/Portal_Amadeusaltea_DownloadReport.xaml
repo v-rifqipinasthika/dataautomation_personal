@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408,2461.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1264.3018867924527,2503.2452830188677</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Amadeusaltea_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -111,32 +111,50 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Amadeusaltea_DownloadReport" sap:VirtualizedContainerService.HintSize="1274.4,2396.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="https://ndc.malaysiaairlines.airlines.amadeus.com/sales-report" Name="reportLink" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Portal_Amadeusaltea_DownloadReport" sap:VirtualizedContainerService.HintSize="1274.264150943396,2438.0377358490564" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Amadeusaltea_DownloadReport" sap:VirtualizedContainerService.HintSize="1212,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Amadeusaltea_DownloadReport&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Amadeusaltea'" sap:VirtualizedContainerService.HintSize="1212,2152" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a271d2ff5e880c27f5048a77ec487433" Selector="&lt;html app='chrome.exe' title='MHagentplus' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Amadeusaltea_DownloadReport" sap:VirtualizedContainerService.HintSize="1212.6792452830189,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Amadeusaltea_DownloadReport&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Amadeusaltea'" sap:VirtualizedContainerService.HintSize="1212.6792452830189,2198.9433962264147" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a271d2ff5e880c27f5048a77ec487433" Selector="&lt;html app='chrome.exe' title='MHagentplus' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1178.264150943396,2005.132075471698" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1178.264150943396,2052.2264150943397" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Report Page" sap:VirtualizedContainerService.HintSize="1116.6792452830189,59.77358490566037" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[reportLink]" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN' sales journal" sap:VirtualizedContainerService.HintSize="1116.6792452830189,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90b4bc80-3057-4658-a06c-71f6b94ccc8b" InformativeScreenshot="22d4d0995c5f6ee4f2b14dde90eadefd" Selector="&lt;webctrl aaname='Sales journal' tag='SPAN' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  mat-input-6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1116.6792452830189,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_period.ToString(&quot;dd/MM/yyyy&quot;)]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="360b5475-2b18-440e-b039-0dbf7af6480a" InformativeScreenshot="30c63d8e4cf1468bf475ba6545e4a03f" Selector="&lt;webctrl id='mat-input-0' tag='INPUT' aaname='From *' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="360b5475-2b18-440e-b039-0dbf7af6480a" InformativeScreenshot="30c63d8e4cf1468bf475ba6545e4a03f" Selector="&lt;webctrl id='mat-input-*' tag='INPUT' aaname='From*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -148,7 +166,7 @@
             </ui:TypeInto>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  mat-input-6'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1116.6792452830189,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_period.ToString(&quot;dd/MM/yyyy&quot;)]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="360b5475-2b18-440e-b039-0dbf7af6480a" InformativeScreenshot="e6f0b2a28336c0f710ca387aabd7d097" Selector="&lt;webctrl id='mat-input-1' tag='INPUT' aaname='To' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="360b5475-2b18-440e-b039-0dbf7af6480a" InformativeScreenshot="e6f0b2a28336c0f710ca387aabd7d097" Selector="&lt;webctrl id='mat-input-*' tag='INPUT' aaname='To' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>

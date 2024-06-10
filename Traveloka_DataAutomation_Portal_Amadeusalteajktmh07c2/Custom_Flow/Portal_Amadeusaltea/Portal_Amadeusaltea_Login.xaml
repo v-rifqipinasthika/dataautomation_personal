@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,2031.3962264150941</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,2031.3962264150941</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Amadeusaltea_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -130,14 +130,7 @@
             <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="403.92452830188677,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="403.92452830188677,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="210383024c7392836e323cbd2bd971bb" Selector="&lt;webctrl id='userIdInput' tag='INPUT' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="210383024c7392836e323cbd2bd971bb" Selector="&lt;webctrl id='userIdInput' tag='INPUT' /&gt;" TimeoutMS="60000" WaitForReady="COMPLETE" />
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  id_confirmButton'" sap:VirtualizedContainerService.HintSize="403.92452830188677,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -164,12 +157,8 @@
             </ui:Click>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Amadeusaltea\Portal_Amadeusaltea_OTPHandler.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="403.92452830188677,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Amadeusaltea\Portal_Amadeusaltea_OTPHandler.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_emailCred">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_credMail" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_otpCode">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="otpCode" />
-                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_emailCred">[in_credMail]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_otpCode">[otpCode]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="403.92452830188677,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_5" SimulateType="True" Text="[otpCode]">
