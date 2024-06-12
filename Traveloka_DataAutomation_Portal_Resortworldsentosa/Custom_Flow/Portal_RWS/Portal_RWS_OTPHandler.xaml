@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1075.0188679245282,3436.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,3156.2264150943392</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Resortworldsentosa_OTPHandler_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -97,7 +97,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Check if otp exist&#xA;2. If ask for OTP, Check email for ct.rpa1@traveloka.com&#xA;3. Filter email with subject &quot;Maya OTP&quot;&#xA;4. OTP code placed in email body" DisplayName="Portal_Resortworldsentosa_OTPHandler" sap:VirtualizedContainerService.HintSize="706.4150943396226,3371.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Check if otp exist&#xA;2. If ask for OTP, Check email for ct.rpa1@traveloka.com&#xA;3. Filter email with subject &quot;Maya OTP&quot;&#xA;4. OTP code placed in email body" DisplayName="Portal_Resortworldsentosa_OTPHandler" sap:VirtualizedContainerService.HintSize="706.4150943396226,3091.018867924528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="otpExist" />
     </Sequence.Variables>
@@ -144,25 +144,17 @@
         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[otpExist]" DisplayName="If OTP Exist" sap:VirtualizedContainerService.HintSize="644.8301886792452,2600.1509433962265" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[otpExist]" DisplayName="If OTP Exist" sap:VirtualizedContainerService.HintSize="644.8301886792452,2319.396226415094" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="566.0377358490566,2331.1698113207544" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="540.6792452830189,2050.4150943396226" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="usrname" />
             <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailMessage" />
             <Variable x:TypeArguments="x:String" Name="filterExpression" />
             <Variable x:TypeArguments="x:String" Default="[Now.ToString(&quot;dd-MMM-yyyy&quot;).ToUpper]" Name="period" />
-            <Variable x:TypeArguments="x:String" Name="subject">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">PARTNERS - One-Time Password(OTP)</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="domain">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">noreply@partners.rwsentosa.com</Literal>
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:String" Default="PARTNERS - One-Time Password(OTP)" Name="subject" />
+            <Variable x:TypeArguments="x:String" Default="noreply@partners.rwsentosa.com" Name="domain" />
             <Variable x:TypeArguments="x:Boolean" Default="False" Name="emailFound" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -170,7 +162,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential AssetName="[in_emailCred]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="504.45283018867923,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
+          <ui:GetRobotCredential AssetName="[in_emailCred]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="479.0943396226415,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
             <ui:GetRobotCredential.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:GetRobotCredential.TimeoutMS>
@@ -181,7 +173,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetRobotCredential>
-          <Assign sap2010:Annotation.AnnotationText="Mail filter for OTP&#xA;- Subject = PARTNERS - One-Time Password(OTP)&#xA;- Domain = noreply@partners.rwsentosa.com&#xA;- Expression = &quot;SINCE 23-Feb-2021 SUBJECT &quot;&quot;PARTNERS - One-Time Password(OTP)&quot;&quot; FROM noreply@partners.rwsentosa.com&quot;" DisplayName="Assign Mail Filter OTP" sap:VirtualizedContainerService.HintSize="504.45283018867923,166.64150943396226" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap2010:Annotation.AnnotationText="Mail filter for OTP&#xA;- Subject = PARTNERS - One-Time Password(OTP)&#xA;- Domain = noreply@partners.rwsentosa.com&#xA;- Expression = &quot;SINCE 23-Feb-2021 SUBJECT &quot;&quot;PARTNERS - One-Time Password(OTP)&quot;&quot; FROM noreply@partners.rwsentosa.com&quot;" DisplayName="Assign Mail Filter OTP" sap:VirtualizedContainerService.HintSize="479.0943396226415,166.64150943396226" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[filterExpression]</OutArgument>
             </Assign.To>
@@ -194,17 +186,17 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:RetryScope DisplayName="Retry Scope Get OTP Mail" sap:VirtualizedContainerService.HintSize="504.45283018867923,652.0754716981131" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:30">
+          <ui:RetryScope DisplayName="Retry Scope Get OTP Mail" sap:VirtualizedContainerService.HintSize="479.0943396226415,511.6981132075471" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:30">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
-                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="461.88679245283015,405.73584905660374" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,265.35849056603774" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages OTP" Email="[usrname]" EnableSSL="True" FilterExpression="[filterExpression]" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="400.3018867924528,25.358490566037734" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[listMailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[pwd]" Server="imap.gmail.com" TimeoutMS="180000" Top="10" />
-                  <Assign sap2010:Annotation.AnnotationText="Set true if email found" DisplayName="Assign OTP to True" sap:VirtualizedContainerService.HintSize="400.3018867924528,90.56603773584905" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Password="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages OTP" Email="[usrname]" EnableSSL="True" FilterExpression="[filterExpression]" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[listMailMessage]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Port="993" SecureConnection="Auto" SecurePassword="[pwd]" Server="imap.gmail.com" TimeoutMS="180000" Top="10" />
+                  <Assign sap2010:Annotation.AnnotationText="Set true if email found" DisplayName="Assign OTP to True" sap:VirtualizedContainerService.HintSize="338.71698113207543,90.56603773584905" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[emailFound]</OutArgument>
                     </Assign.To>
@@ -217,13 +209,6 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
                 </Sequence>
               </ActivityAction>
             </ui:RetryScope.ActivityBody>
@@ -233,7 +218,7 @@
               </ActivityFunc>
             </ui:RetryScope.Condition>
           </ui:RetryScope>
-          <If Condition="[Not emailFound]" DisplayName="If Email not Found throw Business Rule Exception" sap:VirtualizedContainerService.HintSize="504.45283018867923,466.4150943396226" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[Not emailFound]" DisplayName="If Email not Found throw Business Rule Exception" sap:VirtualizedContainerService.HintSize="479.0943396226415,466.4150943396226" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,197.43396226415092" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
@@ -245,7 +230,7 @@
               </Sequence>
             </If.Then>
           </If>
-          <Assign sap2010:Annotation.AnnotationText="Sample mail body : Dear Partners User,&#xD;&#xA;&#xD;&#xA;Your email One-Time Password (OTP) is 492851.&#xD;&#xA;&#xD;&#xA;This OTP will expire in 5 minutes.&#xD;&#xA;&#xD;&#xA;Thank you.&#xD;&#xA;&#xD;&#xA;Yours sincerely,&#xD;&#xA;Resorts World At Sentosa Pte Ltd&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;This is an auto-generated email. Please do not reply to this email.&#xA;&#xA;Get the OTP : 312535&#xA;Use regex expression to get otp&#xA;system.Text.RegularExpressions.Regex.Match(listMailMessage(0).Body,&quot;\d{6}&quot;).ToString" DisplayName="Assign OTP Code" sap:VirtualizedContainerService.HintSize="504.45283018867923,343.2452830188679" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap2010:Annotation.AnnotationText="Sample mail body : Dear Partners User,&#xA;&#xA;Your email One-Time Password (OTP) is 492851.&#xA;&#xA;This OTP will expire in 5 minutes.&#xA;&#xA;Thank you.&#xA;&#xA;Yours sincerely,&#xA;Resorts World At Sentosa Pte Ltd&#xA;&#xA;&#xA;This is an auto-generated email. Please do not reply to this email.&#xA;&#xA;Get the OTP : 312535&#xA;Use regex expression to get otp&#xA;system.Text.RegularExpressions.Regex.Match(listMailMessage(0).Body,&quot;\d{6}&quot;).ToString" DisplayName="Assign OTP Code" sap:VirtualizedContainerService.HintSize="479.0943396226415,343.2452830188679" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_otpCode]</OutArgument>
             </Assign.To>
@@ -258,14 +243,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="504.45283018867923,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[String.Format(&quot;The otp is {0}&quot;, out_otpCode)]" />
-          <Sequence sap:VirtualizedContainerService.HintSize="504.45283018867923,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[String.Format(&quot;The otp is {0}&quot;, out_otpCode)]" />
         </Sequence>
       </If.Then>
     </If>

@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,2979.622641509434</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,2979.622641509434</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Resortworldsentosa_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -111,9 +111,6 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="usrname" />
               <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
-              <Variable x:TypeArguments="x:String" Name="captchaResponse" />
-              <Variable x:TypeArguments="ui:Image" Name="imgCaptcha" />
-              <Variable x:TypeArguments="x:String" Default="Traveloka_DataAutomation_Captcha_Handler" Name="PathCaptchaBreaker" />
               <Variable x:TypeArguments="x:String" Name="otpCode" />
               <Variable x:TypeArguments="x:Boolean" Name="invalidCred" />
             </Sequence.Variables>
