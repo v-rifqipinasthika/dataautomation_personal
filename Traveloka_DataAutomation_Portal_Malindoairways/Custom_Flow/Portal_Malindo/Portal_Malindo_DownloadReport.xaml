@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1096.754716981132,3038.490566037736</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,3053.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Malindo_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -107,9 +107,8 @@
       <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Malindo_DownloadReport" sap:VirtualizedContainerService.HintSize="540.6792452830189,2973.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Malindo_DownloadReport" sap:VirtualizedContainerService.HintSize="541.6,2988.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:DateTime" Default="[Now]" Name="period" />
       <Variable x:TypeArguments="x:String" Name="pathDownloadedFile" />
       <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
     </Sequence.Variables>
@@ -118,8 +117,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Malindo_DownloadReport" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Malindo_DownloadReport&quot;)]" />
-    <If Condition="[in_period &gt; Today]" DisplayName="If Not Found" sap:VirtualizedContainerService.HintSize="479.0943396226415,467.3207547169811" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:LogMessage DisplayName="Log Message Portal_Malindo_DownloadReport" sap:VirtualizedContainerService.HintSize="479.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Malindo_DownloadReport&quot;)]" />
+    <If Condition="[in_period &gt; Today]" DisplayName="If Not Found" sap:VirtualizedContainerService.HintSize="479.2,476.8" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

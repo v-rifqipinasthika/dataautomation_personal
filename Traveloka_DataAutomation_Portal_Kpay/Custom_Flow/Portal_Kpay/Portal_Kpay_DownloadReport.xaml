@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1271.2,4495.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,4455.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Kpay_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -120,9 +120,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Portal_Kpay_DownloadReport" sap:VirtualizedContainerService.HintSize="740,4390.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="pathDownloadedFile" />
       <Variable x:TypeArguments="x:String" Default="https://kpaymentgateway.kasikornbank.com/portal/v1/transaction-report" Name="reportLink" />
-      <Variable x:TypeArguments="x:String" Name="selectorDate" />
       <Variable x:TypeArguments="x:String" Name="reportStatus" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="isReportExist" />
     </Sequence.Variables>

@@ -19,7 +19,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1271.2,3813.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,3813.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cebu_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -309,9 +309,6 @@
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="412,520" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:Boolean" Name="isDownloadReady" />
-                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -407,18 +404,10 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Cebu\Convert_PaymentReceipt.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Cebu\Convert_PaymentReceipt.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathResultFile" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">
-                        <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_periodStart" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_templatePaymentReceipt">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_templatePaymentReceipt" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_pathResultFile">[in_pathResultFile]</InArgument>
+                      <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[in_periodStart]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_templatePaymentReceipt">[in_templatePaymentReceipt]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_pathRawFile">[out_pathRawFile]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

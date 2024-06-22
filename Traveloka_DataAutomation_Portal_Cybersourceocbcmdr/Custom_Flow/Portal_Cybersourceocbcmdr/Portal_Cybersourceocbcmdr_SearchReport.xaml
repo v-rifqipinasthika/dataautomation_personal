@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2095.698113207547</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2110.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourceocbc_SearchDownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -83,23 +83,22 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Search report H-2&#xA;Ie. Date 29, retrieve 27" DisplayName="Portal_Cybersourceocbcmdr_SearchReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,2030.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Search report H-2&#xA;Ie. Date 29, retrieve 27" DisplayName="Portal_Cybersourceocbcmdr_SearchReport" sap:VirtualizedContainerService.HintSize="637.6,2045.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourceocbcmdr_SearchReport" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourceocbcmdr_SearchReport&quot;)]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe MeServices'" sap:VirtualizedContainerService.HintSize="575.0943396226414,1752.4528301886792" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3c15a18b91fa4912a6b8d16e7c38e609" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourceocbcmdr_SearchReport" sap:VirtualizedContainerService.HintSize="575.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourceocbcmdr_SearchReport&quot;)]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe MeServices'" sap:VirtualizedContainerService.HintSize="575.2,1756.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="3c15a18b91fa4912a6b8d16e7c38e609" Selector="&lt;html app='chrome.exe' title='MeServices SG - Merchant Module' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540.6792452830189,1605.7358490566037" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="541.6,1609.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Default="https://meservices.ocbc.com/merchant/main.jsp?PAGEID=Mp_statementTabFormSearch&amp;Action=Search&amp;menuId=Reports&amp;OWASP_CSRFTOKEN=3H5X-YZWJ-OYFW-9PQ7-Z85L-2XED-PCC2-N4N1" Name="reportPage" />
               <Variable x:TypeArguments="x:Boolean" Name="notFound" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -107,7 +106,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A ' Reports" sap:VirtualizedContainerService.HintSize="479.0943396226415,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A ' Reports" sap:VirtualizedContainerService.HintSize="479.2,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>

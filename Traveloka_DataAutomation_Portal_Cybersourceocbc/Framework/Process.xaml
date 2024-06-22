@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1210.8679245283017,3388.9811320754716</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,3437.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -139,7 +139,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,3323.7735849056603" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="557.6,3372.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtUserConfig" />
@@ -158,7 +158,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="495.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
     <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
       <uga:GSuiteApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
@@ -318,7 +318,7 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="in_Rerun">[CBool(io_Config("Rerun"))]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="Data Exist in login checker" Condition="[rowLoginChecker &gt;= 0]" DisplayName="If Login Data Exist and Status Success or Retry" sap:VirtualizedContainerService.HintSize="479.0943396226415,81.50943396226414" sap2010:WorkflowViewState.IdRef="If_10">
+    <If sap2010:Annotation.AnnotationText="Data Exist in login checker" Condition="[rowLoginChecker &gt;= 0]" DisplayName="If Login Data Exist and Status Success or Retry" sap:VirtualizedContainerService.HintSize="495.2,84" sap2010:WorkflowViewState.IdRef="If_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -327,13 +327,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="540.6792452830189,629.4339622641509" sap2010:WorkflowViewState.IdRef="Sequence_38">
+        <Sequence sap:VirtualizedContainerService.HintSize="540,550.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap2010:Annotation.AnnotationText="BPID, BPName, Login State, Last Login&#xA;&#xA;Only &quot;success&quot; or &quot;retry&quot; last login state allow to proceed" Condition="[dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;retry&quot; OR dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;success&quot;]" DisplayName="If BP Found and Status Success or Retry" sap:VirtualizedContainerService.HintSize="479.0943396226414,518.9433962264151" sap2010:WorkflowViewState.IdRef="If_11">
+          <If sap2010:Annotation.AnnotationText="BPID, BPName, Login State, Last Login&#xA;&#xA;Only &quot;success&quot; or &quot;retry&quot; last login state allow to proceed" Condition="[Not (dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;retry&quot; OR dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;success&quot;)]" DisplayName="If BP Found and Status Success or Retry" sap:VirtualizedContainerService.HintSize="477.6,438.4" sap2010:WorkflowViewState.IdRef="If_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -341,16 +341,17 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,197.43396226415092" sap2010:WorkflowViewState.IdRef="Sequence_37">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Throw DisplayName="Throw Last Login Failed" Exception="[New BusinessRuleException(String.Format(&quot;Last login status is &quot;&quot;{0}&quot;&quot;, Only status &quot;&quot;Success&quot;&quot; or &quot;&quot;Retry&quot;&quot; permit to run. Please check Gsheet config sheet Login_Checker_{1}&quot;, dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString, io_Config(&quot;Product Type&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_3" />
               </Sequence>
-            </If.Else>
+            </If.Then>
           </If>
         </Sequence>
       </If.Then>
@@ -364,7 +365,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="If Rerun True Mark Log Empty For Current Period" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True Mark Log Empty For Current Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,521.6603773584906" sap2010:WorkflowViewState.IdRef="If_6">
+    <If sap2010:Annotation.AnnotationText="If Rerun True Mark Log Empty For Current Period" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True Mark Log Empty For Current Period" sap:VirtualizedContainerService.HintSize="495.2,536" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -373,13 +374,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,220.9811320754717" sap2010:WorkflowViewState.IdRef="Sequence_21">
+        <Sequence sap:VirtualizedContainerService.HintSize="417.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_NotSuccess.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Log_MarkStatus_NotSuccess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="355.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Log_MarkStatus_NotSuccess.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
               <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>

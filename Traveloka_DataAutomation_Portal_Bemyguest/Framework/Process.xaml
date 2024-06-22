@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408,3869.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,3869.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -141,17 +141,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540,3804.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="pathUserLog" />
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtUserConfig" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_MasterBp" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_UserLog" />
-      <Variable x:TypeArguments="x:Int32" Name="currentDate" />
-      <Variable x:TypeArguments="x:String" Name="cellRerunFlag" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
       <Variable x:TypeArguments="x:String" Name="pathResultFile" />
       <Variable x:TypeArguments="x:String" Name="pathRawFile" />
-      <Variable x:TypeArguments="x:String" Name="pathLoginChecker" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtLoginChecker" />
       <Variable x:TypeArguments="x:Int32" Name="rowLoginChecker" />
       <Variable x:TypeArguments="x:Boolean" Name="loginSuccess" />
@@ -356,13 +350,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="540,657.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
+        <Sequence sap:VirtualizedContainerService.HintSize="602.4,645.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap2010:Annotation.AnnotationText="BPID, BPName, Login State, Last Login&#xA;&#xA;Only &quot;success&quot; or &quot;retry&quot; last login state allow to proceed" Condition="[dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;retry&quot; OR dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;success&quot;]" DisplayName="If BP Found and Status Success or Retry" sap:VirtualizedContainerService.HintSize="477.6,545.6" sap2010:WorkflowViewState.IdRef="If_11">
+          <If sap2010:Annotation.AnnotationText="BPID, BPName, Login State, Last Login&#xA;&#xA;Only &quot;success&quot; or &quot;retry&quot; last login state allow to proceed" Condition="[Not (dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;retry&quot; OR dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString.ToLower = &quot;success&quot;)]" DisplayName="If BP Found and Status Success or Retry" sap:VirtualizedContainerService.HintSize="540,533.6" sap2010:WorkflowViewState.IdRef="If_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -371,24 +365,23 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,104.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+              <Sequence sap:VirtualizedContainerService.HintSize="462.4,195.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw DisplayName="Throw Last Login Failed" Exception="[New BusinessRuleException(String.Format(&quot;Last login status is &quot;&quot;{0}&quot;&quot;, Only status &quot;&quot;Success&quot;&quot; or &quot;&quot;Retry&quot;&quot; permit to run. Please check Gsheet config sheet Login_Checker_{1}&quot;, dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString, io_Config(&quot;Product Type&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                </Sequence>
               </Sequence>
             </If.Then>
-            <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Throw DisplayName="Throw Last Login Failed" Exception="[New BusinessRuleException(String.Format(&quot;Last login status is &quot;&quot;{0}&quot;&quot;, Only status &quot;&quot;Success&quot;&quot; or &quot;&quot;Retry&quot;&quot; permit to run. Please check Gsheet config sheet Login_Checker_{1}&quot;, dtLoginChecker.Rows(rowLoginChecker).Item(&quot;Login State&quot;).ToString, io_Config(&quot;Product Type&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
-              </Sequence>
-            </If.Else>
           </If>
         </Sequence>
       </If.Then>

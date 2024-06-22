@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2627.320754716981</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2609.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcepaymaya_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -92,14 +92,14 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcepaymaya_Login" sap:VirtualizedContainerService.HintSize="677.4339622641509,2522.264150943396" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcepaymaya_Login" sap:VirtualizedContainerService.HintSize="678.4,2544.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="615.8490566037735,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcepaymaya_Login&quot;)]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="615.8490566037735,114.11320754716981" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="616,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcepaymaya_Login&quot;)]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="616,118.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -108,19 +108,16 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="615.8490566037735,2129.2075471698113" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="101c411df991d643abcdfeaa9c906f89" Selector="&lt;html app='chrome.exe' title='Login | Maya' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="616,2141.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="101c411df991d643abcdfeaa9c906f89" Selector="&lt;html app='chrome.exe' title='Login | Maya' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="581.4339622641509,1982.4905660377358" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582.4,1994.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="usrname" />
               <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
-              <Variable x:TypeArguments="x:String" Name="captchaResponse" />
-              <Variable x:TypeArguments="ui:Image" Name="imgCaptcha" />
-              <Variable x:TypeArguments="x:String" Default="Traveloka_DataAutomation_Captcha_Handler" Name="PathCaptchaBreaker" />
               <Variable x:TypeArguments="x:String" Name="otpCode" />
               <Variable x:TypeArguments="x:Boolean" Name="invalidCred" />
             </Sequence.Variables>
@@ -129,8 +126,8 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="378.566037735849,25.358490566037734" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="378.566037735849,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="520,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="520,172" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="Doesn't support simulate activy" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="519.8490566037735,165.73584905660377" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="98e06fb7b3c534119e7d3b04c730d5f0" Selector="&lt;webctrl id='identityValue' tag='INPUT' aaname='*Email address or mobile number*' /&gt;">

@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1574.943396226415</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,1446.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Remove_UnusedRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,14 +110,10 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Remove_UnusedRow" sap:VirtualizedContainerService.HintSize="638.4905660377358,1509.7358490566037" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Remove_UnusedRow" sap:VirtualizedContainerService.HintSize="639.2,1381.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="txtData" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="listRawData">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listRawData" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="listFilteredData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -125,8 +121,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Remove_UnusedRow" sap:VirtualizedContainerService.HintSize="576.9056603773585,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Remove_UnusedRow&quot;]" />
-    <ui:ReadTextFile File="{x:Null}" Content="[txtData]" DisplayName="Read Text File" FileName="[in_pathRawFile]" sap:VirtualizedContainerService.HintSize="576.9056603773585,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:LogMessage DisplayName="Log Message Remove_UnusedRow" sap:VirtualizedContainerService.HintSize="576.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Remove_UnusedRow&quot;]" />
+    <ui:ReadTextFile File="{x:Null}" Content="[txtData]" DisplayName="Read Text File" FileName="[in_pathRawFile]" sap:VirtualizedContainerService.HintSize="576.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
     <Assign sap:VirtualizedContainerService.HintSize="576.9056603773585,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[listRawData]</OutArgument>
@@ -172,13 +168,6 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[in_pathResult]" sap:VirtualizedContainerService.HintSize="576.9056603773585,130.41509433962264" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[String.Join(Environment.NewLine, listFilteredData)]" />
-    <Sequence sap:VirtualizedContainerService.HintSize="576.9056603773585,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[in_pathResult]" sap:VirtualizedContainerService.HintSize="576.8,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[String.Join(Environment.NewLine, listFilteredData)]" />
   </Sequence>
 </Activity>

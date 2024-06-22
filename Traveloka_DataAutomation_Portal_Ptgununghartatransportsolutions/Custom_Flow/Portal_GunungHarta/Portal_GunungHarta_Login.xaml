@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,2397.2830188679245</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2407.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_GunungHarta_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -97,17 +97,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_GunungHarta_Login" sap:VirtualizedContainerService.HintSize="528.9056603773585,2332.0754716981132" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isCaptchaInvalid" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Portal_GunungHarta_Login" sap:VirtualizedContainerService.HintSize="529.6,2342.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_GunungHarta_Login" sap:VirtualizedContainerService.HintSize="467.3207547169811,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_GunungHarta_Login&quot;)]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="467.3207547169811,114.11320754716981" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
+    <ui:LogMessage DisplayName="Log Message Portal_GunungHarta_Login" sap:VirtualizedContainerService.HintSize="467.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_GunungHarta_Login&quot;)]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="467.2,118.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -127,7 +124,6 @@
               <Variable x:TypeArguments="x:String" Name="usrname" />
               <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
               <Variable x:TypeArguments="x:String" Name="captchaResponse" />
-              <Variable x:TypeArguments="ui:Image" Name="imgCaptcha" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -185,24 +181,12 @@
             <ui:LogMessage DisplayName="Log Message Captcha_Breaker" sap:VirtualizedContainerService.HintSize="338.71698113207543,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Captcha_Breaker&quot;)]" />
             <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Image : &quot;image_captcha_rpa&quot;&#xA;Recaptcha : &quot;recaptchav2_rpa&quot;" DisplayName="Invoke Process Captcha Breaker" sap:VirtualizedContainerService.HintSize="338.71698113207543,201.96226415094338" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="[in_capthaProcess]">
               <ui:InvokeProcess.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_site_key">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_siteKey" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_captchaRuleId" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_portalLink" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BPName" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="captchaResponse" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptcha">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathCaptchaBreaker" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_site_key">[in_siteKey]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">[in_captchaRuleId]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">[in_portalLink]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">[in_BPName]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">[captchaResponse]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptcha">[in_pathCaptchaBreaker]</InArgument>
               </ui:InvokeProcess.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

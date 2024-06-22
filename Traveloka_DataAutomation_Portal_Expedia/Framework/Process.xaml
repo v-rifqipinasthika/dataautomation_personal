@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092.2264150943395,3335.5471698113206</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,3375.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="55">
@@ -139,15 +139,12 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="540.6792452830189,3270.3396226415093" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="541.6,3310.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
       <Variable x:TypeArguments="x:String" Name="pathResultFile" />
       <Variable x:TypeArguments="x:String" Name="pathRawFile" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dtLoginChecker" />
-      <Variable x:TypeArguments="x:Int32" Name="rowLoginChecker" />
-      <Variable x:TypeArguments="x:Boolean" Name="loginSuccess" />
       <Variable x:TypeArguments="s:DateTime" Name="period" />
       <Variable x:TypeArguments="s:DateTime" Name="periodStart" />
       <Variable x:TypeArguments="s:DateTime" Name="periodEnd" />
@@ -158,8 +155,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Started Process Report {0}&quot;, in_TransactionItem(&quot;ReportName&quot;).ToString)]" />
-    <TryCatch DisplayName="Try Catch Assing Period" sap:VirtualizedContainerService.HintSize="479.0943396226415,550.6415094339623" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="479.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Started Process Report {0}&quot;, in_TransactionItem(&quot;ReportName&quot;).ToString)]" />
+    <TryCatch DisplayName="Try Catch Assing Period" sap:VirtualizedContainerService.HintSize="479.2,559.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,4016.6037735849054</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,4022.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcepaymaya_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -106,12 +106,11 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcepaymaya_DownloadReport" sap:VirtualizedContainerService.HintSize="653.8867924528302,3951.396226415094" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcepaymaya_DownloadReport" sap:VirtualizedContainerService.HintSize="653.6,3957.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="x:Int32" Name="reportIndex" />
       <Variable x:TypeArguments="x:String" Name="fileName" />
-      <Variable x:TypeArguments="s:DateTime" Name="periodSearch" />
       <Variable x:TypeArguments="x:Boolean" Name="dialogDownloadExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -119,8 +118,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcepaymaya_DownloadReport" sap:VirtualizedContainerService.HintSize="592.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Cybersourcepaymaya_DownloadReport&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Maya'" sap:VirtualizedContainerService.HintSize="592.3018867924528,3712.3018867924525" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d735620802b48c6a5cd93c19dbaf02ea" Selector="&lt;html app='chrome.exe' title='Maya Business Merchant Manager' /&gt;">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcepaymaya_DownloadReport" sap:VirtualizedContainerService.HintSize="591.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Cybersourcepaymaya_DownloadReport&quot;]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Maya'" sap:VirtualizedContainerService.HintSize="591.2,3712.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d735620802b48c6a5cd93c19dbaf02ea" Selector="&lt;html app='chrome.exe' title='Maya Business Merchant Manager' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -376,15 +375,9 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
-                        <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                      </OutArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_pathFolder]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[out_pathRawFile]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[in_fileType]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

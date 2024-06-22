@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2801.2075471698113</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2790.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcepaymaya_OTPHandler_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -97,7 +97,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Check if otp exist&#xD;&#xA;2. If ask for OTP, Check email for ct.rpa1@traveloka.com&#xD;&#xA;3. Filter email with subject &quot;Maya OTP&quot;&#xD;&#xA;4. OTP code placed in email body" DisplayName="Portal_Cybersourcepaymaya_OTPHandler" sap:VirtualizedContainerService.HintSize="681.0566037735848,2736" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Check if otp exist&#xA;2. If ask for OTP, Check email for ct.rpa1@traveloka.com&#xA;3. Filter email with subject &quot;Maya OTP&quot;&#xA;4. OTP code placed in email body" DisplayName="Portal_Cybersourcepaymaya_OTPHandler" sap:VirtualizedContainerService.HintSize="681.6,2725.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="otpExist" />
     </Sequence.Variables>
@@ -107,8 +107,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="619.4716981132075,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Cybersourcepaymaya_OTPHandler&quot;]" />
-    <ui:UiElementExists sap2010:Annotation.AnnotationText="Check one time OTP for 5 Sec" DisplayName="Element Exists 'H2' OTP" Exists="[otpExist]" sap:VirtualizedContainerService.HintSize="619.4716981132075,137.66037735849056" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="619.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Cybersourcepaymaya_OTPHandler&quot;]" />
+    <ui:UiElementExists sap2010:Annotation.AnnotationText="Check one time OTP for 5 Sec" DisplayName="Element Exists 'H2' OTP" Exists="[otpExist]" sap:VirtualizedContainerService.HintSize="619.2,138.4" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f9845dfe-20db-4a7f-b294-9f12b8099e66" InformativeScreenshot="0be76a0bdfc3533bb522b0b2a3228337" Selector="&lt;html app='chrome.exe' title='One Time PIN | Maya' /&gt;&lt;webctrl tag='H2' /&gt;">
           <ui:Target.TimeoutMS>
@@ -125,41 +125,25 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:UiElementExists>
-    <If Condition="[otpExist]" DisplayName="If OTP Exist" sap:VirtualizedContainerService.HintSize="619.4716981132075,2253.2830188679245" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[otpExist]" DisplayName="If OTP Exist" sap:VirtualizedContainerService.HintSize="619.2,2226.4" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="540.6792452830189,1984.3018867924527" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="541.6,1948" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="usrname" />
             <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
             <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailMessage" />
             <Variable x:TypeArguments="x:String" Name="filterExpression" />
-            <Variable x:TypeArguments="x:String" Name="period">
-              <Variable.Default>
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Now.ToString(&quot;dd-MMM-yyyy&quot;).ToUpper" />
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="subject">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">Maya OTP</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:String" Name="domain">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:String">noreply@maya.ph</Literal>
-              </Variable.Default>
-            </Variable>
-            <Variable x:TypeArguments="x:Boolean" Name="emailFound">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:Boolean" />
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:String" Default="[Now.ToString(&quot;dd-MMM-yyyy&quot;).ToUpper]" Name="period" />
+            <Variable x:TypeArguments="x:String" Default="Maya OTP" Name="subject" />
+            <Variable x:TypeArguments="x:String" Default="noreply@maya.ph" Name="domain" />
+            <Variable x:TypeArguments="x:Boolean" Default="False" Name="emailFound" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential AssetName="[in_emailCred]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="479.0943396226415,50.71698113207547" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
+          <ui:GetRobotCredential AssetName="[in_emailCred]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="479.2,52.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
             <ui:GetRobotCredential.TimeoutMS>
               <InArgument x:TypeArguments="x:Int32" />
             </ui:GetRobotCredential.TimeoutMS>
@@ -170,7 +154,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetRobotCredential>
-          <Assign sap2010:Annotation.AnnotationText="Mail filter for OTP&#xD;&#xA;- Subject = Maya OTP&#xD;&#xA;- Domain = noreply@maya.ph&#xD;&#xA;- Expression = &quot;SINCE 23-Feb-2021 SUBJECT &quot;&quot;Maya OTP&quot;&quot; FROM noreply@maya.ph&quot;" DisplayName="Assign Mail Filter OTP" sap:VirtualizedContainerService.HintSize="479.0943396226415,140.37735849056602" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap2010:Annotation.AnnotationText="Mail filter for OTP&#xA;- Subject = Maya OTP&#xA;- Domain = noreply@maya.ph&#xA;- Expression = &quot;SINCE 23-Feb-2021 SUBJECT &quot;&quot;Maya OTP&quot;&quot; FROM noreply@maya.ph&quot;" DisplayName="Assign Mail Filter OTP" sap:VirtualizedContainerService.HintSize="479.2,168" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[filterExpression]</OutArgument>
             </Assign.To>
@@ -227,7 +211,7 @@
               </Sequence>
             </If.Then>
           </If>
-          <Assign sap2010:Annotation.AnnotationText="Sample mail body : Your One-Time Password (OTP) is 312535. You are trying to login using Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36. Report to support@maya.ph or call our hotline (632) 845 7788 if you did not login to your account. Sharing this OTP will allow another device or person to access your Maya account. DO NOT SHARE.&#xD;&#xA;&#xD;&#xA;Get the OTP : 312535&#xD;&#xA;Use regex expression to get otp&#xD;&#xA;system.Text.RegularExpressions.Regex.Match(listMailMessage(0).Body,&quot;\d{6}&quot;).ToString" DisplayName="Assign OTP Code" sap:VirtualizedContainerService.HintSize="479.0943396226415,276.2264150943396" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap2010:Annotation.AnnotationText="Sample mail body : Your One-Time Password (OTP) is 312535. You are trying to login using Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36. Report to support@maya.ph or call our hotline (632) 845 7788 if you did not login to your account. Sharing this OTP will allow another device or person to access your Maya account. DO NOT SHARE.&#xA;&#xA;Get the OTP : 312535&#xA;Use regex expression to get otp&#xA;system.Text.RegularExpressions.Regex.Match(listMailMessage(0).Body,&quot;\d{6}&quot;).ToString" DisplayName="Assign OTP Code" sap:VirtualizedContainerService.HintSize="479.2,344" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_otpCode]</OutArgument>
             </Assign.To>
@@ -240,14 +224,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[String.Format(&quot;The otp is {0}&quot;, out_otpCode)]" />
-          <Sequence sap:VirtualizedContainerService.HintSize="479.0943396226415,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[String.Format(&quot;The otp is {0}&quot;, out_otpCode)]" />
         </Sequence>
       </If.Then>
     </If>

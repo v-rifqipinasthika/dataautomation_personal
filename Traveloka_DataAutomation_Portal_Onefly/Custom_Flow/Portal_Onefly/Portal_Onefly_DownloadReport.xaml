@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1152.8,2822.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2822.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Onefly_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -120,15 +120,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Portal_Onefly_DownloadReport" sap:VirtualizedContainerService.HintSize="600,2757.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="pathDownloadedFile" />
-      <Variable x:TypeArguments="x:String" Name="reportLink">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">https://mgr.oneflya.com/html/financialReport</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="selectorDate" />
-      <Variable x:TypeArguments="x:String" Name="reportStatus" />
-      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isReportExist" />
+      <Variable x:TypeArguments="x:String" Default="https://mgr.oneflya.com/html/financialReport" Name="reportLink" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,9 +135,6 @@
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="504,2365.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="reportDate" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -313,15 +302,9 @@
             </ui:RetryScope>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="441.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_pathFolder]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[out_pathRawFile]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[in_fileType]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pathResultFile]" DisplayName="Copy File PathRaw to PathResult" sap:VirtualizedContainerService.HintSize="441.6,155.2" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[out_pathRawFile]" />

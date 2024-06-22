@@ -14,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1478.0377358490566,2265.962264150943</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043.2,2275.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Expedia_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -123,9 +123,8 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="636.6792452830189,2200.754716981132" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="637.6,2210.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="notFound" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtCalendar" />
       <Variable x:TypeArguments="x:String" Name="indexReport" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
@@ -135,8 +134,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="575.0943396226414,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Expedia_DownloadReport&quot;)]" />
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="575.0943396226414,79.69811320754717" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <ui:LogMessage DisplayName="Log Message Portal_Expedia_DownloadReport" sap:VirtualizedContainerService.HintSize="575.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Expedia_DownloadReport&quot;)]" />
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="575.2,83.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -267,15 +266,9 @@
             </ui:Click>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_DownloadDialog.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338.71698113207543,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_DownloadDialog.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathFolder" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">
-                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_pathRawFile" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_fileType" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_filePath">[in_pathFolder]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_pathRawFile">[out_pathRawFile]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_fileType">[in_fileType]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dtResult]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="338.71698113207543,87.84905660377358" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet2" WorkbookPath="[out_pathRawFile]" />
