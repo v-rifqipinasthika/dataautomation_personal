@@ -1,0 +1,310 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Mail_RawFile" this:Mail_RawFile.in_Period="[Now]" this:Mail_RawFile.in_ProcessName="ABC" this:Mail_RawFile.in_CredentialEmail="RPA_Moon_Cred_Gmail" this:Mail_RawFile.in_MailTo="rifqionepin@gmail.com" this:Mail_RawFile.in_PID="RPA000" this:Mail_RawFile.in_senderName="RPA Test" this:Mail_RawFile.in_pathCalendar="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Calendar 02 Jan 2024.png" this:Mail_RawFile.in_pathStatement="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\IATA Customer Statement 23 Jan 2024.png" this:Mail_RawFile.in_pathAgentBilling="C:\Kalyana\dataautomation_personal\Traveloka_DataAutomation_Portal_IATAID02\Data\IATA\Billing Agent 12 Jan 2024.png" this:Mail_RawFile.in_periodRemittance="[New DateTime(2024,01,12)]" this:Mail_RawFile.in_reportBills="123" this:Mail_RawFile.in_periodStart="[New DateTime(2024,01,01)]" this:Mail_RawFile.in_periodEnd="[New DateTime(2024,01,08)]" this:Mail_RawFile.in_pathFolder="[Path.Combine(Directory.GetCurrentDirectory, &quot;Data&quot;, &quot;IATA&quot;)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Period" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_strEmailTemplate" Type="InArgument(x:String)" />
+    <x:Property Name="in_ProcessName" Type="InArgument(x:String)" />
+    <x:Property Name="in_CredentialEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_MailTo" Type="InArgument(x:String)" />
+    <x:Property Name="in_MailCC" Type="InArgument(x:String)" />
+    <x:Property Name="in_PID" Type="InArgument(x:String)" />
+    <x:Property Name="in_pathRawFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_senderName" Type="InArgument(x:String)" />
+    <x:Property Name="in_pathCalendar" Type="InArgument(x:String)" />
+    <x:Property Name="in_pathStatement" Type="InArgument(x:String)" />
+    <x:Property Name="in_pathAgentBilling" Type="InArgument(x:String)" />
+    <x:Property Name="in_periodRemittance" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_reportBills" Type="InArgument(x:String)" />
+    <x:Property Name="in_periodStart" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_periodEnd" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_pathFolder" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Mail_RawFile.in_strEmailTemplate>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Mail_RawFile.in_strEmailTemplate>
+  <this:Mail_RawFile.in_pathRawFile>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Mail_RawFile.in_pathRawFile>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1817.6603773584905</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Mail_RawFile_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Net.Mime</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="96">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Mail_RawFile" sap:VirtualizedContainerService.HintSize="604.0754716981131,1752.4528301886792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="htmlBody" />
+      <Variable x:TypeArguments="x:String" Name="usrname" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
+      <Variable x:TypeArguments="x:String" Name="strBody" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="listReport" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Mail_RawFile" sap:VirtualizedContainerService.HintSize="542.4905660377358,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Mail_RawFile&quot;)]" />
+    <Assign sap:VirtualizedContainerService.HintSize="542.4905660377358,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">[listReport]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[Directory.GetFiles(in_pathFolder, "*.zip").ToList]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:GetRobotCredential AssetName="[in_CredentialEmail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="542.4905660377358,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]">
+      <ui:GetRobotCredential.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetRobotCredential.TimeoutMS>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotCredential>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="542.4905660377358,382.18867924528297" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.18867924528297,162.1132075471698" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign.AssignOperations>
+            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">["&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style=""color: #000000;""&gt;&lt;p&gt;Hi All,&lt;/p&gt;&lt;/br&gt;&lt;p&gt;The following information are for IATA bills for period &lt;b&gt;"+in_periodStart.ToString("dd MMM yyyy")+" – "+in_periodEnd.ToString("dd MMM yyyy")+ " &lt;/b&gt; with maturity date &lt;b&gt;"+in_periodRemittance.ToString("dd MMM yyyy")+"&lt;/b&gt; and the total amount is &lt;b&gt;"+in_reportBills+"&lt;/b&gt;&lt;/p&gt;&lt;/br&gt;&lt;img src=""cid:TestImage1""&gt;&lt;/br&gt;&lt;br&gt;&lt;img src=""cid:TestImage2""&gt;&lt;/br&gt;&lt;br&gt;&lt;img src=""cid:TestImage3""&gt;&lt;/br&gt;&lt;p&gt;Thankyou&lt;/p&gt;&lt;p style=""color: white;""&gt;--&lt;/p&gt;&lt;p&gt;Regards,&lt;/p&gt;&lt;p&gt;Robot RPA&lt;/p&gt;&lt;p&gt;RPA Team&lt;/p&gt;&lt;p style=""color: white;""&gt;--&lt;/p&gt;&lt;p&gt;PT. Trinusa Travelindo&lt;/p&gt;&lt;p&gt;Traveloka Campus - Jl Grand Boulevard, BSD Green Office Park, Kel. Sampora, Kec. Cisauk, Kab.Tangerang, Prov. Banten Tangerang, Indonesia&lt;/p&gt;&lt;p&gt;Mobile: (+62) 816 322 650 90 | Office (Receptionist): (+62)21 29775800&lt;/p&gt;&lt;p&gt;Email: ct.rpa1@traveloka.com&lt;/p&gt;&lt;p&gt;Website: http://www.traveloka.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[in_MailTo]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">[If(in_MailTo.Contains(";"), in_MailTo.Replace(";", ","), in_MailTo)]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                <ui:AssignOperation.To>
+                  <OutArgument x:TypeArguments="x:String">[in_MailCC]</OutArgument>
+                </ui:AssignOperation.To>
+                <ui:AssignOperation.Value>
+                  <InArgument x:TypeArguments="x:String">[If(in_MailCc.Contains(";"), in_MailCc.Replace(";", ","), in_MailCc)]</InArgument>
+                </ui:AssignOperation.Value>
+              </ui:AssignOperation>
+            </scg:List>
+          </ui:MultipleAssign.AssignOperations>
+        </ui:MultipleAssign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="433.811320754717,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw DisplayName="Throw Inner Exception" Exception="[exception.InnerException]" sap:VirtualizedContainerService.HintSize="334.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:RetryScope sap2010:Annotation.AnnotationText="1 Minute Retry" DisplayName="Retry Scope Waiting For Download Attachment" sap:VirtualizedContainerService.HintSize="542.4905660377358,787.9245283018868" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="4" RetryInterval="00:00:15">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="499.92452830188677,585.0566037735848" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.3396226415094,384.90566037735846" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;Dim avHtml As AlternateView = AlternateView.CreateAlternateViewFromString(htmlBody, Nothing, MediaTypeNames.Text.Html)&#xA;&#x9;Dim inline1 As LinkedResource = New LinkedResource(imageFilePath1, MediaTypeNames.Image.Jpeg)&#xA;&#x9;Dim inline2 As LinkedResource = New LinkedResource(imageFilePath2, MediaTypeNames.Image.Jpeg)&#xA;&#x9;Dim inline3 As LinkedResource = New LinkedResource(imageFilePath3, MediaTypeNames.Image.Jpeg)&#xA;&#x9;inline1.ContentId = Guid.NewGuid().ToString()&#xA;&#x9;inline2.ContentId = Guid.NewGuid().ToString()&#xA;&#x9;inline3.ContentId = Guid.NewGuid().ToString()&#xA;&#x9;avHtml.LinkedResources.Add(inline1)&#xA;&#x9;avHtml.LinkedResources.Add(inline2)&#xA;&#x9;avHtml.LinkedResources.Add(inline3)&#xA;&#x9;Dim mail As New MailMessage()&#xA;&#x9;mail.AlternateViews.Add(avHtml)&#xA;&#x9;Dim att1 As Attachment = New Attachment(imageFilePath1)&#xA;&#x9;Dim att2 As Attachment = New Attachment(imageFilePath2)&#xA;&#x9;Dim att3 As Attachment = New Attachment(imageFilePath3)&#xA;&#x9;att1.ContentDisposition.Inline = True&#xA;&#x9;att2.ContentDisposition.Inline = True&#xA;&#x9;att3.ContentDisposition.Inline = True&#xA;&#x9;att1.ContentId = &quot;TestImage1&quot;&#xA;&#x9;att2.ContentId = &quot;TestImage2&quot;&#xA;&#x9;att3.ContentId = &quot;TestImage3&quot;&#xA;&#x9;&#xA;&#x9;mail.From = New MailAddress(usrname, senderName)&#xA;    mail.To.Add(strEmailTo)&#xA;&#x9;If Not String.IsNullOrEmpty(strEmailCC)&#xA;&#x9;&#x9;mail.CC.Add(strEmailCC)&#xA;&#x9;End If&#xA;    mail.Subject = subject&#xA;    mail.IsBodyHtml = True&#xA;&#x9;mail.Attachments.Add(att1)&#xA;&#x9;mail.Attachments.Add(att2)&#xA;&#x9;mail.Attachments.Add(att3)&#xA;&#x9;For Each item As String In listAttachment&#xA;&#x9;&#x9;mail.Attachments.Add(New Attachment(item, MediaTypeNames.Application.Zip))&#xA;&#x9;Next&#xA;    Dim smtp As New SmtpClient(&quot;smtp.gmail.com&quot;, 587)&#xA;    smtp.UseDefaultCredentials = False&#xA;    smtp.EnableSsl = True&#xA;    smtp.Credentials = New System.Net.NetworkCredential(usrname, pwd)&#xA;    smtp.Send(mail)&#xA;Catch e As exception&#xA;&#x9;console.WriteLine(e)&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334.18867924528297,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath1">[in_pathCalendar]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath2">[in_pathStatement]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="imageFilePath3">[in_pathAgentBilling]</InArgument>
+                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="listAttachment">[listReport]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="htmlBody">[strBody]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="usrname">[usrname]</InArgument>
+                    <InArgument x:TypeArguments="ss:SecureString" x:Key="pwd">[pwd]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailTo">[in_MailTo]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strEmailCC">[in_MailCC]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateFrom">[in_periodStart]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateTo">[in_periodEnd]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="dateRemittance">[in_periodRemittance]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="strBills">[in_reportBills]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="senderName">[in_senderName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="subject">[String.Format("{0}_{1}_Raw File_{2}", in_PID,in_ProcessName,in_Period.ToString("dd-MM-yyyy"))]</InArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.92452830188677,19.92452830188679" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Throw DisplayName="Throw Inner Exception" Exception="[exception.InnerException]" sap:VirtualizedContainerService.HintSize="334.18867924528297,87.84905660377358" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438.3396226415094,50.71698113207547" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400.3018867924528,285.2830188679245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" sap2010:Annotation.AnnotationText="" Body="[htmlBody.Replace(&quot;{0}&quot;, in_ProcessName).Replace(&quot;{1}&quot;, in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" Cc="[in_MailCC]" DisplayName="Send SMTP Mail Message Raw File" Email="[usrname]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="338.71698113207543,175.69811320754715" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[in_senderName]" Port="465" SecureConnection="Auto" SecurePassword="[pwd]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0}_{1}_Raw File_{2}&quot;, in_PID,in_ProcessName,in_Period.ToString(&quot;dd-MM-yyyy&quot;))]" To="[in_mailTo]">
+                    <ui:SendMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                        <InArgument x:TypeArguments="x:String">[in_pathRawFile]</InArgument>
+                      </scg:List>
+                    </ui:SendMail.Files>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:SendMail>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>

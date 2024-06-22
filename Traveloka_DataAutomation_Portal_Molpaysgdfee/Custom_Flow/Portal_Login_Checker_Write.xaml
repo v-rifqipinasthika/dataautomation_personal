@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>776,1298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476.2264150943395,1281.509433962264</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Login_Checker_Write_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -92,10 +92,9 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Login_Checker_Write" sap:VirtualizedContainerService.HintSize="540,1233" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Login_Checker_Write" sap:VirtualizedContainerService.HintSize="540.6792452830189,1216.3018867924527" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="lastLogin" />
-      <Variable x:TypeArguments="x:String" Name="statusLogin" />
       <Variable x:TypeArguments="x:String" Name="loginState" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -103,8 +102,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Login_Checker_Write" sap:VirtualizedContainerService.HintSize="478,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Login_Checker_Write&quot;]" />
-    <Assign DisplayName="Assign Last Login" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log Message Portal_Login_Checker_Write" sap:VirtualizedContainerService.HintSize="479.0943396226415,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;STEP : Portal_Login_Checker_Write&quot;]" />
+    <Assign DisplayName="Assign Last Login" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[lastLogin]</OutArgument>
       </Assign.To>
@@ -112,7 +111,7 @@
         <InArgument x:TypeArguments="x:String">[Now.ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Status Login" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign Status Login" sap:VirtualizedContainerService.HintSize="479.0943396226415,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[loginState]</OutArgument>
       </Assign.To>
@@ -120,7 +119,7 @@
         <InArgument x:TypeArguments="x:String">[if(in_loginSuccess, "Success", "Failed")]</InArgument>
       </Assign.Value>
     </Assign>
-    <If sap2010:Annotation.AnnotationText="IF BP exist update data,&#xD;&#xA;Else create new data" Condition="[in_rowCurrentBP &gt;= 0]" DisplayName="If BP Exist" sap:VirtualizedContainerService.HintSize="478,788" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="IF BP exist update data,&#xA;Else create new data" Condition="[in_rowCurrentBP &gt;= 0]" DisplayName="If BP Exist" sap:VirtualizedContainerService.HintSize="479.0943396226415,777.9622641509434" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -158,7 +157,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xD;&#xA;in_BPID,&#xD;&#xA;in_BPName,&#xD;&#xA;loginState,&#xD;&#xA;lastLogin&#xD;&#xA;}]" DataTable="[io_dtLoginChecker]" DisplayName="Add Data Row New BP" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;in_BPID,&#xA;in_BPName,&#xA;loginState,&#xA;lastLogin&#xA;}]" DataTable="[io_dtLoginChecker]" DisplayName="Add Data Row New BP" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
         </Sequence>
       </If.Else>
     </If>
