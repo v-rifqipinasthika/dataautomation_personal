@@ -917,10 +917,10 @@
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SystemException.Message" />
                                 </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Email User To&quot;).ToString" />
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Email Technical To&quot;).ToString" />
                                 </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Email User CC&quot;).ToString" />
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Email Technical CC&quot;).ToString" />
                                 </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_credMail">
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CredMail&quot;).ToString" />

@@ -740,8 +740,8 @@
                                 <InArgument x:TypeArguments="x:String" x:Key="in_strProcessName">[in_Config("logF_BusinessProcessName").ToString]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_strSource">[in_SystemException.Source]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">[in_SystemException.Message]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_Config("Email User To").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_Config("Email User CC").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_Config("Email Technical To").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_Config("Email Technical CC").ToString]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[in_Config("CredMail").ToString]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">[ScreenshotPath]</InArgument>
                                 <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[CDate(in_Config("period"))]</InArgument>

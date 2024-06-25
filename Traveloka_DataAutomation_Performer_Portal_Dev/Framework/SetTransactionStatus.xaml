@@ -862,8 +862,8 @@
                                         <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplate">[Path.Combine(in_Config("PathMailTemplate").ToString, "Email_Error.html")]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_strSource">[in_SystemException.Source]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_strMessage">[in_SystemException.Message]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_TransactionItem.SpecificContent("Email User To").ToString]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_TransactionItem.SpecificContent("Email User CC").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[in_TransactionItem.SpecificContent("Email Technical To").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_mailCc">[in_TransactionItem.SpecificContent("Email Technical CC").ToString]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_credMail">[in_Config("Gmail_Credentials").ToString]</InArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_pathSs">[ScreenshotPath]</InArgument>
                                         <InArgument x:TypeArguments="s:DateTime" x:Key="in_Period">[CDate(in_TransactionItem.SpecificContent("Period")).ToLocalTime]</InArgument>

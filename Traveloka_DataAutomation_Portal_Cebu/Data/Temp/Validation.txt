@@ -1,3 +1,0 @@
-﻿C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\cebu-Statement of Account\2024\2024-04-16\SOAReport.xlsx;
-C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\cebu-Payment Receipt\2024\2024-04-16\PaymentReceipt.xlsx;
-C:\Users\Administrator\Documents\ECIRPA\Traveloka_DataAutomation\cebu-5J Refund\2024\2024-04-16\5JRefund.xlsx;
