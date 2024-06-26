@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1512.4528301886792,3793.8113207547167</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>822.3396226415093,4051.9245283018863</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -143,18 +143,15 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="731.7735849056603,3728.6037735849054" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="671.0943396226414,3986.716981132075" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="pathUserLog" />
       <Variable x:TypeArguments="s:DateTime" Name="period" />
       <Variable x:TypeArguments="x:String" Name="pathLog" />
       <Variable x:TypeArguments="x:String" Name="pathScheduler" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtUserConfig" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_MasterBp" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_UserLog" />
-      <Variable x:TypeArguments="x:Int32" Name="currentDate" />
-      <Variable x:TypeArguments="x:String" Default="B18" Name="cellRerunFlag" />
+      <Variable x:TypeArguments="x:String" Name="cellRerunFlag" />
       <Variable x:TypeArguments="x:String" Name="strSheetIdName" />
+      <Variable x:TypeArguments="x:Int32" Name="rowRerunFlag" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -162,8 +159,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="670.188679245283,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Assign DisplayName="Assign Sheet Id Product Type" sap:VirtualizedContainerService.HintSize="670.188679245283,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="609.5094339622641,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <Assign DisplayName="Assign Sheet Id Product Type" sap:VirtualizedContainerService.HintSize="609.5094339622641,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strSheetIdName]</OutArgument>
       </Assign.To>
@@ -171,8 +168,8 @@
         <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(in_ProductType), "SheetIdConfig", String.Format("SheetIdConfig{0}", in_ProductType))]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="670.188679245283,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[$&quot;Sheet : {strSheetIdName}&quot;]" />
-    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="670.188679245283,1017.9622641509434" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="609.5094339622641,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[$&quot;Sheet : {strSheetIdName}&quot;]" />
+    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="609.5094339622641,1017.9622641509434" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
       <uga:GSuiteApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/spreadsheets</InArgument>
@@ -249,7 +246,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uga:GSuiteApplicationScope>
-    <If sap2010:Annotation.AnnotationText="If rerun true get date from config gsheet" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="670.188679245283,538.8679245283018" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="If rerun true get date from config gsheet" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="609.5094339622641,538.8679245283018" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -292,7 +289,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="670.188679245283,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\FolderPath_Manager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="609.5094339622641,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Custom_Flow\FolderPath_Manager.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_pathMasterFolder">[io_Config("PathMasterFolder").ToString]</InArgument>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[period]</InArgument>
@@ -302,7 +299,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_PID">[io_Config("PID").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="670.188679245283,212.83018867924528" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[io_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[String.Format(&quot;{0}-{1}&quot;,io_Config(&quot;Key&quot;).ToString, period.ToString(&quot;dd-MM-yyyy&quot;))]">
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item For Current BP" sap:VirtualizedContainerService.HintSize="609.5094339622641,212.83018867924528" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[io_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[String.Format(&quot;{0}-{1}&quot;,io_Config(&quot;Key&quot;).ToString, period.ToString(&quot;dd-MM-yyyy&quot;))]">
       <ui:AddQueueItem.ItemInformation>
         <InArgument x:TypeArguments="x:String" x:Key="BPID">[io_Config("BPID").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Key">[io_Config("Key").ToString]</InArgument>
@@ -322,7 +319,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="Schedule">[io_Config("Schedule").ToString]</InArgument>
       </ui:AddQueueItem.ItemInformation>
     </ui:AddQueueItem>
-    <If sap2010:Annotation.AnnotationText="If rerun add to queue successfully set flag Rerun to False" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="670.188679245283,1153.811320754717" sap2010:WorkflowViewState.IdRef="If_6">
+    <If sap2010:Annotation.AnnotationText="If rerun add to queue successfully set flag Rerun to False" Condition="[CBool(io_Config(&quot;Rerun&quot;)) = True]" DisplayName="If Rerun True" sap:VirtualizedContainerService.HintSize="609.5094339622641,1411.9245283018868" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -331,13 +328,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="591.3962264150942,853.132075471698" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence sap:VirtualizedContainerService.HintSize="496.3018867924528,1111.245283018868" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="529.8113207547169,743.5471698113207" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_3" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
+          <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="ServiceAccountKey" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope Use SAKey" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="434.71698113207543,1001.6603773584905" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_3" KeyPath="[io_Config(&quot;PathSAKey&quot;).ToString]" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
             <uga:GSuiteApplicationScope.AuthenticationScopes>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                 <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/spreadsheets</InArgument>
@@ -348,21 +345,19 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="495.3962264150943,633.0566037735848" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="rowRerunFlag" />
-                  </Sequence.Variables>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.3018867924528,891.1698113207547" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap2010:Annotation.AnnotationText="To determine position of rerurn flag. This will implement correctly if rerun placed at last row&#xA;&#xA;RowFlag = Total data + 1 (header)" DisplayName="Assign Row Flag" sap:VirtualizedContainerService.HintSize="433.811320754717,139.47169811320754" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtUserConfig]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="338.71698113207543,285.2830188679245" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnIndex="[0]" LookupValue="Rerun" RowIndex="[rowRerunFlag]" />
+                  <Assign sap2010:Annotation.AnnotationText="+1 index table&#xD;&#xA;+1 header" DisplayName="Assign Row Flag" sap:VirtualizedContainerService.HintSize="338.71698113207543,98.71698113207546" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[rowRerunFlag]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[rowRerunFlag]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[(dtUserConfig.Rows.Count + 1).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[rowRerunFlag + 2]</InArgument>
                     </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -370,15 +365,15 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <Assign DisplayName="Assign Cell Flag" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign DisplayName="Assign Cell Flag" sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[cellRerunFlag]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[String.Format("B{0}", rowRerunFlag)]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[String.Format("B{0}", rowRerunFlag.ToString)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" sap2010:Annotation.AnnotationText="Save after susccessfully add queue" AuthScopesInvalid="False" Cell="[cellRerunFlag]" DisplayName="Write Cell Rerun to False" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="WriteCell_3" IsInsideBatchUpdateScope="False" SheetName="[String.Format(&quot;Config_{0}&quot;, in_BPKey)]" SpreadsheetId="[io_Config(strSheetIdName).ToString]" Value="FALSE">
+                  <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" sap2010:Annotation.AnnotationText="Save after susccessfully add queue" AuthScopesInvalid="False" Cell="[cellRerunFlag]" DisplayName="Write Cell Rerun to False" sap:VirtualizedContainerService.HintSize="338.71698113207543,218.2641509433962" sap2010:WorkflowViewState.IdRef="WriteCell_3" IsInsideBatchUpdateScope="False" SheetName="[String.Format(&quot;Config_{0}&quot;, in_BPKey)]" SpreadsheetId="[io_Config(strSheetIdName).ToString]" Value="FALSE">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
