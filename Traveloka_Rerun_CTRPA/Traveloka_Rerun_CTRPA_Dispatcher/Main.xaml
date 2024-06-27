@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1408.8,5684.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugac="clr-namespace:UiPath.GSuite.Activities.Contracts;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="841.3584905660376,4905.962264150943" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugac="clr-namespace:UiPath.GSuite.Activities.Contracts;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="84">
+    <scg:List x:TypeArguments="x:String" Capacity="43">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -47,7 +47,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="110">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -109,7 +109,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="812.8,5620" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="851.3207547169811,4840.754716981131" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SAKeyPath" />
       <Variable x:TypeArguments="x:String" Name="EnvironmentVariable" />
@@ -127,14 +127,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence - Read rerun date list spreadsheet" sap:VirtualizedContainerService.HintSize="750.4,2187.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Sequence - Read rerun date list spreadsheet" sap:VirtualizedContainerService.HintSize="789.7358490566037,1820.377358490566" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotAsset AssetName="Rerun_Config_SpreadsheetID_CT1" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="553.6,174.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+      <ui:GetRobotAsset AssetName="Rerun_Config_SpreadsheetID_CT1" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="583.2452830188679,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
         <ui:GetRobotAsset.TimeoutMS>
           <InArgument x:TypeArguments="x:Int32" />
         </ui:GetRobotAsset.TimeoutMS>
@@ -142,16 +142,16 @@
           <OutArgument x:TypeArguments="x:String">[RerunSpreadsheetID]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <ui:GetEnvironmentVariable DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="553.6,92" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="RPA_ENV" VariableValue="[EnvironmentVariable]" />
-      <Switch x:TypeArguments="x:String" DisplayName="Switch - Environment Variable" Expression="[EnvironmentVariable]" sap:VirtualizedContainerService.HintSize="553.6,436.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <ui:GetEnvironmentVariable DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="583.2452830188679,59.77358490566037" sap2010:WorkflowViewState.IdRef="GetEnvironmentVariable_1" Variable="RPA_ENV" VariableValue="[EnvironmentVariable]" />
+      <Switch x:TypeArguments="x:String" DisplayName="Switch - Environment Variable" Expression="[EnvironmentVariable]" sap:VirtualizedContainerService.HintSize="583.2452830188679,366.79245283018867" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
-          <Sequence sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,169.35849056603772" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_14">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[SAKeyPath]</OutArgument>
               </Assign.To>
@@ -161,13 +161,13 @@
             </Assign>
           </Sequence>
         </Switch.Default>
-        <Sequence x:Key="DEV" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence x:Key="DEV" sap:VirtualizedContainerService.HintSize="400.3018867924528,169.35849056603772" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[SAKeyPath]</OutArgument>
             </Assign.To>
@@ -176,13 +176,13 @@
             </Assign.Value>
           </Assign>
         </Sequence>
-        <Sequence x:Key="PROD" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence x:Key="PROD" sap:VirtualizedContainerService.HintSize="400.3018867924528,169.35849056603772" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[SAKeyPath]</OutArgument>
             </Assign.To>
@@ -192,8 +192,8 @@
           </Assign>
         </Sequence>
       </Switch>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="553.6,124.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[EnvironmentVariable+&quot;-&quot;+RerunSpreadsheetID+&quot;-&quot;+SAKeyPath]" />
-      <uga:GSuiteApplicationScope Account="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" Folder="{x:Null}" AuthenticationType="ServiceAccountKey" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope - Rerun date list" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="553.6,1008.8" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[SAKeyPath]" KeyType="JSON" OAuthClient="UIPATH" Services="Unselected" UseConnectionService="False">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="583.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[EnvironmentVariable+&quot;-&quot;+RerunSpreadsheetID+&quot;-&quot;+SAKeyPath]" />
+      <uga:GSuiteApplicationScope Account="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" Folder="{x:Null}" AuthenticationType="ServiceAccountKey" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope - Rerun date list" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="583.2452830188679,642.1132075471697" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyPath="[SAKeyPath]" KeyType="JSON" OAuthClient="UIPATH" Services="Unselected" UseConnectionService="False">
         <uga:GSuiteApplicationScope.ApiKey>
           <InArgument x:TypeArguments="x:String" />
         </uga:GSuiteApplicationScope.ApiKey>
@@ -205,23 +205,23 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ugac:IGoogleWorkspaceTarget" Name="GSuiteScope" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,859.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="504.45283018867923,481.811320754717" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="457.6,770.4" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:10">
+              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="442.86792452830184,372.2264150943396" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:10">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,571.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400.3018867924528,200.1509433962264" sap2010:WorkflowViewState.IdRef="Sequence_24">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range - Rerun List Sheet" sap:VirtualizedContainerService.HintSize="353.6,245.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" IncludeHeaders="True" Result="[dt_RerunDateList]" SheetName="rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
-                      <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range - Archived Rerun List Sheet" sap:VirtualizedContainerService.HintSize="353.6,236.8" sap2010:WorkflowViewState.IdRef="ReadRange_5" IncludeHeaders="True" Result="[dt_ArchivedRerunDateList]" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
+                      <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range - Rerun List Sheet" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="ReadRange_1" IncludeHeaders="True" Result="[dt_RerunDateList]" SheetName="rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
+                      <uga:ReadRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Range="{x:Null}" AuthScopesInvalid="False" DisplayName="Read Range - Archived Rerun List Sheet" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="ReadRange_5" IncludeHeaders="True" Result="[dt_ArchivedRerunDateList]" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:RetryScope.ActivityBody>
@@ -263,7 +263,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </uga:GSuiteApplicationScope>
-      <Assign sap:VirtualizedContainerService.HintSize="553.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign sap:VirtualizedContainerService.HintSize="583.2452830188679,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_11">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[LastRowArchivedIndex]</OutArgument>
         </Assign.To>
@@ -271,18 +271,18 @@
           <InArgument x:TypeArguments="x:Int32">[dt_ArchivedRerunDateList.RowCount+2]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="553.6,116" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Finish load rerun date list&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="583.2452830188679,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Finish load rerun date list&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Sequence - Execute each date in date list" sap:VirtualizedContainerService.HintSize="750.4,3344" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Sequence - Execute each date in date list" sap:VirtualizedContainerService.HintSize="789.7358490566037,2870.9433962264147" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="688,124.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Start execute each date in date list&quot;]" />
-      <ui:BuildDataTable DataTable="[dt_ArchivedRerunList]" DisplayName="Build Data Table - dt_archived" sap:VirtualizedContainerService.HintSize="688,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;BPID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SpreadsheetID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sheet_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Package_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Rerun_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Rerun_Config_Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
-      <uga:GSuiteApplicationScope Account="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" Folder="{x:Null}" AuthenticationType="ServiceAccountKey" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope - Rerun date list" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="688,3015.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_3" KeyPath="[SAKeyPath]" KeyType="JSON" OAuthClient="UIPATH" Services="Unselected" UseConnectionService="False">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="728.1509433962264,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Start execute each date in date list&quot;]" />
+      <ui:BuildDataTable DataTable="[dt_ArchivedRerunList]" DisplayName="Build Data Table - dt_archived" sap:VirtualizedContainerService.HintSize="728.1509433962264,59.77358490566037" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;BPID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SpreadsheetID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Sheet_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Package_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Rerun_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Rerun_Config_Key&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Product_Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+      <uga:GSuiteApplicationScope Account="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" Folder="{x:Null}" AuthenticationType="ServiceAccountKey" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="GSuite Application Scope - Rerun date list" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="728.1509433962264,2532.2264150943392" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_3" KeyPath="[SAKeyPath]" KeyType="JSON" OAuthClient="UIPATH" Services="Unselected" UseConnectionService="False">
         <uga:GSuiteApplicationScope.ApiKey>
           <InArgument x:TypeArguments="x:String" />
         </uga:GSuiteApplicationScope.ApiKey>
@@ -294,16 +294,16 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ugac:IGoogleWorkspaceTarget" Name="GSuiteScope" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="654.4,2874.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="649.3584905660377,2371.9245283018868" sap2010:WorkflowViewState.IdRef="Sequence_25">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:RetryScope DisplayName="Retry Scope - Read Cell Rerun" sap:VirtualizedContainerService.HintSize="592,391.2" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:10">
+              <ui:RetryScope DisplayName="Retry Scope - Read Cell Rerun" sap:VirtualizedContainerService.HintSize="587.7735849056603,197.43396226415092" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:10">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <uga:ReadCell CellValue="{x:Null}" ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" AuthScopesInvalid="False" Cell="A1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="333.6,183.2" sap2010:WorkflowViewState.IdRef="ReadCell_3" SheetName="archived_rerun_list" SpreadsheetId="1v9sqMXIVa7Gx-2OWvYkyOiAz3ZEiONUTlQVHYU2I0Mg">
+                    <uga:ReadCell CellValue="{x:Null}" ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" AuthScopesInvalid="False" Cell="A1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334.18867924528297,25.358490566037734" sap2010:WorkflowViewState.IdRef="ReadCell_3" SheetName="archived_rerun_list" SpreadsheetId="1v9sqMXIVa7Gx-2OWvYkyOiAz3ZEiONUTlQVHYU2I0Mg">
                       <uga:ReadCell.CellValueGeneric>
                         <OutArgument x:TypeArguments="x:String">[tempCellRerun]</OutArgument>
                       </uga:ReadCell.CellValueGeneric>
@@ -314,23 +314,24 @@
                   <ActivityFunc x:TypeArguments="x:Boolean" />
                 </ui:RetryScope.Condition>
               </ui:RetryScope>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_RerunDateList]" DisplayName="For Each Row in Data Table - RerunDateList" sap:VirtualizedContainerService.HintSize="592,1981.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_RerunDateList]" DisplayName="For Each Row in Data Table - RerunDateList" sap:VirtualizedContainerService.HintSize="587.7735849056603,1787.7735849056603" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="558.4,1833.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence sap:VirtualizedContainerService.HintSize="553.3584905660377,1674.566037735849" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Sequence - Update Rerun and RerunDate on destined config spreadsheet" sap:VirtualizedContainerService.HintSize="496,1098.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Sequence - Update Rerun and RerunDate on destined config spreadsheet" sap:VirtualizedContainerService.HintSize="491.77358490566036,913.8113207547169" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="CurrentSpreadsheetID" />
                           <Variable x:TypeArguments="x:String" Name="CurrentSheetName" />
                           <Variable x:TypeArguments="x:String" Name="CurrentRerunDate" />
+                          <Variable x:TypeArguments="x:String" Name="CurrentProductType" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -338,7 +339,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="430.4,84.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[String.Format(&quot;Processing - {0} - {1} - {2} - {3}&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Sheet_Name&quot;).ToString, CurrentRow(&quot;Package_Name&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString)]">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="430.18867924528297,50.71698113207547" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[String.Format(&quot;Processing - {0} - {1} - {2} - {3}&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Sheet_Name&quot;).ToString, CurrentRow(&quot;Package_Name&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString)]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -346,9 +347,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <ui:MultipleAssign DisplayName="Multiple Assign - CurrentRow to variable" sap:VirtualizedContainerService.HintSize="430.4,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                        <ui:MultipleAssign DisplayName="Multiple Assign - CurrentRow to variable" sap:VirtualizedContainerService.HintSize="430.18867924528297,223.69811320754715" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                           <ui:MultipleAssign.AssignOperations>
-                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                                 <ui:AssignOperation.To>
                                   <OutArgument x:TypeArguments="x:String">[CurrentSpreadsheetID]</OutArgument>
@@ -381,6 +382,14 @@
                                   <InArgument x:TypeArguments="x:String">[CurrentRow("Rerun_Config_Key").ToString]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[CurrentProductType]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[CurrentRow("Product_Type").ToString]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
                             </scg:List>
                           </ui:MultipleAssign.AssignOperations>
                           <sap:WorkflowViewStateService.ViewState>
@@ -390,7 +399,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:MultipleAssign>
-                        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="430.4,225.6" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="RPA_Rerun_CT1" Reference="[String.Format(&quot;{0} - {1}&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString )]">
+                        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="430.18867924528297,212.83018867924528" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="RPA_Rerun_CT1" Reference="[String.Format(&quot;{0} - {1}&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString )]">
                           <ui:AddQueueItem.ItemInformation>
                             <InArgument x:TypeArguments="x:String" x:Key="BPID">[CurrentRow("BPID").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="SpreadsheetID">[CurrentRow("Spreadsheet_ID").ToString]</InArgument>
@@ -399,7 +408,7 @@
                             <InArgument x:TypeArguments="x:String" x:Key="RerunDate">[CurrentRow("Rerun_Date").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="Key">[CurrentRow("Key").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="RerunConfigKey">[CurrentRerunConfigKey]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="ProductType">[CurrentRow("Prodcut_Type").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="ProductType">[CurrentProductType]</InArgument>
                           </ui:AddQueueItem.ItemInformation>
                           <ui:AddQueueItem.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
@@ -411,10 +420,10 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:AddQueueItem>
-                        <ui:RetryScope DisplayName="Retry Scope - Delete Rows in rerun list" sap:VirtualizedContainerService.HintSize="430.4,440.8" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:10">
+                        <ui:RetryScope DisplayName="Retry Scope - Delete Rows in rerun list" sap:VirtualizedContainerService.HintSize="430.18867924528297,197.43396226415092" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:10">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
-                              <uga:AddDeleteRows ContinueOnError="{x:Null}" AuthScopesInvalid="False" ChangeMode="DELETE" DisplayName="Delete Rows - already executed row" sap:VirtualizedContainerService.HintSize="333.6,241.6" sap2010:WorkflowViewState.IdRef="AddDeleteRows_1" NumberOfItems="1" Position="2" SheetName="rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
+                              <uga:AddDeleteRows ContinueOnError="{x:Null}" AuthScopesInvalid="False" ChangeMode="DELETE" DisplayName="Delete Rows - already executed row" sap:VirtualizedContainerService.HintSize="334.18867924528297,25.358490566037734" sap2010:WorkflowViewState.IdRef="AddDeleteRows_1" NumberOfItems="1" Position="2" SheetName="rerun_list" SpreadsheetId="[RerunSpreadsheetID]" />
                             </ActivityAction>
                           </ui:RetryScope.ActivityBody>
                           <ui:RetryScope.Condition>
@@ -422,44 +431,44 @@
                           </ui:RetryScope.Condition>
                         </ui:RetryScope>
                       </Sequence>
-                      <Sequence DisplayName="Sequence - add rerun row to archived datatable" sap:VirtualizedContainerService.HintSize="496,445.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence DisplayName="Sequence - add rerun row to archived datatable" sap:VirtualizedContainerService.HintSize="491.77358490566036,391.2452830188679" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_13">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:Object[]">[RerunRow]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="s:Object[]">[{CurrentRow("BPID"), CurrentRow("Key"), CurrentRow("Spreadsheet_ID"), CurrentRow("Sheet_Name"), CurrentRow("Package_Name"), CurrentRow("Rerun_Date"), CurrentRerunConfigKey}]</InArgument>
+                            <InArgument x:TypeArguments="s:Object[]">[{CurrentRow("BPID"), CurrentRow("Key"), CurrentRow("Spreadsheet_ID"), CurrentRow("Sheet_Name"), CurrentRow("Package_Name"), CurrentRow("Rerun_Date"), CurrentRerunConfigKey, CurrentRow("Product_Type")}]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[RerunRow]" DataTable="[dt_ArchivedRerunList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[RerunRow]" DataTable="[dt_ArchivedRerunList]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338.71698113207543,182.0377358490566" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       </Sequence>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,84.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="491.77358490566036,50.71698113207547" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="462,672" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="461.88679245283015,670.188679245283" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Sequence - Move current processed row to archived" sap:VirtualizedContainerService.HintSize="400,562" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <Sequence DisplayName="Sequence - Move current processed row to archived" sap:VirtualizedContainerService.HintSize="400.3018867924528,560.6037735849056" sap2010:WorkflowViewState.IdRef="Sequence_15">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;A&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - BPID" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_4" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;BPID&quot;).ToString]" />
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;B&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Key" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_9" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Key&quot;).ToString]" />
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;C&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - SpreadsheetID" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_5" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Spreadsheet_ID&quot;).ToString]" />
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;D&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Sheet_Name" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_6" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Sheet_Name&quot;).ToString]" />
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;E&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Package_Name" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_7" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Package_Name&quot;).ToString]" />
-                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;F&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Rerun_Date" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="WriteCell_8" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Rerun_Date&quot;).ToString]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_12">
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;A&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - BPID" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_4" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;BPID&quot;).ToString]" />
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;B&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Key" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_9" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Key&quot;).ToString]" />
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;C&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - SpreadsheetID" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_5" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Spreadsheet_ID&quot;).ToString]" />
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;D&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Sheet_Name" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_6" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Sheet_Name&quot;).ToString]" />
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;E&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Package_Name" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_7" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Package_Name&quot;).ToString]" />
+                              <uga:WriteCell ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" AuthScopesInvalid="False" Cell="[&quot;F&quot;+LastRowArchivedIndex.ToString]" DisplayName="Write Cell - Rerun_Date" sap:VirtualizedContainerService.HintSize="338.71698113207543,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteCell_8" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" Value="[CurrentRow(&quot;Rerun_Date&quot;).ToString]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="338.71698113207543,59.77358490566037" sap2010:WorkflowViewState.IdRef="Assign_12">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Int32">[LastRowArchivedIndex]</OutArgument>
                                 </Assign.To>
@@ -477,7 +486,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[String.Format(&quot;Finish for adding {0} to rerun queue for date {1}.&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString)]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.77358490566036,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[String.Format(&quot;Finish for adding {0} to rerun queue for date {1}.&quot;, CurrentRow(&quot;BPID&quot;).ToString, CurrentRow(&quot;Rerun_Date&quot;).ToString)]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
@@ -488,10 +497,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:RetryScope DisplayName="Retry Scope - write range archived rerun list" sap:VirtualizedContainerService.HintSize="592,412.8" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:10">
+              <ui:RetryScope DisplayName="Retry Scope - write range archived rerun list" sap:VirtualizedContainerService.HintSize="587.7735849056603,197.43396226415092" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:10">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <uga:WriteRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DataTable="[dt_ArchivedRerunList]" DisplayName="Write Range - Archived rerun list" sap:VirtualizedContainerService.HintSize="333.6,213.6" sap2010:WorkflowViewState.IdRef="WriteRange_1" IncludeHeaders="False" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" StartingCell="[&quot;A&quot;+LastRowArchivedIndex.ToString]" />
+                    <uga:WriteRange ContinueOnError="{x:Null}" GoogleSpreadsheet="{x:Null}" Request="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DataTable="[dt_ArchivedRerunList]" DisplayName="Write Range - Archived rerun list" sap:VirtualizedContainerService.HintSize="334.18867924528297,25.358490566037734" sap2010:WorkflowViewState.IdRef="WriteRange_1" IncludeHeaders="False" IsInsideBatchUpdateScope="False" SheetName="archived_rerun_list" SpreadsheetId="[RerunSpreadsheetID]" StartingCell="[&quot;A&quot;+LastRowArchivedIndex.ToString]" />
                   </ActivityAction>
                 </ui:RetryScope.ActivityBody>
                 <ui:RetryScope.Condition>

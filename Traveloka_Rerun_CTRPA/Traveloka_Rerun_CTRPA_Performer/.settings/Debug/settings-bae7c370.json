@@ -1,4 +1,4 @@
-﻿{
+{
   "UiPath.GSuite.Activities.GenericGSuite.ContinueOnError": "False",
   "UiPath.GSuite.Activities.GSuiteScope.TimeoutMS": "90000",
   "UiPath.GSuite.Activities.GoogleSheetsScope.Timeout": "90",
