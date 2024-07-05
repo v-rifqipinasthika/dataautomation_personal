@@ -8,6 +8,8 @@
     <x:Property Name="in_BPID" Type="InArgument(x:String)" />
     <x:Property Name="in_BPName" Type="InArgument(x:String)" />
     <x:Property Name="out_loginSuccess" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_pathCaptchaBreaker" Type="InArgument(x:String)" />
+    <x:Property Name="in_capthaProcess" Type="InArgument(x:String)" />
   </x:Members>
   <this:Portal_Cybersourcevietin_Login.in_BPID>
     <InArgument x:TypeArguments="x:String" />
@@ -15,10 +17,13 @@
   <this:Portal_Cybersourcevietin_Login.in_BPName>
     <InArgument x:TypeArguments="x:String" />
   </this:Portal_Cybersourcevietin_Login.in_BPName>
+  <this:Portal_Cybersourcevietin_Login.in_pathCaptchaBreaker>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Portal_Cybersourcevietin_Login.in_pathCaptchaBreaker>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,2548.528301886792</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206.4,2724</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cybersourcevietin_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -98,14 +103,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="557.8867924528302,2483.320754716981" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="528.8,2619.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="496.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcevietin_Login&quot;)]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="496.3018867924528,114.11320754716981" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
+    <ui:LogMessage DisplayName="Log Message Portal_Cybersourcevietin_Login" sap:VirtualizedContainerService.HintSize="466.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_Cybersourcevietin_Login&quot;)]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser Portal" sap:VirtualizedContainerService.HintSize="466.4,118.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Private="True" Url="[in_portalLink]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -114,27 +119,26 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="496.3018867924528,2090.264150943396" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="125d60b515ca0d4de72609111d0c43ba" Selector="&lt;html app='chrome.exe' title='Vietinbank Card Support' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Vietinbank'" sap:VirtualizedContainerService.HintSize="466.4,2216" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="125d60b515ca0d4de72609111d0c43ba" Selector="&lt;html app='chrome.exe' title='Vietinbank Card Support' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="461.88679245283015,1943.5471698113206" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,2068.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="usrname" />
               <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
               <Variable x:TypeArguments="x:String" Name="captchaResponse" />
               <Variable x:TypeArguments="ui:Image" Name="imgCaptcha" />
-              <Variable x:TypeArguments="x:String" Default="Traveloka_DataAutomation_Captcha_Handler" Name="PathCaptchaBreaker" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="400.3018867924528,25.358490566037734" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Doesn't support simulate" ClickType="CLICK_SINGLE" DisplayName="Click 'A  COM001_lnkEnglish'" sap:VirtualizedContainerService.HintSize="400.3018867924528,137.66037735849056" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window Browser" sap:VirtualizedContainerService.HintSize="337.6,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Doesn't support simulate" ClickType="CLICK_SINGLE" DisplayName="Click 'A  COM001_lnkEnglish'" sap:VirtualizedContainerService.HintSize="337.6,138.4" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -161,8 +165,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:Click>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="400.3018867924528,163.9245283018868" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd]" Username="[usrname]" />
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="400.3018867924528,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_cred]" CacheStrategy="None" DisplayName="Get Credential Portal Login" sap:VirtualizedContainerService.HintSize="337.6,172" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd]" Username="[usrname]" />
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtAccount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="337.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[usrname]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="433195f4-02b2-4b20-bf89-db9192e2b771" InformativeScreenshot="d25fb2319920ef6a80cf50f48cd3b5a9" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -174,7 +178,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="400.3018867924528,106.86792452830188" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
+            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Secure Text 'INPUT  COM001_txtPass'" EmptyField="True" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[pwd]" SimulateType="True">
               <ui:TypeSecureText.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf2d4b0-fefb-4d89-89b8-feb586405eda" InformativeScreenshot="8ce5c27cc758f89b50c03afa42ee9a9b" Selector="&lt;webctrl tag='INPUT' type='password' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -186,7 +190,7 @@
                 </ui:Target>
               </ui:TypeSecureText.Target>
             </ui:TypeSecureText>
-            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'IMG' Captcha" sap:VirtualizedContainerService.HintSize="400.3018867924528,106.86792452830188" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgCaptcha]">
+            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'IMG' Captcha" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgCaptcha]">
               <ui:TakeScreenshot.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="14d1ab17-a12a-46d9-bbd2-230e3a8cd267" InformativeScreenshot="f8decc4197aac69f449c50d1fbd333e4" Selector="&lt;webctrl parentid='inside' tag='IMG' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -198,26 +202,42 @@
                 </ui:Target>
               </ui:TakeScreenshot.Target>
             </ui:TakeScreenshot>
-            <ui:SaveImage sap2010:Annotation.AnnotationText="&quot;RPA_FlightReconciliation_Captcha_Handler\captchaImage.png&quot;" DisplayName="Save Image Captcha" FileName="[String.Format(&quot;{0}/{1}&quot;, PathCaptchaBreaker, &quot;captchaImage.png&quot;)]" sap:VirtualizedContainerService.HintSize="400.3018867924528,170.2641509433962" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[imgCaptcha]">
+            <ui:SaveImage sap2010:Annotation.AnnotationText="&quot;RPA_FlightReconciliation_Captcha_Handler\captchaImage.png&quot;" DisplayName="Save Image Captcha" FileName="[String.Format(&quot;{0}/{1}&quot;, in_pathCaptchaBreaker, &quot;captchaImage.png&quot;)]" sap:VirtualizedContainerService.HintSize="337.6,178.4" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[imgCaptcha]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SaveImage>
-            <ui:LogMessage DisplayName="Log Message Captcha_Breaker" sap:VirtualizedContainerService.HintSize="400.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Captcha_Breaker&quot;)]" />
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Captcha_Breaker.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400.3018867924528,111.39622641509433" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Traveloka_DataAutomation_Captcha_Handler\Captcha_Breaker.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
+            <ui:LogMessage DisplayName="Log Message Captcha_Breaker" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Captcha_Breaker&quot;)]" />
+            <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Image : &quot;image_captcha_rpa&quot;&#xA;Recaptcha : &quot;recaptchav2_rpa&quot;" DisplayName="Invoke Process Captcha Breaker" sap:VirtualizedContainerService.HintSize="337.6,211.2" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="[in_capthaProcess]">
+              <ui:InvokeProcess.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_site_key">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">[in_captchaRuleId]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">[in_portalLink]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">[in_BPName]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">[captchaResponse]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtCaptcha'" EmptyField="True" sap:VirtualizedContainerService.HintSize="400.3018867924528,134.94339622641508" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[captchaResponse]">
+                <InArgument x:TypeArguments="x:String" x:Key="in_captcha_rule_id">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_captchaRuleId" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_url_airlines">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_portalLink" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_target_site">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BPName" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_captcha_response">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="captchaResponse" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_pathCaptcha">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_pathCaptchaBreaker" />
+                </InArgument>
+              </ui:InvokeProcess.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeProcess>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  COM001_txtCaptcha'" EmptyField="True" sap:VirtualizedContainerService.HintSize="337.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[captchaResponse]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="013f716e-7c92-4d09-be50-5234c5d0521e" InformativeScreenshot="41454ae2edc678525d9b23f71d4136c0" Selector="&lt;webctrl name='COM001$txtCaptcha' tag='INPUT' type='text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -229,7 +249,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  COM001_btnLogon'" sap:VirtualizedContainerService.HintSize="400.3018867924528,106.86792452830188" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  COM001_btnLogon'" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -251,7 +271,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="400.3018867924528,106.86792452830188" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists 'A  ctl00_lnkLogout'" Exists="[out_loginSuccess]" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1faf309-9891-4f45-8716-20a772df14fb" InformativeScreenshot="bcf839eb91f00782264e12faae520708" Selector="&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Logout' tableRow='1' tag='A' /&gt;">
                   <ui:Target.TimeoutMS>
