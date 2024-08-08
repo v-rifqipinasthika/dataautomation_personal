@@ -8,6 +8,7 @@
     "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.Python.Activities": "[1.6.0]",
     "UiPath.System.Activities": "[22.10.4]",
+    "UiPath.Testing.Activities": "[22.10.4]",
     "UiPath.UIAutomation.Activities": "[22.10.5]",
     "UiPath.WebAPI.Activities": "[1.16.2]"
   },
@@ -15,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.5.0",
-  "projectVersion": "1.0.2-alpha",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
