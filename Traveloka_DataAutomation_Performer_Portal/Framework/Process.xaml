@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.9245283018868,1125.7358490566037</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206.4,1042.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -108,7 +108,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="461.88679245283015,1060.5283018867924" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="400,977.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="processName" />
     </Sequence.Variables>
@@ -118,8 +118,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="400.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <Assign sap2010:Annotation.AnnotationText="Traveloka_DataAutomation_Portal_&lt;Portal Name&gt;&#xA;&#xA;key : cyeberousrcevietin&#xA;Cybersourcevietin" DisplayName="Assign Process Name" sap:VirtualizedContainerService.HintSize="400.3018867924528,139.47169811320754" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <Assign sap2010:Annotation.AnnotationText="Traveloka_DataAutomation_Portal_&lt;Portal Name&gt;&#xA;&#xA;key : cyeberousrcevietin&#xA;Cybersourcevietin" DisplayName="Assign Process Name" sap:VirtualizedContainerService.HintSize="337.6,152" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[processName]</OutArgument>
       </Assign.To>
@@ -132,20 +132,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message Run Process" sap:VirtualizedContainerService.HintSize="400.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Run process {0}&quot;, processName)]" />
-    <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process Current" sap:VirtualizedContainerService.HintSize="400.3018867924528,163.01886792452828" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="[processName]">
+    <ui:LogMessage DisplayName="Log Message Run Process" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Run process {0}&quot;, processName)]" />
+    <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="Invoke Process Current" sap:VirtualizedContainerService.HintSize="337.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="[processName]">
       <ui:InvokeProcess.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Period">[in_TransactionItem.SpecificContent("Period").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Rerun">[in_TransactionItem.SpecificContent("Rerun").ToString]</InArgument>
       </ui:InvokeProcess.Arguments>
-    </ui:InvokeProcess>
-    <ui:LogMessage DisplayName="Log Message Run Process" sap:VirtualizedContainerService.HintSize="400.3018867924528,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Finish run process {0}&quot;, processName)]" />
-    <Sequence sap:VirtualizedContainerService.HintSize="400.3018867924528,100.52830188679245" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
+    </ui:InvokeProcess>
+    <ui:LogMessage DisplayName="Log Message Run Process" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Finish run process {0}&quot;, processName)]" />
   </Sequence>
 </Activity>

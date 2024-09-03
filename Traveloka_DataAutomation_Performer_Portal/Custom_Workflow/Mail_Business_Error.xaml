@@ -25,7 +25,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>992.6037735849056,890.2641509433962</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206.4,932</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Mail_Business_Error_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,17 +116,16 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Email to user in case any business exception happens during the process" DisplayName="Mail_Business_Error" sap:VirtualizedContainerService.HintSize="511.6981132075471,825.0566037735848" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Email to user in case any business exception happens during the process" DisplayName="Mail_Business_Error" sap:VirtualizedContainerService.HintSize="462.4,867.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="450.1132075471698,684.6792452830189" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="400,724" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="htmlBody" />
-        <Variable x:TypeArguments="x:String" Name="mailServer" />
         <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
         <Variable x:TypeArguments="x:String" Name="usrname" />
       </Sequence.Variables>
@@ -136,10 +135,10 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message Mail Error" sap:VirtualizedContainerService.HintSize="388.5283018867924,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_PID + &quot; - &quot; +&quot;STEP : Mail Business Exception Error&quot;]" />
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_credMail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="388.5283018867924,136.75471698113208" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
-      <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="388.5283018867924,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[htmlBody.Replace(&quot;{0}&quot;, in_strBPName).Replace(&quot;{1}&quot;, DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm:ss&quot;)).Replace(&quot;{2}&quot;, in_strSource).Replace(&quot;{3}&quot;, in_strMessage)]" Cc="[in_mailCc]" DisplayName="Send SMTP Mail Message" Email="[usrname]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388.5283018867924,150.33962264150944" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[in_SenderName]" Port="465" SecureConnection="Auto" SecurePassword="[pwd]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0}_{1}_Error Notification_{2}&quot;, in_PID,in_strBPName,in_Period.ToString(&quot;dd-MMM-yy&quot;))]" To="[in_mailTo]">
+      <ui:LogMessage DisplayName="Log Message Mail Error" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_PID + &quot; - &quot; +&quot;STEP : Mail Business Exception Error&quot;]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_credMail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="337.6,172" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[pwd]" Username="[usrname]" />
+      <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="337.6,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[htmlBody.Replace(&quot;{0}&quot;, in_strBPName).Replace(&quot;{1}&quot;, DateTime.Now.ToString(&quot;dd-MM-yyyy HH:mm:ss&quot;)).Replace(&quot;{2}&quot;, in_strSource).Replace(&quot;{3}&quot;, in_strMessage)]" Cc="[in_mailCc]" DisplayName="Send SMTP Mail Message" Email="[usrname]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="337.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[in_SenderName]" Port="465" SecureConnection="Auto" SecurePassword="[pwd]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0}_{1}_Error Notification_{2}&quot;, in_PID,in_strBPName,in_Period.ToString(&quot;dd-MMM-yy&quot;))]" To="[in_mailTo]">
         <ui:SendMail.Files>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
             <InArgument x:TypeArguments="x:String">[in_pathLog]</InArgument>

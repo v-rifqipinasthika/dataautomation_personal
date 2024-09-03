@@ -25,7 +25,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>992.6037735849056,1303.245283018868</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206.4,1345.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="72">
@@ -128,10 +128,9 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Email to user in case any system exception happens during the process" DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="470.9433962264151,1238.0377358490566" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Email to user in case any system exception happens during the process" DisplayName="Mail Error" sap:VirtualizedContainerService.HintSize="515.2,1280.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="htmlBody" />
-      <Variable x:TypeArguments="x:String" Name="mailServer" />
       <Variable x:TypeArguments="ss:SecureString" Name="pwd" />
       <Variable x:TypeArguments="x:String" Name="usrname" />
     </Sequence.Variables>
@@ -142,10 +141,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Mail Error" sap:VirtualizedContainerService.HintSize="409.3584905660377,89.66037735849056" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[in_PID + &quot; - &quot; +&quot;STEP : Mail System Exception Error&quot;]" />
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_credMail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="409.3584905660377,136.75471698113208" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd]" Username="[usrname]" />
-    <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="409.3584905660377,78.79245283018868" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-    <If sap2010:Annotation.AnnotationText="Send email without image if screenshot failed" Condition="[in_pathSs = &quot;&quot;]" DisplayName="If no screenshot path" sap:VirtualizedContainerService.HintSize="409.3584905660377,672.9056603773585" sap2010:WorkflowViewState.IdRef="If_3">
+    <ui:LogMessage DisplayName="Log Message Mail Error" sap:VirtualizedContainerService.HintSize="452.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[in_PID + &quot; - &quot; +&quot;STEP : Mail System Exception Error&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_credMail]" CacheStrategy="None" DisplayName="Get Credential Email" sap:VirtualizedContainerService.HintSize="452.8,172" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pwd]" Username="[usrname]" />
+    <ui:ReadTextFile File="{x:Null}" Content="[htmlBody]" DisplayName="Read Text File Email Template" FileName="[in_strEmailTemplate]" sap:VirtualizedContainerService.HintSize="452.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+    <If sap2010:Annotation.AnnotationText="Send email without image if screenshot failed" Condition="[in_pathSs = &quot;&quot;]" DisplayName="If no screenshot path" sap:VirtualizedContainerService.HintSize="452.8,672" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
