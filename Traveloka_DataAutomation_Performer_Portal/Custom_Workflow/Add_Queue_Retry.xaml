@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Add_Queue_Retry" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_Queue_Retry" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -6,10 +6,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1206.4,4004.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1206.4,4145.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_Queue_Retry_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="29">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,10 @@
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>System.Text</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="47">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -89,9 +89,9 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Queue_Retry" sap:VirtualizedContainerService.HintSize="820,3940" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Queue_Retry" sap:VirtualizedContainerService.HintSize="820,4080.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strQueueReference" />
       <Variable x:TypeArguments="x:Int32" Name="intAutoRetryMax" />
@@ -102,30 +102,39 @@
       <Variable x:TypeArguments="x:Int32" Name="intAutoRetryMaxDay" />
       <Variable x:TypeArguments="x:Int32" Name="intAutoRetrySchedule" />
       <Variable x:TypeArguments="x:String" Name="bpKey" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="excludedBps" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="excludedBps">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(Of String)" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Object" Name="strExcludeBps" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="757.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;{0} {1}&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, &quot;STEP : Add Queue Retry&quot;)]" />
-    <Assign sap2010:Annotation.AnnotationText="Excluded BP's from auto retry&#xD;&#xA;&#xD;&#xA; &quot;bnismartpay&quot;,&#xD;&#xA; &quot;amadeusndc&quot;,&#xD;&#xA; &quot;amadeustjq&quot;,&#xD;&#xA; &quot;amexsubmission&quot;,&#xD;&#xA; &quot;cybersourcemaybankinstallment&quot;,&#xD;&#xA; &quot;paypal&quot;,&#xD;&#xA; &quot;amadeusalteakulmh07c2&quot;,&#xD;&#xA; &quot;amadeusalteajktmh07c2&quot;" DisplayName="Assign - excludedBps" sap:VirtualizedContainerService.HintSize="757.6,236" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="757.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(&quot;{0} {1}&quot;, in_TransactionItem.SpecificContent(&quot;PID&quot;).ToString, &quot;STEP : Add Queue Retry&quot;)]" />
+    <ui:GetRobotAsset AssetName="RPA_Moon_AutoRetryExclude" CacheStrategy="None" DisplayName="Get Asset Exclude BP's" sap:VirtualizedContainerService.HintSize="757.6,52.8" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetRobotAsset.TimeoutMS>
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:Object">[strExcludeBps]</OutArgument>
+      </ui:GetRobotAsset.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <Assign sap2010:Annotation.AnnotationText="Excluded BP's from auto retry&#xD;&#xA;&#xD;&#xA;New List(Of String) From&#xD;&#xA;{&#xD;&#xA; &quot;bnismartpay&quot;,&#xD;&#xA; &quot;amadeusndc&quot;,&#xD;&#xA; &quot;amadeustjq&quot;,&#xD;&#xA; &quot;amexsubmission&quot;,&#xD;&#xA; &quot;cybersourcemaybankinstallment&quot;,&#xD;&#xA; &quot;amadeusalteakulmh07c2&quot;,&#xD;&#xA; &quot;amadeusalteajktmh07c2&quot;,&#xD;&#xA; &quot;paypal&quot;&#xD;&#xA;}" DisplayName="Assign - excludedBps" sap:VirtualizedContainerService.HintSize="757.6,284" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[excludedBps]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[New List(Of String) From
-{
-	"bnismartpay",
-	"amadeusndc",
-	"amadeustjq",
-	"amexsubmission",
-	"cybersourcemaybankinstallment",
-	"amadeusalteakulmh07c2",
-	"amadeusalteajktmh07c2",
-	"paypal"
-}]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)">[strExcludeBps.ToString.Split(","c) .Where(Function(item) Not String.IsNullOrWhiteSpace(item)) .ToList()]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
