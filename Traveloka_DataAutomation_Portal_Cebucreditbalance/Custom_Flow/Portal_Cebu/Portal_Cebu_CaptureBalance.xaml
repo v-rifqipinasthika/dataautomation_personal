@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408,850.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>822.4,850.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Cebu_CaptureBalance_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -106,7 +106,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'DIV'" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[imgCreditBlance]">
               <ui:TakeScreenshot.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2cd52ed8-98cd-486e-a0d6-f9eccd0faf3b" InformativeScreenshot="85b8e70b9cb3ca3132c656b11d45f5ca" Selector="&lt;webctrl css-selector='body&amp;gt;omnix-project&amp;gt;omnix-main-master-page&amp;gt;div&amp;gt;omnix-credit-balance-and-travel-fund&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2cd52ed8-98cd-486e-a0d6-f9eccd0faf3b" InformativeScreenshot="85b8e70b9cb3ca3132c656b11d45f5ca" Selector="&lt;webctrl tag='DIV' innertext='Agency Credit*' class='col-12 agency-credit-card' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
