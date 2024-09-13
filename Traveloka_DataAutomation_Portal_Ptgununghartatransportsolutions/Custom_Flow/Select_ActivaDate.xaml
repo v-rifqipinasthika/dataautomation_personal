@@ -1,0 +1,198 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Playground" this:Playground.in_datePeriod="[Date.Now.AddDays(-7)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_datePeriod" Type="InArgument(s:DateTime)" />
+    <x:Property Name="out_elementCurrentMonth" Type="OutArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>822.4,897.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Playground_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select_ActivaDate" sap:VirtualizedContainerService.HintSize="540,832.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="element" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:FindChildren Children="[element]" DisplayName="Find Children 'TABLE' calendar" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="477.6,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+      <ui:FindChildren.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6a2c52c-13a1-404c-919a-706d947929b1" InformativeScreenshot="77617f84c1878c2540ee1b1edf8e4d30" Selector="&lt;html app='chrome.exe' title='GH Solutions' /&gt;&lt;webctrl class='calendar-table' tag='DIV' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:FindChildren.Target>
+    </ui:FindChildren>
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each child element" sap:VirtualizedContainerService.HintSize="477.6,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[element]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="ui:UiElement">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentElement" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,768.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="dateInnerText" />
+              <Variable x:TypeArguments="x:String" Name="dateClass" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="class" DisplayName="Get Attribute class" sap:VirtualizedContainerService.HintSize="337.6,184" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+              <ui:GetAttribute.Result>
+                <OutArgument x:TypeArguments="x:String">[dateClass]</OutArgument>
+              </ui:GetAttribute.Result>
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[currentElement]" Id="fb8cde83-a415-4d50-aebe-4287432bd496">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetAttribute.Target>
+            </ui:GetAttribute>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innerText" DisplayName="Get Attribute inner text" sap:VirtualizedContainerService.HintSize="337.6,184" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+              <ui:GetAttribute.Result>
+                <OutArgument x:TypeArguments="x:String">[dateInnerText]</OutArgument>
+              </ui:GetAttribute.Result>
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[currentElement]" Id="fb8cde83-a415-4d50-aebe-4287432bd496">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetAttribute.Target>
+            </ui:GetAttribute>
+            <If sap2010:Annotation.AnnotationText="class&#xA;exclude off (attached in previous or next month so need to be excluded from selector)&#xA;include available&#xA;&#xA;innerText&#xA;current month" Condition="[Not dateClass.ToLower.Contains(&quot;off&quot;) AndAlso dateInnerText.Equals(in_datePeriod.Day.ToString) AndAlso dateClass.ToLower.Contains(&quot;available&quot;)]" DisplayName="If select available only date for current month" sap:VirtualizedContainerService.HintSize="337.6,208.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,304.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[String.Format(&quot;Class : {0}, InnerText  : {1}&quot;, dateClass, dateInnerText)]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="ui:UiElement">[out_elementCurrentMonth]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="ui:UiElement">[currentElement]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <If Condition="[out_elementCurrentMonth Is Nothing]" DisplayName="If element for current date not found" sap:VirtualizedContainerService.HintSize="477.6,480.8" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw elemnt not found" Exception="[New Exception(String.Format(&quot;Selector for period {0} not found in date picker&quot;, in_datePeriod.ToShortDateString))]" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>822.4,6028.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>822.4,4388</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_GunungHarta_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -54,7 +54,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="126">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="776.8,5964" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="776.8,4323.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="currentSearchDate" />
       <Variable x:TypeArguments="x:Int32" Name="indexMonth" />
@@ -161,13 +161,13 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Statements'" sap:VirtualizedContainerService.HintSize="714.4,3767.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="722a054140d0ba5b56f1360d4368962a" Selector="&lt;html app='chrome.exe' title='GH Solutions' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Statements'" sap:VirtualizedContainerService.HintSize="714.4,2126.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="722a054140d0ba5b56f1360d4368962a" Selector="&lt;html app='chrome.exe' title='GH Solutions' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="680.8,3620" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="560,1979.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="resultDate" />
             </Sequence.Variables>
@@ -176,7 +176,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://agen.ghtiket...'" sap:VirtualizedContainerService.HintSize="618.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://agen.ghtiket...'" sap:VirtualizedContainerService.HintSize="497.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -198,14 +198,17 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Sequence DisplayName="Sequence Select Date" sap:VirtualizedContainerService.HintSize="618.4,1999.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence DisplayName="Sequence Select Date" sap:VirtualizedContainerService.HintSize="497.6,1388.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ui:UiElement" Name="elementCurrentMonth" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN' Current Search" sap:VirtualizedContainerService.HintSize="540.8,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN' Current Search" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
                 <ui:GetValue.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="439d7cc5-1403-47d5-b62f-4585807ac52d" InformativeScreenshot="4fac46e85ce53e23ef4ece560e3143a6" Selector="&lt;webctrl parentid='reportrange' tag='SPAN' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -220,7 +223,7 @@
                   <OutArgument x:TypeArguments="x:String">[currentSearchDate]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:InvokeCode ContinueOnError="{x:Null}" Code="DateTime date1 = in_period;&#xA;DateTime date2 = DateTime.ParseExact(currentSearchDate, &quot;MMMM d, yyyy&quot;, System.Globalization.CultureInfo.InvariantCulture);&#xA;&#xA;int monthDifference = ((date2.Year - date1.Year) * 12) + date2.Month - date1.Month;&#xA;&#xA;Console.WriteLine(&quot;Output: &quot; + monthDifference);&#xA;indexMonth = monthDifference;&#xA;strDate = int.Parse(in_period.ToString(&quot;dd&quot;)).ToString();" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="540.8,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="DateTime date1 = in_period;&#xA;DateTime date2 = DateTime.ParseExact(currentSearchDate, &quot;MMMM d, yyyy&quot;, System.Globalization.CultureInfo.InvariantCulture);&#xA;&#xA;int monthDifference = ((date2.Year - date1.Year) * 12) + date2.Month - date1.Month;&#xA;&#xA;Console.WriteLine(&quot;Output: &quot; + monthDifference);&#xA;indexMonth = monthDifference;&#xA;strDate = int.Parse(in_period.ToString(&quot;dd&quot;)).ToString();" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="435.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
                 <ui:InvokeCode.Arguments>
                   <OutArgument x:TypeArguments="x:Int32" x:Key="indexMonth">[indexMonth]</OutArgument>
                   <InArgument x:TypeArguments="s:DateTime" x:Key="in_period">[in_period]</InArgument>
@@ -228,7 +231,7 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="strDate">[strDate]</OutArgument>
                 </ui:InvokeCode.Arguments>
               </ui:InvokeCode>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  reportrange'" sap:VirtualizedContainerService.HintSize="540.8,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  reportrange'" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -250,7 +253,7 @@
                   </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
-              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="540.8,476.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0, indexMonth)]">
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="435.2,476.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0, indexMonth)]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -295,181 +298,144 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <ui:RetryScope DisplayName="Retry Scope click current date" sap:VirtualizedContainerService.HintSize="540.8,871.2" sap2010:WorkflowViewState.IdRef="RetryScope_5">
-                <ui:RetryScope.ActivityBody>
-                  <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="499.2,695.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch click date" sap:VirtualizedContainerService.HintSize="436.8,583.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                        <TryCatch.Try>
-                          <Sequence sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message click date available" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Click date available&quot;]" />
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD' Date" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition Position="Center">
-                                  <ui:CursorPosition.OffsetX>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetX>
-                                  <ui:CursorPosition.OffsetY>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetY>
-                                </ui:CursorPosition>
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="034d9ef1-5b10-401a-95d5-e18ed5c9aed4" InformativeScreenshot="8a70589c780bf561723b7b00400bbcbb" Selector="[string.Format(&quot;&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl class='available' innertext='{0}' /&gt;&quot;, strDate)]">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                          </Sequence>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:Exception">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                              </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message click date *available*" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Click date available&quot;]" />
-                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD' Date" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                  <ui:Click.CursorPosition>
-                                    <ui:CursorPosition Position="Center">
-                                      <ui:CursorPosition.OffsetX>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetX>
-                                      <ui:CursorPosition.OffsetY>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:CursorPosition.OffsetY>
-                                    </ui:CursorPosition>
-                                  </ui:Click.CursorPosition>
-                                  <ui:Click.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="034d9ef1-5b10-401a-95d5-e18ed5c9aed4" InformativeScreenshot="8a70589c780bf561723b7b00400bbcbb" Selector="[string.Format(&quot;&lt;webctrl class='table-condensed' tag='TABLE' /&gt;&lt;webctrl class='*available*' innertext='{0}' /&gt;&quot;, strDate)]">
-                                      <ui:Target.TimeoutMS>
-                                        <InArgument x:TypeArguments="x:Int32" />
-                                      </ui:Target.TimeoutMS>
-                                      <ui:Target.WaitForReady>
-                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                      </ui:Target.WaitForReady>
-                                    </ui:Target>
-                                  </ui:Click.Target>
-                                </ui:Click>
-                              </Sequence>
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                      </TryCatch>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:RetryScope.ActivityBody>
-                <ui:RetryScope.Condition>
-                  <ActivityFunc x:TypeArguments="x:Boolean" />
-                </ui:RetryScope.Condition>
-              </ui:RetryScope>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Select_ActivaDate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Select_ActivaDate.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">
+                    <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_period" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_elementCurrentMonth">
+                    <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="elementCurrentMonth" />
+                  </OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD' Date" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[elementCurrentMonth]" Id="034d9ef1-5b10-401a-95d5-e18ed5c9aed4" InformativeScreenshot="8a70589c780bf561723b7b00400bbcbb">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
             </Sequence>
-            <ui:RetryScope DisplayName="Retry Scope Wait Data" sap:VirtualizedContainerService.HintSize="618.4,1321.6" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="6" RetryInterval="00:00:10">
-              <ui:RetryScope.ActivityBody>
-                <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="576.8,1073.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD' Result Date" sap:VirtualizedContainerService.HintSize="514.4,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
-                      <ui:GetValue.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3ae7d7a4-4d1f-4cec-b8e0-c8fd32228a9d" InformativeScreenshot="abae8b50a712dd36a58262fdc800d837" Selector="&lt;webctrl id='datatable-buttons' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" TimeoutMS="1000">
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:GetValue.Target>
-                      <ui:GetValue.Value>
-                        <OutArgument x:TypeArguments="x:String">[resultDate]</OutArgument>
-                      </ui:GetValue.Value>
-                    </ui:GetValue>
-                    <TryCatch DisplayName="Try Catch Result Date" sap:VirtualizedContainerService.HintSize="514.4,814.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                      <TryCatch.Try>
-                        <If Condition="[DateTime.Parse(resultDate).ToShortDateString.Equals(in_period.ToShortDateString)]" DisplayName="If Datetime Match" sap:VirtualizedContainerService.HintSize="477.6,583.2" sap2010:WorkflowViewState.IdRef="If_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="400,304.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <TryCatch DisplayName="Try Catch wait data" sap:VirtualizedContainerService.HintSize="497.6,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch.Try>
+                <ui:RetryScope DisplayName="Retry Scope Wait Data" sap:VirtualizedContainerService.HintSize="208,52.8" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="12" RetryInterval="00:00:10">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496,587.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD' Result Date" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3ae7d7a4-4d1f-4cec-b8e0-c8fd32228a9d" InformativeScreenshot="abae8b50a712dd36a58262fdc800d837" Selector="&lt;webctrl id='datatable-buttons' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" TimeoutMS="1000">
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[resultDate]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <TryCatch DisplayName="Try Catch Result Date" sap:VirtualizedContainerService.HintSize="433.6,328" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch.Try>
+                            <If Condition="[DateTime.Parse(resultDate).ToShortDateString.Equals(in_period.ToShortDateString)]" DisplayName="If Datetime Match" sap:VirtualizedContainerService.HintSize="477.6,583.2" sap2010:WorkflowViewState.IdRef="If_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message Date Match" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Date match&quot;]" />
-                              <Assign DisplayName="Assign Flag Wait Data" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[waitData]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <ui:LogMessage DisplayName="Log Message Date Match" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Date Unmatch&quot;]" />
-                          </If.Else>
-                        </If>
-                      </TryCatch.Try>
-                      <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ActivityAction x:TypeArguments="s:Exception">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                            </ActivityAction.Argument>
-                            <ui:LogMessage DisplayName="Log Message Result Date" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[resultDate]" />
-                          </ActivityAction>
-                        </Catch>
-                      </TryCatch.Catches>
-                    </TryCatch>
-                  </Sequence>
-                </ActivityAction>
-              </ui:RetryScope.ActivityBody>
-              <ui:RetryScope.Condition>
-                <ActivityFunc x:TypeArguments="x:Boolean">
-                  <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Wait Data" Expression="[waitData]" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
-                </ActivityFunc>
-              </ui:RetryScope.Condition>
-            </ui:RetryScope>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="400,304.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message Date Match" sap:VirtualizedContainerService.HintSize="337.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Date match&quot;]" />
+                                  <Assign DisplayName="Assign Flag Wait Data" sap:VirtualizedContainerService.HintSize="337.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[waitData]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <ui:LogMessage DisplayName="Log Message Date Match" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Date Unmatch&quot;]" />
+                              </If.Else>
+                            </If>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <ui:LogMessage DisplayName="Log Message Result Date" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[resultDate]" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean">
+                      <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Wait Data" Expression="[waitData]" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+                    </ActivityFunc>
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Throw DisplayName="Throw wait data take longer than usual" Exception="[New Exception(&quot;Still wating for data, website takes longer than usual&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
