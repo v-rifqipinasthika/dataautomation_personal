@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>822.4,4388</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>760,4590.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_GunungHarta_DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -54,7 +54,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="128">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -118,9 +118,10 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="776.8,4323.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="656,4525.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="currentSearchDate" />
       <Variable x:TypeArguments="x:Int32" Name="indexMonth" />
@@ -133,8 +134,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="714.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_GunungHarta_DownloadReport&quot;)]" />
-    <If Condition="[in_period &gt; Today.AddDays(1)]" DisplayName="If Not Found" sap:VirtualizedContainerService.HintSize="714.4,485.6" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:LogMessage DisplayName="Log Message Portal_GunungHarta_DownloadReport" sap:VirtualizedContainerService.HintSize="593.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;{0} [{1}] {2}&quot;, in_PID, Now, &quot;STEP : Portal_GunungHarta_DownloadReport&quot;)]" />
+    <If Condition="[in_period &gt; Today.AddDays(1)]" DisplayName="If Not Found" sap:VirtualizedContainerService.HintSize="593.6,485.6" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,7 +162,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Statements'" sap:VirtualizedContainerService.HintSize="714.4,2126.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="722a054140d0ba5b56f1360d4368962a" Selector="&lt;html app='chrome.exe' title='GH Solutions' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  Statements'" sap:VirtualizedContainerService.HintSize="593.6,2126.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="722a054140d0ba5b56f1360d4368962a" Selector="&lt;html app='chrome.exe' title='GH Solutions' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -300,12 +301,8 @@
               </ui:ForEach>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Select_ActivaDate.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Custom_Flow\Select_ActivaDate.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">
-                    <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="in_period" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_elementCurrentMonth">
-                    <VisualBasicReference x:TypeArguments="ui:UiElement" ExpressionText="elementCurrentMonth" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_datePeriod">[in_period]</InArgument>
+                  <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_elementCurrentMonth">[elementCurrentMonth]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD' Date" sap:VirtualizedContainerService.HintSize="435.2,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
@@ -336,7 +333,7 @@
                 <ui:RetryScope DisplayName="Retry Scope Wait Data" sap:VirtualizedContainerService.HintSize="208,52.8" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="12" RetryInterval="00:00:10">
                   <ui:RetryScope.ActivityBody>
                     <ActivityAction>
-                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496,587.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="576.8,1174.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -354,7 +351,7 @@
                             <OutArgument x:TypeArguments="x:String">[resultDate]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <TryCatch DisplayName="Try Catch Result Date" sap:VirtualizedContainerService.HintSize="433.6,328" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="Try Catch Result Date" sap:VirtualizedContainerService.HintSize="433.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Try>
                             <If Condition="[DateTime.Parse(resultDate).ToShortDateString.Equals(in_period.ToShortDateString)]" DisplayName="If Datetime Match" sap:VirtualizedContainerService.HintSize="477.6,583.2" sap2010:WorkflowViewState.IdRef="If_4">
                               <sap:WorkflowViewStateService.ViewState>
@@ -387,10 +384,10 @@
                             </If>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,163.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -446,7 +443,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <Sequence sap:VirtualizedContainerService.HintSize="714.4,590.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence sap:VirtualizedContainerService.HintSize="593.6,590.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -486,7 +483,7 @@
         </ui:BrowserScope>
       </Sequence>
     </Sequence>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRaw]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="714.4,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtRaw]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="593.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -532,7 +529,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Assign DisplayName="Assign skip total" sap:VirtualizedContainerService.HintSize="714.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign DisplayName="Assign skip total" sap:VirtualizedContainerService.HintSize="593.6,60" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dtRaw]</OutArgument>
       </Assign.To>
@@ -540,13 +537,32 @@
         <InArgument x:TypeArguments="sd:DataTable">[dtRaw.AsEnumerable.Take(dtRaw.RowCount-1).CopyToDataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Delete_PreviousDownload.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="714.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Delete_PreviousDownload.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Custom_Flow\Portal_Delete_PreviousDownload.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="593.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Custom_Flow\Portal_Delete_PreviousDownload.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_pathDownloadChrome">[Path.GetDirectoryName(in_pathResultFile)]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_patternDownloadedFile">*.xlsx</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="714.4,309.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_pathResultFile]">
+    <ui:FilterDataTable DataTable="[dtRaw]" DisplayName="Filter Data Table - current date" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="593.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtRaw]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">[in_period.ToString("yyyy-MM-dd")]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="593.6,309.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_pathResultFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -563,7 +579,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <Assign DisplayName="Assign raw file path" sap:VirtualizedContainerService.HintSize="714.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign raw file path" sap:VirtualizedContainerService.HintSize="593.6,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_pathRawFile]</OutArgument>
       </Assign.To>
